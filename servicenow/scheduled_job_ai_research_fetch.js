@@ -1,0 +1,201 @@
+// AI Research Fetcher — ServiceNow Scheduled Job
+//
+// このファイルはGitHubとは自動連携していない。ServiceNow PDI(dev395932.service-now.com)の
+// 「System Definition > Scheduled Jobs」で「Automatically run a script of your choosing」を
+// 選び、このファイルの内容をそのまま貼り付けて保存する必要がある(コード変更のたびに
+// 再貼り付けが必要。gas/Code.gsと同じ制約。詳細はprogress-tracker-dashboardのREADME参照)。
+//
+// 前提: 下記3つのREST Message(認証不要・GET専用)がSystem Web Servicesに作成済みであること。
+// 詳細な設定値はこのリポジトリのREADME.md「セットアップ手順」を参照。
+//   - "AI Research - arXiv"        HTTPメソッド "search"
+//   - "AI Research - Hacker News"  HTTPメソッド "search"
+//   - "AI Research - Blog RSS"     HTTPメソッド "anthropic" / "openai" / "huggingface"
+// また u_ai_research_item テーブル(フィールド定義はREADME参照)が作成済みであること。
+//
+// 既知の制約: arXiv(Atom XML)とブログ(RSS XML)のパースは、ServiceNowのXMLDocument2 API
+// ではなく、あえて単純な正規表現ベースの文字列抽出にしている。実装したworker-roomセッションは
+// ネットワークegress制限によりarXiv/HN/各ブログへ実地アクセスできず(詳細はPTD-045参照)、
+// XMLDocument2の名前空間まわりの挙動を実機で確認できなかったため、確実性を優先してこの方式に
+// した。IDやHTMLタグを含むtitle/summaryが稀に誤って切れる可能性はあるが、パイプライン全体が
+// XML解析エラーで停止するリスクは避けられる。実機で問題が出た場合はここを見直すこと。
+
+(function () {
+    "use strict";
+
+    var CATEGORY = {
+        ARCHITECTURE: "1", // アプリ作成時に活かせる技術・アーキテクチャ・データ構造・データのやり取り
+        AI_TREND: "2",     // 最新のAI技術でできること・今後の技術動向
+        COMBINATION: "3",  // 既存技術の組み合わせでできる新しいこと
+        USE_CASE: "4",     // AIが使われている分野・使われやすいシチュエーション
+        FASHION: "5"       // AIの流行
+    };
+
+    // 情報源ごとの既定カテゴリ。5観点は本来どの記事にも当てはまり得る横断的な視点のため、
+    // 自動取得の時点では「その情報源が最も関連しやすい観点」を機械的に割り当てるだけに留める
+    // (内容を読んで正確に分類するのはこのパイプラインの範囲外。人が後で読み替えてよい)。
+    var SOURCE_DEFAULT_CATEGORY = {
+        arxiv: CATEGORY.AI_TREND,
+        hackernews: CATEGORY.USE_CASE,
+        anthropic: CATEGORY.AI_TREND,
+        openai: CATEGORY.AI_TREND,
+        huggingface: CATEGORY.COMBINATION
+    };
+
+    var stats = { inserted: 0, skipped: 0, errors: [] };
+
+    function normalizeUrl(url) {
+        if (!url) return "";
+        return url.trim().replace(/\/+$/, "").toLowerCase();
+    }
+
+    function alreadyExists(dedupKey) {
+        var gr = new GlideRecord("u_ai_research_item");
+        gr.addQuery("u_dedup_key", dedupKey);
+        gr.setLimit(1);
+        gr.query();
+        return gr.next();
+    }
+
+    function insertItem(item) {
+        var dedupKey = normalizeUrl(item.sourceUrl).substring(0, 255);
+        if (!dedupKey) {
+            stats.skipped++;
+            return;
+        }
+        if (alreadyExists(dedupKey)) {
+            stats.skipped++;
+            return;
+        }
+        var gr = new GlideRecord("u_ai_research_item");
+        gr.initialize();
+        gr.u_category = item.category;
+        gr.u_title = (item.title || "").substring(0, 200);
+        gr.u_summary = (item.summary || "").substring(0, 4000);
+        gr.u_source_url = (item.sourceUrl || "").substring(0, 1024);
+        gr.u_source_name = item.sourceName || "";
+        if (item.publishedAt) gr.u_published_at = item.publishedAt;
+        gr.u_fetched_at = new GlideDateTime();
+        gr.u_dedup_key = dedupKey;
+        gr.insert();
+        stats.inserted++;
+    }
+
+    // ---- 汎用の正規表現ベース抽出ヘルパー ----
+    function stripTags(s) {
+        return (s || "").replace(/<!\[CDATA\[/g, "").replace(/\]\]>/g, "").replace(/<[^>]+>/g, "").trim();
+    }
+
+    function extractTag(block, tagName) {
+        var re = new RegExp("<" + tagName + "[^>]*>([\\s\\S]*?)<\\/" + tagName + ">", "i");
+        var m = re.exec(block);
+        return m ? stripTags(m[1]) : "";
+    }
+
+    function splitBlocks(xml, tagName) {
+        var re = new RegExp("<" + tagName + "[^>]*>[\\s\\S]*?<\\/" + tagName + ">", "gi");
+        return xml.match(re) || [];
+    }
+
+    // ---- arXiv (Atom XML) ----
+    function fetchArxiv() {
+        try {
+            var r = new sn_ws.RESTMessageV2("AI Research - arXiv", "search");
+            r.setStringParameterNoEscape("search_query", "cat:cs.AI+OR+cat:cs.CL+OR+cat:cs.LG");
+            r.setStringParameterNoEscape("max_results", "10");
+            var response = r.execute();
+            if (response.getStatusCode() !== 200) {
+                stats.errors.push("arXiv: HTTP " + response.getStatusCode());
+                return;
+            }
+            var body = response.getBody();
+            var entries = splitBlocks(body, "entry");
+            entries.forEach(function (entry) {
+                // Atom既定名前空間下のidタグはURL(例: http://arxiv.org/abs/xxxx)
+                var idUrl = extractTag(entry, "id");
+                insertItem({
+                    category: SOURCE_DEFAULT_CATEGORY.arxiv,
+                    title: extractTag(entry, "title").replace(/\s+/g, " "),
+                    summary: extractTag(entry, "summary").replace(/\s+/g, " "),
+                    sourceUrl: idUrl,
+                    sourceName: "arXiv",
+                    publishedAt: extractTag(entry, "published")
+                });
+            });
+        } catch (e) {
+            stats.errors.push("arXiv: " + e);
+        }
+    }
+
+    // ---- Hacker News (Algolia JSON API) ----
+    function fetchHackerNews() {
+        try {
+            var r = new sn_ws.RESTMessageV2("AI Research - Hacker News", "search");
+            r.setStringParameterNoEscape("query", "AI");
+            r.setStringParameterNoEscape("hits", "20");
+            var response = r.execute();
+            if (response.getStatusCode() !== 200) {
+                stats.errors.push("Hacker News: HTTP " + response.getStatusCode());
+                return;
+            }
+            var data = JSON.parse(response.getBody());
+            (data.hits || []).forEach(function (hit) {
+                var url = hit.url || ("https://news.ycombinator.com/item?id=" + hit.objectID);
+                insertItem({
+                    category: SOURCE_DEFAULT_CATEGORY.hackernews,
+                    title: hit.title || hit.story_title || "",
+                    summary: "",
+                    sourceUrl: url,
+                    sourceName: "Hacker News",
+                    publishedAt: hit.created_at || ""
+                });
+            });
+        } catch (e) {
+            stats.errors.push("Hacker News: " + e);
+        }
+    }
+
+    // ---- ブログRSS(Anthropic / OpenAI / Hugging Face、いずれもRSS 2.0想定) ----
+    function fetchBlogRss(httpMethodName, sourceKey, sourceName) {
+        try {
+            var r = new sn_ws.RESTMessageV2("AI Research - Blog RSS", httpMethodName);
+            var response = r.execute();
+            if (response.getStatusCode() !== 200) {
+                stats.errors.push(sourceName + ": HTTP " + response.getStatusCode());
+                return;
+            }
+            var body = response.getBody();
+            var items = splitBlocks(body, "item");
+            // Atom形式のブログの場合(RSS 2.0でなければitemが取れない)は<entry>も試す
+            if (items.length === 0) items = splitBlocks(body, "entry");
+            items.forEach(function (block) {
+                var link = extractTag(block, "link") || extractTag(block, "guid");
+                insertItem({
+                    category: SOURCE_DEFAULT_CATEGORY[sourceKey],
+                    title: extractTag(block, "title"),
+                    summary: extractTag(block, "description") || extractTag(block, "summary"),
+                    sourceUrl: link,
+                    sourceName: sourceName,
+                    publishedAt: extractTag(block, "pubDate") || extractTag(block, "published")
+                });
+            });
+        } catch (e) {
+            stats.errors.push(sourceName + ": " + e);
+        }
+    }
+
+    // ---- 実行 ----
+    fetchArxiv();
+    fetchHackerNews();
+    fetchBlogRss("anthropic", "anthropic", "Anthropic Blog");
+    fetchBlogRss("openai", "openai", "OpenAI Blog");
+    fetchBlogRss("huggingface", "huggingface", "Hugging Face Blog");
+
+    gs.info(
+        "[AIResearchFetcher] inserted=" + stats.inserted +
+        " skipped(duplicate/empty)=" + stats.skipped +
+        " errors=" + JSON.stringify(stats.errors)
+    );
+    if (stats.errors.length > 0) {
+        gs.error("[AIResearchFetcher] " + stats.errors.length + "件のエラー: " + JSON.stringify(stats.errors));
+    }
+})();
