@@ -19,20 +19,20 @@ jobs:
     name: 情報源URLの実地検証(PTD-050関連、認証不要)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          node-version: "20"
+          node-version: "22"
       - run: node servicenow/scripts/verify_source_urls.mjs
 
   setup-rest-messages:
     name: REST Message自動作成(PTD-048)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          node-version: "20"
+          node-version: "22"
       - run: node servicenow/scripts/setup_rest_messages.mjs
         env:
           SN_INSTANCE: ${{ secrets.SERVICENOW_INSTANCE_URL }}
