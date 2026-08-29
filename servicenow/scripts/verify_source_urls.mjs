@@ -13,6 +13,10 @@
 // 手動実行が必要。
 //
 // setup_rest_messages.mjsのREST_MESSAGES定義と値を合わせること(値を変えたら両方直す)。
+//
+// 2026-08-29: Anthropic Blog RSS(https://www.anthropic.com/rss.xml)はこのチェックで実際に
+// HTTP 404(Next.jsアプリのエラーページ)を検出し、Anthropicが公式RSSフィードを提供していない
+// ことが判明したため、情報源から除外した(ユーザー承認済み)。
 
 const SOURCES = [
   {
@@ -33,12 +37,6 @@ const SOURCES = [
       }
     },
     expectDesc: "hits配列を含むJSON",
-  },
-  {
-    label: "Anthropic Blog RSS",
-    url: "https://www.anthropic.com/rss.xml",
-    expect: (body) => body.includes("<item") || body.includes("<entry"),
-    expectDesc: "<item> または <entry> を含むRSS/Atom XML",
   },
   {
     label: "OpenAI Blog RSS",

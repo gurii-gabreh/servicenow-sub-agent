@@ -9,8 +9,13 @@
 // 詳細な設定値はこのリポジトリのREADME.md「セットアップ手順」を参照。
 //   - "AI Research - arXiv"        HTTPメソッド "search"
 //   - "AI Research - Hacker News"  HTTPメソッド "search"
-//   - "AI Research - Blog RSS"     HTTPメソッド "anthropic" / "openai" / "huggingface"
+//   - "AI Research - Blog RSS"     HTTPメソッド "openai" / "huggingface"
 // また u_ai_research_item テーブル(フィールド定義はREADME参照)が作成済みであること。
+//
+// 2026-08-29追記: Anthropic Blog(HTTPメソッド"anthropic")は情報源から除外した。実機検証
+// (servicenow/scripts/verify_source_urls.mjs)で https://www.anthropic.com/rss.xml が
+// HTTP 404を返すことを確認し、Anthropicが公式RSSフィードを現在提供していないと判明したため
+// (ユーザー承認済み)。
 //
 // 既知の制約: arXiv(Atom XML)とブログ(RSS XML)のパースは、ServiceNowのXMLDocument2 API
 // ではなく、あえて単純な正規表現ベースの文字列抽出にしている。実装したworker-roomセッションは
@@ -46,7 +51,6 @@
     var SOURCE_DEFAULT_CATEGORY = {
         arxiv: CATEGORY.AI_TREND,
         hackernews: CATEGORY.USE_CASE,
-        anthropic: CATEGORY.AI_TREND,
         openai: CATEGORY.AI_TREND,
         huggingface: CATEGORY.COMBINATION
     };
@@ -192,7 +196,6 @@
     // ---- 実行 ----
     fetchArxiv();
     fetchHackerNews();
-    fetchBlogRss("anthropic", "anthropic", "Anthropic Blog");
     fetchBlogRss("openai", "openai", "OpenAI Blog");
     fetchBlogRss("huggingface", "huggingface", "Hugging Face Blog");
 

@@ -18,9 +18,10 @@ ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で�
 |---|---|---|
 | arXiv | API(Atom XML) | `http://export.arxiv.org/api/query` |
 | Hacker News | API(JSON、Algolia) | `http://hn.algolia.com/api/v1/search_by_date` |
-| Anthropic Blog | RSS | `https://www.anthropic.com/rss.xml` (要確認、下記「既知の制約」参照) |
-| OpenAI Blog | RSS | `https://openai.com/blog/rss.xml` (要確認) |
-| Hugging Face Blog | RSS | `https://huggingface.co/blog/feed.xml` (要確認) |
+| OpenAI Blog | RSS | `https://openai.com/blog/rss.xml` (実機検証済み、2026-08-29) |
+| Hugging Face Blog | RSS | `https://huggingface.co/blog/feed.xml` (実機検証済み、2026-08-29) |
+
+**2026-08-29、Anthropic Blogは情報源から除外した**: `https://www.anthropic.com/rss.xml`を`.github/workflows/servicenow-setup.yml`のverify-source-urlsジョブで実地検証したところHTTP 404(Next.jsアプリのエラーページ)が返り、調査の結果Anthropicは現在公式のRSSフィードを提供していないことが判明した(非公式の第三者ミラーは信頼性・継続性の観点から採用せず、ユーザー承認の上で情報源自体を4つに減らす方針にした)。
 
 いずれもAPIキー・OAuth等の認証情報は不要。**ServiceNow認証情報や、万一将来他の情報源で認証が必要になった場合のAPIキー等は、このリポジトリには絶対にコミットしない**(ServiceNow PDI内のシステムプロパティ等でのみ保持する)。
 
@@ -49,7 +50,7 @@ Studio(または「システム定義 > テーブル」)から新規テーブル
 | `u_title` | String | 200 | タイトル |
 | `u_summary` | String | 4000 | 要約 |
 | `u_source_url` | String | 1024 | 出典URL |
-| `u_source_name` | String | 100 | arXiv / Hacker News / Anthropic Blog / OpenAI Blog / Hugging Face Blog |
+| `u_source_name` | String | 100 | arXiv / Hacker News / OpenAI Blog / Hugging Face Blog |
 | `u_published_at` | Date/Time | - | 元記事の公開日時(取得できない場合は空) |
 | `u_fetched_at` | Date/Time | - | このパイプラインが取得した日時 |
 | `u_dedup_key` | String | 255 | 重複防止用キー(`u_source_url`を小文字化+末尾スラッシュ除去した正規化文字列、255文字まで)。**Unique制約を付けることを推奨** |
@@ -65,9 +66,10 @@ Studio(または「システム定義 > テーブル」)から新規テーブル
 - HTTPメソッド `search`: Endpoint `http://hn.algolia.com/api/v1/search_by_date?query=AI&tags=story&hitsPerPage=20`(同上、静的URL)
 
 **REST Message: `AI Research - Blog RSS`**
-- HTTPメソッド `anthropic`: Endpoint `https://www.anthropic.com/rss.xml`
 - HTTPメソッド `openai`: Endpoint `https://openai.com/blog/rss.xml`
 - HTTPメソッド `huggingface`: Endpoint `https://huggingface.co/blog/feed.xml`
+
+(2026-08-29追記: 当初あった`anthropic`メソッドは、Anthropicが公式RSSフィードを提供していないと実機検証で判明したため削除した。既に作成してしまっていた場合はservicenow-sub-agentのGitHub Actionsワークフローを再実行すると自動削除される。詳細は下記「既知の制約」参照)
 
 #### REST Messageの自動作成(GitHub Actions、2026-08-29追加)
 
@@ -95,7 +97,7 @@ Studio(または「システム定義 > テーブル」)から新規テーブル
 
 ## 既知の制約
 
-- **RSS URLは実地未確認**: この実装を行ったworker-roomセッションは、ネットワークegressポリシーにより`export.arxiv.org`・`hn.algolia.com`・`www.anthropic.com`等への外部アクセスが遮断される環境だったため(詳細はprogress-tracker-dashboardのPTD-045参照)、上記のAPI/RSS URLをこのセッションから実地検証できていない。arXiv APIとHacker News Algolia APIは長年安定している既知の公開APIのため形式には比較的自信があるが、特に3つのブログRSSのURLパスは変更されている可能性がある。**上記「4. 動作確認」を必ず行い、404やパースエラーが出る場合はブラウザで実際のRSS URLを確認して修正すること**。2026-08-29時点では、`.github/workflows/servicenow-setup.yml`の`verify-source-urls`ジョブが、GitHub Actionsランナー(通常のインターネットアクセスを持つ)から5つの情報源URLへ実際にリクエストし、期待する形式(Atom/JSON/RSS)が返るかを自動チェックする(認証不要・ServiceNow側の設定とは無関係に単独実行される)。ただしこれは「情報源URL自体の生存確認」に留まり、ServiceNow上で`scheduled_job_ai_research_fetch.js`を実行した際の`u_ai_research_item`への実際の書き込みまでは検証できないため、PTD-050の手動確認(「4. 動作確認」)は引き続き必要
+- **RSS URLの実地検証結果(2026-08-29更新)**: この実装を行ったworker-roomセッション自身は、ネットワークegressポリシーにより`export.arxiv.org`・`hn.algolia.com`・`www.anthropic.com`等への外部アクセスが遮断される環境だったため(詳細はprogress-tracker-dashboardのPTD-045参照)、当初はAPI/RSS URLを実地検証できていなかった。2026-08-29、`.github/workflows/servicenow-setup.yml`の`verify-source-urls`ジョブ(GitHub Actionsランナーから実行、通常のインターネットアクセスを持つ)を実際に実行した結果、arXiv API・Hacker News API・OpenAI Blog RSS・Hugging Face Blog RSSの4件はHTTP 200・期待した形式で正常に確認できた。一方Anthropic Blog(`https://www.anthropic.com/rss.xml`)はHTTP 404(Next.jsアプリのエラーページ)であることが判明し、Anthropicが公式RSSフィードを提供していないことが分かったため情報源から除外した(上記「情報源」表参照)。このverify-source-urlsジョブは「情報源URL自体の生存確認」に留まり、ServiceNow上で`scheduled_job_ai_research_fetch.js`を実行した際の`u_ai_research_item`への実際の書き込みまでは検証できないため、PTD-050の手動確認(「4. 動作確認」)は引き続き必要
 - **ServiceNow自体からのアクセスはこのセッションの制約を受けない**: 上記の実地未確認はこのCloud上のworker-roomセッションのネットワーク制限によるものであり、実際にスケジュールジョブを実行するServiceNow PDI自体のネットワークとは無関係。ServiceNow側は通常、外部の公開HTTPSエンドポイントへ問題なくアクセスできる
 - arXivのAtom XMLパース部分(`parseArxivXml`)は、ServiceNowの`XMLDocument2`の挙動をこのセッションから実機確認できていないため、他の2つ(JSON/RSS)より検証の優先度を上げることを推奨する
 - **ServiceNow PDIの制約**: 開発・テスト目的限定というServiceNowのToSに従うこと。また、インスタンス作成から90日以上経過し、かつ10日間ログインが無い場合に自動回収される制約がある。本パイプラインが蓄積したデータを失わないよう、定期的に(90日を待たずに)ログインするか、必要であれば蓄積データを外部へエクスポートする運用を検討すること(現時点でエクスポートの自動化までは実装していない)

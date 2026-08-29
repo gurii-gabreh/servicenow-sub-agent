@@ -65,12 +65,18 @@ const REST_MESSAGES = [
     name: "AI Research - Blog RSS",
     description: "PTD-046: 各社ブログRSS(認証不要・GET)",
     methods: [
-      { function_name: "anthropic", rest_endpoint: "https://www.anthropic.com/rss.xml" },
       { function_name: "openai", rest_endpoint: "https://openai.com/blog/rss.xml" },
       { function_name: "huggingface", rest_endpoint: "https://huggingface.co/blog/feed.xml" },
     ],
   },
 ];
+// 2026-08-29: Anthropicは公式RSSフィードを提供していないことが実機検証(verify-source-urlsジョブ、
+// https://www.anthropic.com/rss.xml が404)で判明したため、情報源から除外した(ユーザー承認済み)。
+// 詳細はprogress-tracker-dashboardのconcept-log.json参照。以前の実行で既に作成されてしまった
+// 場合に備え、下記REMOVED_METHODSで明示的に削除する。
+
+// 過去に存在した情報源のうち、廃止されたHTTPメソッド。存在すれば削除する(冪等: 無ければ何もしない)。
+const REMOVED_METHODS = [{ restMessageName: "AI Research - Blog RSS", function_name: "anthropic" }];
 
 function log(...args) {
   console.log(...args);
@@ -214,6 +220,27 @@ async function ensureMethod(token, restMessage, method, authInheritValue) {
   log(`  [作成] HTTPメソッド "${method.function_name}" (sys_id=${created.result.sys_id})`);
 }
 
+async function cleanupRemovedMethods(token) {
+  for (const removed of REMOVED_METHODS) {
+    const restMessage = await findByQuery(token, "sys_rest_message", `name=${removed.restMessageName}`);
+    if (!restMessage) continue;
+    const existing = await findByQuery(
+      token,
+      "sys_rest_message_fn",
+      `rest_message=${restMessage.sys_id}^function_name=${removed.function_name}`
+    );
+    if (!existing) continue;
+    if (DRY_RUN) {
+      log(
+        `[dry-run] 廃止済みのHTTPメソッド "${removed.restMessageName}" / "${removed.function_name}" (sys_id=${existing.sys_id}) を削除予定`
+      );
+      continue;
+    }
+    await api(token, "DELETE", `/api/now/table/sys_rest_message_fn/${existing.sys_id}`);
+    log(`[削除] 廃止済みのHTTPメソッド "${removed.restMessageName}" / "${removed.function_name}" (sys_id=${existing.sys_id})`);
+  }
+}
+
 async function main() {
   if (!CLIENT_ID || !CLIENT_SECRET) {
     throw new Error(
@@ -248,7 +275,9 @@ async function main() {
     }
   }
 
-  log(DRY_RUN ? "dry-run完了(何も作成していません)" : "完了");
+  await cleanupRemovedMethods(token);
+
+  log(DRY_RUN ? "dry-run完了(何も作成・削除していません)" : "完了");
 }
 
 main().catch((err) => {
