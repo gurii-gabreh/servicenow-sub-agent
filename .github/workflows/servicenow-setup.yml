@@ -15,6 +15,16 @@ on:
         default: true
 
 jobs:
+  debug-pubdate:
+    name: pubDate調査(一時的、認証不要)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - run: node servicenow/scripts/debug_pubdate.mjs
+
   verify-source-urls:
     name: 情報源URLの実地検証(PTD-050関連、認証不要)
     runs-on: ubuntu-latest
