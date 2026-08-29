@@ -73,10 +73,11 @@ Studio(または「システム定義 > テーブル」)から新規テーブル
 
 上記3レコードは、`.github/workflows/servicenow-setup.yml`(手動実行=workflow_dispatch)から`servicenow/scripts/setup_rest_messages.mjs`を実行することで、ServiceNowのTable API経由で自動作成できる。手順:
 
-1. ServiceNow PDI(dev395932.service-now.com)の`System OAuth > Application Registry`で、OAuth 2.0のClient Credentials grant用アプリケーション(「Create an OAuth API endpoint for external clients」、Zurich以降のリリースでは「New Inbound Integration Experience > New Integration > OAuth - Client credentials grant」)を作成し、Client ID/Client Secretを控える。Client Credentials grant typeをシステム全体で有効化し、統合用ユーザーをこのOAuthアプリケーションに割り当てること(未設定だと401エラーになる)。
-2. このリポジトリのGitHub Settings > Secrets and variables > Actionsで、以下2つのRepository secretを登録する(**値は絶対にコミット・チャットに書かない**)。
-   - `SN_CLIENT_ID`: 1.で発行されたClient ID
-   - `SN_CLIENT_SECRET`: 1.で発行されたClient Secret
+1. ServiceNow PDI(dev395932.service-now.com)の`System OAuth > Application Registry`で、OAuth 2.0のClient Credentials grant用アプリケーションを作成し、Client ID/Client Secretを控える。「Create an OAuth API endpoint for external clients」(旧UI)・「New Inbound Integration Experience > New Integration > OAuth - Client credentials grant」(Zurich以降の新UI)のどちらで作成したものでも、トークン取得エンドポイント(`/oauth_token.do`)は共通のため問題なく使える。Client Credentials grant typeをシステム全体で有効化し、統合用ユーザーをこのOAuthアプリケーションに割り当てること(未設定だと401エラーになる)。
+2. このリポジトリのGitHub Settings > Secrets and variables > Actionsで、以下3つのRepository secretを登録する(**値は絶対にコミット・チャットに書かない**)。
+   - `SERVICENOW_INSTANCE_URL`: ServiceNow PDIのインスタンス(`dev395932.service-now.com`のようなホスト名でも、`https://dev395932.service-now.com`のような完全なURLでもどちらでもよい)
+   - `SERVICENOW_CLIENT_ID`: 1.で発行されたClient ID
+   - `SERVICENOW_CLIENT_SECRET`: 1.で発行されたClient Secret
 3. GitHub Actionsの「Actions」タブから「ServiceNow REST Messageセットアップ(PTD-048)」をworkflow_dispatchで実行する。`dry_run`を`true`のまま(初期値)で1回実行し、ログに出力される作成予定の内容(REST Message名・HTTPメソッド・エンドポイント)を確認してから、`dry_run`を`false`にして再実行すると実際に作成される。
 4. 既に存在するREST Message/HTTPメソッド(名前で判定)はスキップされ、重複作成はされない。想定と異なるエンドポイントが既に設定されている場合は上書きせず警告ログのみ出す。
 

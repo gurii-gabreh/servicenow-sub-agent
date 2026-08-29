@@ -1,8 +1,10 @@
 // PTD-048: ServiceNow Table API経由でREST Message(3件)を自動作成するスクリプト。
 //
 // GitHub Actionsワークフロー(.github/workflows/servicenow-setup.yml)からのみ実行される想定。
-// このリポジトリに認証情報は一切含めない。SN_CLIENT_ID/SN_CLIENT_SECRETはGitHub Actions
-// Secretsから環境変数として渡される(このスクリプト自身はSecretsの値をログ出力しない)。
+// このリポジトリに認証情報は一切含めない。GitHub Actions Secrets(SERVICENOW_INSTANCE_URL/
+// SERVICENOW_CLIENT_ID/SERVICENOW_CLIENT_SECRET)が、ワークフロー側でSN_INSTANCE/SN_CLIENT_ID/
+// SN_CLIENT_SECRETという環境変数名にマッピングされて渡される(このスクリプト自身はSecretsの
+// 値をログ出力しない)。
 //
 // 設計判断: README記載の当初案ではarXiv/Hacker Newsのエンドポイントに ${search_query} のような
 // ランタイム変数を使う想定だったが、ServiceNowのRESTMessageV2は ${varName} を使う場合、
@@ -19,7 +21,17 @@
 // (CLAUDE.mdルール1)のため、authentication_typeの選択肢値はsys_choiceテーブルから、
 // フィールドの実在確認はsys_dictionaryテーブルから、実行時に動的に取得している。
 
-const INSTANCE = process.env.SN_INSTANCE || "dev395932.service-now.com";
+// SERVICENOW_INSTANCE_URL(GitHub Secret)は "dev395932.service-now.com" のような
+// ホスト名でも "https://dev395932.service-now.com/" のような完全なURLでも渡され得るため、
+// どちらの形式で登録されていても動くよう正規化する。
+function normalizeInstance(raw) {
+  return String(raw || "")
+    .trim()
+    .replace(/^https?:\/\//i, "")
+    .replace(/\/+$/, "");
+}
+
+const INSTANCE = normalizeInstance(process.env.SN_INSTANCE) || "dev395932.service-now.com";
 const CLIENT_ID = process.env.SN_CLIENT_ID;
 const CLIENT_SECRET = process.env.SN_CLIENT_SECRET;
 const DRY_RUN = process.env.DRY_RUN === "true";
