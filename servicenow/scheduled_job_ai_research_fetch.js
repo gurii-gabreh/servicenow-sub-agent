@@ -18,6 +18,16 @@
 // XMLDocument2の名前空間まわりの挙動を実機で確認できなかったため、確実性を優先してこの方式に
 // した。IDやHTMLタグを含むtitle/summaryが稀に誤って切れる可能性はあるが、パイプライン全体が
 // XML解析エラーで停止するリスクは避けられる。実機で問題が出た場合はここを見直すこと。
+//
+// 2026-08-29追記: arXiv/Hacker NewsのREST Messageは、検索クエリ・件数を${変数}によるランタイム
+// 置換ではなく、エンドポイントURLに直接埋め込んだ静的URLにした(servicenow/scripts/
+// setup_rest_messages.mjs参照)。ServiceNowのRESTMessageV2は${varName}をHTTPメソッド側の
+// 「Variable」定義に事前登録しないと、置換されずリテラルの"${varName}"のまま送信されて
+// エラーも出ずに検索結果が空になる、という既知の落とし穴があり、対話的にServiceNowへ
+// ログインして確認する手段がないこのセッションからはそのリスクを取れないと判断したため。
+// 検索クエリや件数を変えたい場合は、setup_rest_messages.mjs(またはREST Message自体の
+// エンドポイント設定)側を書き換えること。このファイル側にsetStringParameterNoEscapeは
+// もう不要(エンドポイントに値が埋め込み済みのため)。
 
 (function () {
     "use strict";
@@ -100,8 +110,6 @@
     function fetchArxiv() {
         try {
             var r = new sn_ws.RESTMessageV2("AI Research - arXiv", "search");
-            r.setStringParameterNoEscape("search_query", "cat:cs.AI+OR+cat:cs.CL+OR+cat:cs.LG");
-            r.setStringParameterNoEscape("max_results", "10");
             var response = r.execute();
             if (response.getStatusCode() !== 200) {
                 stats.errors.push("arXiv: HTTP " + response.getStatusCode());
@@ -130,8 +138,6 @@
     function fetchHackerNews() {
         try {
             var r = new sn_ws.RESTMessageV2("AI Research - Hacker News", "search");
-            r.setStringParameterNoEscape("query", "AI");
-            r.setStringParameterNoEscape("hits", "20");
             var response = r.execute();
             if (response.getStatusCode() !== 200) {
                 stats.errors.push("Hacker News: HTTP " + response.getStatusCode());

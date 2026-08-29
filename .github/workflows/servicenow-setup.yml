@@ -1,0 +1,39 @@
+name: ServiceNow REST Messageセットアップ(PTD-048)
+
+# 手動実行専用(workflow_dispatch)。ServiceNow OAuth Application Registryの
+# Client ID/Secretを、リポジトリのSettings > Secrets and variables > Actionsに
+# SN_CLIENT_ID / SN_CLIENT_SECRET として登録した上で実行すること。
+# 手順の詳細はREADME.md「セットアップ手順」参照。
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "true=実際には作成せずログ出力のみ(初回はtrue推奨)"
+        type: boolean
+        default: true
+
+jobs:
+  verify-source-urls:
+    name: 情報源URLの実地検証(PTD-050関連、認証不要)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: node servicenow/scripts/verify_source_urls.mjs
+
+  setup-rest-messages:
+    name: REST Message自動作成(PTD-048)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: node servicenow/scripts/setup_rest_messages.mjs
+        env:
+          SN_INSTANCE: dev395932.service-now.com
+          SN_CLIENT_ID: ${{ secrets.SN_CLIENT_ID }}
+          SN_CLIENT_SECRET: ${{ secrets.SN_CLIENT_SECRET }}
+          DRY_RUN: ${{ inputs.dry_run }}

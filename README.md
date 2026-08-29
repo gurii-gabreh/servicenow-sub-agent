@@ -56,23 +56,37 @@ Studio(または「システム定義 > テーブル」)から新規テーブル
 
 ### 2. REST Message作成
 
-「System Web Services > REST Message」から、以下の3レコードを作成する(いずれも認証不要・GET)。
+「System Web Services > REST Message」から、以下の3レコードを作成する(いずれも認証不要・GET)。**手作業の代わりに、下記「REST Messageの自動作成(GitHub Actions)」で自動化することもできる。**
 
 **REST Message: `AI Research - arXiv`**
-- HTTPメソッド `search`: Endpoint `http://export.arxiv.org/api/query`
-  - 変数: `search_query`(デフォルト `cat:cs.AI+OR+cat:cs.CL+OR+cat:cs.LG`)、`max_results`(デフォルト `10`)、`sortBy=submittedDate`、`sortOrder=descending` をクエリパラメータに含める
+- HTTPメソッド `search`: Endpoint `http://export.arxiv.org/api/query?search_query=cat:cs.AI+OR+cat:cs.CL+OR+cat:cs.LG&max_results=10&sortBy=submittedDate&sortOrder=descending`(クエリ文字列を含めた完全な静的URL。理由は下記「REST Messageの自動作成」の注記参照)
 
 **REST Message: `AI Research - Hacker News`**
-- HTTPメソッド `search`: Endpoint `http://hn.algolia.com/api/v1/search_by_date?query=${query}&tags=story&hitsPerPage=${hits}`
+- HTTPメソッド `search`: Endpoint `http://hn.algolia.com/api/v1/search_by_date?query=AI&tags=story&hitsPerPage=20`(同上、静的URL)
 
 **REST Message: `AI Research - Blog RSS`**
 - HTTPメソッド `anthropic`: Endpoint `https://www.anthropic.com/rss.xml`
 - HTTPメソッド `openai`: Endpoint `https://openai.com/blog/rss.xml`
 - HTTPメソッド `huggingface`: Endpoint `https://huggingface.co/blog/feed.xml`
 
+#### REST Messageの自動作成(GitHub Actions、2026-08-29追加)
+
+上記3レコードは、`.github/workflows/servicenow-setup.yml`(手動実行=workflow_dispatch)から`servicenow/scripts/setup_rest_messages.mjs`を実行することで、ServiceNowのTable API経由で自動作成できる。手順:
+
+1. ServiceNow PDI(dev395932.service-now.com)の`System OAuth > Application Registry`で、OAuth 2.0のClient Credentials grant用アプリケーション(「Create an OAuth API endpoint for external clients」、Zurich以降のリリースでは「New Inbound Integration Experience > New Integration > OAuth - Client credentials grant」)を作成し、Client ID/Client Secretを控える。Client Credentials grant typeをシステム全体で有効化し、統合用ユーザーをこのOAuthアプリケーションに割り当てること(未設定だと401エラーになる)。
+2. このリポジトリのGitHub Settings > Secrets and variables > Actionsで、以下2つのRepository secretを登録する(**値は絶対にコミット・チャットに書かない**)。
+   - `SN_CLIENT_ID`: 1.で発行されたClient ID
+   - `SN_CLIENT_SECRET`: 1.で発行されたClient Secret
+3. GitHub Actionsの「Actions」タブから「ServiceNow REST Messageセットアップ(PTD-048)」をworkflow_dispatchで実行する。`dry_run`を`true`のまま(初期値)で1回実行し、ログに出力される作成予定の内容(REST Message名・HTTPメソッド・エンドポイント)を確認してから、`dry_run`を`false`にして再実行すると実際に作成される。
+4. 既に存在するREST Message/HTTPメソッド(名前で判定)はスキップされ、重複作成はされない。想定と異なるエンドポイントが既に設定されている場合は上書きせず警告ログのみ出す。
+
+**設計判断**: 当初案ではarXiv/Hacker Newsのクエリを`${変数}`によるランタイム置換にする想定だったが、ServiceNowのRESTMessageV2は`${varName}`をHTTPメソッド側の「Variable」定義に事前登録しないと、置換されずリテラルの`"${varName}"`のまま送信されて**エラーも出ずに検索結果が空になる**という既知の落とし穴がある。このworker-roomセッションはServiceNowへ対話的にログインしてその変数定義まわりの挙動を実機確認する手段がなく、かつscheduled_job_ai_research_fetch.jsが渡す値は常に固定(実行のたびに変えていない)ため、そもそも変数を使わずクエリ文字列をエンドポイントURLに直接埋め込んだ静的URLに設計変更した。検索クエリや件数を変更したい場合は、`servicenow/scripts/setup_rest_messages.mjs`とこのREADME、`servicenow/scheduled_job_ai_research_fetch.js`のコメントを合わせて修正すること。
+
 ### 3. スケジュールジョブ作成
 
 「System Definition > Scheduled Jobs」から「Automatically run a script of your choosing」を選択し、`servicenow/scheduled_job_ai_research_fetch.js`の内容をそのまま貼り付ける。実行頻度は日次を推奨(無料PDIのリソース枠内で十分)。
+
+**この手順は手動のまま残している(2026-08-29時点であえて自動化していない)**。理由: (1) UI操作としてはスクリプトの貼り付け+頻度選択+保存のみで、上記REST Message作成(3レコード×複数フィールド)より手間が小さい、(2) Table API経由で`sysauto_script`(Scheduled Script Execution)を作成する場合に必要な`run_type`等のフィールド構成を、このセッションからは実機で検証する手段がなく、誤った設定で「一見成功したが実際には動かない/意図しない頻度で動く」スケジュールジョブを作ってしまうリスクの方が、手作業の手間より大きいと判断した。将来これを自動化したい場合は、まずServiceNow PDI上で実際に`sysauto_script`テーブルの必須フィールドをTable API(`GET /api/now/table/sysauto_script?sysparm_limit=1`等)で確認してから着手すること。
 
 ### 4. 動作確認
 
@@ -80,7 +94,7 @@ Studio(または「システム定義 > テーブル」)から新規テーブル
 
 ## 既知の制約
 
-- **RSS URLは実地未確認**: この実装を行ったworker-roomセッションは、ネットワークegressポリシーにより`export.arxiv.org`・`hn.algolia.com`・`www.anthropic.com`等への外部アクセスが遮断される環境だったため(詳細はprogress-tracker-dashboardのPTD-045参照)、上記のAPI/RSS URLをこのセッションから実地検証できていない。arXiv APIとHacker News Algolia APIは長年安定している既知の公開APIのため形式には比較的自信があるが、特に3つのブログRSSのURLパスは変更されている可能性がある。**上記「4. 動作確認」を必ず行い、404やパースエラーが出る場合はブラウザで実際のRSS URLを確認して修正すること**
+- **RSS URLは実地未確認**: この実装を行ったworker-roomセッションは、ネットワークegressポリシーにより`export.arxiv.org`・`hn.algolia.com`・`www.anthropic.com`等への外部アクセスが遮断される環境だったため(詳細はprogress-tracker-dashboardのPTD-045参照)、上記のAPI/RSS URLをこのセッションから実地検証できていない。arXiv APIとHacker News Algolia APIは長年安定している既知の公開APIのため形式には比較的自信があるが、特に3つのブログRSSのURLパスは変更されている可能性がある。**上記「4. 動作確認」を必ず行い、404やパースエラーが出る場合はブラウザで実際のRSS URLを確認して修正すること**。2026-08-29時点では、`.github/workflows/servicenow-setup.yml`の`verify-source-urls`ジョブが、GitHub Actionsランナー(通常のインターネットアクセスを持つ)から5つの情報源URLへ実際にリクエストし、期待する形式(Atom/JSON/RSS)が返るかを自動チェックする(認証不要・ServiceNow側の設定とは無関係に単独実行される)。ただしこれは「情報源URL自体の生存確認」に留まり、ServiceNow上で`scheduled_job_ai_research_fetch.js`を実行した際の`u_ai_research_item`への実際の書き込みまでは検証できないため、PTD-050の手動確認(「4. 動作確認」)は引き続き必要
 - **ServiceNow自体からのアクセスはこのセッションの制約を受けない**: 上記の実地未確認はこのCloud上のworker-roomセッションのネットワーク制限によるものであり、実際にスケジュールジョブを実行するServiceNow PDI自体のネットワークとは無関係。ServiceNow側は通常、外部の公開HTTPSエンドポイントへ問題なくアクセスできる
 - arXivのAtom XMLパース部分(`parseArxivXml`)は、ServiceNowの`XMLDocument2`の挙動をこのセッションから実機確認できていないため、他の2つ(JSON/RSS)より検証の優先度を上げることを推奨する
 - **ServiceNow PDIの制約**: 開発・テスト目的限定というServiceNowのToSに従うこと。また、インスタンス作成から90日以上経過し、かつ10日間ログインが無い場合に自動回収される制約がある。本パイプラインが蓄積したデータを失わないよう、定期的に(90日を待たずに)ログインするか、必要であれば蓄積データを外部へエクスポートする運用を検討すること(現時点でエクスポートの自動化までは実装していない)
