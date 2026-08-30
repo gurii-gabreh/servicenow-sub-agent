@@ -1,0 +1,30 @@
+name: ServiceNow Business Rule自動作成
+
+# 手動実行専用(workflow_dispatch)。servicenow-setup.ymlとは別ワークフローにしている理由:
+# こちらはBusiness Rule作成のたびに実データ(カタログアイテム等)を軽く更新して動作確認するため、
+# REST Message/Scheduled Job同期(無関係な変更)と同じworkflow_dispatchで毎回まとめて動くと
+# 意図しないタイミングでデータが触られてしまう。認証情報の登録手順はservicenow-setup.ymlと共通
+# (README.md参照)。
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "true=実際には作成せずログ出力のみ(初回はtrue推奨)"
+        type: boolean
+        default: true
+
+jobs:
+  sc-cat-item-update-logger:
+    name: sc_cat_item更新ログBusiness Rule(manager-room依頼 2026-08-30)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - run: node servicenow/scripts/setup_business_rule_sc_cat_item.mjs
+        env:
+          SN_INSTANCE: ${{ secrets.SERVICENOW_INSTANCE_URL }}
+          SN_CLIENT_ID: ${{ secrets.SERVICENOW_CLIENT_ID }}
+          SN_CLIENT_SECRET: ${{ secrets.SERVICENOW_CLIENT_SECRET }}
+          DRY_RUN: ${{ inputs.dry_run }}

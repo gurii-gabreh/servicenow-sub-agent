@@ -106,6 +106,10 @@ Studio(または「システム定義 > テーブル」)から新規テーブル
 - **ServiceNow PDIの制約**: 開発・テスト目的限定というServiceNowのToSに従うこと。また、インスタンス作成から90日以上経過し、かつ10日間ログインが無い場合に自動回収される制約がある。本パイプラインが蓄積したデータを失わないよう、定期的に(90日を待たずに)ログインするか、必要であれば蓄積データを外部へエクスポートする運用を検討すること(現時点でエクスポートの自動化までは実装していない)
 - 重複排除は`u_source_url`を正規化した`u_dedup_key`の完全一致のみで判定している(ServiceNowの標準ハッシュAPIを実機確認できなかったため、あえてハッシュ化せず正規化文字列そのものを使う設計にした)。同じ記事が`http://`と`https://`のように大きく異なる形で重複する場合までは防げない
 
+## ServiceNow Business Rule等の自動化(このリポジトリのAI研究パイプライン以外の依頼)
+
+2026-08-30、manager-room経由の依頼で`sc_cat_item`(カタログアイテム)更新時にログ出力するBusiness Ruleを追加した。これはAI研究パイプライン本体とは無関係の、ServiceNow PDI上の別要件への対応で、`.github/workflows/servicenow-business-rules.yml`(`servicenow/scripts/setup_business_rule_sc_cat_item.mjs`)として独立したワークフローで管理している(REST Message/Scheduled Job同期と混ぜると無関係な作業のたびにカタログアイテムが触られてしまうため、意図的に別ワークフローにした)。認証情報の登録手順は上記「REST Messageの自動作成」と共通。今後同様のBusiness Rule/Catalog Client Script/Flow Designer等の依頼が来た場合も、この形式(スキーマの動的確認・DRY_RUN・モックテスト・実機での動作確認までを1つのスクリプト+ワークフローにまとめる)を踏襲する想定。詳細な設計判断はconcept-log.json参照。
+
 ## 意味のある実装判断の記録
 
 DB設計(単一テーブル+category列による分類、dedup_keyによる重複防止)や、REST Message + Scheduled Jobという構成についての判断根拠は、`gurii-gabreh/progress-tracker-dashboard`の`data/concept-log.json`にも記録している(CLAUDE.mdコア規則の指示に従い)。
