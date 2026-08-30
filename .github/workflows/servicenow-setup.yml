@@ -15,6 +15,16 @@ on:
         default: true
 
 jobs:
+  verify-candidate-urls:
+    name: 追加候補6件の実地検証(PTD-048拡張、一時ジョブ・採用後に削除予定)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - run: node servicenow/scripts/tmp_verify_candidate_urls.mjs
+
   verify-source-urls:
     name: 情報源URLの実地検証(PTD-050関連、認証不要)
     runs-on: ubuntu-latest
