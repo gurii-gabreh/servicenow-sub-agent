@@ -9,13 +9,25 @@
 // 詳細な設定値はこのリポジトリのREADME.md「セットアップ手順」を参照。
 //   - "AI Research - arXiv"        HTTPメソッド "search"
 //   - "AI Research - Hacker News"  HTTPメソッド "search"
-//   - "AI Research - Blog RSS"     HTTPメソッド "openai" / "huggingface"
+//   - "AI Research - Blog RSS"     HTTPメソッド "openai" / "huggingface" / "mittechreview" /
+//                                   "marktechpost" / "bytebytego" / "infoq" / "martinfowler"
 // また u_ai_research_item テーブル(フィールド定義はREADME参照)が作成済みであること。
 //
 // 2026-08-29追記: Anthropic Blog(HTTPメソッド"anthropic")は情報源から除外した。実機検証
 // (servicenow/scripts/verify_source_urls.mjs)で https://www.anthropic.com/rss.xml が
 // HTTP 404を返すことを確認し、Anthropicが公式RSSフィードを現在提供していないと判明したため
 // (ユーザー承認済み)。
+//
+// 2026-08-30追記(PTD-048拡張): MIT Technology Review AI(AI特化topicフィード)/MarkTechPost/
+// ByteByteGo/InfoQ(AI/ML/Data Eng)/Martin Fowler blogの5件を追加した(候補6件のうち
+// Architecture Weeklyは実地検証で2候補URLとも失敗したため未採用、ユーザー確認待ち)。
+// Martin Fowler blogはAtom形式で、RSS 2.0の<link>要素(テキストとしてURLを持つ)と異なり
+// <link href="..."/>のように自己終端タグの属性でURLを持つ。既存のextractTagは
+// <tag>content</tag>形式の閉じタグ前提のため自己終端タグにマッチせず、そのままだと
+// sourceUrlが常に空になり全件insertItem側でスキップされる(実機検証前にコードレビューで
+// 発見)。これを避けるため、下記extractAttrで属性値抽出を追加し、fetchBlogRssの
+// リンク抽出をRSS形式(<link>テキスト</link>)→Atom形式(<link href="...">属性)→
+// <guid>の順にフォールバックするよう修正した。
 //
 // 既知の制約: arXiv(Atom XML)とブログ(RSS XML)のパースは、ServiceNowのXMLDocument2 API
 // ではなく、あえて単純な正規表現ベースの文字列抽出にしている。実装したworker-roomセッションは
@@ -52,7 +64,17 @@
         arxiv: CATEGORY.AI_TREND,
         hackernews: CATEGORY.USE_CASE,
         openai: CATEGORY.AI_TREND,
-        huggingface: CATEGORY.COMBINATION
+        huggingface: CATEGORY.COMBINATION,
+        // 2026-08-30追記(PTD-048拡張): ByteByteGo/InfoQ(AI/ML/Data Eng)/Martin Fowler blogは
+        // いずれもソフトウェアアーキテクチャ・システム設計が主題のため観点1(アーキテクチャ)、
+        // MarkTechPostはAI研究ニュース中心のため観点2(AI技術動向)、MIT Technology Review AIは
+        // 一般向けのAIトレンド報道が中心のため観点5(AIの流行)を割り当てた(いずれも機械的な
+        // 既定値であり、正確な分類は人が後で読み替えてよい。README「対象の5観点」参照)。
+        mittechreview: CATEGORY.FASHION,
+        marktechpost: CATEGORY.AI_TREND,
+        bytebytego: CATEGORY.ARCHITECTURE,
+        infoq: CATEGORY.ARCHITECTURE,
+        martinfowler: CATEGORY.ARCHITECTURE
     };
 
     var stats = { inserted: 0, skipped: 0, errors: [] };
@@ -119,6 +141,14 @@
         var re = new RegExp("<" + tagName + "[^>]*>([\\s\\S]*?)<\\/" + tagName + ">", "i");
         var m = re.exec(block);
         return m ? stripTags(m[1]) : "";
+    }
+
+    // Atom形式は<link href="..." rel="alternate"/>のように自己終端タグの属性でURLを持つ
+    // (RSS 2.0の<link>テキスト</link>とは異なる)。fetchBlogRssのリンク抽出フォールバック用。
+    function extractAttr(block, tagName, attrName) {
+        var re = new RegExp("<" + tagName + "[^>]*\\s" + attrName + "=[\"']([^\"']*)[\"'][^>]*\\/?>", "i");
+        var m = re.exec(block);
+        return m ? m[1] : "";
     }
 
     function splitBlocks(xml, tagName) {
@@ -194,7 +224,8 @@
             // Atom形式のブログの場合(RSS 2.0でなければitemが取れない)は<entry>も試す
             if (items.length === 0) items = splitBlocks(body, "entry");
             items.forEach(function (block) {
-                var link = extractTag(block, "link") || extractTag(block, "guid");
+                // RSS 2.0(<link>テキスト</link>) → Atom(<link href="..."/>属性) → <guid> の順に試す
+                var link = extractTag(block, "link") || extractAttr(block, "link", "href") || extractTag(block, "guid");
                 insertItem({
                     category: SOURCE_DEFAULT_CATEGORY[sourceKey],
                     title: extractTag(block, "title"),
@@ -214,6 +245,11 @@
     fetchHackerNews();
     fetchBlogRss("openai", "openai", "OpenAI Blog");
     fetchBlogRss("huggingface", "huggingface", "Hugging Face Blog");
+    fetchBlogRss("mittechreview", "mittechreview", "MIT Technology Review AI");
+    fetchBlogRss("marktechpost", "marktechpost", "MarkTechPost");
+    fetchBlogRss("bytebytego", "bytebytego", "ByteByteGo");
+    fetchBlogRss("infoq", "infoq", "InfoQ (AI/ML/Data Eng)");
+    fetchBlogRss("martinfowler", "martinfowler", "Martin Fowler blog");
 
     gs.info(
         "[AIResearchFetcher] inserted=" + stats.inserted +

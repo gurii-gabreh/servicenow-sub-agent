@@ -50,7 +50,39 @@ const SOURCES = [
     expect: (body) => body.includes("<item") || body.includes("<entry"),
     expectDesc: "<item> または <entry> を含むRSS/Atom XML",
   },
+  {
+    label: "MIT Technology Review AI (topic feed)",
+    url: "https://www.technologyreview.com/topic/artificial-intelligence/feed/",
+    expect: (body) => body.includes("<item") || body.includes("<entry"),
+    expectDesc: "<item> または <entry> を含むRSS/Atom XML",
+  },
+  {
+    label: "MarkTechPost",
+    url: "https://www.marktechpost.com/feed/",
+    expect: (body) => body.includes("<item") || body.includes("<entry"),
+    expectDesc: "<item> または <entry> を含むRSS/Atom XML",
+  },
+  {
+    label: "ByteByteGo",
+    url: "https://blog.bytebytego.com/feed",
+    expect: (body) => body.includes("<item") || body.includes("<entry"),
+    expectDesc: "<item> または <entry> を含むRSS/Atom XML",
+  },
+  {
+    label: "InfoQ (AI/ML/Data Eng)",
+    url: "https://feed.infoq.com/ai-ml-data-eng/",
+    expect: (body) => body.includes("<item") || body.includes("<entry"),
+    expectDesc: "<item> または <entry> を含むRSS/Atom XML",
+  },
+  {
+    label: "Martin Fowler blog",
+    url: "https://martinfowler.com/feed.atom",
+    expect: (body) => body.includes("<item") || body.includes("<entry"),
+    expectDesc: "<item> または <entry> を含むRSS/Atom XML",
+  },
 ];
+// Architecture Weeklyは両候補URLとも実地検証(tmp_verify_candidate_urls.mjs)で失敗したため
+// 未採用。詳細はsetup_rest_messages.mjsのコメント、progress-tracker-dashboardのPTD-048参照。
 
 async function checkOne(source) {
   try {

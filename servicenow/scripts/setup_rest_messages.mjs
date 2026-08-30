@@ -58,6 +58,22 @@ const REST_MESSAGES = [
     methods: [
       { function_name: "openai", rest_endpoint: "https://openai.com/blog/rss.xml" },
       { function_name: "huggingface", rest_endpoint: "https://huggingface.co/blog/feed.xml" },
+      // 2026-08-30(PTD-048拡張): 以下5件はtmp_verify_candidate_urls.mjsによるGitHub Actions実地
+      // 検証(HTTP 200・想定形式)を通過済み。MIT Technology ReviewはAI特化のtopicフィード
+      // (/topic/artificial-intelligence/feed/)を採用した(全体feedは無関係な記事が混ざるため、
+      // このパイプラインの目的=AI観点の収集により合致するAI特化版を選択)。
+      {
+        function_name: "mittechreview",
+        rest_endpoint: "https://www.technologyreview.com/topic/artificial-intelligence/feed/",
+      },
+      { function_name: "marktechpost", rest_endpoint: "https://www.marktechpost.com/feed/" },
+      { function_name: "bytebytego", rest_endpoint: "https://blog.bytebytego.com/feed" },
+      { function_name: "infoq", rest_endpoint: "https://feed.infoq.com/ai-ml-data-eng/" },
+      { function_name: "martinfowler", rest_endpoint: "https://martinfowler.com/feed.atom" },
+      // Architecture Weekly(候補6件目)は両候補URL(architecture-weekly.com/feed、
+      // softwarearchitectureweekly.substack.com/feed)とも実地検証で失敗(前者はfetch failed=
+      // 名前解決/接続失敗、後者はHTTP 403・Cloudflareのbot対策ページ)したため未採用。
+      // progress-tracker-dashboardのPTD-048へ相談事項として記録し、ユーザー確認待ち。
     ],
   },
 ];
