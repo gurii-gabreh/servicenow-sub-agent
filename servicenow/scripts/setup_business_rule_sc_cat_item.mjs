@@ -76,7 +76,6 @@ async function verifyByTouchingCatalogItem(client, token) {
   }
   log(`動作確認対象: "${item.name}" (sys_id=${item.sys_id})`);
 
-  const beforeTouch = new Date();
   // 値そのものは変えず同じnameを再代入する(Table APIのPATCHはGlideRecord.update()を呼ぶため、
   // 値が変化していなくてもupdate系Business Ruleは発火する)。
   await client.api(token, "PATCH", `/api/now/table/sc_cat_item/${item.sys_id}`, { name: item.name });
@@ -84,12 +83,12 @@ async function verifyByTouchingCatalogItem(client, token) {
 
   await new Promise((r) => setTimeout(r, 5000));
 
-  // 2026-08-30判明: メッセージ検索文字列に"["・"]"(角括弧)を含めるとServiceNowのLIKEクエリで
-  // マッチしなくなる(診断スクリプトで確認済み)。そのため角括弧を含まない"AI-managed BR"のみで
-  // 検索し、対象アイテム名を含むかで絞り込む。
-  const q = `messageLIKEAI-managed BR^sys_created_on>=${toGlideDateTimeString(
-    beforeTouch
-  )}^ORDERBYDESCsys_created_on`;
+  // 2026-08-30判明: (1) メッセージ検索文字列に"["・"]"(角括弧)を含めるとServiceNowのLIKEクエリで
+  // マッチしなくなる、(2) sys_created_on>=での日付絞り込みはサーバー側のタイムゾーン表示と
+  // このスクリプトが計算するUTC時刻がズレて0件になる、の2点を診断スクリプトで確認した。
+  // そのため日付での絞り込みはやめ、角括弧を含まない"AI-managed BR"での検索+ORDERBYDESCで
+  // 直近5件を取得し、対象アイテム名を含むかで判定する(直後に更新した記録は先頭付近に来るはず)。
+  const q = `messageLIKEAI-managed BR^ORDERBYDESCsys_created_on`;
   const data = await client.api(
     token,
     "GET",
@@ -106,25 +105,6 @@ async function verifyByTouchingCatalogItem(client, token) {
       )})。Business Ruleが正しく発火していないか、ログ反映に時間がかかっている可能性がある。数分後にsyslogを手動確認してください(messageに"AI-managed BR"を含む行)。`
     );
   }
-}
-
-function toGlideDateTimeString(date) {
-  function pad(n) {
-    return (n < 10 ? "0" : "") + n;
-  }
-  return (
-    date.getUTCFullYear() +
-    "-" +
-    pad(date.getUTCMonth() + 1) +
-    "-" +
-    pad(date.getUTCDate()) +
-    " " +
-    pad(date.getUTCHours()) +
-    ":" +
-    pad(date.getUTCMinutes()) +
-    ":" +
-    pad(date.getUTCSeconds())
-  );
 }
 
 async function main() {
