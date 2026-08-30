@@ -89,7 +89,9 @@ Studio(または「システム定義 > テーブル」)から新規テーブル
 
 「System Definition > Scheduled Jobs」から「Automatically run a script of your choosing」を選択し、`servicenow/scheduled_job_ai_research_fetch.js`の内容をそのまま貼り付ける。実行頻度は日次を推奨(無料PDIのリソース枠内で十分)。
 
-**この手順は手動のまま残している(2026-08-29時点であえて自動化していない)**。理由: (1) UI操作としてはスクリプトの貼り付け+頻度選択+保存のみで、上記REST Message作成(3レコード×複数フィールド)より手間が小さい、(2) Table API経由で`sysauto_script`(Scheduled Script Execution)を作成する場合に必要な`run_type`等のフィールド構成を、このセッションからは実機で検証する手段がなく、誤った設定で「一見成功したが実際には動かない/意図しない頻度で動く」スケジュールジョブを作ってしまうリスクの方が、手作業の手間より大きいと判断した。将来これを自動化したい場合は、まずServiceNow PDI上で実際に`sysauto_script`テーブルの必須フィールドをTable API(`GET /api/now/table/sysauto_script?sysparm_limit=1`等)で確認してから着手すること。
+**新規作成そのものは手動のまま(2026-08-29時点であえて自動化していない)**。理由: (1) UI操作としてはスクリプトの貼り付け+頻度選択+保存のみで、上記REST Message作成(3レコード×複数フィールド)より手間が小さい、(2) Table API経由で`sysauto_script`(Scheduled Script Execution)を新規作成する場合に必要な`run_type`等のフィールド構成を、このセッションからは実機で検証する手段がなく、誤った設定で「一見成功したが実際には動かない/意図しない頻度で動く」スケジュールジョブを作ってしまうリスクの方が、手作業の手間より大きいと判断した。
+
+**ただし、作成済みのScheduled Jobのscript本文だけを最新化する部分更新は自動化した**(2026-08-29追加)。`servicenow/scheduled_job_ai_research_fetch.js`を編集するたびに手動で貼り直す必要をなくすため、`.github/workflows/servicenow-setup.yml`の`sync-scheduled-job`ジョブ(`servicenow/scripts/sync_scheduled_job.mjs`)を実行すると、script内の目印文字列(`AIResearchFetcher`)でScheduled Jobを特定し、`script`フィールドだけをPATCH更新する(実行頻度・有効/無効等の他の設定には一切触れない)。新規作成は上記の手作業で1度だけ行い、以後の**コード更新の反映はこのワークフローで自動化する**、という役割分担にした。将来スケジュール設定自体もTable APIで自動化したい場合は、まずServiceNow PDI上で実際に`sysauto_script`テーブルの必須フィールドをTable API(`GET /api/now/table/sysauto_script?sysparm_limit=1`等)で確認してから着手すること。
 
 ### 4. 動作確認
 

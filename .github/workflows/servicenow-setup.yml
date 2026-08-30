@@ -1,11 +1,11 @@
-name: ServiceNow REST Messageセットアップ(PTD-048)
+name: ServiceNowセットアップ・同期(PTD-048/049)
 
 # 手動実行専用(workflow_dispatch)。ServiceNow OAuth Application RegistryのClient ID/Secretと
 # インスタンスURLを、リポジトリのSettings > Secrets and variables > Actionsに
 # SERVICENOW_INSTANCE_URL / SERVICENOW_CLIENT_ID / SERVICENOW_CLIENT_SECRET として
 # 登録した上で実行すること。SERVICENOW_INSTANCE_URLは "dev395932.service-now.com" のような
 # ホスト名でも "https://dev395932.service-now.com" のような完全なURLでもどちらでもよい
-# (setup_rest_messages.mjs側で正規化する)。手順の詳細はREADME.md「セットアップ手順」参照。
+# (lib/servicenow_client.mjs側で正規化する)。手順の詳細はREADME.md「セットアップ手順」参照。
 on:
   workflow_dispatch:
     inputs:
@@ -34,6 +34,21 @@ jobs:
         with:
           node-version: "22"
       - run: node servicenow/scripts/setup_rest_messages.mjs
+        env:
+          SN_INSTANCE: ${{ secrets.SERVICENOW_INSTANCE_URL }}
+          SN_CLIENT_ID: ${{ secrets.SERVICENOW_CLIENT_ID }}
+          SN_CLIENT_SECRET: ${{ secrets.SERVICENOW_CLIENT_SECRET }}
+          DRY_RUN: ${{ inputs.dry_run }}
+
+  sync-scheduled-job:
+    name: Scheduled Jobスクリプト同期(PTD-049)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - run: node servicenow/scripts/sync_scheduled_job.mjs
         env:
           SN_INSTANCE: ${{ secrets.SERVICENOW_INSTANCE_URL }}
           SN_CLIENT_ID: ${{ secrets.SERVICENOW_CLIENT_ID }}

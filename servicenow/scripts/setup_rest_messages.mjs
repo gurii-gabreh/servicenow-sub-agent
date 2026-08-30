@@ -4,7 +4,8 @@
 // このリポジトリに認証情報は一切含めない。GitHub Actions Secrets(SERVICENOW_INSTANCE_URL/
 // SERVICENOW_CLIENT_ID/SERVICENOW_CLIENT_SECRET)が、ワークフロー側でSN_INSTANCE/SN_CLIENT_ID/
 // SN_CLIENT_SECRETという環境変数名にマッピングされて渡される(このスクリプト自身はSecretsの
-// 値をログ出力しない)。
+// 値をログ出力しない)。ServiceNow API呼び出しの共通処理はlib/servicenow_client.mjsに切り出して
+// いる(sync_scheduled_job.mjsと共有)。
 //
 // 設計判断: README記載の当初案ではarXiv/Hacker Newsのエンドポイントに ${search_query} のような
 // ランタイム変数を使う想定だったが、ServiceNowのRESTMessageV2は ${varName} を使う場合、
@@ -21,21 +22,11 @@
 // (CLAUDE.mdルール1)のため、authentication_typeの選択肢値はsys_choiceテーブルから、
 // フィールドの実在確認はsys_dictionaryテーブルから、実行時に動的に取得している。
 
-// SERVICENOW_INSTANCE_URL(GitHub Secret)は "dev395932.service-now.com" のような
-// ホスト名でも "https://dev395932.service-now.com/" のような完全なURLでも渡され得るため、
-// どちらの形式で登録されていても動くよう正規化する。
-function normalizeInstance(raw) {
-  return String(raw || "")
-    .trim()
-    .replace(/^https?:\/\//i, "")
-    .replace(/\/+$/, "");
-}
+import { createClient } from "./lib/servicenow_client.mjs";
 
-const INSTANCE = normalizeInstance(process.env.SN_INSTANCE) || "dev395932.service-now.com";
 const CLIENT_ID = process.env.SN_CLIENT_ID;
 const CLIENT_SECRET = process.env.SN_CLIENT_SECRET;
 const DRY_RUN = process.env.DRY_RUN === "true";
-const BASE = `https://${INSTANCE}`;
 
 // 情報源URLは verify_source_urls.mjs と揃えること(値を変えたら両方直す)
 const REST_MESSAGES = [
@@ -82,97 +73,8 @@ function log(...args) {
   console.log(...args);
 }
 
-async function getToken() {
-  const res = await fetch(`${BASE}/oauth_token.do`, {
-    method: "POST",
-    headers: {
-      Authorization: "Basic " + Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString("base64"),
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: "grant_type=client_credentials",
-  });
-  const text = await res.text();
-  if (!res.ok) {
-    throw new Error(`OAuthトークン取得に失敗: HTTP ${res.status} ${text}`);
-  }
-  const data = JSON.parse(text);
-  if (!data.access_token) {
-    throw new Error(`OAuthレスポンスにaccess_tokenが含まれていない: ${text}`);
-  }
-  return data.access_token;
-}
-
-async function api(token, method, path, body) {
-  const res = await fetch(`${BASE}${path}`, {
-    method,
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: body ? JSON.stringify(body) : undefined,
-  });
-  const text = await res.text();
-  let json;
-  try {
-    json = JSON.parse(text);
-  } catch {
-    json = text;
-  }
-  if (!res.ok) {
-    throw new Error(`${method} ${path} が失敗: HTTP ${res.status} ${JSON.stringify(json)}`);
-  }
-  return json;
-}
-
-async function findChoiceValue(token, table, element, labelIncludes) {
-  const q = encodeURIComponent(`name=${table}^element=${element}`);
-  const data = await api(
-    token,
-    "GET",
-    `/api/now/table/sys_choice?sysparm_query=${q}&sysparm_fields=value,label&sysparm_limit=50`
-  );
-  const rows = data.result || [];
-  const hit = rows.find((r) => (r.label || "").toLowerCase().includes(labelIncludes.toLowerCase()));
-  if (!hit) {
-    log(
-      `[警告] ${table}.${element}: 「${labelIncludes}」を含む選択肢が見つからなかった。候補一覧: ${JSON.stringify(
-        rows
-      )} → この項目は未設定のまま作成します(ServiceNow側のデフォルト値に依存)`
-    );
-    return null;
-  }
-  return hit.value;
-}
-
-async function verifyFieldsExist(token, table, fields) {
-  const q = encodeURIComponent(`name=${table}^elementIN${fields.join(",")}`);
-  const data = await api(
-    token,
-    "GET",
-    `/api/now/table/sys_dictionary?sysparm_query=${q}&sysparm_fields=element&sysparm_limit=100`
-  );
-  const found = new Set((data.result || []).map((r) => r.element));
-  const missing = fields.filter((f) => !found.has(f));
-  if (missing.length > 0) {
-    log(
-      `[警告] テーブル${table}に見つからないフィールド: ${missing.join(
-        ", "
-      )} (フィールド名がこのServiceNowバージョンでは異なる可能性。このまま作成を試みますが、失敗した場合はここを疑ってください)`
-    );
-  } else {
-    log(`[確認OK] テーブル${table}のフィールド ${fields.join(", ")} は実在を確認`);
-  }
-}
-
-async function findByQuery(token, table, query) {
-  const q = encodeURIComponent(query);
-  const data = await api(token, "GET", `/api/now/table/${table}?sysparm_query=${q}&sysparm_limit=1`);
-  return (data.result || [])[0] || null;
-}
-
-async function ensureRestMessage(token, name, description, authNoAuthValue) {
-  const existing = await findByQuery(token, "sys_rest_message", `name=${name}`);
+async function ensureRestMessage(client, token, name, description, authNoAuthValue) {
+  const existing = await client.findByQuery(token, "sys_rest_message", `name=${name}`);
   if (existing) {
     log(`[スキップ] REST Message "${name}" は既に存在 (sys_id=${existing.sys_id})`);
     return existing;
@@ -183,14 +85,14 @@ async function ensureRestMessage(token, name, description, authNoAuthValue) {
     log(`[dry-run] POST /api/now/table/sys_rest_message body=${JSON.stringify(body)}`);
     return { sys_id: `DRY-RUN-${name}`, name };
   }
-  const created = await api(token, "POST", "/api/now/table/sys_rest_message", body);
+  const created = await client.api(token, "POST", "/api/now/table/sys_rest_message", body);
   log(`[作成] REST Message "${name}" (sys_id=${created.result.sys_id})`);
   return created.result;
 }
 
-async function ensureMethod(token, restMessage, method, authInheritValue) {
+async function ensureMethod(client, token, restMessage, method, authInheritValue) {
   if (!DRY_RUN && !String(restMessage.sys_id).startsWith("DRY-RUN-")) {
-    const existing = await findByQuery(
+    const existing = await client.findByQuery(
       token,
       "sys_rest_message_fn",
       `rest_message=${restMessage.sys_id}^function_name=${method.function_name}`
@@ -216,15 +118,15 @@ async function ensureMethod(token, restMessage, method, authInheritValue) {
     log(`  [dry-run] POST /api/now/table/sys_rest_message_fn body=${JSON.stringify(body)}`);
     return;
   }
-  const created = await api(token, "POST", "/api/now/table/sys_rest_message_fn", body);
+  const created = await client.api(token, "POST", "/api/now/table/sys_rest_message_fn", body);
   log(`  [作成] HTTPメソッド "${method.function_name}" (sys_id=${created.result.sys_id})`);
 }
 
-async function cleanupRemovedMethods(token) {
+async function cleanupRemovedMethods(client, token) {
   for (const removed of REMOVED_METHODS) {
-    const restMessage = await findByQuery(token, "sys_rest_message", `name=${removed.restMessageName}`);
+    const restMessage = await client.findByQuery(token, "sys_rest_message", `name=${removed.restMessageName}`);
     if (!restMessage) continue;
-    const existing = await findByQuery(
+    const existing = await client.findByQuery(
       token,
       "sys_rest_message_fn",
       `rest_message=${restMessage.sys_id}^function_name=${removed.function_name}`
@@ -236,7 +138,7 @@ async function cleanupRemovedMethods(token) {
       );
       continue;
     }
-    await api(token, "DELETE", `/api/now/table/sys_rest_message_fn/${existing.sys_id}`);
+    await client.api(token, "DELETE", `/api/now/table/sys_rest_message_fn/${existing.sys_id}`);
     log(`[削除] 廃止済みのHTTPメソッド "${removed.restMessageName}" / "${removed.function_name}" (sys_id=${existing.sys_id})`);
   }
 }
@@ -247,12 +149,13 @@ async function main() {
       "SN_CLIENT_ID / SN_CLIENT_SECRET が設定されていません。GitHub Actions SecretsにSN_CLIENT_ID/SN_CLIENT_SECRETを登録してください。"
     );
   }
+  const client = createClient({ instance: process.env.SN_INSTANCE, clientId: CLIENT_ID, clientSecret: CLIENT_SECRET });
   log(`DRY_RUN=${DRY_RUN} (true = 実際には作成せずログ出力のみ)`);
-  const token = await getToken();
+  const token = await client.getToken();
   log("OAuthトークン取得成功");
 
-  await verifyFieldsExist(token, "sys_rest_message", ["name", "description", "authentication_type"]);
-  await verifyFieldsExist(token, "sys_rest_message_fn", [
+  await client.verifyFieldsExist(token, "sys_rest_message", ["name", "description", "authentication_type"]);
+  await client.verifyFieldsExist(token, "sys_rest_message_fn", [
     "function_name",
     "rest_message",
     "rest_endpoint",
@@ -260,8 +163,8 @@ async function main() {
     "authentication_type",
   ]);
 
-  const authNoAuth = await findChoiceValue(token, "sys_rest_message", "authentication_type", "no authentication");
-  const authInherit = await findChoiceValue(
+  const authNoAuth = await client.findChoiceValue(token, "sys_rest_message", "authentication_type", "no authentication");
+  const authInherit = await client.findChoiceValue(
     token,
     "sys_rest_message_fn",
     "authentication_type",
@@ -269,13 +172,13 @@ async function main() {
   );
 
   for (const rm of REST_MESSAGES) {
-    const restMessage = await ensureRestMessage(token, rm.name, rm.description, authNoAuth);
+    const restMessage = await ensureRestMessage(client, token, rm.name, rm.description, authNoAuth);
     for (const method of rm.methods) {
-      await ensureMethod(token, restMessage, method, authInherit);
+      await ensureMethod(client, token, restMessage, method, authInherit);
     }
   }
 
-  await cleanupRemovedMethods(token);
+  await cleanupRemovedMethods(client, token);
 
   log(DRY_RUN ? "dry-run完了(何も作成・削除していません)" : "完了");
 }
