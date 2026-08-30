@@ -82,9 +82,12 @@ async function verifyByTouchingCatalogItem(client, token) {
   await client.api(token, "PATCH", `/api/now/table/sc_cat_item/${item.sys_id}`, { name: item.name });
   log("カタログアイテムを更新(name再代入)。Business Ruleの発火を待ってsyslogを確認します。");
 
-  await new Promise((r) => setTimeout(r, 3000));
+  await new Promise((r) => setTimeout(r, 5000));
 
-  const q = `messageLIKE[AI-managed BR] sc_cat_item updated^sys_created_on>=${toGlideDateTimeString(
+  // 2026-08-30判明: メッセージ検索文字列に"["・"]"(角括弧)を含めるとServiceNowのLIKEクエリで
+  // マッチしなくなる(診断スクリプトで確認済み)。そのため角括弧を含まない"AI-managed BR"のみで
+  // 検索し、対象アイテム名を含むかで絞り込む。
+  const q = `messageLIKEAI-managed BR^sys_created_on>=${toGlideDateTimeString(
     beforeTouch
   )}^ORDERBYDESCsys_created_on`;
   const data = await client.api(
@@ -100,7 +103,7 @@ async function verifyByTouchingCatalogItem(client, token) {
     log(
       `[警告] syslogに期待したログが見つからなかった(候補${rows.length}件: ${JSON.stringify(
         rows
-      )})。Business Ruleが正しく発火していないか、ログ反映に時間がかかっている可能性がある。数分後にsyslogを手動確認してください(messageに"[AI-managed BR] sc_cat_item updated"を含む行)。`
+      )})。Business Ruleが正しく発火していないか、ログ反映に時間がかかっている可能性がある。数分後にsyslogを手動確認してください(messageに"AI-managed BR"を含む行)。`
     );
   }
 }

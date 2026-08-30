@@ -14,20 +14,6 @@ on:
         default: true
 
 jobs:
-  debug-business-rule:
-    name: Business Rule動作確認の診断(一時的)
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
-        with:
-          node-version: "22"
-      - run: node servicenow/scripts/debug_business_rule.mjs
-        env:
-          SN_INSTANCE: ${{ secrets.SERVICENOW_INSTANCE_URL }}
-          SN_CLIENT_ID: ${{ secrets.SERVICENOW_CLIENT_ID }}
-          SN_CLIENT_SECRET: ${{ secrets.SERVICENOW_CLIENT_SECRET }}
-
   sc-cat-item-update-logger:
     name: sc_cat_item更新ログBusiness Rule(manager-room依頼 2026-08-30)
     runs-on: ubuntu-latest
