@@ -62,6 +62,21 @@
         return url.trim().replace(/\/+$/, "").toLowerCase();
     }
 
+    // 2026-08-29追記: 情報源ごとに日付の形式がバラバラ(arXiv/HN=ISO8601、ブログRSS=RFC822等)
+    // なのに対し、ServiceNowのDate/Timeフィールド(u_published_at)へ生の文字列をそのまま
+    // 代入すると、形式が合わない場合エラーも出さず黙って空欄になる、という挙動を実機検証
+    // (PTD-050)で確認した。標準のJavaScript Dateオブジェクトはこれらの形式をいずれも
+    // パースできるため、一旦Dateへ変換してからServiceNowが確実に解釈できる
+    // "yyyy-MM-dd HH:mm:ss"(UTC)形式の文字列に変換してから代入する。
+    function toGlideDateTimeString(dateStr) {
+        if (!dateStr) return "";
+        var d = new Date(dateStr);
+        if (isNaN(d.getTime())) return "";
+        function pad(n) { return (n < 10 ? "0" : "") + n; }
+        return d.getUTCFullYear() + "-" + pad(d.getUTCMonth() + 1) + "-" + pad(d.getUTCDate()) + " " +
+            pad(d.getUTCHours()) + ":" + pad(d.getUTCMinutes()) + ":" + pad(d.getUTCSeconds());
+    }
+
     function alreadyExists(dedupKey) {
         var gr = new GlideRecord("u_ai_research_item");
         gr.addQuery("u_dedup_key", dedupKey);
@@ -87,7 +102,8 @@
         gr.u_summary = (item.summary || "").substring(0, 4000);
         gr.u_source_url = (item.sourceUrl || "").substring(0, 1024);
         gr.u_source_name = item.sourceName || "";
-        if (item.publishedAt) gr.u_published_at = item.publishedAt;
+        var publishedAtGdt = toGlideDateTimeString(item.publishedAt);
+        if (publishedAtGdt) gr.u_published_at = publishedAtGdt;
         gr.u_fetched_at = new GlideDateTime();
         gr.u_dedup_key = dedupKey;
         gr.insert();
