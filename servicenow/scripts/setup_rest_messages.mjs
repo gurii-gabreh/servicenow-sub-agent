@@ -76,6 +76,13 @@ const REST_MESSAGES = [
       // ドメインは"www"付きだと判明。https://www.architecture-weekly.com/feedを実地検証した結果
       // HTTP 200・RSS 2.0を確認できたため採用した。
       { function_name: "architectureweekly", rest_endpoint: "https://www.architecture-weekly.com/feed" },
+      // 2026-08-31(ユーザー依頼: Claude/Gemini/ChatGPT公式サイトの追加、無料RSS/Atom方式で統一):
+      // Geminiの公式RSSは単独では見つからず、Google DeepMind Blog(Gemini含むAI研究発表)の
+      // 公式RSSを実地検証(HTTP 200・RSS 2.0)の上で採用した。Anthropic(Claude)は公式RSS/Atomが
+      // 依然として存在しない(CL-009で確認済み、2026-08-31にWeb検索で再確認)ため非採用。
+      // ChatGPTは既存のopenaiメソッド(openai.com/blog/rss.xml→openai.com/news/rss.xmlへリダイレクト)
+      // が同一の公式発表チャネルをカバーしているため、別メソッドは追加していない。詳細はREADME参照。
+      { function_name: "geminideepmind", rest_endpoint: "https://deepmind.google/blog/rss.xml" },
     ],
   },
 ];

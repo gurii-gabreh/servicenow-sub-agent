@@ -86,6 +86,12 @@ const SOURCES = [
     expect: (body) => body.includes("<item") || body.includes("<entry"),
     expectDesc: "<item> または <entry> を含むRSS/Atom XML",
   },
+  {
+    label: "Google DeepMind Blog (Gemini)",
+    url: "https://deepmind.google/blog/rss.xml",
+    expect: (body) => body.includes("<item") || body.includes("<entry"),
+    expectDesc: "<item> または <entry> を含むRSS/Atom XML",
+  },
 ];
 
 async function checkOne(source) {

@@ -11,7 +11,7 @@
 //   - "AI Research - Hacker News"  HTTPメソッド "search"
 //   - "AI Research - Blog RSS"     HTTPメソッド "openai" / "huggingface" / "mittechreview" /
 //                                   "marktechpost" / "bytebytego" / "infoq" / "martinfowler" /
-//                                   "architectureweekly"
+//                                   "architectureweekly" / "geminideepmind"
 // また u_ai_research_item テーブル(フィールド定義はREADME参照)が作成済みであること。
 //
 // 2026-08-29追記: Anthropic Blog(HTTPメソッド"anthropic")は情報源から除外した。実機検証
@@ -78,7 +78,10 @@
         martinfowler: CATEGORY.ARCHITECTURE,
         // 2026-08-31追記(PTD-056): Architecture Weeklyもソフトウェアアーキテクチャの
         // キュレーション記事が主題のため観点1(アーキテクチャ)を割り当てた。
-        architectureweekly: CATEGORY.ARCHITECTURE
+        architectureweekly: CATEGORY.ARCHITECTURE,
+        // 2026-08-31追記(ユーザー依頼: Gemini追加): Google DeepMind BlogはGeminiモデルの発表を
+        // 含むAI研究動向が主題のため、openaiと同じ観点2(AI技術動向)を割り当てた。
+        geminideepmind: CATEGORY.AI_TREND
     };
 
     var stats = { inserted: 0, skipped: 0, errors: [] };
@@ -255,6 +258,7 @@
     fetchBlogRss("infoq", "infoq", "InfoQ (AI/ML/Data Eng)");
     fetchBlogRss("martinfowler", "martinfowler", "Martin Fowler blog");
     fetchBlogRss("architectureweekly", "architectureweekly", "Architecture Weekly");
+    fetchBlogRss("geminideepmind", "geminideepmind", "Google DeepMind Blog (Gemini)");
 
     gs.info(
         "[AIResearchFetcher] inserted=" + stats.inserted +
