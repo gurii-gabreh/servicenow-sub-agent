@@ -10,7 +10,8 @@
 //   - "AI Research - arXiv"        HTTPメソッド "search"
 //   - "AI Research - Hacker News"  HTTPメソッド "search"
 //   - "AI Research - Blog RSS"     HTTPメソッド "openai" / "huggingface" / "mittechreview" /
-//                                   "marktechpost" / "bytebytego" / "infoq" / "martinfowler"
+//                                   "marktechpost" / "bytebytego" / "infoq" / "martinfowler" /
+//                                   "architectureweekly"
 // また u_ai_research_item テーブル(フィールド定義はREADME参照)が作成済みであること。
 //
 // 2026-08-29追記: Anthropic Blog(HTTPメソッド"anthropic")は情報源から除外した。実機検証
@@ -74,7 +75,10 @@
         marktechpost: CATEGORY.AI_TREND,
         bytebytego: CATEGORY.ARCHITECTURE,
         infoq: CATEGORY.ARCHITECTURE,
-        martinfowler: CATEGORY.ARCHITECTURE
+        martinfowler: CATEGORY.ARCHITECTURE,
+        // 2026-08-31追記(PTD-056): Architecture Weeklyもソフトウェアアーキテクチャの
+        // キュレーション記事が主題のため観点1(アーキテクチャ)を割り当てた。
+        architectureweekly: CATEGORY.ARCHITECTURE
     };
 
     var stats = { inserted: 0, skipped: 0, errors: [] };
@@ -250,6 +254,7 @@
     fetchBlogRss("bytebytego", "bytebytego", "ByteByteGo");
     fetchBlogRss("infoq", "infoq", "InfoQ (AI/ML/Data Eng)");
     fetchBlogRss("martinfowler", "martinfowler", "Martin Fowler blog");
+    fetchBlogRss("architectureweekly", "architectureweekly", "Architecture Weekly");
 
     gs.info(
         "[AIResearchFetcher] inserted=" + stats.inserted +

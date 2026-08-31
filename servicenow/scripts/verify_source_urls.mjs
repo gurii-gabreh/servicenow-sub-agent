@@ -80,9 +80,13 @@ const SOURCES = [
     expect: (body) => body.includes("<item") || body.includes("<entry"),
     expectDesc: "<item> または <entry> を含むRSS/Atom XML",
   },
+  {
+    label: "Architecture Weekly",
+    url: "https://www.architecture-weekly.com/feed",
+    expect: (body) => body.includes("<item") || body.includes("<entry"),
+    expectDesc: "<item> または <entry> を含むRSS/Atom XML",
+  },
 ];
-// Architecture Weeklyは両候補URLとも実地検証(tmp_verify_candidate_urls.mjs)で失敗したため
-// 未採用。詳細はsetup_rest_messages.mjsのコメント、progress-tracker-dashboardのPTD-048参照。
 
 async function checkOne(source) {
   try {

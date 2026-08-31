@@ -70,10 +70,12 @@ const REST_MESSAGES = [
       { function_name: "bytebytego", rest_endpoint: "https://blog.bytebytego.com/feed" },
       { function_name: "infoq", rest_endpoint: "https://feed.infoq.com/ai-ml-data-eng/" },
       { function_name: "martinfowler", rest_endpoint: "https://martinfowler.com/feed.atom" },
-      // Architecture Weekly(候補6件目)は両候補URL(architecture-weekly.com/feed、
-      // softwarearchitectureweekly.substack.com/feed)とも実地検証で失敗(前者はfetch failed=
-      // 名前解決/接続失敗、後者はHTTP 403・Cloudflareのbot対策ページ)したため未採用。
-      // progress-tracker-dashboardのPTD-048へ相談事項として記録し、ユーザー確認待ち。
+      // 2026-08-31(PTD-056対応): Architecture Weekly(候補6件目)は当初、www無し・Substack版
+      // (architecture-weekly.com/feed、softwarearchitectureweekly.substack.com/feed)の2URLとも
+      // 実地検証で失敗していたが、ユーザーの追加調査で運営者(Oskar Dudycz)のSubstackカスタム
+      // ドメインは"www"付きだと判明。https://www.architecture-weekly.com/feedを実地検証した結果
+      // HTTP 200・RSS 2.0を確認できたため採用した。
+      { function_name: "architectureweekly", rest_endpoint: "https://www.architecture-weekly.com/feed" },
     ],
   },
 ];

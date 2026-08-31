@@ -25,10 +25,13 @@ ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で�
 | ByteByteGo | RSS | `https://blog.bytebytego.com/feed` (実機検証済み、2026-08-30) |
 | InfoQ (AI/ML/Data Eng) | RSS | `https://feed.infoq.com/ai-ml-data-eng/` (実機検証済み、2026-08-30) |
 | Martin Fowler blog | Atom | `https://martinfowler.com/feed.atom` (実機検証済み、2026-08-30) |
+| Architecture Weekly | RSS | `https://www.architecture-weekly.com/feed` (実機検証済み、2026-08-31) |
 
 **2026-08-29、Anthropic Blogは情報源から除外した**: `https://www.anthropic.com/rss.xml`を`.github/workflows/servicenow-setup.yml`のverify-source-urlsジョブで実地検証したところHTTP 404(Next.jsアプリのエラーページ)が返り、調査の結果Anthropicは現在公式のRSSフィードを提供していないことが判明した(非公式の第三者ミラーは信頼性・継続性の観点から採用せず、ユーザー承認の上で情報源自体を4つに減らす方針にした)。
 
-**2026-08-30、PTD-048の追加候補6件のうちArchitecture Weeklyは未採用**: 候補URLが2通り(`architecture-weekly.com/feed`・`softwarearchitectureweekly.substack.com/feed`)あったため両方を実地検証したところ、前者は`fetch failed`(名前解決/接続失敗)、後者はHTTP 403(Cloudflareのbot対策による`Just a moment...`チャレンジページ)で、どちらも有効なフィードを取得できなかった。CL-009の教訓(URLの実在は推測せず実地検証する)に従い、いずれの候補URLを採用すべきか・あるいは別の正しいURLがあるのかを推測で決めず、progress-tracker-dashboard側に相談事項として記録しユーザー確認待ちとした(詳細はPTD-048参照)。残る5候補(MIT Technology Review AI/MarkTechPost/ByteByteGo/InfoQ/Martin Fowler blog)は実地検証(HTTP 200・想定形式)を通過したため採用した。
+**2026-08-30、PTD-048の追加候補6件のうち5件を実地検証(HTTP 200・想定形式)の上で採用した**(MIT Technology Review AI/MarkTechPost/ByteByteGo/InfoQ/Martin Fowler blog)。
+
+**Architecture Weeklyの候補URLについて(2026-08-30→31で解決)**: 当初の候補URL2通り(`architecture-weekly.com/feed`・`softwarearchitectureweekly.substack.com/feed`)は両方とも実地検証に失敗した(前者はfetch failed=名前解決/接続失敗、後者はHTTP 403=Cloudflareのbot対策によるチャレンジページ)。CL-009の教訓(URLの実在は推測せず実地検証する)に従い、いずれの候補URLを採用すべきか・あるいは別の正しいURLがあるのかを推測で決めず、progress-tracker-dashboard側に相談事項(PTD-056)として記録しユーザー確認待ちとした。ユーザーの追加調査で、Architecture Weekly(運営: Oskar Dudycz)のSubstackカスタムドメインは"www"付きの`www.architecture-weekly.com`であると判明し、`https://www.architecture-weekly.com/feed`を改めて実地検証したところHTTP 200・RSS 2.0であることを確認できたため、これを採用した。
 
 いずれもAPIキー・OAuth等の認証情報は不要。**ServiceNow認証情報や、万一将来他の情報源で認証が必要になった場合のAPIキー等は、このリポジトリには絶対にコミットしない**(ServiceNow PDI内のシステムプロパティ等でのみ保持する)。
 
@@ -80,10 +83,11 @@ Studio(または「システム定義 > テーブル」)から新規テーブル
 - HTTPメソッド `bytebytego`: Endpoint `https://blog.bytebytego.com/feed`(2026-08-30追加)
 - HTTPメソッド `infoq`: Endpoint `https://feed.infoq.com/ai-ml-data-eng/`(2026-08-30追加)
 - HTTPメソッド `martinfowler`: Endpoint `https://martinfowler.com/feed.atom`(2026-08-30追加)
+- HTTPメソッド `architectureweekly`: Endpoint `https://www.architecture-weekly.com/feed`(2026-08-31追加)
 
 (2026-08-29追記: 当初あった`anthropic`メソッドは、Anthropicが公式RSSフィードを提供していないと実機検証で判明したため削除した。既に作成してしまっていた場合はservicenow-sub-agentのGitHub Actionsワークフローを再実行すると自動削除される。詳細は下記「既知の制約」参照)
 
-(2026-08-30追記: PTD-048の追加候補6件のうち5件を上記の通りHTTPメソッドとして追加した。既存の「AI Research - Blog RSS」レコード自体は増やさず、同じレコードにHTTPメソッドを追加する形で拡張している(新規REST Messageレコードを増やさない冪等設計を踏襲)。Martin Fowler blogはAtom形式のため、`scheduled_job_ai_research_fetch.js`側のリンク抽出処理に`<link href="...">`属性からの抽出フォールバックを追加した(詳細は下記「既知の制約」参照)。残る1件(Architecture Weekly)は候補URL2件とも実地検証に失敗したため未採用・ユーザー確認待ち)
+(2026-08-30〜31追記: PTD-048の追加候補6件を全て上記の通りHTTPメソッドとして追加した。既存の「AI Research - Blog RSS」レコード自体は増やさず、同じレコードにHTTPメソッドを追加する形で拡張している(新規REST Messageレコードを増やさない冪等設計を踏襲)。Martin Fowler blogはAtom形式のため、`scheduled_job_ai_research_fetch.js`側のリンク抽出処理に`<link href="...">`属性からの抽出フォールバックを追加した(詳細は下記「既知の制約」参照)。Architecture Weeklyは当初候補URL2件とも実地検証に失敗したが、追加調査で判明した`www`付きの正しいURL(`https://www.architecture-weekly.com/feed`)で実地検証OKとなり採用した)
 
 #### REST Messageの自動作成(GitHub Actions、2026-08-29追加)
 
@@ -119,7 +123,7 @@ Studio(または「システム定義 > テーブル」)から新規テーブル
 - **(2026-08-29発見・修正済み)u_published_atが常に空欄になるバグ**: 情報源ごとに日付形式が異なる(arXiv/Hacker NewsはISO8601、ブログRSSはRFC822)のに対し、抽出した日付文字列をServiceNowの`Date/Time`型フィールドへそのまま代入すると、形式が合わない場合エラーも出さず黙って空欄になる、という挙動を実機検証で確認した。`toGlideDateTimeString()`でJavaScriptの`Date`オブジェクトを経由し、ServiceNowが確実に解釈できる`"yyyy-MM-dd HH:mm:ss"`(UTC)形式に変換してから代入するよう修正した。修正前に取り込み済みの既存レコード(u_published_atが空欄のまま)は、1回限りのバックフィル用スクリプト`servicenow/backfill_published_at.js`をBackground Scriptsで実行することで遡って埋められる(新規insertは行わず、既存レコードの空欄のみ更新)
 - **ServiceNow PDIの制約**: 開発・テスト目的限定というServiceNowのToSに従うこと。また、インスタンス作成から90日以上経過し、かつ10日間ログインが無い場合に自動回収される制約がある。本パイプラインが蓄積したデータを失わないよう、定期的に(90日を待たずに)ログインするか、必要であれば蓄積データを外部へエクスポートする運用を検討すること(現時点でエクスポートの自動化までは実装していない)
 - **(2026-08-30発見・修正済み)Atom形式ブログでsourceUrlが常に空になる潜在バグ**: PTD-048拡張でMartin Fowler blog(Atom)を追加するにあたり、既存の`extractTag`(`<tag>content</tag>`のように閉じタグにテキストを持つ前提)ではAtomの`<link href="..." rel="alternate"/>`のような自己終端タグの属性値を取得できないことに気づいた(そのまま追加するとMartin Fowler由来の全記事でsourceUrlが空→`insertItem`側でdedupKey空とみなされ静かにスキップされ続ける)。属性値抽出用の`extractAttr`を追加し、リンク抽出をRSS形式→Atom形式(属性)→`<guid>`の順にフォールバックするよう修正した(実装時のコードレビューで発見、ServiceNow実機でのAtom記事insert確認はこのワークフロー実行後に行う)
-- **PTD-048追加候補6件のうちArchitecture Weekly(1件)は未採用**: 候補URL2件(`architecture-weekly.com/feed`・Substack版`softwarearchitectureweekly.substack.com/feed`)を実地検証した結果、前者は接続失敗(`fetch failed`)、後者はHTTP 403(Cloudflareのbot対策ページ)で、いずれも有効なフィードとして取得できなかった。CL-009の教訓に従い、どちらのURLを採用すべきかを推測で決めず、progress-tracker-dashboard側に相談事項として記録した(詳細は上記「情報源」表・PTD-048参照)
+- **(2026-08-30発見→31解決)PTD-048追加候補6件のうちArchitecture Weeklyは当初未採用、追加調査で正しいURL判明**: 候補URL2件(`architecture-weekly.com/feed`・Substack版`softwarearchitectureweekly.substack.com/feed`)を実地検証した結果、前者は接続失敗(`fetch failed`)、後者はHTTP 403(Cloudflareのbot対策ページ)で、いずれも有効なフィードとして取得できなかった。CL-009の教訓に従い、どちらのURLを採用すべきかを推測で決めず、progress-tracker-dashboard側に相談事項(PTD-056)として記録した。その後の追加調査で、運営者(Oskar Dudycz)のSubstackカスタムドメインは`www`付きの`www.architecture-weekly.com`だと判明し、`https://www.architecture-weekly.com/feed`を実地検証した結果HTTP 200・RSS 2.0を確認できたため採用した(詳細は上記「情報源」表・PTD-048/PTD-056参照)
 - 重複排除は`u_source_url`を正規化した`u_dedup_key`の完全一致のみで判定している(ServiceNowの標準ハッシュAPIを実機確認できなかったため、あえてハッシュ化せず正規化文字列そのものを使う設計にした)。同じ記事が`http://`と`https://`のように大きく異なる形で重複する場合までは防げない
 
 ## ServiceNow Business Rule等の自動化(このリポジトリのAI研究パイプライン以外の依頼)

@@ -15,16 +15,6 @@ on:
         default: true
 
 jobs:
-  verify-architecture-weekly-www:
-    name: Architecture Weekly(www付き)の再検証(PTD-056、一時ジョブ・結論後に削除予定)
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
-        with:
-          node-version: "22"
-      - run: node servicenow/scripts/tmp_verify_architecture_weekly_www.mjs
-
   verify-source-urls:
     name: 情報源URLの実地検証(PTD-050関連、認証不要)
     runs-on: ubuntu-latest
