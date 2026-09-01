@@ -94,7 +94,9 @@ Studio(または「システム定義 > テーブル」)から新規テーブル
 
 (2026-08-29追記: 当初あった`anthropic`メソッドは、Anthropicが公式RSSフィードを提供していないと実機検証で判明したため削除した。既に作成してしまっていた場合はservicenow-sub-agentのGitHub Actionsワークフローを再実行すると自動削除される。詳細は下記「既知の制約」参照)
 
-(2026-08-30〜31追記: PTD-048の追加候補6件を全て上記の通りHTTPメソッドとして追加した。既存の「AI Research - Blog RSS」レコード自体は増やさず、同じレコードにHTTPメソッドを追加する形で拡張している(新規REST Messageレコードを増やさない冪等設計を踏襲)。Martin Fowler blogはAtom形式のため、`scheduled_job_ai_research_fetch.js`側のリンク抽出処理に`<link href="...">`属性からの抽出フォールバックを追加した(詳細は下記「既知の制約」参照)。Architecture Weeklyは当初候補URL2件とも実地検証に失敗したが、追加調査で判明した`www`付きの正しいURL(`https://www.architecture-weekly.com/feed`)で実地検証OKとなり採用した)
+(2026-08-30〜31追記: PTD-048の追加候補6件、およびGemini(`geminideepmind`、PTD-057)を全て上記の通りHTTPメソッドとして追加した。既存の「AI Research - Blog RSS」レコード自体は増やさず、同じレコードにHTTPメソッドを追加する形で拡張している(新規REST Messageレコードを増やさない冪等設計を踏襲)。Martin Fowler blogはAtom形式のため、`scheduled_job_ai_research_fetch.js`側のリンク抽出処理に`<link href="...">`属性からの抽出フォールバックを追加した(詳細は下記「既知の制約」参照)。Architecture Weeklyは当初候補URL2件とも実地検証に失敗したが、追加調査で判明した`www`付きの正しいURL(`https://www.architecture-weekly.com/feed`)で実地検証OKとなり採用した)
+
+**2026-09-01、ServiceNow PDIへ実際に反映済み**: ユーザーの指示によりGitHub Actionsワークフローを`dry_run=false`で実行し(run #12)、上記7件のHTTPメソッド(`mittechreview`/`marktechpost`/`bytebytego`/`infoq`/`martinfowler`/`architectureweekly`/`geminideepmind`)を実際にServiceNow PDI上へ作成した(各sys_idをログで確認済み)。同時にScheduled Job(`AI Research Fetcher`)のscriptフィールドも最新のコードへ更新した。これで情報源は計11件(arXiv・Hacker News・Blog RSS 9メソッド)がServiceNow PDI上で稼働状態になっており、次回のScheduled Job実行(日次)から新規7情報源が収集対象に入る。`u_ai_research_item`への実際の書き込み確認は別途「4. 動作確認」の手順が必要。
 
 #### REST Messageの自動作成(GitHub Actions、2026-08-29追加)
 
