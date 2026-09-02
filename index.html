@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ServiceNow Research Viewer</title>
+<style>
+  :root {
+    --bg: #f4f6f8;
+    --surface: #ffffff;
+    --surface-2: #eef1f4;
+    --ink: #12151c;
+    --ink-muted: #5b6270;
+    --ink-faint: #8991a0;
+    --accent: #0e7c8c;
+    --accent-ink: #ffffff;
+    --line: #dde2e8;
+    --shadow: 0 1px 2px rgba(18,21,28,0.04), 0 4px 12px rgba(18,21,28,0.04);
+    --badge-curated-bg: #e1eee0; --badge-curated-fg: #3e6b3d;
+    --badge-raw-bg: #eef1f4; --badge-raw-fg: #7a8290;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b0d12;
+      --surface: #12161d;
+      --surface-2: #171c25;
+      --ink: #e7eaf0;
+      --ink-muted: #9098a8;
+      --ink-faint: #6b7180;
+      --accent: #4bd6dc;
+      --accent-ink: #04262a;
+      --line: #232833;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.25);
+      --badge-curated-bg: #1c2c1c; --badge-curated-fg: #92c98f;
+      --badge-raw-bg: #171c25; --badge-raw-fg: #6b7180;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 32px 16px 96px; }
+  header.top { margin-bottom: 24px; }
+  h1 { font-size: clamp(24px, 4vw, 32px); margin: 0 0 6px; }
+  .sub { font-size: 14px; color: var(--ink-muted); margin: 0 0 16px; line-height: 1.6; }
+  .stats { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .stat { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; box-shadow: var(--shadow); font-size: 13px; }
+  .stat b { font-size: 16px; display: block; }
+
+  .controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 20px; padding: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); }
+  .control-group { display: flex; align-items: center; gap: 6px; }
+  .control-group label { font-size: 12px; color: var(--ink-faint); }
+  select, button.toggle {
+    font-family: inherit; font-size: 13px; padding: 6px 10px; border-radius: 8px;
+    border: 1px solid var(--line); background: var(--surface-2); color: var(--ink); cursor: pointer;
+  }
+  button.toggle.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    font-size: 12px; padding: 5px 10px; border-radius: 999px; border: 1px solid var(--line);
+    background: var(--surface-2); color: var(--ink-muted); cursor: pointer;
+  }
+  .chip.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+
+  .group { margin-bottom: 22px; }
+  .group-header {
+    display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 8px 4px;
+    font-size: 14px; font-weight: 600; color: var(--ink-muted); user-select: none;
+  }
+  .group-header:hover { color: var(--ink); }
+  .group-header .arrow { transition: transform 0.15s ease; }
+  .group.collapsed .group-header .arrow { transform: rotate(-90deg); }
+  .group-header .count { font-weight: 400; color: var(--ink-faint); }
+  .group-body { display: flex; flex-direction: column; gap: 10px; }
+  .group.collapsed .group-body { display: none; }
+
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; box-shadow: var(--shadow); }
+  .card .badges { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; }
+  .badge { font-size: 10.5px; padding: 2px 8px; border-radius: 6px; font-weight: 600; letter-spacing: 0.02em; }
+  .badge.curated { background: var(--badge-curated-bg); color: var(--badge-curated-fg); }
+  .badge.raw { background: var(--badge-raw-bg); color: var(--badge-raw-fg); }
+  .badge.cat { background: var(--surface-2); color: var(--ink-muted); }
+  .card h3 { font-size: 15.5px; margin: 0 0 6px; line-height: 1.4; }
+  .card h3 a { color: var(--ink); text-decoration: none; }
+  .card h3 a:hover { color: var(--accent); }
+  .card .ja-summary { font-size: 13.5px; line-height: 1.7; margin: 0 0 8px; }
+  .card ul.points { margin: 0 0 8px; padding-left: 18px; font-size: 13px; line-height: 1.7; }
+  .card .tech { font-size: 13px; background: var(--surface-2); border-radius: 8px; padding: 8px 10px; margin-bottom: 8px; }
+  .card .tech b { color: var(--accent); }
+  .card .raw-summary { font-size: 12.5px; color: var(--ink-muted); line-height: 1.6; margin: 0 0 8px; }
+  .card .meta { font-size: 11.5px; color: var(--ink-faint); display: flex; flex-wrap: wrap; gap: 6px 10px; }
+  .card .meta a { color: var(--ink-faint); }
+
+  .more-btn { display: block; margin: 8px auto 0; font-size: 12.5px; padding: 6px 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink-muted); cursor: pointer; }
+  .more-btn:hover { color: var(--ink); border-color: var(--accent); }
+
+  .empty { text-align: center; color: var(--ink-faint); padding: 60px 0; font-size: 14px; }
+  footer.meta { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--ink-faint); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>ServiceNow Research Viewer</h1>
+    <p class="sub">ServiceNow PDI(u_ai_research_item)が日次で自動収集した、アプリ設計・最新AI技術・技術の組み合わせ・活用分野・AIの流行に関する記事一覧。「要約済み」バッジの項目のみClaudeが日本語の概要・ポイント・活かせる技術を付与済み。</p>
+    <div class="stats" id="stats"></div>
+  </header>
+
+  <div class="controls">
+    <div class="control-group">
+      <label>表示単位</label>
+      <button class="toggle" data-group="day">日</button>
+      <button class="toggle" data-group="week">週</button>
+      <button class="toggle" data-group="month">月</button>
+    </div>
+    <div class="control-group">
+      <label>並び順</label>
+      <button class="toggle" data-sort="score">おすすめ順</button>
+      <button class="toggle" data-sort="date">新着順</button>
+    </div>
+    <div class="control-group">
+      <label><input type="checkbox" id="curatedOnly"> 要約済みのみ</label>
+    </div>
+  </div>
+  <div class="chip-row" id="catFilters"></div>
+  <br>
+
+  <main id="feed"></main>
+
+  <footer class="meta">servicenow-sub-agent/data/research-items.json より生成 · 表示はブラウザ側で毎回JSONをfetch</footer>
+</div>
+
+<script>
+(function () {
+  var DATA_URL = 'data/research-items.json';
+  var state = { groupBy: 'day', sortBy: 'score', curatedOnly: false, category: '__all__' };
+  var allItems = [];
+  var categories = {};
+  var PAGE_STEP = 30;
+  var shownCounts = {}; // groupKey -> 現在表示件数
+
+  function fmtDate(iso) {
+    if (!iso) return '(日付不明)';
+    return String(iso).slice(0, 10);
+  }
+
+  function isoWeekLabel(d) {
+    var date = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+    var dayNum = (date.getUTCDay() + 6) % 7;
+    date.setUTCDate(date.getUTCDate() - dayNum + 3);
+    var firstThursday = new Date(Date.UTC(date.getUTCFullYear(), 0, 4));
+    var week = 1 + Math.round(((date - firstThursday) / 86400000 - 3 + ((firstThursday.getUTCDay() + 6) % 7)) / 7);
+    return date.getUTCFullYear() + '-W' + String(week).padStart(2, '0');
+  }
+
+  function groupKeyFor(item) {
+    var raw = item.createdAt || item.publishedAt || item.fetchedAt;
+    if (!raw) return '(日付不明)';
+    var d = new Date(raw);
+    if (isNaN(d.getTime())) return '(日付不明)';
+    if (state.groupBy === 'day') return fmtDate(raw);
+    if (state.groupBy === 'month') return raw.slice(0, 7);
+    return isoWeekLabel(d);
+  }
+
+  function escapeHtml(s) {
+    return String(s || '').replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function renderStats() {
+    var total = allItems.length;
+    var curated = allItems.filter(function (i) { return i.curated; }).length;
+    var stats = document.getElementById('stats');
+    stats.innerHTML =
+      '<div class="stat"><b>' + total + '</b>総件数</div>' +
+      '<div class="stat"><b>' + curated + '</b>要約済み</div>' +
+      '<div class="stat"><b>' + (total - curated) + '</b>未要約(生データ)</div>';
+  }
+
+  function renderCatFilters() {
+    var wrap = document.getElementById('catFilters');
+    var html = '<button class="chip active" data-cat="__all__">すべて</button>';
+    Object.keys(categories).forEach(function (k) {
+      html += '<button class="chip" data-cat="' + k + '">' + escapeHtml(k) + ': ' + escapeHtml(categories[k].slice(0, 20)) + '…</button>';
+    });
+    wrap.innerHTML = html;
+    wrap.querySelectorAll('.chip').forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        wrap.querySelectorAll('.chip').forEach(function (c) { c.classList.remove('active'); });
+        chip.classList.add('active');
+        state.category = chip.getAttribute('data-cat');
+        shownCounts = {};
+        render();
+      });
+    });
+  }
+
+  function cardHtml(item) {
+    var catLabel = categories[String(item.category)] || '';
+    var badges = '<span class="badge ' + (item.curated ? 'curated">要約済み' : 'raw">未要約') + '</span>';
+    if (catLabel) badges += '<span class="badge cat">観点' + item.category + '</span>';
+
+    var body = '';
+    if (item.curated) {
+      body += '<p class="ja-summary">' + escapeHtml(item.summaryJa) + '</p>';
+      if (item.pointsJa && item.pointsJa.length) {
+        body += '<ul class="points">' + item.pointsJa.map(function (p) { return '<li>' + escapeHtml(p) + '</li>'; }).join('') + '</ul>';
+      }
+      if (item.applicableTechJa) {
+        body += '<div class="tech"><b>活かせる技術:</b> ' + escapeHtml(item.applicableTechJa) + '</div>';
+      }
+    } else {
+      var snippet = (item.rawSummary || '').replace(/<[^>]+>/g, '').slice(0, 200);
+      body += '<p class="raw-summary">' + escapeHtml(snippet) + (snippet.length >= 200 ? '…' : '') + '</p>';
+    }
+
+    var meta = [];
+    if (item.sourceName) meta.push(escapeHtml(item.sourceName));
+    if (item.publishedAt) meta.push(fmtDate(item.publishedAt));
+    if (item.sourceUrl) meta.push('<a href="' + escapeHtml(item.sourceUrl) + '" target="_blank" rel="noopener">元記事を開く</a>');
+
+    return (
+      '<article class="card">' +
+      '<div class="badges">' + badges + '</div>' +
+      '<h3>' + (item.sourceUrl ? '<a href="' + escapeHtml(item.sourceUrl) + '" target="_blank" rel="noopener">' + escapeHtml(item.title) + '</a>' : escapeHtml(item.title)) + '</h3>' +
+      body +
+      '<div class="meta">' + meta.join('<span>·</span>') + '</div>' +
+      '</article>'
+    );
+  }
+
+  function render() {
+    var filtered = allItems.filter(function (i) {
+      if (state.curatedOnly && !i.curated) return false;
+      if (state.category !== '__all__' && String(i.category) !== state.category) return false;
+      return true;
+    });
+
+    filtered.sort(function (a, b) {
+      if (state.sortBy === 'score') {
+        return (b.score || 0) - (a.score || 0) || (b.createdAt || '').localeCompare(a.createdAt || '');
+      }
+      return (b.createdAt || '').localeCompare(a.createdAt || '');
+    });
+
+    var groups = {}; // key -> items[]
+    var order = [];
+    filtered.forEach(function (item) {
+      var key = groupKeyFor(item);
+      if (!groups[key]) { groups[key] = []; order.push(key); }
+      groups[key].push(item);
+    });
+    // グループの並び順は「グループ内最新日時」で降順に揃える(スコア順ソートでもグループ自体は新しい順)
+    order.sort(function (a, b) {
+      var da = groups[a][0] ? (groups[a][0].createdAt || '') : '';
+      var db = groups[b][0] ? (groups[b][0].createdAt || '') : '';
+      return db.localeCompare(da);
+    });
+
+    var feed = document.getElementById('feed');
+    if (order.length === 0) {
+      feed.innerHTML = '<div class="empty">該当する記事がありません。</div>';
+      return;
+    }
+
+    var html = '';
+    order.forEach(function (key, idx) {
+      var items = groups[key];
+      var shown = shownCounts[key] || PAGE_STEP;
+      var visible = items.slice(0, shown);
+      var collapsedClass = idx < 3 ? '' : ' collapsed'; // 直近3グループのみ初期展開
+      html +=
+        '<section class="group' + collapsedClass + '" data-group-key="' + escapeHtml(key) + '">' +
+        '<div class="group-header"><span class="arrow">▾</span> ' + escapeHtml(key) + ' <span class="count">(' + items.length + '件)</span></div>' +
+        '<div class="group-body">' +
+        visible.map(cardHtml).join('') +
+        (items.length > shown ? '<button class="more-btn" data-group-key="' + escapeHtml(key) + '">さらに' + Math.min(PAGE_STEP, items.length - shown) + '件表示(残り' + (items.length - shown) + '件)</button>' : '') +
+        '</div>' +
+        '</section>';
+    });
+    feed.innerHTML = html;
+
+    feed.querySelectorAll('.group-header').forEach(function (h) {
+      h.addEventListener('click', function () {
+        h.closest('.group').classList.toggle('collapsed');
+      });
+    });
+    feed.querySelectorAll('.more-btn').forEach(function (b) {
+      b.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var key = b.getAttribute('data-group-key');
+        shownCounts[key] = (shownCounts[key] || PAGE_STEP) + PAGE_STEP;
+        render();
+      });
+    });
+  }
+
+  function wireControls() {
+    document.querySelectorAll('button[data-group]').forEach(function (btn) {
+      if (btn.getAttribute('data-group') === state.groupBy) btn.classList.add('active');
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('button[data-group]').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        state.groupBy = btn.getAttribute('data-group');
+        shownCounts = {};
+        render();
+      });
+    });
+    document.querySelectorAll('button[data-sort]').forEach(function (btn) {
+      if (btn.getAttribute('data-sort') === state.sortBy) btn.classList.add('active');
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('button[data-sort]').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        state.sortBy = btn.getAttribute('data-sort');
+        shownCounts = {};
+        render();
+      });
+    });
+    document.getElementById('curatedOnly').addEventListener('change', function (e) {
+      state.curatedOnly = e.target.checked;
+      shownCounts = {};
+      render();
+    });
+  }
+
+  fetch(DATA_URL)
+    .then(function (res) { return res.json(); })
+    .then(function (data) {
+      allItems = data.items || [];
+      categories = data.categories || {};
+      renderStats();
+      renderCatFilters();
+      wireControls();
+      render();
+    })
+    .catch(function (err) {
+      document.getElementById('feed').innerHTML = '<div class="empty">データの読み込みに失敗しました: ' + escapeHtml(err.message) + '</div>';
+    });
+})();
+</script>
+</body>
+</html>
