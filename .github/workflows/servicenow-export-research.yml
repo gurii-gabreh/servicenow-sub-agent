@@ -1,0 +1,39 @@
+name: ServiceNowリサーチデータのエクスポート(PTD-058)
+
+# u_ai_research_itemテーブルの全件を data/research-items.json へエクスポート・マージする。
+# 既存の日本語要約(summaryJa等)は上書きしない。認証情報はSecrets経由(servicenow-setup.ymlと共通)。
+on:
+  workflow_dispatch: {}
+  schedule:
+    # 毎日09:30 JST(00:30 UTC)。AI技術リサーチRoutine(progress-tracker-dashboard側)や
+    # ServiceNowのScheduled Job(日次)の後に、その日の新着分も含めて反映されるタイミング。
+    - cron: "30 0 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  export-research-items:
+    name: research-items.jsonへエクスポート
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - run: node servicenow/scripts/export_research_items.mjs
+        env:
+          SN_INSTANCE: ${{ secrets.SERVICENOW_INSTANCE_URL }}
+          SN_CLIENT_ID: ${{ secrets.SERVICENOW_CLIENT_ID }}
+          SN_CLIENT_SECRET: ${{ secrets.SERVICENOW_CLIENT_SECRET }}
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet -- data/research-items.json; then
+            echo "変化なし、コミットをスキップします"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/research-items.json
+          git commit -m "chore: update research-items.json via servicenow-export-research workflow"
+          git push
