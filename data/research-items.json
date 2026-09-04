@@ -34183,7 +34183,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "開発者向け「GPT-5.1」を発表"
     },
     {
       "sysId": "79b29bf4938fcb10043532edfaba10e6",
@@ -34199,7 +34200,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "スキル機能の使い方"
     },
     {
       "sysId": "79b29bf4938fcb10043532edfaba10eb",
@@ -34215,7 +34217,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Model Spec」への取り組みの舞台裏"
     },
     {
       "sysId": "79b29bf4938fcb10043532edfaba10f0",
@@ -34231,7 +34234,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "最先端LLMにおける指示の優先順位付けを改善"
     },
     {
       "sysId": "79b29bf4938fcb10043532edfaba10f5",
@@ -34247,7 +34251,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "Axios、影響力あるローカルジャーナリズムにAIを活用"
     },
     {
       "sysId": "79b29bf4938fcb10043532edfaba10fa",
@@ -34263,7 +34268,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "AIアライメントの独立研究を推進"
     },
     {
       "sysId": "79b29bf4938fcb10043532edfaba10ff",
@@ -34279,7 +34285,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "Codexハーネスの舞台裏、App Serverはこう作られた"
     },
     {
       "sysId": "79b2dbf4938fcb10043532edfaba1004",
@@ -34295,7 +34302,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「GPT-5 for Work」の中身、企業はGPT-5をどう使っているか"
     },
     {
       "sysId": "79b2dbf4938fcb10043532edfaba1009",
@@ -34311,7 +34319,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAIとソフトバンクグループ、SBエナジーと提携"
     },
     {
       "sysId": "79b2dbf4938fcb10043532edfaba100e",
@@ -34327,7 +34336,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "企業におけるAI活用の現在地"
     },
     {
       "sysId": "79b2dbf4938fcb10043532edfaba1021",
@@ -34343,7 +34353,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ドイツテレコムと共に、欧州数百万人へ高性能AIを届ける"
     },
     {
       "sysId": "79b2dbf4938fcb10043532edfaba1026",
@@ -34359,7 +34370,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "GPT-5と数学的発見の未来"
     },
     {
       "sysId": "79b2dbf4938fcb10043532edfaba1039",
@@ -34375,7 +34387,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "GPT-5.1、より賢く会話上手になったChatGPT"
     },
     {
       "sysId": "7db29bf4938fcb10043532edfaba10e7",
@@ -34391,7 +34404,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "カスタマーサクセスチーム向けChatGPT活用法"
     },
     {
       "sysId": "7db29bf4938fcb10043532edfaba10ec",
@@ -34407,7 +34421,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "ChatGPT内の商品発見機能を支える技術"
     },
     {
       "sysId": "7db29bf4938fcb10043532edfaba10f1",
@@ -34423,7 +34438,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Descript、多言語動画吹き替えを大規模実装した舞台裏"
     },
     {
       "sysId": "7db29bf4938fcb10043532edfaba10f6",
@@ -34439,7 +34455,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAIとマイクロソフトによる共同声明"
     },
     {
       "sysId": "7db29bf4938fcb10043532edfaba10fb",
@@ -34455,7 +34472,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPTに「ロックダウンモード」と「高リスクラベル」を導入"
     },
     {
       "sysId": "7db2dbf4938fcb10043532edfaba1000",
@@ -34471,7 +34489,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 5
+      "score": 5,
+      "titleJa": "OpenAI社内で使われる「データエージェント」の中身"
     },
     {
       "sysId": "7db2dbf4938fcb10043532edfaba1005",
@@ -34487,7 +34506,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "各国は「能力オーバーハング」をどう解消できるか"
     },
     {
       "sysId": "7db2dbf4938fcb10043532edfaba100a",
@@ -34503,7 +34523,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "Tolan、GPT-5.1で音声ファーストAIを構築"
     },
     {
       "sysId": "7db2dbf4938fcb10043532edfaba100f",
@@ -34519,7 +34540,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "新しい「ChatGPT Images」登場"
     },
     {
       "sysId": "7db2dbf4938fcb10043532edfaba101d",
@@ -34535,7 +34557,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "GPT-5.2で科学と数学の研究を前進"
     },
     {
       "sysId": "7db2dbf4938fcb10043532edfaba1022",
@@ -34551,7 +34574,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「OpenAI for Australia」を発表"
     },
     {
       "sysId": "7db2dbf4938fcb10043532edfaba1027",
@@ -34567,7 +34591,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "GPT-5で科学研究を加速する初期実験"
     },
     {
       "sysId": "7db2dbf4938fcb10043532edfaba103a",
@@ -34583,7 +34608,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「ティーン向け安全設計指針」を発表"
     },
     {
       "sysId": "b1b29bf4938fcb10043532edfaba10e3",
@@ -34599,7 +34625,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "金融サービス分野でのAI活用"
     },
     {
       "sysId": "b1b29bf4938fcb10043532edfaba10e8",
@@ -34615,7 +34642,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "医療分野でのAI活用"
     },
     {
       "sysId": "b1b29bf4938fcb10043532edfaba10ed",
@@ -34631,7 +34659,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Soraで安全にコンテンツを作る"
     },
     {
       "sysId": "b1b29bf4938fcb10043532edfaba10f2",
@@ -34647,7 +34676,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "Balyasny Asset Management、AIリサーチエンジンを構築"
     },
     {
       "sysId": "b1b29bf4938fcb10043532edfaba10f7",
@@ -34663,7 +34693,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "すべての人へAIを届けるためのスケーリング"
     },
     {
       "sysId": "b1b29bf4938fcb10043532edfaba10fc",
@@ -34679,7 +34710,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "レート制限を超えて、CodexとSoraの利用枠を拡大"
     },
     {
       "sysId": "b1b2dbf4938fcb10043532edfaba1001",
@@ -34695,7 +34727,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "大成建設、AIで次世代人材を育成"
     },
     {
       "sysId": "b1b2dbf4938fcb10043532edfaba1006",
@@ -34711,7 +34744,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Horizon 1000」、プライマリケア向けAIを推進"
     },
     {
       "sysId": "b1b2dbf4938fcb10043532edfaba100b",
@@ -34727,7 +34761,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「ChatGPT Health」を発表"
     },
     {
       "sysId": "b1b2dbf4938fcb10043532edfaba1010",
@@ -34743,7 +34778,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AI時代を先取りするために"
     },
     {
       "sysId": "b1b2dbf4938fcb10043532edfaba101e",
@@ -34759,7 +34795,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "GPT-5システムカード更新、GPT-5.2版"
     },
     {
       "sysId": "b1b2dbf4938fcb10043532edfaba1023",
@@ -34775,7 +34812,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「告白」機能が言語モデルの誠実さを保つ仕組み"
     },
     {
       "sysId": "b1b2dbf4938fcb10043532edfaba1028",
@@ -34791,7 +34829,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "外部テストで安全性エコシステムを強化"
     },
     {
       "sysId": "b1b2dbf4938fcb10043532edfaba1036",
@@ -34807,7 +34846,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "「GPT-5.1-Codex-Max」システムカード"
     },
     {
       "sysId": "b1b2dbf4938fcb10043532edfaba103b",
@@ -34823,7 +34863,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIの進展と提言"
     },
     {
       "sysId": "b5b29bf4938fcb10043532edfaba10e4",
@@ -34839,7 +34880,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "財務チーム向けChatGPT活用ワークフローを学ぶ"
     },
     {
       "sysId": "b5b29bf4938fcb10043532edfaba10e9",
@@ -34855,7 +34897,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「OpenAI Safety Fellowship」を発表"
     },
     {
       "sysId": "b5b29bf4938fcb10043532edfaba10ee",
@@ -34871,7 +34914,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "「GPT-5.4 mini」「GPT-5.4 nano」を発表"
     },
     {
       "sysId": "b5b29bf4938fcb10043532edfaba10f3",
@@ -34887,7 +34931,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "教育現場でのAI活用を機会創出につなげる"
     },
     {
       "sysId": "b5b29bf4938fcb10043532edfaba10f8",
@@ -34903,7 +34948,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "PNNLとOpenAI、連邦許認可手続きの迅速化へ提携"
     },
     {
       "sysId": "b5b29bf4938fcb10043532edfaba10fd",
@@ -34919,7 +34965,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPTを「GenAI.mil」に導入"
     },
     {
       "sysId": "b5b2dbf4938fcb10043532edfaba1002",
@@ -34935,7 +34982,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "AIエージェントがリンクをクリックしてもデータを守る仕組み"
     },
     {
       "sysId": "b5b2dbf4938fcb10043532edfaba1007",
@@ -34951,7 +34999,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "知能の価値とともにスケールするビジネス"
     },
     {
       "sysId": "b5b2dbf4938fcb10043532edfaba100c",
@@ -34967,7 +35016,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「思考の連鎖」の監視可能性を評価"
     },
     {
       "sysId": "b5b2dbf4938fcb10043532edfaba101f",
@@ -34983,7 +35033,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Podium、AIエージェントで中小企業1万社超を支援"
     },
     {
       "sysId": "b5b2dbf4938fcb10043532edfaba1024",
@@ -34999,7 +35050,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIとメンタルヘルスに関する新研究へ助成金"
     },
     {
       "sysId": "b5b2dbf4938fcb10043532edfaba1029",
@@ -35015,7 +35067,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "教師向け無料版ChatGPTを提供"
     },
     {
       "sysId": "b5b2dbf4938fcb10043532edfaba1037",
@@ -35031,7 +35084,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「OpenAI for Ireland」を発表"
     },
     {
       "sysId": "b5b2dbf4938fcb10043532edfaba103c",
@@ -35047,7 +35101,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "「IndQA」を発表"
     },
     {
       "sysId": "b9b29bf4938fcb10043532edfaba10e5",
@@ -35063,7 +35118,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIの基礎知識"
     },
     {
       "sysId": "b9b29bf4938fcb10043532edfaba10ea",
@@ -35079,7 +35135,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIの次なる段階を加速する"
     },
     {
       "sysId": "b9b29bf4938fcb10043532edfaba10ef",
@@ -35095,7 +35152,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "モデルからエージェントへ、Responses APIにコンピュータ環境を実装"
     },
     {
       "sysId": "b9b29bf4938fcb10043532edfaba10f4",
@@ -35111,7 +35169,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Adoption」ニュースチャンネルを開設"
     },
     {
       "sysId": "b9b29bf4938fcb10043532edfaba10f9",
@@ -35127,7 +35186,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "SWE-bench Verifiedでの評価をやめた理由"
     },
     {
       "sysId": "b9b29bf4938fcb10043532edfaba10fe",
@@ -35143,7 +35203,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「OpenAI Frontier」を発表"
     },
     {
       "sysId": "b9b2dbf4938fcb10043532edfaba1003",
@@ -35159,7 +35220,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Indeed、AIで求人検索を進化させる取り組み"
     },
     {
       "sysId": "b9b2dbf4938fcb10043532edfaba1008",
@@ -35175,7 +35237,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "国内製造で米国のAIサプライチェーンを強化"
     },
     {
       "sysId": "b9b2dbf4938fcb10043532edfaba100d",
@@ -35191,7 +35254,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "GPT-5.2システムカード補遺、GPT-5.2-Codex版"
     },
     {
       "sysId": "b9b2dbf4938fcb10043532edfaba1020",
@@ -35207,7 +35271,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "第1弾となる「OpenAI認定資格」コースを開始"
     },
     {
       "sysId": "b9b2dbf4938fcb10043532edfaba1025",
@@ -35223,7 +35288,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "Mixpanelのセキュリティインシデント、OpenAIユーザーが知るべきこと"
     },
     {
       "sysId": "b9b2dbf4938fcb10043532edfaba1038",
@@ -35239,7 +35305,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPTに「グループチャット」機能を導入"
     },
     {
       "sysId": "bdb29bf4938fcb10043532edfaba10e6",
@@ -35255,7 +35322,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPTの「プロジェクト」機能の使い方"
     },
     {
       "sysId": "bdb29bf4938fcb10043532edfaba10eb",
@@ -35271,7 +35339,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 5
+      "score": 5,
+      "titleJa": "「OpenAI安全性バグバウンティ」プログラムを開始"
     },
     {
       "sysId": "bdb29bf4938fcb10043532edfaba10f0",
@@ -35287,7 +35356,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPTで数学・科学を学ぶ新機能"
     },
     {
       "sysId": "bdb29bf4938fcb10043532edfaba10f5",
@@ -35303,7 +35373,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「GPT-5.3 Instant」システムカード"
     },
     {
       "sysId": "bdb29bf4938fcb10043532edfaba10fa",
@@ -35319,7 +35390,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「OpenAI for India」を発表"
     },
     {
       "sysId": "bdb29bf4938fcb10043532edfaba10ff",
@@ -35335,7 +35407,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Soraフィードが目指す設計思想"
     },
     {
       "sysId": "bdb2dbf4938fcb10043532edfaba1004",
@@ -35351,7 +35424,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Praktika、対話型の語学学習アプローチの中身"
     },
     {
       "sysId": "bdb2dbf4938fcb10043532edfaba1009",
@@ -35367,7 +35441,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Datadog、システムレベルのコードレビューにCodexを活用"
     },
     {
       "sysId": "bdb2dbf4938fcb10043532edfaba100e",
@@ -35383,7 +35458,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "開発者がChatGPTへアプリを申請できるように"
     },
     {
       "sysId": "bdb2dbf4938fcb10043532edfaba1021",
@@ -35399,7 +35475,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "InstacartとOpenAI、AIショッピング体験で提携"
     },
     {
       "sysId": "bdb2dbf4938fcb10043532edfaba1026",
@@ -35415,7 +35492,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPTに「ショッピングリサーチ」機能を導入"
     },
     {
       "sysId": "bdb2dbf4938fcb10043532edfaba1039",
@@ -35431,7 +35509,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「GPT-5.1 Instant」「GPT-5.1 Thinking」システムカード補遺"
     },
     {
       "sysId": "f1b29bf4938fcb10043532edfaba10e7",
@@ -35447,7 +35526,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "マネージャー向けChatGPT活用法"
     },
     {
       "sysId": "f1b29bf4938fcb10043532edfaba10ec",
@@ -35463,7 +35543,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "開発者による10代向け安全なAI体験づくりを支援"
     },
     {
       "sysId": "f1b29bf4938fcb10043532edfaba10f1",
@@ -35479,7 +35560,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "OpenAI、Promptfooを買収へ"
     },
     {
       "sysId": "f1b29bf4938fcb10043532edfaba10f6",
@@ -35495,7 +35577,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "GPT-5.3 Instant、日常会話がより滑らかで実用的に"
     },
     {
       "sysId": "f1b29bf4938fcb10043532edfaba10fb",
@@ -35511,7 +35594,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "「EVMbench」を発表"
     },
     {
       "sysId": "f1b2dbf4938fcb10043532edfaba1000",
@@ -35527,7 +35611,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "SnowflakeとOpenAI、企業データへ最先端AIを提供する提携"
     },
     {
       "sysId": "f1b2dbf4938fcb10043532edfaba1005",
@@ -35543,7 +35628,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Higgsfield、簡単なアイデアを映画的なSNS動画に変える仕組み"
     },
     {
       "sysId": "f1b2dbf4938fcb10043532edfaba100a",
@@ -35559,7 +35645,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「OpenAI for Healthcare」"
     },
     {
       "sysId": "f1b2dbf4938fcb10043532edfaba100f",
@@ -35575,7 +35662,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "科学研究タスクを遂行するAIの能力を評価"
     },
     {
       "sysId": "f1b2dbf4938fcb10043532edfaba101d",
@@ -35591,7 +35679,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Codexを使いSora Android版を28日でリリースした方法"
     },
     {
       "sysId": "f1b2dbf4938fcb10043532edfaba1022",
@@ -35607,7 +35696,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "企業向けAI活用の現在地"
     },
     {
       "sysId": "f1b2dbf4938fcb10043532edfaba1027",
@@ -35623,7 +35713,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAIとFoxconn、AIサプライチェーンにおける米国製造業強化で協力"
     },
     {
       "sysId": "f1b2dbf4938fcb10043532edfaba103a",
@@ -35639,7 +35730,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "退役・除隊する米軍関係者へ無料ChatGPTを提供"
     },
     {
       "sysId": "f5b29bf4938fcb10043532edfaba10e3",
@@ -35655,7 +35747,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPTで行うリサーチ活用法"
     },
     {
       "sysId": "f5b29bf4938fcb10043532edfaba10e8",
@@ -35671,7 +35764,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "サイバーエージェント、ChatGPT EnterpriseとCodexでスピード向上"
     },
     {
       "sysId": "f5b29bf4938fcb10043532edfaba10ed",
@@ -35687,7 +35781,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "社内コーディングエージェントの「ミスアライメント」をどう監視するか"
     },
     {
       "sysId": "f5b29bf4938fcb10043532edfaba10f2",
@@ -35703,7 +35798,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「GPT-5.4」を発表"
     },
     {
       "sysId": "f5b29bf4938fcb10043532edfaba10f7",
@@ -35719,7 +35815,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAIとAmazon、戦略的提携を発表"
     },
     {
       "sysId": "f5b29bf4938fcb10043532edfaba10fc",
@@ -35735,7 +35832,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "社会科学研究をスケールさせる"
     },
     {
       "sysId": "f5b2dbf4938fcb10043532edfaba1001",
@@ -35751,7 +35849,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPTでGPT-4o、GPT-4.1、GPT-4.1 mini、o4-miniの提供終了"
     },
     {
       "sysId": "f5b2dbf4938fcb10043532edfaba1006",
@@ -35767,7 +35866,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Stargate」コミュニティ"
     },
     {
       "sysId": "f5b2dbf4938fcb10043532edfaba100b",
@@ -35783,7 +35883,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「OpenAI Grove」第2期生を発表"
     },
     {
       "sysId": "f5b2dbf4938fcb10043532edfaba1010",
@@ -35799,7 +35900,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "BNY、OpenAIと「あらゆる場所のあらゆる人へAIを」実現"
     },
     {
       "sysId": "f5b2dbf4938fcb10043532edfaba101e",
@@ -35815,7 +35917,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "10年の歩み"
     },
     {
       "sysId": "f5b2dbf4938fcb10043532edfaba1023",
@@ -35831,7 +35934,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAI、Neptuneを買収へ"
     },
     {
       "sysId": "f5b2dbf4938fcb10043532edfaba1028",
@@ -35847,7 +35951,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "評価(エバル)が企業向けAIの次章を切り開く"
     },
     {
       "sysId": "f5b2dbf4938fcb10043532edfaba1036",
@@ -35863,7 +35968,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Scania、全世界の従業員でAI活用を加速"
     },
     {
       "sysId": "f5b2dbf4938fcb10043532edfaba103b",
@@ -35879,7 +35985,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "CRED、AIでプレミアムな顧客体験を実現"
     },
     {
       "sysId": "f9b29bf4938fcb10043532edfaba10e4",
@@ -35895,7 +36002,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "カスタムGPTの使い方"
     },
     {
       "sysId": "f9b29bf4938fcb10043532edfaba10e9",
@@ -35911,7 +36019,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAI、TBPNを買収"
     },
     {
       "sysId": "f9b29bf4938fcb10043532edfaba10ee",
@@ -35927,7 +36036,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "報酬に関する知見を働き手に提供"
     },
     {
       "sysId": "f9b29bf4938fcb10043532edfaba10f3",
@@ -35943,7 +36053,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「ChatGPT for Excel」と新たな金融データ連携を発表"
     },
     {
       "sysId": "f9b29bf4938fcb10043532edfaba10f8",
@@ -35959,7 +36070,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAI CodexとFigma、コードとデザインをシームレスに繋ぐ機能を開始"
     },
     {
       "sysId": "f9b29bf4938fcb10043532edfaba10fd",
@@ -35975,7 +36087,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "あらゆる場所のあらゆる人にAIを、ローカライズへの取り組み"
     },
     {
       "sysId": "f9b2dbf4938fcb10043532edfaba1002",
@@ -35991,7 +36104,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "PVH、OpenAIとファッションの未来を再構想"
     },
     {
       "sysId": "f9b2dbf4938fcb10043532edfaba1007",
@@ -36007,7 +36121,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "「ChatGPT Go」を発表、世界展開を開始"
     },
     {
       "sysId": "f9b2dbf4938fcb10043532edfaba100c",
@@ -36023,7 +36138,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "米エネルギー省との連携を強化"
     },
     {
       "sysId": "f9b2dbf4938fcb10043532edfaba101f",
@@ -36039,7 +36155,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "AI能力の進展に伴いサイバー耐性を強化"
     },
     {
       "sysId": "f9b2dbf4938fcb10043532edfaba1024",
@@ -36055,7 +36172,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAIとNORAD提携、「NORADサンタ追跡」に新たな魔法を"
     },
     {
       "sysId": "f9b2dbf4938fcb10043532edfaba1037",
@@ -36071,7 +36189,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "スパース回路でニューラルネットワークの仕組みを理解する"
     },
     {
       "sysId": "f9b2dbf4938fcb10043532edfaba103c",
@@ -36087,7 +36206,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AWSとOpenAI、複数年の戦略的提携を発表"
     },
     {
       "sysId": "fdb29bf4938fcb10043532edfaba10e5",
@@ -36103,7 +36223,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "オペレーションチーム向けChatGPT活用法"
     },
     {
       "sysId": "fdb29bf4938fcb10043532edfaba10ea",
@@ -36119,7 +36240,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "アジア各国の災害対応チームによるAI実践活用を支援"
     },
     {
       "sysId": "fdb29bf4938fcb10043532edfaba10ef",
@@ -36135,7 +36257,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "楽天、Codexで不具合修正を2倍速に"
     },
     {
       "sysId": "fdb29bf4938fcb10043532edfaba10f4",
@@ -36151,7 +36274,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "シングルマイナス振幅をグラビトンへ拡張"
     },
     {
       "sysId": "fdb29bf4938fcb10043532edfaba10f9",
@@ -36167,7 +36291,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "OpenAI、「Frontier Alliance」パートナーを発表"
     },
     {
       "sysId": "fdb29bf4938fcb10043532edfaba10fe",
@@ -36183,7 +36308,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "「GPT-5.3-Codex」システムカード"
     },
     {
       "sysId": "fdb2dbf4938fcb10043532edfaba1003",
@@ -36199,7 +36325,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "Codexエージェントループの仕組みを解き明かす"
     },
     {
       "sysId": "fdb2dbf4938fcb10043532edfaba1008",
@@ -36215,7 +36342,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAI、Cerebrasと提携"
     },
     {
       "sysId": "fdb2dbf4938fcb10043532edfaba100d",
@@ -36231,7 +36359,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「GPT-5.2-Codex」を発表"
     },
     {
       "sysId": "fdb2dbf4938fcb10043532edfaba1020",
@@ -36247,7 +36376,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "コモンウェルス銀行(豪)、全社的にAI活用力を育成"
     },
     {
       "sysId": "fdb2dbf4938fcb10043532edfaba1025",
@@ -36263,7 +36393,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "データレジデンシーを世界の法人顧客へ拡大提供"
     },
     {
       "sysId": "fdb2dbf4938fcb10043532edfaba1038",
@@ -36279,7 +36410,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Neuro、ChatGPT Businessで全国規模の小売成果を実現"
     },
     {
       "sysId": "21b29bf4938fcb10043532edfaba10a4",
@@ -36295,7 +36427,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ヴァージン・アトランティック航空、ChatGPT Workで顧客体験を磨く"
     },
     {
       "sysId": "21b29bf4938fcb10043532edfaba10a9",
@@ -36311,7 +36444,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Univé、AI対応可能な人材組織を構築"
     },
     {
       "sysId": "21b29bf4938fcb10043532edfaba10ae",
@@ -36327,7 +36461,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "OpenAIとHugging Face、モデル評価中のセキュリティインシデントで連携対応"
     },
     {
       "sysId": "21b29bf4938fcb10043532edfaba10b3",
@@ -36343,7 +36478,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "GPT-5.6、野心に応じてスケールする最先端知能"
     },
     {
       "sysId": "21b29bf4938fcb10043532edfaba10b8",
@@ -36359,7 +36495,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAIとBroadcom、LLM最適化推論チップを発表"
     },
     {
       "sysId": "21b29bf4938fcb10043532edfaba10bd",
@@ -36375,7 +36512,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Preply、AIと人間講師の組み合わせで学習をパーソナライズ"
     },
     {
       "sysId": "21b29bf4938fcb10043532edfaba10c2",
@@ -36391,7 +36529,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "インテリジェンス時代のバイオディフェンス"
     },
     {
       "sysId": "21b29bf4938fcb10043532edfaba10c7",
@@ -36407,7 +36546,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Braintrust、Codexで顧客要望をコードに変える仕組み"
     },
     {
       "sysId": "21b29bf4938fcb10043532edfaba10cc",
@@ -36423,7 +36563,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Rampのエンジニア、Codexでコードレビューを加速"
     },
     {
       "sysId": "21b29bf4938fcb10043532edfaba10d1",
@@ -36439,7 +36580,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「パラメータゴルフ」から学んだAI支援研究の教訓"
     },
     {
       "sysId": "21b29bf4938fcb10043532edfaba10d6",
@@ -36455,7 +36597,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「GPT-5.5 Instant」システムカード"
     },
     {
       "sysId": "21b29bf4938fcb10043532edfaba10db",
@@ -36471,7 +36614,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Choco、AIエージェントで食品流通を自動化"
     },
     {
       "sysId": "21b29bf4938fcb10043532edfaba10e0",
@@ -36487,7 +36631,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "私たちを守るサイバー防衛エコシステムを加速する"
     },
     {
       "sysId": "25b29bf4938fcb10043532edfaba10a5",
@@ -36503,7 +36648,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "HSP GRUPPE、税務アドバイザリー向けAI活用力を構築"
     },
     {
       "sysId": "25b29bf4938fcb10043532edfaba10aa",
@@ -36519,7 +36665,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "2つの設定を有効化しARC-AGI-3ベンチマークのスコアが3倍に"
     },
     {
       "sysId": "25b29bf4938fcb10043532edfaba10af",
@@ -36535,7 +36682,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "10代にこそ安全なAIへのアクセスが必要な理由"
     },
     {
       "sysId": "25b29bf4938fcb10043532edfaba10b4",
@@ -36551,7 +36699,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "K-12教育者の実践的AIスキル習得を支援"
     },
     {
       "sysId": "25b29bf4938fcb10043532edfaba10b9",
@@ -36567,7 +36716,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 4
+      "score": 4,
+      "titleJa": "「Patch the Planet」、オープンソース保守者を支援するDaybreakの取り組み"
     },
     {
       "sysId": "25b29bf4938fcb10043532edfaba10be",
@@ -36583,7 +36733,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "信頼できるAIエコシステム構築に向けた欧州の取り組みを支援"
     },
     {
       "sysId": "25b29bf4938fcb10043532edfaba10c3",
@@ -36599,7 +36750,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAIの公共政策アジェンダ"
     },
     {
       "sysId": "25b29bf4938fcb10043532edfaba10c8",
@@ -36615,7 +36767,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "OpenAIの「フロンティア・ガバナンス・フレームワーク」"
     },
     {
       "sysId": "25b29bf4938fcb10043532edfaba10cd",
@@ -36631,7 +36784,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAIとマルタ、全国民へChatGPT Plusを提供する提携"
     },
     {
       "sysId": "25b29bf4938fcb10043532edfaba10d2",
@@ -36647,7 +36801,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAI、企業のAI活用構築を支援する「DeployCo」を開始"
     },
     {
       "sysId": "25b29bf4938fcb10043532edfaba10d7",
@@ -36663,7 +36818,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPT広告の新しい購入方法"
     },
     {
       "sysId": "25b29bf4938fcb10043532edfaba10dc",
@@ -36679,7 +36835,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「GPT-5.5」を発表"
     },
     {
       "sysId": "25b29bf4938fcb10043532edfaba10e1",
@@ -36695,7 +36852,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAI社内におけるAI活用事例"
     },
     {
       "sysId": "29b29bf4938fcb10043532edfaba10a1",
@@ -36711,7 +36869,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "RingCentral、エンジニアリングから運用までAIネイティブな業務を構築"
     },
     {
       "sysId": "29b29bf4938fcb10043532edfaba10a6",
@@ -36727,7 +36886,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAIモデルを対象とした第三者サイバー評価"
     },
     {
       "sysId": "29b29bf4938fcb10043532edfaba10ab",
@@ -36743,7 +36903,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIが仕事の可能性をどう広げているか"
     },
     {
       "sysId": "29b29bf4938fcb10043532edfaba10b0",
@@ -36759,7 +36920,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "「GPT-Red」、頑健性向上のための自己改善を実現"
     },
     {
       "sysId": "29b29bf4938fcb10043532edfaba10b5",
@@ -36775,7 +36937,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPTの普及はどう広がったか"
     },
     {
       "sysId": "29b29bf4938fcb10043532edfaba10ba",
@@ -36791,7 +36954,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "企業向けに利用状況分析と支出管理機能を刷新"
     },
     {
       "sysId": "29b29bf4938fcb10043532edfaba10bf",
@@ -36807,7 +36971,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Nextdoorのエンジニア、Codexで制約なく開発する方法"
     },
     {
       "sysId": "29b29bf4938fcb10043532edfaba10c4",
@@ -36823,7 +36988,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "グローバルな主導力で若者の安全と機会を前進させる"
     },
     {
       "sysId": "29b29bf4938fcb10043532edfaba10c9",
@@ -36839,7 +37005,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "2026年の選挙に関する情報提供と安全対策"
     },
     {
       "sysId": "29b29bf4938fcb10043532edfaba10ce",
@@ -36855,7 +37022,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "Sea社が語る、Codexによるエージェント型ソフトウェア開発の未来"
     },
     {
       "sysId": "29b29bf4938fcb10043532edfaba10d3",
@@ -36871,7 +37039,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "API新モデルで音声インテリジェンスを前進"
     },
     {
       "sysId": "29b29bf4938fcb10043532edfaba10d8",
@@ -36887,7 +37056,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ゴブリンたちはどこから来たのか"
     },
     {
       "sysId": "29b29bf4938fcb10043532edfaba10dd",
@@ -36903,7 +37073,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "Responses APIのWebSocket対応でエージェント型ワークフローを高速化"
     },
     {
       "sysId": "29b29bf4938fcb10043532edfaba10e2",
@@ -36919,7 +37090,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPTでのファイル活用法"
     },
     {
       "sysId": "2db29bf4938fcb10043532edfaba1086",
@@ -36935,7 +37107,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAI、「PORTS-Pike」プロジェクトに参加"
     },
     {
       "sysId": "2db29bf4938fcb10043532edfaba10a2",
@@ -36951,7 +37124,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Model ML、GPT-5.6 Solで財務業務を効率化"
     },
     {
       "sysId": "2db29bf4938fcb10043532edfaba10a7",
@@ -36967,7 +37141,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Circles、OpenAI技術で通信サービスのパーソナライズを実現"
     },
     {
       "sysId": "2db29bf4938fcb10043532edfaba10ac",
@@ -36983,7 +37158,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "国家科学の次なる時代を切り開く"
     },
     {
       "sysId": "2db29bf4938fcb10043532edfaba10b1",
@@ -36999,7 +37175,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ドイツテレコム、AIで通信事業を再構築"
     },
     {
       "sysId": "2db29bf4938fcb10043532edfaba10b6",
@@ -37015,7 +37192,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "欧州のAI人材機会を可視化する"
     },
     {
       "sysId": "2db29bf4938fcb10043532edfaba10bb",
@@ -37031,7 +37209,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "「LifeSciBench」を発表"
     },
     {
       "sysId": "2db29bf4938fcb10043532edfaba10c0",
@@ -37047,7 +37226,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "すべての人の利益のために、その計画"
     },
     {
       "sysId": "2db29bf4938fcb10043532edfaba10c5",
@@ -37063,7 +37243,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAIの最先端モデルとCodex、AWSで利用可能に"
     },
     {
       "sysId": "2db29bf4938fcb10043532edfaba10ca",
@@ -37079,7 +37260,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAI、Gartnerの企業向けコーディングエージェント部門で「リーダー」に選出"
     },
     {
       "sysId": "2db29bf4938fcb10043532edfaba10cf",
@@ -37095,7 +37277,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "TanStackのnpmサプライチェーン攻撃への対応"
     },
     {
       "sysId": "2db29bf4938fcb10043532edfaba10d4",
@@ -37111,7 +37294,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「ChatGPT Futures」2026年度クラスを発表"
     },
     {
       "sysId": "2db29bf4938fcb10043532edfaba10d9",
@@ -37127,7 +37311,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAIのモデル・Codex・マネージドエージェントがAWSに登場"
     },
     {
       "sysId": "2db29bf4938fcb10043532edfaba10de",
@@ -37143,7 +37328,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Codexを世界の企業へ拡大展開"
     },
     {
       "sysId": "61b29bf4938fcb10043532edfaba1087",
@@ -37159,7 +37345,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "インテリジェンス時代に向けた新たな政策提言"
     },
     {
       "sysId": "61b29bf4938fcb10043532edfaba10a3",
@@ -37175,7 +37362,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "AIネイティブな財務部門を構築して学んだこと"
     },
     {
       "sysId": "61b29bf4938fcb10043532edfaba10a8",
@@ -37191,7 +37379,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "数学と理論計算機科学における10の進展"
     },
     {
       "sysId": "61b29bf4938fcb10043532edfaba10ad",
@@ -37207,7 +37396,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "「OpenAI Presence」を発表"
     },
     {
       "sysId": "61b29bf4938fcb10043532edfaba10b2",
@@ -37223,7 +37413,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPT入門ガイド"
     },
     {
       "sysId": "61b29bf4938fcb10043532edfaba10b7",
@@ -37239,7 +37430,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "HP Inc.、OpenAIと「Frontier」戦略的提携を開始"
     },
     {
       "sysId": "61b29bf4938fcb10043532edfaba10bc",
@@ -37255,7 +37447,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "展開をシミュレートし、リリース前にモデルの挙動を予測"
     },
     {
       "sysId": "61b29bf4938fcb10043532edfaba10c1",
@@ -37271,7 +37464,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「OpenAI Economic Research Exchange」を発表"
     },
     {
       "sysId": "61b29bf4938fcb10043532edfaba10c6",
@@ -37287,7 +37481,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Tech and Tariffs」キャンペーン、米テック政策を狙う影響工作"
     },
     {
       "sysId": "61b29bf4938fcb10043532edfaba10cb",
@@ -37303,7 +37498,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AdventHealth、OpenAIで全人的ケアを前進"
     },
     {
       "sysId": "61b29bf4938fcb10043532edfaba10d0",
@@ -37319,7 +37515,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPT Workで実現する財務ワークフロー"
     },
     {
       "sysId": "61b29bf4938fcb10043532edfaba10d5",
@@ -37335,7 +37532,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "先進企業はなぜ一歩リードできているのか"
     },
     {
       "sysId": "61b29bf4938fcb10043532edfaba10da",
@@ -37351,7 +37549,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAI、「FedRAMP Moderate」認証を取得"
     },
     {
       "sysId": "61b29bf4938fcb10043532edfaba10df",
@@ -37367,7 +37566,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAI、ハイアットの社内AI活用推進を支援"
     },
     {
       "sysId": "65b29bf4938fcb10043532edfaba10a4",
@@ -37383,7 +37583,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "Zapier、ChatGPT Workで基幹マーケティング業務を変革"
     },
     {
       "sysId": "65b29bf4938fcb10043532edfaba10a9",
@@ -37399,7 +37600,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "詐欺犯罪組織の活動を阻止"
     },
     {
       "sysId": "65b29bf4938fcb10043532edfaba10ae",
@@ -37415,7 +37617,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "David Vélez氏とRobin Vince氏、OpenAI FoundationとOpenAI Group PBCの取締役に就任"
     },
     {
       "sysId": "65b29bf4938fcb10043532edfaba10b3",
@@ -37431,7 +37634,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "ChatGPT、最も野心的な仕事のパートナーへ"
     },
     {
       "sysId": "65b29bf4938fcb10043532edfaba10b8",
@@ -37447,7 +37651,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "高度なAIの共通基準づくりを支援"
     },
     {
       "sysId": "65b29bf4938fcb10043532edfaba10bd",
@@ -37463,7 +37668,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "BBVA、OpenAIと共に銀行業務の中核にAIを据える"
     },
     {
       "sysId": "65b29bf4938fcb10043532edfaba10c2",
@@ -37479,7 +37685,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "「GPT-Rosalind」に新機能を追加"
     },
     {
       "sysId": "65b29bf4938fcb10043532edfaba10c7",
@@ -37495,7 +37702,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Rosalind Biodefense」で社会的耐性を強化"
     },
     {
       "sysId": "65b29bf4938fcb10043532edfaba10cc",
@@ -37511,7 +37719,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「OpenAI for Singapore」を発表"
     },
     {
       "sysId": "65b29bf4938fcb10043532edfaba10d1",
@@ -37527,7 +37736,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "2026年前半、ChatGPTの普及はこう広がった"
     },
     {
       "sysId": "65b29bf4938fcb10043532edfaba10d6",
@@ -37543,7 +37753,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "「MRC(マルチパス信頼接続)」で大規模AI学習ネットワークを実現"
     },
     {
       "sysId": "65b29bf4938fcb10043532edfaba10db",
@@ -37559,7 +37770,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "私たちの理念"
     },
     {
       "sysId": "65b29bf4938fcb10043532edfaba10e0",
@@ -37575,7 +37787,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Agents SDK」の次なる進化"
     },
     {
       "sysId": "69b29bf4938fcb10043532edfaba10a5",
@@ -37591,7 +37804,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "ChatGPT内のGPT-5.6 Solを改善、無料ユーザーへのGPT-5.6 Luna提供も拡大"
     },
     {
       "sysId": "69b29bf4938fcb10043532edfaba10aa",
@@ -37607,7 +37821,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "「ChatGPT for Academic Researchers」で科学的発見を加速"
     },
     {
       "sysId": "69b29bf4938fcb10043532edfaba10af",
@@ -37623,7 +37838,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Codex、OpenAIクリエイティブチームの「協働相手」になるまで"
     },
     {
       "sysId": "69b29bf4938fcb10043532edfaba10b4",
@@ -37639,7 +37855,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「GPT-Live」を発表"
     },
     {
       "sysId": "69b29bf4938fcb10043532edfaba10b9",
@@ -37655,7 +37872,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "「Daybreak」、世界中のあらゆる組織を守るためのツール群"
     },
     {
       "sysId": "69b29bf4938fcb10043532edfaba10be",
@@ -37671,7 +37889,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "Oracleクラウドの契約枠でOpenAIモデルとCodexを利用可能に"
     },
     {
       "sysId": "69b29bf4938fcb10043532edfaba10c3",
@@ -37687,7 +37906,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Travelers、OpenAIとAI活用の保険金請求処理を全米展開"
     },
     {
       "sysId": "69b29bf4938fcb10043532edfaba10c8",
@@ -37703,7 +37923,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "CiscoとOpenAI、Codexで企業エンジニアリングを再定義"
     },
     {
       "sysId": "69b29bf4938fcb10043532edfaba10cd",
@@ -37719,7 +37940,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 4
+      "score": 4,
+      "titleJa": "Databricks、企業のエージェント型ワークフローにGPT-5.5を導入"
     },
     {
       "sysId": "69b29bf4938fcb10043532edfaba10d2",
@@ -37735,7 +37957,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "OpenAI社内でCodexを安全に運用する方法"
     },
     {
       "sysId": "69b29bf4938fcb10043532edfaba10d7",
@@ -37751,7 +37974,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "OpenAIとPwC、CFO業務の未来像を共に描く"
     },
     {
       "sysId": "69b29bf4938fcb10043532edfaba10dc",
@@ -37767,7 +37991,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPT Workで変わる日々の仕事"
     },
     {
       "sysId": "69b29bf4938fcb10043532edfaba10e1",
@@ -37783,7 +38008,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "Axios開発者ツール侵害への対応"
     },
     {
       "sysId": "6db29bf4938fcb10043532edfaba1085",
@@ -37799,7 +38025,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "NVIDIA、ChatGPT Workで専門知識をスケールさせる方法"
     },
     {
       "sysId": "6db29bf4938fcb10043532edfaba10a1",
@@ -37815,7 +38042,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "「Daybreak」モデル、AWSで利用可能に"
     },
     {
       "sysId": "6db29bf4938fcb10043532edfaba10a6",
@@ -37831,7 +38059,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPT WorkとCodexで広がる学び・教えの新しい形"
     },
     {
       "sysId": "6db29bf4938fcb10043532edfaba10ab",
@@ -37847,7 +38076,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPTに「Health」機能を追加"
     },
     {
       "sysId": "6db29bf4938fcb10043532edfaba10b0",
@@ -37863,7 +38093,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "エージェント時代のAI投資、その管理法"
     },
     {
       "sysId": "6db29bf4938fcb10043532edfaba10b5",
@@ -37879,7 +38110,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「コアダンプ疫学」、18年物のバグを修正した記録"
     },
     {
       "sysId": "6db29bf4938fcb10043532edfaba10ba",
@@ -37895,7 +38127,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPTの健康関連機能を改善"
     },
     {
       "sysId": "6db29bf4938fcb10043532edfaba10bf",
@@ -37911,7 +38144,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Codexが切り開くNotionの可能性"
     },
     {
       "sysId": "6db29bf4938fcb10043532edfaba10c4",
@@ -37927,7 +38161,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "Codex、誰もが使える生産性ツールへ"
     },
     {
       "sysId": "6db29bf4938fcb10043532edfaba10c9",
@@ -37943,7 +38178,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "中小企業にとってAIが「最初の採用」になりつつある"
     },
     {
       "sysId": "6db29bf4938fcb10043532edfaba10ce",
@@ -37959,7 +38195,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "どこからでもCodexで仕事ができる"
     },
     {
       "sysId": "6db29bf4938fcb10043532edfaba10d3",
@@ -37975,7 +38212,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPTに「信頼できる連絡先」機能を導入"
     },
     {
       "sysId": "6db29bf4938fcb10043532edfaba10d8",
@@ -37991,7 +38229,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "インテリジェンス時代の計算基盤を構築する"
     },
     {
       "sysId": "6db29bf4938fcb10043532edfaba10dd",
@@ -38007,7 +38246,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "ワークスペースエージェント"
     },
     {
       "sysId": "a1b29bf4938fcb10043532edfaba1086",
@@ -38023,7 +38263,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Asana、Codexで5年分のエンジニアリング作業をわずか2週間で完了"
     },
     {
       "sysId": "a1b29bf4938fcb10043532edfaba10a2",
@@ -38039,7 +38280,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "ChatGPT内広告のテストを開始"
     },
     {
       "sysId": "a1b29bf4938fcb10043532edfaba10a7",
@@ -38055,7 +38297,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Appleはこの点を間違えている"
     },
     {
       "sysId": "a1b29bf4938fcb10043532edfaba10ac",
@@ -38071,7 +38314,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "エフィンガム郡地域と共にAIインフラを構築"
     },
     {
       "sysId": "a1b29bf4938fcb10043532edfaba10b1",
@@ -38087,7 +38331,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPT Workで実現するデータサイエンス業務"
     },
     {
       "sysId": "a1b29bf4938fcb10043532edfaba10b6",
@@ -38103,7 +38348,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "「GeneBench-Pro」を発表"
     },
     {
       "sysId": "a1b29bf4938fcb10043532edfaba10bb",
@@ -38119,7 +38365,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "小児の希少遺伝性疾患診断をAIで医師支援"
     },
     {
       "sysId": "a1b29bf4938fcb10043532edfaba10c0",
@@ -38135,7 +38382,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "インテリジェンス時代の産業政策"
     },
     {
       "sysId": "a1b29bf4938fcb10043532edfaba10c5",
@@ -38151,7 +38399,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AI政策と政治的擁護活動に関する私たちの見解"
     },
     {
       "sysId": "a1b29bf4938fcb10043532edfaba10ca",
@@ -38167,7 +38416,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAI、Grupo FolhaとGrupo UOLとコンテンツ分野の戦略的提携を発表"
     },
     {
       "sysId": "a1b29bf4938fcb10043532edfaba10cf",
@@ -38183,7 +38433,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "デリケートな会話の文脈をChatGPTがより適切に認識できるように"
     },
     {
       "sysId": "a1b29bf4938fcb10043532edfaba10d4",
@@ -38199,7 +38450,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Simplex、Codexでソフトウェア開発を再構築"
     },
     {
       "sysId": "a1b29bf4938fcb10043532edfaba10d9",
@@ -38215,7 +38467,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "インテリジェンス時代のサイバーセキュリティ"
     },
     {
       "sysId": "a1b29bf4938fcb10043532edfaba10de",
@@ -38231,7 +38484,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「OpenAI Privacy Filter」を発表"
     },
     {
       "sysId": "a5b29bf4938fcb10043532edfaba1087",
@@ -38247,7 +38501,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "開発者向け「GPT-5.6」活用ガイド"
     },
     {
       "sysId": "a5b29bf4938fcb10043532edfaba10a3",
@@ -38263,7 +38518,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "サイバー防衛の猶予が狭まる中、「Daybreak」を拡大"
     },
     {
       "sysId": "a5b29bf4938fcb10043532edfaba10a8",
@@ -38279,7 +38535,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "欧州全域で責任あるAIの推進を"
     },
     {
       "sysId": "a5b29bf4938fcb10043532edfaba10ad",
@@ -38295,7 +38552,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "NTTデータグループ、Codexでインシデント分析を30分に短縮"
     },
     {
       "sysId": "a5b29bf4938fcb10043532edfaba10b2",
@@ -38311,7 +38569,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "GPT-5.6、Microsoft 365 Copilotの推奨モデルに"
     },
     {
       "sysId": "a5b29bf4938fcb10043532edfaba10b7",
@@ -38327,7 +38586,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "次世代モデル「GPT-5.6 Sol」をプレビュー公開"
     },
     {
       "sysId": "a5b29bf4938fcb10043532edfaba10bc",
@@ -38343,7 +38603,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「OpenAI Partner Network」を発表"
     },
     {
       "sysId": "a5b29bf4938fcb10043532edfaba10c1",
@@ -38359,7 +38620,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "Endava、AIエージェント中心にソフトウェア提供を再設計"
     },
     {
       "sysId": "a5b29bf4938fcb10043532edfaba10c6",
@@ -38375,7 +38637,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Data Center Bandwagon」キャンペーン、米国を標的とした影響工作"
     },
     {
       "sysId": "a5b29bf4938fcb10043532edfaba10cb",
@@ -38391,7 +38654,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAIの「国家向け教育プログラム」次なる段階"
     },
     {
       "sysId": "a5b29bf4938fcb10043532edfaba10d0",
@@ -38407,7 +38671,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "NVIDIAのエンジニア・研究者、Codexでの開発事例"
     },
     {
       "sysId": "a5b29bf4938fcb10043532edfaba10d5",
@@ -38423,7 +38688,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Uber、OpenAIでドライバーの収益最適化と予約の高速化を支援"
     },
     {
       "sysId": "a5b29bf4938fcb10043532edfaba10da",
@@ -38439,7 +38705,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "マイクロソフトとOpenAI提携、次なるフェーズへ"
     },
     {
       "sysId": "a5b29bf4938fcb10043532edfaba10df",
@@ -38455,7 +38722,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "Codexは(ほぼ)何にでも使える"
     },
     {
       "sysId": "a9b29bf4938fcb10043532edfaba10a4",
@@ -38471,7 +38739,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPT Businessに「プレミアムシート」登場へ"
     },
     {
       "sysId": "a9b29bf4938fcb10043532edfaba10a9",
@@ -38487,7 +38756,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "GPT-5.6でコストパフォーマンスの最前線を前進"
     },
     {
       "sysId": "a9b29bf4938fcb10043532edfaba10ae",
@@ -38503,7 +38773,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "長期タスク対応モデルの時代における安全性とアライメント"
     },
     {
       "sysId": "a9b29bf4938fcb10043532edfaba10b3",
@@ -38519,7 +38790,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "政府・国家安全保障分野との連携方針"
     },
     {
       "sysId": "a9b29bf4938fcb10043532edfaba10b8",
@@ -38535,7 +38807,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "免疫学者Derya Unutmaz氏、GPT-5の助けで3年越しの謎を解明"
     },
     {
       "sysId": "a9b29bf4938fcb10043532edfaba10bd",
@@ -38551,7 +38824,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAI、Onaを買収へ"
     },
     {
       "sysId": "a9b29bf4938fcb10043532edfaba10c2",
@@ -38567,7 +38841,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Wasmer、CodexでエッジのNode.jsランタイムを構築"
     },
     {
       "sysId": "a9b29bf4938fcb10043532edfaba10c7",
@@ -38583,7 +38858,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "信頼できる第三者評価のための共通指針"
     },
     {
       "sysId": "a9b29bf4938fcb10043532edfaba10cc",
@@ -38599,7 +38875,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "より安全で透明性の高いAIエコシステムへ、コンテンツ来歴技術を推進"
     },
     {
       "sysId": "a9b29bf4938fcb10043532edfaba10d1",
@@ -38615,7 +38892,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "企業はどのようにAI活用を拡大しているか"
     },
     {
       "sysId": "a9b29bf4938fcb10043532edfaba10d6",
@@ -38631,7 +38909,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "GPT-5.5 Instant、より賢く明快でパーソナルに"
     },
     {
       "sysId": "a9b29bf4938fcb10043532edfaba10db",
@@ -38647,7 +38926,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "AIによる雇用移行をモデル化する"
     },
     {
       "sysId": "a9b29bf4938fcb10043532edfaba10e0",
@@ -38663,7 +38943,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "次世代サイバー防衛のための「信頼されたアクセス」"
     },
     {
       "sysId": "adb29bf4938fcb10043532edfaba10a0",
@@ -38679,7 +38960,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAI、Dali Rajic氏を最高収益責任者(CRO)に任命"
     },
     {
       "sysId": "adb29bf4938fcb10043532edfaba10a5",
@@ -38695,7 +38977,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "米国心理学会と連携、若者のメンタルヘルスとAIに関する取り組み"
     },
     {
       "sysId": "adb29bf4938fcb10043532edfaba10aa",
@@ -38711,7 +38994,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "GPT-5.6、最先端の知能と効率性を融合"
     },
     {
       "sysId": "adb29bf4938fcb10043532edfaba10af",
@@ -38727,7 +39011,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "Cars24、OpenAIで会話対応をスケールし開発を高速化"
     },
     {
       "sysId": "adb29bf4938fcb10043532edfaba10b4",
@@ -38743,7 +39028,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "MUFG、OpenAIと共にAIネイティブな組織を目指す"
     },
     {
       "sysId": "adb29bf4938fcb10043532edfaba10b9",
@@ -38759,7 +39045,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "長時間タスクを「Codex-maxxing」でこなす"
     },
     {
       "sysId": "adb29bf4938fcb10043532edfaba10be",
@@ -38775,7 +39062,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "中国関連の影響工作、米国のAI議論を標的に"
     },
     {
       "sysId": "adb29bf4938fcb10043532edfaba10c3",
@@ -38791,7 +39079,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「ChatGPT Sites」"
     },
     {
       "sysId": "adb29bf4938fcb10043532edfaba10c8",
@@ -38807,7 +39096,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "Codexで自己改善する税務エージェントを構築"
     },
     {
       "sysId": "adb29bf4938fcb10043532edfaba10cd",
@@ -38823,7 +39113,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPT Workで実現するオペレーション業務"
     },
     {
       "sysId": "adb29bf4938fcb10043532edfaba10d2",
@@ -38839,7 +39130,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "GPT-5.5とGPT-5.5-Cyberで「信頼されたアクセス」をサイバー領域に拡大"
     },
     {
       "sysId": "adb29bf4938fcb10043532edfaba10d7",
@@ -38855,7 +39147,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAI、低遅延な音声AIを大規模に提供する仕組み"
     },
     {
       "sysId": "adb29bf4938fcb10043532edfaba10dc",
@@ -38871,7 +39164,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "臨床医にとって使いやすいChatGPTへ"
     },
     {
       "sysId": "adb29bf4938fcb10043532edfaba10e1",
@@ -38887,7 +39181,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPTでブレインストーミング"
     },
     {
       "sysId": "e1b29bf4938fcb10043532edfaba10a1",
@@ -38903,7 +39198,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "支援から実行へ、企業はAIをどう活用しているか"
     },
     {
       "sysId": "e1b29bf4938fcb10043532edfaba10a6",
@@ -38919,7 +39215,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「尋ねる」から「実行する」へ、世界はChatGPTをどう活用しているか"
     },
     {
       "sysId": "e1b29bf4938fcb10043532edfaba10ab",
@@ -38935,7 +39232,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "エージェント型AI時代の科学計算"
     },
     {
       "sysId": "e1b29bf4938fcb10043532edfaba10b0",
@@ -38951,7 +39249,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "米国、州・連邦双方の取り組みでAI安全性を推進"
     },
     {
       "sysId": "e1b29bf4938fcb10043532edfaba10b5",
@@ -38967,7 +39266,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Australian Payments Plus、ChatGPTとCodexでスピード向上"
     },
     {
       "sysId": "e1b29bf4938fcb10043532edfaba10ba",
@@ -38983,7 +39283,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "サムスン電子、従業員向けにChatGPTとCodexを導入"
     },
     {
       "sysId": "e1b29bf4938fcb10043532edfaba10bf",
@@ -38999,7 +39300,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "データから意思決定へ、LSEGが信頼できるAIをスケールする方法"
     },
     {
       "sysId": "e1b29bf4938fcb10043532edfaba10c4",
@@ -39015,7 +39317,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "あらゆる職種・ツール・ワークフローに対応するCodex"
     },
     {
       "sysId": "e1b29bf4938fcb10043532edfaba10c9",
@@ -39031,7 +39334,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "Warp、GPT-5.5でオープンソース開発に大きく賭ける"
     },
     {
       "sysId": "e1b29bf4938fcb10043532edfaba10ce",
@@ -39047,7 +39351,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPTに新しい家計管理体験を追加"
     },
     {
       "sysId": "e1b29bf4938fcb10043532edfaba10d3",
@@ -39063,7 +39368,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Parloa、顧客が話したくなるサービスエージェントを構築"
     },
     {
       "sysId": "e1b29bf4938fcb10043532edfaba10d8",
@@ -39079,7 +39385,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "「高度なアカウントセキュリティ」を発表"
     },
     {
       "sysId": "e1b29bf4938fcb10043532edfaba10dd",
@@ -39095,7 +39402,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "ChatGPTに「ワークスペースエージェント」を導入"
     },
     {
       "sysId": "e1b29bf4938fcb10043532edfaba10e2",
@@ -39111,7 +39419,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "責任ある安全なAI利用のために"
     },
     {
       "sysId": "e5b29bf4938fcb10043532edfaba1086",
@@ -39127,7 +39436,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "「防御側の好機」、その時間軸"
     },
     {
       "sysId": "e5b29bf4938fcb10043532edfaba10a2",
@@ -39143,7 +39453,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAI、テキサス州アボット知事へ責任あるAIインフラに関する書簡"
     },
     {
       "sysId": "e5b29bf4938fcb10043532edfaba10a7",
@@ -39159,7 +39470,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "6か月で構築した、即応性の高い音声AI向けリアルタイムシステム"
     },
     {
       "sysId": "e5b29bf4938fcb10043532edfaba10ac",
@@ -39175,7 +39487,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "報道機関はAIをどう活用し使命を果たしているか"
     },
     {
       "sysId": "e5b29bf4938fcb10043532edfaba10b1",
@@ -39191,7 +39504,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPT Workで実現する営業ワークフロー"
     },
     {
       "sysId": "e5b29bf4938fcb10043532edfaba10b6",
@@ -39207,7 +39521,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Genebench-Pro」の中身"
     },
     {
       "sysId": "e5b29bf4938fcb10043532edfaba10bb",
@@ -39223,7 +39538,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ほぼ自律的な「AI化学者」、医薬化学の難反応を改良"
     },
     {
       "sysId": "e5b29bf4938fcb10043532edfaba10c0",
@@ -39239,7 +39555,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "SECへS-1登録届出書の草案を秘密裏に提出"
     },
     {
       "sysId": "e5b29bf4938fcb10043532edfaba10c5",
@@ -39255,7 +39572,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ミシガン州にインテリジェンス時代のインフラを構築"
     },
     {
       "sysId": "e5b29bf4938fcb10043532edfaba10ca",
@@ -39271,7 +39589,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "ヴァージン・アトランティック航空、Codexでリリースを高速化"
     },
     {
       "sysId": "e5b29bf4938fcb10043532edfaba10cf",
@@ -39287,7 +39606,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Windows版Codexを実現する安全で効果的なサンドボックスを構築"
     },
     {
       "sysId": "e5b29bf4938fcb10043532edfaba10d4",
@@ -39303,7 +39623,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "プライバシーを守りながらChatGPTが世界について学ぶ仕組み"
     },
     {
       "sysId": "e5b29bf4938fcb10043532edfaba10d9",
@@ -39319,7 +39640,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "コミュニティの安全性への私たちの取り組み"
     },
     {
       "sysId": "e5b29bf4938fcb10043532edfaba10de",
@@ -39335,7 +39657,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「ChatGPT Images 2.0」を発表"
     },
     {
       "sysId": "e9b29bf4938fcb10043532edfaba1087",
@@ -39351,7 +39674,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Ultrafastモード」をプレビュー、GPT-5.6 Solが最大14倍速に"
     },
     {
       "sysId": "e9b29bf4938fcb10043532edfaba10a3",
@@ -39367,7 +39691,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "最先端サイバーモデルをより信頼できる手に"
     },
     {
       "sysId": "e9b29bf4938fcb10043532edfaba10a8",
@@ -39383,7 +39708,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「豊富な知能」を構築する"
     },
     {
       "sysId": "e9b29bf4938fcb10043532edfaba10ad",
@@ -39399,7 +39725,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "「ChatGPT for small business」プログラムを発表"
     },
     {
       "sysId": "e9b29bf4938fcb10043532edfaba10b2",
@@ -39415,7 +39742,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「GPT-5.5 Bio」バグバウンティ"
     },
     {
       "sysId": "e9b29bf4938fcb10043532edfaba10b7",
@@ -39431,7 +39759,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "エージェントは仕事をどう変えているか"
     },
     {
       "sysId": "e9b29bf4938fcb10043532edfaba10bc",
@@ -39447,7 +39776,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "次なる働き方の時代に向けた「OpenAI Academy」新講座"
     },
     {
       "sysId": "e9b29bf4938fcb10043532edfaba10c1",
@@ -39463,7 +39793,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "「Dreaming」、より役立つChatGPTのための記憶力向上機能"
     },
     {
       "sysId": "e9b29bf4938fcb10043532edfaba10c6",
@@ -39479,7 +39810,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ボストン小児病院、AIで新たな診断を可能に"
     },
     {
       "sysId": "e9b29bf4938fcb10043532edfaba10cb",
@@ -39495,7 +39827,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAIのモデル、離散幾何学の中心的予想を反証"
     },
     {
       "sysId": "e9b29bf4938fcb10043532edfaba10d0",
@@ -39511,7 +39844,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AutoScout24、AI活用ワークフローでエンジニアリングをスケール"
     },
     {
       "sysId": "e9b29bf4938fcb10043532edfaba10d5",
@@ -39527,7 +39861,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Singular Bank、ChatGPTとCodexで行員の業務を迅速化"
     },
     {
       "sysId": "e9b29bf4938fcb10043532edfaba10da",
@@ -39543,7 +39878,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 5
+      "score": 5,
+      "titleJa": "オーケストレーションのオープンソース仕様「Symphony」"
     },
     {
       "sysId": "e9b29bf4938fcb10043532edfaba10df",
@@ -39559,7 +39895,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ライフサイエンス研究向け「GPT-Rosalind」を発表"
     },
     {
       "sysId": "edb29bf4938fcb10043532edfaba10a4",
@@ -39575,7 +39912,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "重大サイバー能力の新たな最前線への対応"
     },
     {
       "sysId": "edb29bf4938fcb10043532edfaba10a9",
@@ -39591,7 +39929,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "avatarin、GPT-Realtimeで24時間対応の小売エージェントを構築"
     },
     {
       "sysId": "edb29bf4938fcb10043532edfaba10ae",
@@ -39607,7 +39946,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AI時代のスコアカード"
     },
     {
       "sysId": "edb29bf4938fcb10043532edfaba10b3",
@@ -39623,7 +39963,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "コーディング評価における「シグナルとノイズ」の切り分け"
     },
     {
       "sysId": "edb29bf4938fcb10043532edfaba10b8",
@@ -39639,7 +39980,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Omio、対話型旅行体験の未来を構築"
     },
     {
       "sysId": "edb29bf4938fcb10043532edfaba10bd",
@@ -39655,7 +39997,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "天体物理学者、Codexでブラックホールのシミュレーションを支援"
     },
     {
       "sysId": "edb29bf4938fcb10043532edfaba10c2",
@@ -39671,7 +40014,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "最先端AIの民主的ガバナンスに向けた青写真"
     },
     {
       "sysId": "edb29bf4938fcb10043532edfaba10c7",
@@ -39687,7 +40031,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "Endava、Codexでエージェント型組織を構築"
     },
     {
       "sysId": "edb29bf4938fcb10043532edfaba10cc",
@@ -39703,7 +40048,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAIとDell、ハイブリッド・オンプレミス環境向けにCodexを提供する提携"
     },
     {
       "sysId": "edb29bf4938fcb10043532edfaba10d1",
@@ -39719,7 +40065,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「OpenAI Campus Network」学生団体向け参加登録フォーム"
     },
     {
       "sysId": "edb29bf4938fcb10043532edfaba10d6",
@@ -39735,7 +40082,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "EMEA地域における若者の安全と幸福を推進"
     },
     {
       "sysId": "edb29bf4938fcb10043532edfaba10db",
@@ -39751,7 +40099,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「GPT-5.5」システムカード"
     },
     {
       "sysId": "edb29bf4938fcb10043532edfaba10e0",
@@ -39767,7 +40116,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 5
+      "score": 5,
+      "titleJa": "企業、Cloudflare Agent CloudとOpenAIでエージェント型ワークフローを実現"
     },
     {
       "sysId": "11b29bf4938fcb10043532edfaba1024",
@@ -39783,7 +40133,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "空気圧駆動の64ピクセルディスプレイ[動画]"
     },
     {
       "sysId": "11b29bf4938fcb10043532edfaba107c",
@@ -39799,7 +40150,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "幻滅したソフトウェアエンジニア、バビロニアの書記官にLLMを説明する"
     },
     {
       "sysId": "11b29bf4938fcb10043532edfaba1083",
@@ -39815,7 +40167,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「インテリジェンス・エイジ」を発表"
     },
     {
       "sysId": "15b29bf4938fcb10043532edfaba107d",
@@ -39831,7 +40184,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Googleの「パーソナルインテリジェンス」に自分の生活データを預けてみた、その効果"
     },
     {
       "sysId": "15b29bf4938fcb10043532edfaba107f",
@@ -39847,7 +40201,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "より良い答え、広がる思考、ChatGPTと批判的思考トレーニングで学生が得るもの"
     },
     {
       "sysId": "15b29bf4938fcb10043532edfaba1084",
@@ -39863,7 +40218,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「ChatGPT Ads」、欧州全域に展開拡大"
     },
     {
       "sysId": "19b29bf4938fcb10043532edfaba1021",
@@ -39879,7 +40235,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "あなたの「一番奇妙なエージェントログ」、AI安全性研究者と共有しませんか"
     },
     {
       "sysId": "19b29bf4938fcb10043532edfaba1080",
@@ -39895,7 +40252,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "Hugging Faceのインシデントとその後の道筋"
     },
     {
       "sysId": "19b29bf4938fcb10043532edfaba1085",
@@ -39911,7 +40269,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「ChatGPT for Teens」を発表、学びのために設計され保護機能を搭載"
     },
     {
       "sysId": "1db29bf4938fcb10043532edfaba1022",
@@ -39927,7 +40286,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "プロンプトインジェクションでAmazon Kiroからデータを窃取"
     },
     {
       "sysId": "1db29bf4938fcb10043532edfaba1081",
@@ -39943,7 +40303,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ロシア発の新たな秘密影響工作キャンペーンを阻止"
     },
     {
       "sysId": "51b29bf4938fcb10043532edfaba1023",
@@ -39959,7 +40320,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "電子書籍管理ソフト「Calibre」、AIによる表紙生成に対応"
     },
     {
       "sysId": "51b29bf4938fcb10043532edfaba1082",
@@ -39975,7 +40337,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「ChatGPT Work」「Codex」向け管理者プラグインを発表"
     },
     {
       "sysId": "55b29bf4938fcb10043532edfaba107c",
@@ -39991,7 +40354,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIデータセンターへの反発、実態は「本物」かつ「自然発生的」で「広範囲」"
     },
     {
       "sysId": "55b29bf4938fcb10043532edfaba1083",
@@ -40007,7 +40371,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Stampli、ChatGPT Workで導入作業時間を68%削減"
     },
     {
       "sysId": "59b29bf4938fcb10043532edfaba1020",
@@ -40023,7 +40388,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Google、「AIモード」で検索結果をさらに埋没させる"
     },
     {
       "sysId": "59b29bf4938fcb10043532edfaba107d",
@@ -40039,7 +40405,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ウェブページの「AIに聞く」ボタン、SNSリンクのような存在に"
     },
     {
       "sysId": "59b29bf4938fcb10043532edfaba107f",
@@ -40055,7 +40422,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ブラジルでのOpenAIの展開を拡大"
     },
     {
       "sysId": "59b29bf4938fcb10043532edfaba1084",
@@ -40071,7 +40439,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "国家安全保障分野における民主的監視を強化"
     },
     {
       "sysId": "5db29bf4938fcb10043532edfaba1021",
@@ -40087,7 +40456,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AI新規チームが陥りがちな3つの失敗"
     },
     {
       "sysId": "5db29bf4938fcb10043532edfaba1080",
@@ -40103,7 +40473,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "loveholidays、Codexで誰もが「作り手」になれる環境を実現"
     },
     {
       "sysId": "91b29bf4938fcb10043532edfaba1022",
@@ -40119,7 +40490,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "FRB、強力な新たな経済的要因「AI」に向き合う"
     },
     {
       "sysId": "91b29bf4938fcb10043532edfaba1081",
@@ -40135,7 +40507,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「豊富な知能」を支えるフルスタック"
     },
     {
       "sysId": "95b29bf4938fcb10043532edfaba1023",
@@ -40151,7 +40524,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Gemini Notebook」、所有する書籍の内容も分析対象に"
     },
     {
       "sysId": "95b29bf4938fcb10043532edfaba107b",
@@ -40167,7 +40541,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "マイクロソフト支援のAIデータセンター、無許可ガスタービン62基で反発招く"
     },
     {
       "sysId": "95b29bf4938fcb10043532edfaba1082",
@@ -40183,7 +40558,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Kiro内のGPT-5.6で開発者向けコストパフォーマンスを向上"
     },
     {
       "sysId": "99b29bf4938fcb10043532edfaba107c",
@@ -40199,7 +40575,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "マスク氏、Grokの政治的偏向は「サンフランシスコ・ベイエリアの政治観の反映」と発言"
     },
     {
       "sysId": "99b29bf4938fcb10043532edfaba107e",
@@ -40215,7 +40592,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "SpaceXによるCursor買収を受けた当社の対応方針"
     },
     {
       "sysId": "99b29bf4938fcb10043532edfaba1083",
@@ -40231,7 +40609,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "最先端モデル向けに「ゼロデータ保持」を提供"
     },
     {
       "sysId": "9db29bf4938fcb10043532edfaba1020",
@@ -40247,7 +40626,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「BoqCalc」、単価を捏造せず500行の内訳書に価格を付けるAIパイプライン"
     },
     {
       "sysId": "9db29bf4938fcb10043532edfaba107f",
@@ -40263,7 +40643,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "学びは止まらない、AIが学習を継続的にする仕組み"
     },
     {
       "sysId": "9db29bf4938fcb10043532edfaba1084",
@@ -40279,7 +40660,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "CodeAIと提携、「AIネイティブ世代」第1号を育成"
     },
     {
       "sysId": "d1b29bf4938fcb10043532edfaba1021",
@@ -40295,7 +40677,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Chris Peikert氏に聞く、AIによる格子暗号証明"
     },
     {
       "sysId": "d1b29bf4938fcb10043532edfaba1080",
@@ -40311,7 +40694,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「ChatGPT for Teachers」を米国のより多くの学区へ"
     },
     {
       "sysId": "d1b29bf4938fcb10043532edfaba1085",
@@ -40327,7 +40711,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "サイバー分野で重大な能力を持つ時代のモデル開発の歩調"
     },
     {
       "sysId": "d5b29bf4938fcb10043532edfaba1022",
@@ -40343,7 +40728,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Show HN:「DataZen」、複数DB横断ワークフロー向けローカルファーストクライアント"
     },
     {
       "sysId": "d5b29bf4938fcb10043532edfaba1081",
@@ -40359,7 +40745,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Jalapeño」の初期結果、AI推論で業界最速級の速度と効率を実証"
     },
     {
       "sysId": "d9b29bf4938fcb10043532edfaba1023",
@@ -40375,7 +40762,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "主要なオープンAIモデルに重大なセキュリティ上の弱点が発覚"
     },
     {
       "sysId": "d9b29bf4938fcb10043532edfaba107b",
@@ -40391,7 +40779,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Debian、「生成AIの責任ある利用」を認める方針を投票で可決"
     },
     {
       "sysId": "d9b29bf4938fcb10043532edfaba1082",
@@ -40407,7 +40796,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「インテリジェンス・エイジ」を発表"
     },
     {
       "sysId": "ddb29bf4938fcb10043532edfaba107c",
@@ -40423,7 +40813,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIでウェブベースのゲームを作る"
     },
     {
       "sysId": "ddb29bf4938fcb10043532edfaba107e",
@@ -40439,7 +40830,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "タイの次世代AIスタートアップを支援"
     },
     {
       "sysId": "ddb29bf4938fcb10043532edfaba1083",
@@ -40455,7 +40847,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "Replit、GPT-5.6 Lunaでソフトウェア開発への門戸を拡大"
     },
     {
       "sysId": "01b29bf4938fcb10043532edfaba101d",
@@ -40471,7 +40864,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 4
+      "score": 4,
+      "titleJa": "「WikiSkill」、エージェントの経験をスキル進化のための永続知識に変換"
     },
     {
       "sysId": "05b29bf4938fcb10043532edfaba101e",
@@ -40487,7 +40881,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 4
+      "score": 4,
+      "titleJa": "「RedEvoAgent」、経験駆動型スキル進化による自動レッドチーミングエージェント"
     },
     {
       "sysId": "09b29bf4938fcb10043532edfaba101f",
@@ -40503,7 +40898,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "F1スコアを超えて、AIモデル用セキュリティスキャナーのカバレッジと障害復旧を評価"
     },
     {
       "sysId": "45b29bf4938fcb10043532edfaba101d",
@@ -40519,7 +40915,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 4
+      "score": 4,
+      "titleJa": "「SWE-Prime」、少ない軌跡でより高い性能を実現"
     },
     {
       "sysId": "49b29bf4938fcb10043532edfaba101e",
@@ -40535,7 +40932,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "グラフ構造化された電子占有状態への離散フローマッチングによる機構論的反応予測"
     },
     {
       "sysId": "89b29bf4938fcb10043532edfaba101d",
@@ -40551,7 +40949,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "「TTPO」、テスト時方策最適化"
     },
     {
       "sysId": "8db29bf4938fcb10043532edfaba101e",
@@ -40567,7 +40966,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "変換型言語モデルの確率的推定"
     },
     {
       "sysId": "c1b29bf4938fcb10043532edfaba101f",
@@ -40583,7 +40983,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 5
+      "score": 5,
+      "titleJa": "「ペルソナ・実行分離」、実行監査下で進化するLLMエージェントのためのアーキテクチャパターン"
     },
     {
       "sysId": "c5b29bf4938fcb10043532edfaba101b",
@@ -40599,7 +41000,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「CritICL」、小型言語モデルの失敗モードから学ぶ推論時Weak-to-Strong汎化"
     },
     {
       "sysId": "cdb29bf4938fcb10043532edfaba101d",
@@ -40615,7 +41017,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 6
+      "score": 6,
+      "titleJa": "静的から動的へ、「MCR-Bench」による実世界のコードレビューベンチマーク"
     }
   ]
 }
