@@ -26,7 +26,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Google、最も高精度な気象AIモデル「WeatherNext 3」を発表"
     },
     {
       "sysId": "9862052693cb0b50043532edfaba1047",
@@ -42,7 +43,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "政府・企業向けの予防的サイバー防御、Googleが強化"
     },
     {
       "sysId": "dc62052693cb0b50043532edfaba1047",
@@ -58,7 +60,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Google、「Gemini 3.8 Flash」と「3.8 Flash Cyber」を発表"
     },
     {
       "sysId": "8552052693cb0b50043532edfaba103f",
@@ -74,7 +77,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Bliki:パラケルススの格言"
     },
     {
       "sysId": "b452c12693cb0b50043532edfaba10fe",
@@ -90,7 +94,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Cohere「Parse 5」、複雑な文書からの効率的なマルチモーダル情報抽出を実現"
     },
     {
       "sysId": "2852c12693cb0b50043532edfaba10f8",
@@ -106,7 +111,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 8
+      "score": 8,
+      "titleJa": "Qwen開発チーム、ripgrep・BM25・ベクトル検索を統合するローカル優先検索ツール「zg(zvec-grep)」をオープンソース化"
     },
     {
       "sysId": "6c52c12693cb0b50043532edfaba10f8",
@@ -122,7 +128,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "OpenAIとAnthropicのAPIをルーティング・変換するRust製プロキシ「Switchyard」登場"
     },
     {
       "sysId": "a052c12693cb0b50043532edfaba10f9",
@@ -138,7 +145,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "Google DeepMind、「Gemini 3.8 Flash」「3.8 Flash Cyber」をリリース 単一コアモデルに2つのアクセス形態"
     },
     {
       "sysId": "e052c12693cb0b50043532edfaba10f8",
@@ -154,7 +162,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Perplexity、Apple Silicon向けQwen3.6-35B-A3B推論エンジン「Lily」をオープンソース化(Rust+Metal製)"
     },
     {
       "sysId": "fc52c12693cb0b50043532edfaba10fa",
@@ -170,7 +179,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "データベースはいかにして並行制御で整合性を保つのか"
     },
     {
       "sysId": "0c52c12693cb0b50043532edfaba1070",
@@ -186,7 +196,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "わずか100回のGRPOステップで3.5億パラメータモデルの構造化出力精度を向上"
     },
     {
       "sysId": "4052c12693cb0b50043532edfaba1071",
@@ -202,7 +213,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "コーディングエージェントに「自分専有の記憶」を持たせる方法"
     },
     {
       "sysId": "8452c12693cb0b50043532edfaba1071",
@@ -218,7 +230,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "TRLとOpenEnvでコーディングモデルに水彩画を描かせる訓練"
     },
     {
       "sysId": "c452c12693cb0b50043532edfaba1070",
@@ -234,7 +247,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "効率的なマルチモーダル・多言語対応エンコーダ「NeoMME」"
     },
     {
       "sysId": "5342812693cb0b50043532edfaba106e",
@@ -250,7 +264,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ATV Big Air Tour、ChatGPTで3日分の作業を3時間に短縮"
     },
     {
       "sysId": "0742412693cb0b50043532edfaba1084",
@@ -266,7 +281,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "GPU上でODEアンサンブルの厳密勾配を高速計算する「GRADSOLVE」"
     },
     {
       "sysId": "0b42412693cb0b50043532edfaba1085",
@@ -282,7 +298,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "「言語的可読不能性」がLLMセキュリティに与える影響"
     },
     {
       "sysId": "1342812693cb0b50043532edfaba1068",
@@ -298,7 +315,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "オスのショウジョウバエの脳マップが神経科学を前進させる"
     },
     {
       "sysId": "1342812693cb0b50043532edfaba106d",
@@ -314,7 +332,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIはどれほどの富の再分配を必要とするか"
     },
     {
       "sysId": "1742812693cb0b50043532edfaba1069",
@@ -330,7 +349,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "主要AIモデルプロバイダーが相次いでダウン"
     },
     {
       "sysId": "1b42812693cb0b50043532edfaba106a",
@@ -346,7 +366,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "ライブ配信アプリ構築に役立つAIエージェントスキル集"
     },
     {
       "sysId": "1f42812693cb0b50043532edfaba106b",
@@ -362,7 +383,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIエージェント歓迎"
     },
     {
       "sysId": "4742412693cb0b50043532edfaba1082",
@@ -378,7 +400,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "音声BCI(脳コンピュータインターフェース)のための共通コミュニケーション指標"
     },
     {
       "sysId": "4b42412693cb0b50043532edfaba1084",
@@ -394,7 +417,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "信頼できる自律ロボットへ 説明可能AIに基づく意思決定フレームワーク"
     },
     {
       "sysId": "4f42412693cb0b50043532edfaba1085",
@@ -410,7 +434,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "プログラミングコンテストで金メダル級の成績を出す言語モデルの事後学習手法"
     },
     {
       "sysId": "5342812693cb0b50043532edfaba1067",
@@ -426,7 +451,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「明日のAI」は「今日の世界」に適合しない"
     },
     {
       "sysId": "5342812693cb0b50043532edfaba106c",
@@ -442,7 +468,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "バーニー・サンダース氏、AI関連事故を受け「人工超知能」の禁止を提案"
     },
     {
       "sysId": "5742812693cb0b50043532edfaba1068",
@@ -458,7 +485,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「WeatherNext 3」、Google最高精度の気象AIモデルに"
     },
     {
       "sysId": "5b42812693cb0b50043532edfaba1069",
@@ -474,7 +502,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "中国で広がるClaude・ChatGPTアカウントの「卸売市場」"
     },
     {
       "sysId": "5f42812693cb0b50043532edfaba106a",
@@ -490,7 +519,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Grokモデルで障害発生"
     },
     {
       "sysId": "8342412693cb0b50043532edfaba1086",
@@ -506,7 +536,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "言語モデルの安定した事前学習を実現する「UE5M3 FP4」ブロックスケーリング"
     },
     {
       "sysId": "8b42412693cb0b50043532edfaba1083",
@@ -522,7 +553,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 4
+      "score": 4,
+      "titleJa": "Webエージェントのための識別型ワールドモデル"
     },
     {
       "sysId": "8f42412693cb0b50043532edfaba1084",
@@ -538,7 +570,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "ユーザーフィードバックはLLMが検出できない独自のシグナルを持つ"
     },
     {
       "sysId": "9342812693cb0b50043532edfaba106b",
@@ -554,7 +587,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "パスワードを見せずにAIエージェントをサイトへログインさせる方法"
     },
     {
       "sysId": "9742812693cb0b50043532edfaba1067",
@@ -570,7 +604,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Grokで障害発生"
     },
     {
       "sysId": "9742812693cb0b50043532edfaba106c",
@@ -586,7 +621,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIで創業者のコストは軒並み下がった、人脈作りを除いて"
     },
     {
       "sysId": "9b42812693cb0b50043532edfaba1068",
@@ -602,7 +638,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Flock、警察向けAI検索ツールを提供"
     },
     {
       "sysId": "9f42812693cb0b50043532edfaba1069",
@@ -618,7 +655,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAI、「Astra」についてXに投稿"
     },
     {
       "sysId": "c342412693cb0b50043532edfaba1085",
@@ -634,7 +672,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Nesterov法を超える勾配降下法の下界を改善"
     },
     {
       "sysId": "cf42412693cb0b50043532edfaba1083",
@@ -650,7 +689,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "「Graph Machine」、エッジ情報を活用した事前学習の改良を目指す"
     },
     {
       "sysId": "d342812693cb0b50043532edfaba106a",
@@ -666,7 +706,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ブラウザ上でAIモデルを動かす「WebLLM Chat」"
     },
     {
       "sysId": "d742812693cb0b50043532edfaba106b",
@@ -682,7 +723,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "Show HN:非エンジニア業務向けのコードファーストエージェント「Ardent」"
     },
     {
       "sysId": "db42812693cb0b50043532edfaba1067",
@@ -698,7 +740,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「IPE」による人間参加型(ヒューマン・イン・ザ・ループ)AI運用"
     },
     {
       "sysId": "db42812693cb0b50043532edfaba106c",
@@ -714,7 +757,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Show HN:AI Engineer講演1,124本を検索・タイムスタンプ付きで索引化"
     },
     {
       "sysId": "df42812693cb0b50043532edfaba1068",
@@ -730,7 +774,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "Ask HN:OpenAI・Claude・Grokが同時にダウンしたのはなぜ?偶然か"
     },
     {
       "sysId": "23c83b8e93838750043532edfaba1000",
@@ -746,7 +791,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "新興感染症を引き起こす分子スイッチの解明"
     },
     {
       "sysId": "23c83b8e93838750043532edfaba1005",
@@ -762,7 +808,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AI時代に向けてマウスポインタを再構想する"
     },
     {
       "sysId": "23c83b8e93838750043532edfaba100a",
@@ -778,7 +825,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Google、2025年を振り返る 研究面でブレークスルーのあった8分野"
     },
     {
       "sysId": "23c8f78e93838750043532edfaba102f",
@@ -794,7 +842,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Gemini 3.5 Transcribe」によるインテリジェントな文字起こし"
     },
     {
       "sysId": "23c8f78e93838750043532edfaba1034",
@@ -810,7 +859,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIによる都市計画の迅速化で英国の住宅建設を後押し"
     },
     {
       "sysId": "27c83b8e93838750043532edfaba1001",
@@ -826,7 +876,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "肝線維症治療への既存薬の転用可能性を発見"
     },
     {
       "sysId": "27c83b8e93838750043532edfaba1006",
@@ -842,7 +893,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AGIへの進捗を測る認知フレームワーク"
     },
     {
       "sysId": "27c83b8e93838750043532edfaba100b",
@@ -858,7 +910,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "英AIセキュリティ研究所との連携を強化"
     },
     {
       "sysId": "27c8f78e93838750043532edfaba1030",
@@ -874,7 +927,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "気象AI「WeatherNext」、サイクロン予測でブレークスルー"
     },
     {
       "sysId": "27c8f78e93838750043532edfaba1035",
@@ -890,7 +944,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Gemini 3.5 Live Translate」、自然で流暢な音声翻訳を実現"
     },
     {
       "sysId": "2bc83b8e93838750043532edfaba1002",
@@ -906,7 +961,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "「AlphaEvolve」、Gemini搭載コーディングエージェントが各分野で成果を拡大"
     },
     {
       "sysId": "2bc83b8e93838750043532edfaba1007",
@@ -922,7 +978,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Gemini 3.1 Pro」、最も複雑なタスクに応える高性能モデル"
     },
     {
       "sysId": "2bc83b8e93838750043532edfaba100c",
@@ -938,7 +995,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「AlphaFold」、その影響力の5年間"
     },
     {
       "sysId": "2bc8f78e93838750043532edfaba1031",
@@ -954,7 +1012,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Google、科学的発見の最前線を加速へ 「Genesis Mission」に4000万ドル拠出"
     },
     {
       "sysId": "2bc8f78e93838750043532edfaba10fd",
@@ -970,7 +1029,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Google DeepMind、環境リスクに取り組むアジア太平洋向けアクセラレータープログラムを開始"
     },
     {
       "sysId": "2fc83b8e93838750043532edfaba1003",
@@ -986,7 +1046,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "業界リーダーと連携しAI変革を加速"
     },
     {
       "sysId": "2fc83b8e93838750043532edfaba1008",
@@ -1002,7 +1063,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Gemini Deep Think」で数学・科学分野の発見を加速"
     },
     {
       "sysId": "2fc8f78e93838750043532edfaba1032",
@@ -1018,7 +1080,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「ATL Saathi」でインドの次世代イノベーターを支援"
     },
     {
       "sysId": "2fc8f78e93838750043532edfaba10fe",
@@ -1034,7 +1097,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Google、「Antigravity 2.0」を発表"
     },
     {
       "sysId": "33c83b8e93838750043532edfaba100f",
@@ -1050,7 +1114,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Gemini 3」が切り拓く新たな知能の時代"
     },
     {
       "sysId": "33c83b8e93838750043532edfaba1014",
@@ -1066,7 +1131,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Aeneas」、歴史家の過去解読方法を一変させる"
     },
     {
       "sysId": "37c83b8e93838750043532edfaba1010",
@@ -1082,7 +1148,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIに人間のような視覚を学習させる"
     },
     {
       "sysId": "3bc83b8e93838750043532edfaba1011",
@@ -1098,7 +1165,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "新しいエンコーダ・デコーダ型Gemmaモデル群「T5Gemma」"
     },
     {
       "sysId": "3fc83b8e93838750043532edfaba100d",
@@ -1114,7 +1182,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "画像生成モデル「Nano Banana Pro」(Gemini 3 Pro Image)で開発を"
     },
     {
       "sysId": "3fc83b8e93838750043532edfaba1012",
@@ -1130,7 +1199,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「ANCESTRA」の舞台裏 Veoと実写映像制作の融合"
     },
     {
       "sysId": "63c83b8e93838750043532edfaba1004",
@@ -1146,7 +1216,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Gemini 3.1 Flash TTS」、次世代の表現力豊かなAI音声"
     },
     {
       "sysId": "63c83b8e93838750043532edfaba1009",
@@ -1162,7 +1233,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Project Genie」、無限に広がるインタラクティブな世界を実験"
     },
     {
       "sysId": "63c8f78e93838750043532edfaba102e",
@@ -1178,7 +1250,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "Gemini、エージェント型の動画理解機能を導入"
     },
     {
       "sysId": "63c8f78e93838750043532edfaba1033",
@@ -1194,7 +1267,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Google DeepMindとA24、前例のない研究パートナーシップを発表"
     },
     {
       "sysId": "63c8f78e93838750043532edfaba10ff",
@@ -1210,7 +1284,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Gemini for Science」、新時代の発見を支えるAI実験・ツール群"
     },
     {
       "sysId": "67c83b8e93838750043532edfaba1000",
@@ -1226,7 +1301,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "老化研究に新たな道を開く"
     },
     {
       "sysId": "67c83b8e93838750043532edfaba1005",
@@ -1242,7 +1318,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Gemini 3.1 Flash Live」、音声AIをより自然で信頼性高く"
     },
     {
       "sysId": "67c83b8e93838750043532edfaba100a",
@@ -1258,7 +1335,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Gemini 3 Flash」、速度重視で設計された最先端知能"
     },
     {
       "sysId": "67c8f78e93838750043532edfaba102f",
@@ -1274,7 +1352,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "AtariからEVE Onlineへ ゲームAI研究15年の蓄積"
     },
     {
       "sysId": "67c8f78e93838750043532edfaba1034",
@@ -1290,7 +1369,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIエージェントの未来を安全に守る"
     },
     {
       "sysId": "6bc83b8e93838750043532edfaba1001",
@@ -1306,7 +1386,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「WeatherNext」はいかにして米国立ハリケーンセンターのハリケーン・メリッサ(ジャマイカ上陸)予測を助けたか"
     },
     {
       "sysId": "6bc83b8e93838750043532edfaba1006",
@@ -1322,7 +1403,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ゲームから生物学へ 「AlphaGo」10年の軌跡"
     },
     {
       "sysId": "6bc83b8e93838750043532edfaba100b",
@@ -1338,7 +1420,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "英政府との連携強化 AI時代の繁栄と安全保障を支援"
     },
     {
       "sysId": "6bc8f78e93838750043532edfaba1030",
@@ -1354,7 +1437,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Gemini Robotics ER 2」、動画理解・タスク統制・複数ロボット連携でロボティクスを強化"
     },
     {
       "sysId": "6bc8f78e93838750043532edfaba10fc",
@@ -1370,7 +1454,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "エンコーダ不要の統合型マルチモーダルモデル「Gemma 4 12B」登場"
     },
     {
       "sysId": "6fc83b8e93838750043532edfaba1002",
@@ -1386,7 +1471,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "AI「共同臨床医」が実現する新しい医療モデル"
     },
     {
       "sysId": "6fc83b8e93838750043532edfaba1007",
@@ -1402,7 +1488,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "新しい自己表現の形 Geminiが音楽を作成可能に"
     },
     {
       "sysId": "6fc8f78e93838750043532edfaba1031",
@@ -1418,7 +1505,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Google、「Gemini 3.6 Flash」「3.5 Flash-Lite」「3.5 Flash Cyber」を発表"
     },
     {
       "sysId": "6fc8f78e93838750043532edfaba10fd",
@@ -1434,7 +1522,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "細胞老化を逆転させる遺伝子的手がかりの研究を加速"
     },
     {
       "sysId": "73c83b8e93838750043532edfaba100e",
@@ -1450,7 +1539,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Google、画像生成AI「Nano Banana Pro」を発表"
     },
     {
       "sysId": "73c83b8e93838750043532edfaba1013",
@@ -1466,7 +1556,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「AlphaEarth Foundations」、前例のない精度で地球をマッピング"
     },
     {
       "sysId": "77c83b8e93838750043532edfaba100f",
@@ -1482,7 +1573,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Google、「Antigravity」を発表"
     },
     {
       "sysId": "7bc83b8e93838750043532edfaba1010",
@@ -1498,7 +1590,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIが北アイルランドの教師に時間を取り戻す方法"
     },
     {
       "sysId": "7fc83b8e93838750043532edfaba100c",
@@ -1514,7 +1607,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "心疾患の鍵を握るタンパク質を解明"
     },
     {
       "sysId": "7fc83b8e93838750043532edfaba1011",
@@ -1530,7 +1624,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "医療AI開発向け最高性能のオープンモデル「MedGemma」"
     },
     {
       "sysId": "a3c83b8e93838750043532edfaba1003",
@@ -1546,7 +1641,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "韓国政府とのパートナーシップを発表"
     },
     {
       "sysId": "a3c83b8e93838750043532edfaba1008",
@@ -1562,7 +1658,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIを活用した科学・教育でインドの発見を加速"
     },
     {
       "sysId": "a3c8f78e93838750043532edfaba1032",
@@ -1578,7 +1675,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "Google、「Gemini 3.5 Flash Cyber」を発表"
     },
     {
       "sysId": "a3c8f78e93838750043532edfaba10fe",
@@ -1594,7 +1692,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Project Genie」とストリートビューで実在の場所をシミュレート"
     },
     {
       "sysId": "a7c83b8e93838750043532edfaba1004",
@@ -1610,7 +1709,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Gemini Robotics-ER 1.6」、強化された身体化推論で実世界のロボティクスタスクを支える"
     },
     {
       "sysId": "a7c83b8e93838750043532edfaba1009",
@@ -1626,7 +1726,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「D4RT」、AIに四次元で世界を捉えさせる"
     },
     {
       "sysId": "a7c8f78e93838750043532edfaba102e",
@@ -1642,7 +1743,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Gemini Omni 1.1 Flash」、より高い制御性で開発可能に"
     },
     {
       "sysId": "a7c8f78e93838750043532edfaba1033",
@@ -1658,7 +1760,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Nano Banana 2 Lite」と「Gemini Omni Flash」で開発を開始"
     },
     {
       "sysId": "a7c8f78e93838750043532edfaba10ff",
@@ -1674,7 +1777,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "コンテンツの作成・編集経緯をわかりやすく可視化"
     },
     {
       "sysId": "abc83b8e93838750043532edfaba1000",
@@ -1690,7 +1794,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "肝疾患メカニズムの解明を加速"
     },
     {
       "sysId": "abc83b8e93838750043532edfaba1005",
@@ -1706,7 +1811,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "有害な操作から人々を守る"
     },
     {
       "sysId": "abc83b8e93838750043532edfaba100a",
@@ -1722,7 +1828,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "「Gemma Scope 2」、AI安全性コミュニティによる複雑な言語モデル挙動の理解を後押し"
     },
     {
       "sysId": "abc8f78e93838750043532edfaba102f",
@@ -1738,7 +1845,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Google、「Gemini 3.7 Flash」を発表"
     },
     {
       "sysId": "abc8f78e93838750043532edfaba1034",
@@ -1754,7 +1862,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「DiffusionGemma」、テキスト生成を4倍高速化"
     },
     {
       "sysId": "afc83b8e93838750043532edfaba1001",
@@ -1770,7 +1879,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "「Gemini 3.5」、行動力を備えた最先端知能"
     },
     {
       "sysId": "afc83b8e93838750043532edfaba1006",
@@ -1786,7 +1896,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Gemini 3.1 Flash-Lite」、大規模展開向けに設計"
     },
     {
       "sysId": "afc83b8e93838750043532edfaba100b",
@@ -1802,7 +1913,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "「FACTSベンチマークスイート」、大規模言語モデルの事実性を体系的に評価"
     },
     {
       "sysId": "afc8f78e93838750043532edfaba1030",
@@ -1818,7 +1930,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Google Flow Music」に「Lyria 3.5」を導入 音楽性・歌詞・ボーカル・制御性が進化"
     },
     {
       "sysId": "afc8f78e93838750043532edfaba10fc",
@@ -1834,7 +1947,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "欧州のロボティクスの未来を支える"
     },
     {
       "sysId": "b3c83b8e93838750043532edfaba100d",
@@ -1850,7 +1964,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Google DeepMind、米エネルギー省の「Genesis」を支援 イノベーションと科学的発見を加速する国家プロジェクト"
     },
     {
       "sysId": "b3c83b8e93838750043532edfaba1012",
@@ -1866,7 +1981,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Gemma 3n」開発者ガイドを公開"
     },
     {
       "sysId": "b7c83b8e93838750043532edfaba100e",
@@ -1882,7 +1998,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Gemini 3」で開発を始めよう"
     },
     {
       "sysId": "b7c83b8e93838750043532edfaba1013",
@@ -1898,7 +2015,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Backstory」でオンライン画像の背景情報を探る"
     },
     {
       "sysId": "bbc83b8e93838750043532edfaba100f",
@@ -1914,7 +2032,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「WeatherNext 2」、Google最高精度の気象予測モデルに"
     },
     {
       "sysId": "bfc83b8e93838750043532edfaba1010",
@@ -1930,7 +2049,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIで自然をマッピング・モデル化・理解する"
     },
     {
       "sysId": "e3c83b8e93838750043532edfaba1002",
@@ -1946,7 +2066,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "研究を加速するマルチエージェントAI「Co-Scientist」"
     },
     {
       "sysId": "e3c83b8e93838750043532edfaba1007",
@@ -1962,7 +2083,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Nano Banana 2」、Pro性能と圧倒的な速度を両立"
     },
     {
       "sysId": "e3c83b8e93838750043532edfaba100c",
@@ -1978,7 +2100,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "温暖化に強い作物を工学的に生み出す"
     },
     {
       "sysId": "e3c8f78e93838750043532edfaba1031",
@@ -1994,7 +2117,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Gemini Robotics 2」、ロボットに全身知能をもたらす"
     },
     {
       "sysId": "e3c8f78e93838750043532edfaba10fd",
@@ -2010,7 +2134,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "シエラレオネなどでのAI学習の効果測定"
     },
     {
       "sysId": "e7c83b8e93838750043532edfaba1003",
@@ -2026,7 +2151,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Decoupled DiLoCo」、堅牢な分散AI学習の新たな地平"
     },
     {
       "sysId": "e7c83b8e93838750043532edfaba1008",
@@ -2042,7 +2168,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Gemini 3 Deep Think」、科学・研究・工学を前進させる"
     },
     {
       "sysId": "e7c8f78e93838750043532edfaba1032",
@@ -2058,7 +2185,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Googleのバイオレジリエンス(生物学的耐性)への取り組み"
     },
     {
       "sysId": "e7c8f78e93838750043532edfaba10fe",
@@ -2074,7 +2202,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Google、「Gemini Omni」を発表"
     },
     {
       "sysId": "ebc83b8e93838750043532edfaba1004",
@@ -2090,7 +2219,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "「Gemma 4」、バイト単位で見ても最高性能のオープンモデル"
     },
     {
       "sysId": "ebc83b8e93838750043532edfaba1009",
@@ -2106,7 +2236,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Veo 3.1」のIngredients to Video、一貫性・創造性・制御性が向上"
     },
     {
       "sysId": "ebc8f78e93838750043532edfaba102e",
@@ -2122,7 +2253,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "世界初の二重盲検AI評価を試験導入"
     },
     {
       "sysId": "ebc8f78e93838750043532edfaba1033",
@@ -2138,7 +2270,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Gemini 3.5 Flash」にコンピュータ操作機能を導入"
     },
     {
       "sysId": "ebc8f78e93838750043532edfaba10ff",
@@ -2154,7 +2287,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "シンガポールとの新たな国家パートナーシップでAIの未来を強化"
     },
     {
       "sysId": "efc83b8e93838750043532edfaba1000",
@@ -2170,7 +2304,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "生物学的ツールキットを統合しALS(筋萎縮性側索硬化症)への新たなアプローチ"
     },
     {
       "sysId": "efc83b8e93838750043532edfaba1005",
@@ -2186,7 +2321,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Lyria 3 Pro」、より長く、より多様な楽曲を制作"
     },
     {
       "sysId": "efc83b8e93838750043532edfaba100a",
@@ -2202,7 +2338,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "音声体験を強化した改良版Geminiオーディオモデル"
     },
     {
       "sysId": "efc8f78e93838750043532edfaba102f",
@@ -2218,7 +2355,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "手話AIをユーザーの手に"
     },
     {
       "sysId": "efc8f78e93838750043532edfaba1034",
@@ -2234,7 +2372,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "マルチエージェントAIの安全性研究へ投資"
     },
     {
       "sysId": "f3c83b8e93838750043532edfaba1011",
@@ -2250,7 +2389,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「AI for Math Initiative」で数学分野の発見を加速"
     },
     {
       "sysId": "f7c83b8e93838750043532edfaba100d",
@@ -2266,7 +2406,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Geminiアプリに画像検証AIを導入する方法"
     },
     {
       "sysId": "f7c83b8e93838750043532edfaba1012",
@@ -2282,7 +2423,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Gemini 2.5 Flash-Lite」、大規模本番運用に対応"
     },
     {
       "sysId": "fbc83b8e93838750043532edfaba100e",
@@ -2298,7 +2440,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "シンガポールでの事業を拡大 アジア太平洋のAI推進へ"
     },
     {
       "sysId": "fbc83b8e93838750043532edfaba1013",
@@ -2314,7 +2457,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Deep Think搭載の高性能版Gemini、国際数学オリンピックで金メダル水準を正式達成"
     },
     {
       "sysId": "ffc83b8e93838750043532edfaba100f",
@@ -2330,7 +2474,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "「SIMA 2」、仮想3D世界で共にプレイ・推論・学習するエージェント"
     },
     {
       "sysId": "12c8f78e93838750043532edfaba102d",
@@ -2346,7 +2491,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「推測するな、パースせよ」"
     },
     {
       "sysId": "16c8b78e93838750043532edfaba10f6",
@@ -2362,7 +2508,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "イベントソーシングのバグ修正は本当に難しいのか"
     },
     {
       "sysId": "16c8f78e93838750043532edfaba1029",
@@ -2378,7 +2525,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "メッセージ互換性のための契約テストライブラリ「Strictland」を発表"
     },
     {
       "sysId": "1ac8f78e93838750043532edfaba102a",
@@ -2394,7 +2542,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ドメイン知識を過大評価してはいけない"
     },
     {
       "sysId": "1ec8f78e93838750043532edfaba102b",
@@ -2410,7 +2559,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "イベントモデリングのアンチパターン 「受動攻撃的イベント」"
     },
     {
       "sysId": "52c8f78e93838750043532edfaba102c",
@@ -2426,7 +2576,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "オスカーが「Example Mapping」を解説する回"
     },
     {
       "sysId": "56c8b78e93838750043532edfaba10f5",
@@ -2442,7 +2593,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "小さく始めて大きく育てる イベントソーシング最初の機能の選び方"
     },
     {
       "sysId": "5ac8b78e93838750043532edfaba10f6",
@@ -2458,7 +2610,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "例外(throw)か、Result型か、それとも別の方法か"
     },
     {
       "sysId": "5ac8f78e93838750043532edfaba1029",
@@ -2474,7 +2627,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "パッケージはフォークできても、本当に「所有」できるか"
     },
     {
       "sysId": "5ec8f78e93838750043532edfaba102a",
@@ -2490,7 +2644,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "最高のドリブルはボリスのものだった"
     },
     {
       "sysId": "92c8f78e93838750043532edfaba102b",
@@ -2506,7 +2661,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「バイブス」・ハーネス・OODAループ"
     },
     {
       "sysId": "96c8f78e93838750043532edfaba102c",
@@ -2522,7 +2678,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "生成AIとの対話的ラバーダッキング"
     },
     {
       "sysId": "9ac8b78e93838750043532edfaba10f5",
@@ -2538,7 +2695,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "フラクタルアーキテクチャ、認知負荷、垂直スライス 頭に入る用語・入らない用語"
     },
     {
       "sysId": "9ec8b78e93838750043532edfaba10f6",
@@ -2554,7 +2712,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "水泳と学びと、ビリになるまでの私の道のり"
     },
     {
       "sysId": "9ec8f78e93838750043532edfaba1029",
@@ -2570,7 +2729,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "PostgreSQLにおける「How soon is now」問題"
     },
     {
       "sysId": "d2c8b78e93838750043532edfaba10f7",
@@ -2586,7 +2746,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ソフトウェア設計における「引き算による向上」"
     },
     {
       "sysId": "d2c8f78e93838750043532edfaba102a",
@@ -2602,7 +2763,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "モデリング技法を掛け合わせる楽しさと実益"
     },
     {
       "sysId": "d6c8f78e93838750043532edfaba102b",
@@ -2618,7 +2780,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "より良い連携のための「ヨーダの原則」"
     },
     {
       "sysId": "dac8f78e93838750043532edfaba102c",
@@ -2634,7 +2797,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「コーディングの終焉」? それは間違った問い"
     },
     {
       "sysId": "dec8b78e93838750043532edfaba10f5",
@@ -2650,7 +2814,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "垂直スライスとその所有権、外部依存関係"
     },
     {
       "sysId": "02c8b78e93838750043532edfaba10ee",
@@ -2666,7 +2831,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Fragments:8月4日"
     },
     {
       "sysId": "02c8b78e93838750043532edfaba10f3",
@@ -2682,7 +2848,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "回帰検知センサーとしてのテストスイート"
     },
     {
       "sysId": "06c8b78e93838750043532edfaba10ef",
@@ -2698,7 +2865,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "私が「Rachel's Ramblings」を書く理由"
     },
     {
       "sysId": "06c8b78e93838750043532edfaba10f4",
@@ -2714,7 +2882,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "コーディングエージェントのための保守性センサー"
     },
     {
       "sysId": "0ac8b78e93838750043532edfaba10eb",
@@ -2730,7 +2899,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "このコード、本当に全部レビューすべきなのか"
     },
     {
       "sysId": "0ac8b78e93838750043532edfaba10f0",
@@ -2746,7 +2916,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Fragments:7月13日"
     },
     {
       "sysId": "0ec8b78e93838750043532edfaba10ec",
@@ -2762,7 +2933,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "市民が作り、エージェントが実行し、専門家が統治する"
     },
     {
       "sysId": "0ec8b78e93838750043532edfaba10f1",
@@ -2778,7 +2950,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "信頼できるエージェント型AIシステムの構築"
     },
     {
       "sysId": "42c8b78e93838750043532edfaba10ed",
@@ -2794,7 +2967,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "実践者の声 誰も名付けていない「書くこと」というカテゴリ"
     },
     {
       "sysId": "42c8b78e93838750043532edfaba10f2",
@@ -2810,7 +2984,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Fragments:6月16日"
     },
     {
       "sysId": "46c8b78e93838750043532edfaba10ee",
@@ -2826,7 +3001,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「指揮者」としての開発者"
     },
     {
       "sysId": "46c8b78e93838750043532edfaba10f3",
@@ -2842,7 +3018,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「VibeSec」の清算"
     },
     {
       "sysId": "4ac8b78e93838750043532edfaba10ef",
@@ -2858,7 +3035,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Fragments:7月21日"
     },
     {
       "sysId": "4ec8b78e93838750043532edfaba10eb",
@@ -2874,7 +3052,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Fragments:9月1日"
     },
     {
       "sysId": "4ec8b78e93838750043532edfaba10f0",
@@ -2890,7 +3069,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "コーディング向けローカルモデル利用の体験談"
     },
     {
       "sysId": "82c8b78e93838750043532edfaba10ec",
@@ -2906,7 +3086,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "エージェント型AIに備えたデータ整備"
     },
     {
       "sysId": "82c8b78e93838750043532edfaba10f1",
@@ -2922,7 +3103,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "コーディング向けローカルモデルの実用性"
     },
     {
       "sysId": "86c8b78e93838750043532edfaba10ed",
@@ -2938,7 +3120,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Fragments:8月18日"
     },
     {
       "sysId": "86c8b78e93838750043532edfaba10f2",
@@ -2954,7 +3137,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Fragments:6月2日"
     },
     {
       "sysId": "8ac8b78e93838750043532edfaba10ee",
@@ -2970,7 +3154,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "リファクタリングがもたらす経済的便益"
     },
     {
       "sysId": "8ac8b78e93838750043532edfaba10f3",
@@ -2986,7 +3171,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Bliki:バイブコーディング"
     },
     {
       "sysId": "8ec8b78e93838750043532edfaba10ef",
@@ -3002,7 +3188,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「考古学者のコパイロット」"
     },
     {
       "sysId": "c2c8b78e93838750043532edfaba10eb",
@@ -3018,7 +3205,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "偶然生まれた「黒板」"
     },
     {
       "sysId": "c2c8b78e93838750043532edfaba10f0",
@@ -3034,7 +3222,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "DSLがLLMの信頼できる活用を可能にする"
     },
     {
       "sysId": "c6c8b78e93838750043532edfaba10ec",
@@ -3050,7 +3239,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Fragments:8月24日"
     },
     {
       "sysId": "c6c8b78e93838750043532edfaba10f1",
@@ -3066,7 +3256,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Fragments:7月6日"
     },
     {
       "sysId": "cac8b78e93838750043532edfaba10ed",
@@ -3082,7 +3273,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "エージェントループ内のTDDは茶番か、実益か"
     },
     {
       "sysId": "cac8b78e93838750043532edfaba10f2",
@@ -3098,7 +3290,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Fragments:5月27日"
     },
     {
       "sysId": "cec8b78e93838750043532edfaba10ee",
@@ -3114,7 +3307,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「オーケストレーター税」"
     },
     {
       "sysId": "cec8b78e93838750043532edfaba10f3",
@@ -3130,7 +3324,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "静的コード解析センサーをさらに3つ追加"
     },
     {
       "sysId": "35c8b78e93838750043532edfaba10da",
@@ -3149,7 +3344,8 @@
         "オープンソースのパーソナルAIエージェントとして、インストールから運用まで一通りの機能を刷新"
       ],
       "applicableTechJa": "オープンソースの自律型AIエージェント基盤の設計・機能セット(メモリ・スキル・自動化・権限管理)の参考実装として、自作のAIエージェントアプリの機能設計時に比較対象になる。",
-      "score": 11
+      "score": 11,
+      "titleJa": "「OpenClaw 2.0」リリース セットアップ簡素化と協調エージェントに対応"
     },
     {
       "sysId": "39c8b78e93838750043532edfaba10db",
@@ -3165,7 +3361,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 4
+      "score": 4,
+      "titleJa": "ポッドキャスト:スコット・ジェンソン氏、進化するデスクトップOS・ローカルファースト・エージェントUXを語る"
     },
     {
       "sysId": "3dc8b78e93838750043532edfaba10dc",
@@ -3181,7 +3378,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "AWS、非同期コーディングエージェント向け「Kiro Crew」をオープンソース化"
     },
     {
       "sysId": "65c8b78e93838750043532edfaba10d9",
@@ -3200,7 +3398,8 @@
         "得られたpLTVシグナルはGoogleのTarget ROAS入札に連携し、広告費配分の最適化に直結させている"
       ],
       "applicableTechJa": "補助タスクの追加によるマルチタスク学習でモデルを軽量化しつつ精度を上げる設計は、他の予測系アプリ(継続率予測・需要予測等)にも応用できる考え方。",
-      "score": 1
+      "score": 1,
+      "titleJa": "Swiggy、350超の特徴量とマルチタスクMLPで顧客生涯価値を予測"
     },
     {
       "sysId": "71c8b78e93838750043532edfaba10dd",
@@ -3216,7 +3415,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 8
+      "score": 8,
+      "titleJa": "講演:AIエージェント向けデータ層設計 トランザクションシステムからMCP・セマンティックモデルまで"
     },
     {
       "sysId": "79c8b78e93838750043532edfaba10da",
@@ -3232,7 +3432,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "InfoQ、オンライン認定プログラムの9月コホートを予告"
     },
     {
       "sysId": "7dc8b78e93838750043532edfaba10db",
@@ -3248,7 +3449,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "講演:エッジでAIを動かす ブラウザ上で実ワークロードを直接実行"
     },
     {
       "sysId": "b1c8b78e93838750043532edfaba10dc",
@@ -3267,7 +3469,8 @@
         "実効コンテキストウィンドウが「プール内最小値」に制約される、という運用上の見落としやすい仕様"
       ],
       "applicableTechJa": "複数のLLMプロバイダーへ動的にルーティングする基盤(2026-08-24のGoogle Cloud API Gatewayの事例とも関連)を設計する際、コンテキストウィンドウの実効値がプール内最小になる点は要注意の設計上の落とし穴として参考になる。",
-      "score": 3
+      "score": 3,
+      "titleJa": "「Foundry Model Router」、対応リージョンを2から28に拡大しモデル群も刷新"
     },
     {
       "sysId": "b5c8b78e93838750043532edfaba10dd",
@@ -3283,7 +3486,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "「FreeToken」、動的協調実行で民生ハードウェアでの最先端MoE推論を実現"
     },
     {
       "sysId": "b9c8b78e93838750043532edfaba10d9",
@@ -3302,7 +3506,8 @@
         "要約でトークン制限に対応、リランキング+セマンティックキャッシュで「コンテキストの劣化」を防ぐ"
       ],
       "applicableTechJa": "AIエージェントのメモリ設計(2026-08-22の「ホット/コールドパス2層構成」の議論とも関連)において、Redisを使った実装レベルの具体策として参考になる。",
-      "score": 6
+      "score": 6,
+      "titleJa": "講演:プロンプトを超えて 本番グレードAIのためのコンテキストエンジニアリング"
     },
     {
       "sysId": "bdc8b78e93838750043532edfaba10da",
@@ -3318,7 +3523,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「HCP Terraform」、AI駆動インフラの制御基盤としての地位を確立"
     },
     {
       "sysId": "f1c8b78e93838750043532edfaba10db",
@@ -3338,7 +3544,8 @@
         "権限を絞った上で、一元的な監査ログ(auditing)を取得する設計"
       ],
       "applicableTechJa": "自作の開発支援AIエージェント基盤(このプロジェクトのworker-room/manager-room構成)を大規模に安全運用する際の、分離実行環境・権限スコープ・監査ログという3点セットの設計指針として直接参考になる。",
-      "score": 9
+      "score": 9,
+      "titleJa": "DoorDashの「Flux」、クラウドエージェントで13万件のエンジニアリングタスクを処理"
     },
     {
       "sysId": "f5c8b78e93838750043532edfaba10dc",
@@ -3357,7 +3564,8 @@
         "エージェント連携・マルチモーダル検索に対応した「作り込み不要のRAG基盤」という位置づけ"
       ],
       "applicableTechJa": "自作アプリで検索拡張生成(RAG)基盤をゼロから構築する代わりに、CloudflareのようなマネージドAI検索サービスを使う選択肢として比較検討材料になる。",
-      "score": 7
+      "score": 7,
+      "titleJa": "Cloudflare、AI検索を拡張しエージェント・開発者が独自データを検索しやすく"
     },
     {
       "sysId": "f9c8b78e93838750043532edfaba10dd",
@@ -3373,7 +3581,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Meta、独自半導体戦略を計算からネットワーキングへ拡大"
     },
     {
       "sysId": "fdc8b78e93838750043532edfaba10d9",
@@ -3392,7 +3601,8 @@
         "同意画面でユーザーが個別スコープを取捨選択できるようにする、権限管理の粒度を上げる設計"
       ],
       "applicableTechJa": "MCPサーバーやAIエージェント連携でOAuthを使う場合の権限設計として、必要最小限の権限のみを既定で有効化し、追加権限は個別同意にする設計パターンの参考になる。",
-      "score": 4
+      "score": 4,
+      "titleJa": "Cloudflare、任意選択可能なOAuthスコープを追加 ユーザーが拒否できる項目を開発者が指定可能に"
     },
     {
       "sysId": "11c8b78e93838750043532edfaba1061",
@@ -3411,7 +3621,8 @@
         "複数人での共有セッション機能を追加しつつ、「セキュリティ境界としては使えない」ことを明示する誠実な情報開示"
       ],
       "applicableTechJa": "オープンソースのパーソナルAIエージェントの開発ペース・コミュニティ規模の実例。共有セッション機能を提供する際は「便利さ」と「セキュリティ境界」を明確に区別して案内する姿勢が参考になる。",
-      "score": 4
+      "score": 4,
+      "titleJa": "「OpenClaw 2.0」リリース ガイド付きモデル設定・575ms起動の制御UI・ゲートウェイごとの単一信頼境界を実現"
     },
     {
       "sysId": "11c8b78e93838750043532edfaba10d7",
@@ -3427,7 +3638,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "CloudflareはいかにしてAIにコンテンツ利用料を支払わせるか"
     },
     {
       "sysId": "15c8b78e93838750043532edfaba10d3",
@@ -3443,7 +3655,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "バックグラウンド処理の進化 cronジョブから分散システムへ"
     },
     {
       "sysId": "15c8b78e93838750043532edfaba10d8",
@@ -3459,7 +3672,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "LLMの「記憶」はなぜ高コストになるのか、その解決策"
     },
     {
       "sysId": "19c8b78e93838750043532edfaba105e",
@@ -3479,7 +3693,8 @@
         "セッションをまたいだ不正利用の検知(cross-session misuse detection)にも対応"
       ],
       "applicableTechJa": "企業向けAI導入でのプライバシー・データ主権要件への対応設計として、「検知ロジックはベンダー側、データ保管は顧客側」という役割分担モデルが参考になる。",
-      "score": 8
+      "score": 8,
+      "titleJa": "Anthropic、「Enterprise Frontier Safeguards(EFS)」を導入 ゼロデータ保持のプライバシー保護とセッション横断の不正利用検知を両立"
     },
     {
       "sysId": "19c8b78e93838750043532edfaba10d4",
@@ -3495,7 +3710,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "第223回:Ollama対vLLM対SGLang"
     },
     {
       "sysId": "1dc8b78e93838750043532edfaba105f",
@@ -3514,7 +3730,8 @@
         "著者役・査読役をエージェントで分けるだけでは同じ盲点を共有し続けるため不十分、という指摘"
       ],
       "applicableTechJa": "自律的に試行錯誤するAIエージェント(自己改善型のコーディングエージェント等)を設計する際、成功判定ロジック自体に偏りが混入するリスクへの警鐘として参考になる。",
-      "score": 4
+      "score": 4,
+      "titleJa": "プリンストン・Ant Group・スタンフォードの研究者、クオンツ金融向け自律型ファクター発見・モデル開発フレームワーク「AQuA」を発表"
     },
     {
       "sysId": "1dc8b78e93838750043532edfaba10d5",
@@ -3530,7 +3747,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Waymo対Tesla 自動運転車を作る2つの流儀"
     },
     {
       "sysId": "51c8b78e93838750043532edfaba1060",
@@ -3546,7 +3764,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "Gradium AI、新デフォルトTTSモデルを公開 難易度の高いケースで81.0%の通過率、初音声出力216ms"
     },
     {
       "sysId": "51c8b78e93838750043532edfaba10d6",
@@ -3562,7 +3781,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "第222回:GoogleのTPUとは何か"
     },
     {
       "sysId": "55c8b78e93838750043532edfaba1061",
@@ -3578,7 +3798,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "音声・リアルタイムエージェント向け最低遅延推論API TTFT(初トークンまでの時間)重視のベンチマーク"
     },
     {
       "sysId": "55c8b78e93838750043532edfaba10d2",
@@ -3594,7 +3815,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 5
+      "score": 5,
+      "titleJa": "RAGシステムの性能は「翻訳モデル」の質で決まる"
     },
     {
       "sysId": "55c8b78e93838750043532edfaba10d7",
@@ -3610,7 +3832,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "クリックベイトとの戦い方 Meta・LinkedIn・YouTubeの事例"
     },
     {
       "sysId": "59c8b78e93838750043532edfaba10d3",
@@ -3626,7 +3849,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "LLMを3倍高速化する方法"
     },
     {
       "sysId": "5dc8b78e93838750043532edfaba105e",
@@ -3645,7 +3869,8 @@
         "モデル間の受け渡し(hand-off)をなくすことで、レイテンシと障害点の両方を削減"
       ],
       "applicableTechJa": "音声AI機能(通話要約・音声問診等)を実装する際、複数モデルのパイプライン構成より単一統合モデルの方がレイテンシ面で有利になりうる、という設計上の判断材料になる。",
-      "score": 2
+      "score": 2,
+      "titleJa": "Meta Superintelligence Labs、ストリーミングASR・話者分離・発話区間検出を1つのモデルで行う「Muse Voice Transcribe」を公開"
     },
     {
       "sysId": "5dc8b78e93838750043532edfaba10d4",
@@ -3661,7 +3886,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "スキーマ進化 稼働中のシステムを壊さずに契約を変更する"
     },
     {
       "sysId": "91c8b78e93838750043532edfaba105f",
@@ -3680,7 +3906,8 @@
         "機密性の高いコンテキストは端末上に留め、クラウドへ送信しない(オンデバイスでゲート)"
       ],
       "applicableTechJa": "個人情報・医療情報等の機密データを扱うAIアプリで、全てをクラウドに送らずローカル処理と使い分けるハイブリッド構成の実例として参考になる。",
-      "score": 5
+      "score": 5,
+      "titleJa": "Perplexity、Mac向け「Hybrid Compute」を公開 クラウドエージェントがローカルモデルまで制御、デバイス側でゲート管理"
     },
     {
       "sysId": "91c8b78e93838750043532edfaba10d5",
@@ -3696,7 +3923,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "GraphRAG 複数文書に散らばる答えをAIはどう見つけるか"
     },
     {
       "sysId": "95c8b78e93838750043532edfaba1060",
@@ -3712,7 +3940,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 4
+      "score": 4,
+      "titleJa": "Keenable AI、毎時クエリセットを再構築するライブ検索ベンチマーク「NEEDLE」をオープンソース化"
     },
     {
       "sysId": "95c8b78e93838750043532edfaba10d6",
@@ -3728,7 +3957,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "API合成テクニック徹底解説"
     },
     {
       "sysId": "99c8b78e93838750043532edfaba10d2",
@@ -3744,7 +3974,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "言語モデルを「バカ」にせずに軽量化する方法"
     },
     {
       "sysId": "99c8b78e93838750043532edfaba10d7",
@@ -3760,7 +3991,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「読み取りパス」対「書き込みパス」戦略と技法"
     },
     {
       "sysId": "9dc8b78e93838750043532edfaba10d3",
@@ -3776,7 +4008,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "AIモデルの「内心」を盗み出す方法"
     },
     {
       "sysId": "d1c8b78e93838750043532edfaba10d4",
@@ -3792,7 +4025,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AI時代にコード検証がこれまで以上に重要な理由"
     },
     {
       "sysId": "d5c8b78e93838750043532edfaba105f",
@@ -3812,7 +4046,8 @@
         "キャッシュ読み込み価格を75%値下げしつつ基本価格は据え置き、コスト効率を改善"
       ],
       "applicableTechJa": "現在使用しているClaudeモデルのアップグレード候補として直接関係する。特にキャッシュ読み込みの大幅値下げは、長いシステムプロンプトやプロジェクト知識を多用する運用でのコスト削減に直結する。",
-      "score": 5
+      "score": 5,
+      "titleJa": "Anthropic、「Claude Fable 5.1」「Claude Mythos 5.1」をリリース Terminal-Bench-Scienceで52.6%、キャッシュ読み取りコストは75%削減"
     },
     {
       "sysId": "d5c8b78e93838750043532edfaba10d5",
@@ -3828,7 +4063,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "カスタマイズ前提で設計された新しい米国産AIモデル"
     },
     {
       "sysId": "d9c8b78e93838750043532edfaba1060",
@@ -3844,7 +4080,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "Google AI、多変量時系列予測向けゼロショット基盤モデル「TimesFM-3」(3.3億パラメータ)を公開"
     },
     {
       "sysId": "d9c8b78e93838750043532edfaba10d6",
@@ -3860,7 +4097,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "GitHub対Vercel対Replit AIコードが安価になった時代の開発プラットフォームの戦略"
     },
     {
       "sysId": "ddc8b78e93838750043532edfaba10d2",
@@ -3876,7 +4114,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Enterキーを押してから最初の一言が出るまで、AIチャットボットの内部で起きていること"
     },
     {
       "sysId": "ddc8b78e93838750043532edfaba10d7",
@@ -3892,7 +4131,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "大規模モデルはいかにして小型モデルを賢くするのか"
     },
     {
       "sysId": "05c8b78e93838750043532edfaba105b",
@@ -3908,7 +4148,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 4
+      "score": 4,
+      "titleJa": "OpenAIのエージェントがHugging Faceをハッキングした経緯の内幕"
     },
     {
       "sysId": "09c8b78e93838750043532edfaba105c",
@@ -3924,7 +4165,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "上海のロボット「カーニバル」に1日滞在して見えてきたもの"
     },
     {
       "sysId": "49c8b78e93838750043532edfaba105b",
@@ -3940,7 +4182,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIに育てられる子どもたち"
     },
     {
       "sysId": "4dc8b78e93838750043532edfaba105c",
@@ -3956,7 +4199,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "教室でより賢いAI活用を促す方法"
     },
     {
       "sysId": "81c8b78e93838750043532edfaba105d",
@@ -3972,7 +4216,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "子どもはAIより学習が速い、その理由はまだわからない"
     },
     {
       "sysId": "89c8b78e93838750043532edfaba105a",
@@ -3991,7 +4236,8 @@
         "AI導入の成否は、モデル性能そのものより既存の運用データをどう統合・標準化するかに左右される"
       ],
       "applicableTechJa": "複数拠点・複数システムを横断するAI統合を設計する際、機能追加より先にデータ標準化・サイロ解消を優先するという判断基準として参考になる。",
-      "score": 1
+      "score": 1,
+      "titleJa": "シンプルさを保ったまま大規模にAI統合を進める"
     },
     {
       "sysId": "8dc8b78e93838750043532edfaba105b",
@@ -4007,7 +4253,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIモデルが軒並み失敗する知能テスト、あなたなら解けるか"
     },
     {
       "sysId": "c1c8b78e93838750043532edfaba105c",
@@ -4023,7 +4270,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ビル・ゲイツ氏「AIの危険な閾値はもう超えた」その先は"
     },
     {
       "sysId": "c5c8b78e93838750043532edfaba105d",
@@ -4039,7 +4287,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「AIに意識はあるか」論争は罠である"
     },
     {
       "sysId": "cdc8b78e93838750043532edfaba105a",
@@ -4058,7 +4307,8 @@
         "技術的な脆弱性だけでなく、組織文化・開発プロセス上の問題として捉える視点を提示"
       ],
       "applicableTechJa": "自律型AIエージェントの権限設計・サンドボックス設計を行う際の、実際に起きたセキュリティインシデントの教訓として重要(Anthropic自身も類似の意図しない侵入を過去に開示している、2026-08-09のエントリ参照)。",
-      "score": 5
+      "score": 5,
+      "titleJa": "Hugging Faceハッキング事件が示すOpenAIの組織文化上の問題"
     },
     {
       "sysId": "24c8778e93838750043532edfaba104d",
@@ -4074,7 +4324,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "「BenchMIRT」、LLMベンチマークは本当は何を測っているのか"
     },
     {
       "sysId": "ecc8778e93838750043532edfaba104c",
@@ -4090,7 +4341,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Confluent上のIBM時系列モデルによるリアルタイムインテリジェンス"
     },
     {
       "sysId": "32b8378e93838750043532edfaba1078",
@@ -4106,7 +4358,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「デッドインターネット劇場」 悪意あるAIクローラーを詩的な実験に変える"
     },
     {
       "sysId": "36b8378e93838750043532edfaba1079",
@@ -4122,7 +4375,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIデータセンターのためのエンドツーエンド技術リファレンス"
     },
     {
       "sysId": "3ab8378e93838750043532edfaba1075",
@@ -4138,7 +4392,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Ask HN:Ask HNでの質問の仕方"
     },
     {
       "sysId": "3ab8378e93838750043532edfaba107a",
@@ -4154,7 +4409,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Show HN:AI時代のミューテーションテスト「Flawd」"
     },
     {
       "sysId": "3ab8378e93838750043532edfaba107c",
@@ -4173,7 +4429,8 @@
         "臨床医向けに、患者コンテキストや医学研究情報への安全なアクセスを想定した設計"
       ],
       "applicableTechJa": "医療分野でのAI活用事例(2026-08-31の大阪病院の事例等と同系統)として、公式チャットボットと医療データを安全に接続する設計の参考になる。",
-      "score": 1
+      "score": 1,
+      "titleJa": "医療機関、電子カルテ(EHR)や業界データをChatGPTに接続可能に"
     },
     {
       "sysId": "3eb8378e93838750043532edfaba1076",
@@ -4189,7 +4446,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ニューヨーク市の公立学校、中学校までAI利用を禁止"
     },
     {
       "sysId": "72b8378e93838750043532edfaba1077",
@@ -4205,7 +4463,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "二重盲検評価 AI安全性における「二重の機密性」ジレンマの解決"
     },
     {
       "sysId": "76b8378e93838750043532edfaba1078",
@@ -4221,7 +4480,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "米イラン空爆、MetaのAIレイオフ計画、そしてクマの侵入事件"
     },
     {
       "sysId": "7ab8378e93838750043532edfaba1079",
@@ -4237,7 +4497,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "私たちはAIの「知能」を正しく捉えているか"
     },
     {
       "sysId": "7eb8378e93838750043532edfaba1075",
@@ -4253,7 +4514,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Gemini 3.8 Flash」"
     },
     {
       "sysId": "7eb8378e93838750043532edfaba107a",
@@ -4269,7 +4531,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「No Jibber Jabber」 ミスターT風スキルでAIの前置きを削減"
     },
     {
       "sysId": "7eb8378e93838750043532edfaba107c",
@@ -4285,7 +4548,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "法律事務所Gilbert + Tobin、OpenAIとともにAI活用のガバナンスと拡大を実現"
     },
     {
       "sysId": "b2b8378e93838750043532edfaba1076",
@@ -4301,7 +4565,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Kubernetesはもはや単なるコンテナ基盤ではない、AIインフラそのものだ"
     },
     {
       "sysId": "b6b8378e93838750043532edfaba1077",
@@ -4317,7 +4582,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AI支援ライティングと「AIスロップ」、その境界線"
     },
     {
       "sysId": "bab8378e93838750043532edfaba1078",
@@ -4333,7 +4599,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「AIスロップ」にも手作りの価値はある"
     },
     {
       "sysId": "beb8378e93838750043532edfaba1079",
@@ -4349,7 +4616,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "Geminiのエージェント型動画解析、トークン使用量を最大88%削減"
     },
     {
       "sysId": "beb8378e93838750043532edfaba107b",
@@ -4368,7 +4636,8 @@
         "オンボーディング・アカウント管理・開発者連携など、複数の業務領域で共通するパターンを紹介"
       ],
       "applicableTechJa": "自作アプリの運用フロー(進捗管理・タスク振り分け等)をAIエージェントに任せる設計の方向性として、既に実践している「manager-room/worker-room」的な役割分担の発想と近い事例。",
-      "score": 1
+      "score": 1,
+      "titleJa": "AIネイティブ企業はワークフローをいかに実行力に変えるか"
     },
     {
       "sysId": "f2b8378e93838750043532edfaba1075",
@@ -4384,7 +4653,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIエージェントを増やすほどチームが遅くなる理由"
     },
     {
       "sysId": "f2b8378e93838750043532edfaba107a",
@@ -4400,7 +4670,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIがインドの有権者データを大量監視の武器に変えている実態"
     },
     {
       "sysId": "f2b8378e93838750043532edfaba107c",
@@ -4419,7 +4690,8 @@
         "能力の高さに応じて、リリース前の安全対策(safeguards)を強化する運用フレームワークの実例"
       ],
       "applicableTechJa": "モデルの能力とリスクに応じて安全対策の強度を段階的に変える、というAIガバナンスの考え方は、自作アプリでAIエージェントの権限を段階的に付与する設計判断の参考になる。",
-      "score": 2
+      "score": 2,
+      "titleJa": "「Astra」への道 重要能力と最先端の安全対策"
     },
     {
       "sysId": "f6b8378e93838750043532edfaba1076",
@@ -4435,7 +4707,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "研究者、「llms.txt」経由でフォーチュン500企業のAIエージェントに任意コードを実行させることに成功"
     },
     {
       "sysId": "fab8378e93838750043532edfaba1077",
@@ -4451,7 +4724,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "欧州の課題は「AI問題」ではなく「信頼の問題」だ"
     },
     {
       "sysId": "feb8378e93838750043532edfaba1078",
@@ -4467,7 +4741,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Show HN:AIロールプレイクライアント「Otaku.sh」"
     },
     {
       "sysId": "26b8378e93838750043532edfaba1072",
@@ -4486,7 +4761,8 @@
         "「いつ効くか」「何を変えるか」という軸で3つの柱に分類し、分野の全体像を提示"
       ],
       "applicableTechJa": "AIエージェントの継続的改善の仕組み(ユーザーフィードバックの反映、失敗パターンの学習)を設計する際の、理論的な整理枠組みとして参考になる。",
-      "score": 4
+      "score": 4,
+      "titleJa": "「言語的強化学習」の台頭"
     },
     {
       "sysId": "2ab8378e93838750043532edfaba1073",
@@ -4502,7 +4778,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "執筆のための「能動的な思考パートナー」を設計する"
     },
     {
       "sysId": "66b8378e93838750043532edfaba1071",
@@ -4521,7 +4798,8 @@
         "項目反応理論(IRT)を応用し、代表タスクのサブセットから全体性能を高精度に推定"
       ],
       "applicableTechJa": "自作のコーディングエージェント(Claude Code等)の性能を継続的に評価・比較検討する際、全タスクを毎回フル実行せずコストを抑えて評価する手法の参考になる。",
-      "score": 7
+      "score": 7,
+      "titleJa": "軌跡認識型評価による効率的なSWEエージェントベンチマーク"
     },
     {
       "sysId": "6ab8378e93838750043532edfaba1072",
@@ -4537,7 +4815,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "接触の多い精密操作向けロボット基盤モデル「Facet-0」"
     },
     {
       "sysId": "6eb8378e93838750043532edfaba1073",
@@ -4553,7 +4832,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "LLMにおける量子化ダメージの構造 「次の1ビット」はグローバルに使うべき理由"
     },
     {
       "sysId": "a2b8b38e93838750043532edfaba10c9",
@@ -4572,7 +4852,8 @@
         "可読性(Readability)と妥当性(Adequacy)という2軸で、誤りの種類・強度ごとに評価器がどう反応するかを検証"
       ],
       "applicableTechJa": "自作アプリでLLMを使った自動採点・自動レビュー機能(例: AI技術リサーチの品質判定、コードレビューの自動化)を実装する際、評価器の信頼性を検証する手法として参考になる。",
-      "score": 7
+      "score": 7,
+      "titleJa": "スコアの先へ 要約評価における「LLM審査員」のメカニズムを理解する"
     },
     {
       "sysId": "aab8378e93838750043532edfaba1071",
@@ -4591,7 +4872,8 @@
         "コード生成タスクにおけるRAGの精度・効率をさらに一段引き上げるアプローチ"
       ],
       "applicableTechJa": "自作アプリのリポジトリ横断RAG設計(例: 大規模コードベースへのコード生成支援)において、単純な類似度検索を超えたコンテキスト選定の高度化手法として参考になる。",
-      "score": 5
+      "score": 5,
+      "titleJa": "リポジトリ規模のコード生成のための適応的・重要トークン認識型検索"
     },
     {
       "sysId": "aeb8378e93838750043532edfaba1072",
@@ -4607,7 +4889,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "アライメントと制御のためのメカニズムデザイン"
     },
     {
       "sysId": "beb8378e93838750043532edfaba1074",
@@ -4623,7 +4906,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "超高速LLMは面白い(「Mercury 2.5」プレビュー版公開)"
     },
     {
       "sysId": "e2b8378e93838750043532edfaba1073",
@@ -4639,7 +4923,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「StudentSim」、LLMベースの生徒シミュレーターを訓練"
     },
     {
       "sysId": "eeb8378e93838750043532edfaba1071",
@@ -4655,7 +4940,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 4
+      "score": 4,
+      "titleJa": "「CordisBench」、言語モデルは動的エージェントハーネスのコンポーネントライフサイクルを推論できるか"
     },
     {
       "sysId": "d82fa239938bc350043532edfaba1087",
@@ -4671,7 +4957,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ローカルAI向けWebGPUカーネル200種以上「@huggingface/kernels」を発表"
     },
     {
       "sysId": "731f6239938bc350043532edfaba10ab",
@@ -4687,7 +4974,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAI、若者のAI安全性を推進するカリフォルニア州法案を支持"
     },
     {
       "sysId": "b71f6239938bc350043532edfaba10ab",
@@ -4703,7 +4991,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Polimill、日本の次世代公共AIインフラを構築"
     },
     {
       "sysId": "231f6239938bc350043532edfaba10a1",
@@ -4719,7 +5008,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「SUN」、言語接地型の制御から学習・実環境移行までを担う永続プログラム"
     },
     {
       "sysId": "271f6239938bc350043532edfaba10a2",
@@ -4735,7 +5025,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 7
+      "score": 7,
+      "titleJa": "「OntoAligner-Ensemble」、異種オントロジー整合技術を投票方式で統合"
     },
     {
       "sysId": "271f6239938bc350043532edfaba10a4",
@@ -4751,7 +5042,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Show HN:AI機能を追加したRedashのフォーク"
     },
     {
       "sysId": "2b1f6239938bc350043532edfaba10a5",
@@ -4767,7 +5059,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "男性と仕事に関する7つの事実"
     },
     {
       "sysId": "2f1f6239938bc350043532edfaba10a6",
@@ -4783,7 +5076,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "Linuxカーネル、1リリースあたりの脆弱性数が過去最多の2000件に迫る"
     },
     {
       "sysId": "331f6239938bc350043532edfaba10a8",
@@ -4799,7 +5093,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "無料ビジネスビルダー"
     },
     {
       "sysId": "331f6239938bc350043532edfaba10aa",
@@ -4815,7 +5110,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Openvisor」、自分だけのAIソフトウェアコンサルティング(セルフホスト型)"
     },
     {
       "sysId": "371f6239938bc350043532edfaba10a9",
@@ -4831,7 +5127,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "我々は世界をAGI(人間)から守ってきた それをAIにも適用しよう"
     },
     {
       "sysId": "631f6239938bc350043532edfaba10a7",
@@ -4847,7 +5144,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Show HN:あなたとAIエージェントのためのエナジードリンク「Zero Shot」"
     },
     {
       "sysId": "671f6239938bc350043532edfaba10a1",
@@ -4863,7 +5161,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "アフィン潜在パラメータ化を用いたニューラルネットワークの精密な近似速度"
     },
     {
       "sysId": "6b1f6239938bc350043532edfaba10a2",
@@ -4879,7 +5178,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Template Model Builder(TMB)でニューラルネットワーク混合効果モデルを実装"
     },
     {
       "sysId": "6b1f6239938bc350043532edfaba10a4",
@@ -4895,7 +5195,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "「あなたはAIアシスタント、では私は何者か」 常にエージェントに「私は専門家だ」と伝える理由"
     },
     {
       "sysId": "6f1f6239938bc350043532edfaba10a5",
@@ -4911,7 +5212,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "DHH、プログラミングの未来・AI・エージェント型エンジニアリング・バイブコーディング・Linuxを語る[動画]"
     },
     {
       "sysId": "771f6239938bc350043532edfaba10a8",
@@ -4927,7 +5229,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Ask HN:採用募集中の企業は?(2026年9月)"
     },
     {
       "sysId": "7b1f6239938bc350043532edfaba10a9",
@@ -4943,7 +5246,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIネイティブなエンジニアリングは「DevOps 2.0」か、それとも「アジャイル3.0」か"
     },
     {
       "sysId": "a31f6239938bc350043532edfaba10a6",
@@ -4959,7 +5263,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "「SWE-in-a-team」、ソフトウェアファクトリー向けコーディングベンチマーク"
     },
     {
       "sysId": "a71f6239938bc350043532edfaba10a7",
@@ -4975,7 +5280,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AMD、コンピューティングソリューション強化のためTaalasを買収"
     },
     {
       "sysId": "ab1f6239938bc350043532edfaba10a1",
@@ -4991,7 +5297,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "匿名AIモデルを監査する ブラックボックス型身元検証の4段階プロトコル"
     },
     {
       "sysId": "af1f6239938bc350043532edfaba10a2",
@@ -5007,7 +5314,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "「DIASENTINEL」、ガイドラインに基づく糖尿病リスクスクリーニングのための監査可能なマルチエージェントシステム"
     },
     {
       "sysId": "af1f6239938bc350043532edfaba10a4",
@@ -5023,7 +5331,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ベングヴィル氏、パレスチナ人の飢餓を描いたAI動画を投稿後に削除"
     },
     {
       "sysId": "bb1f6239938bc350043532edfaba10a8",
@@ -5039,7 +5348,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Ask HN:仕事を探している人は?(2026年9月)"
     },
     {
       "sysId": "e31f6239938bc350043532edfaba10a3",
@@ -5055,7 +5365,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "簡潔に符号化された条件付き分布における両立可能性問題の計算複雑性について"
     },
     {
       "sysId": "e31f6239938bc350043532edfaba10a5",
@@ -5071,7 +5382,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "Instinctの高性能AIアシスタント、プライバシーとセキュリティへの懸念が浮上"
     },
     {
       "sysId": "e71f6239938bc350043532edfaba10a6",
@@ -5087,7 +5399,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "あなたのAI出力は、誰かの入力になる"
     },
     {
       "sysId": "eb1f6239938bc350043532edfaba10a0",
@@ -5103,7 +5416,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "一般ゲームにおける個人後悔の定数性"
     },
     {
       "sysId": "eb1f6239938bc350043532edfaba10a7",
@@ -5119,7 +5433,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "Show HN:エージェント型アプリの問題を24時間365日検出・修正する「Selfship.ai」"
     },
     {
       "sysId": "ef1f6239938bc350043532edfaba10a1",
@@ -5138,7 +5453,8 @@
         "エンティティ保持・トリガー中心分割・命題優先抽出・階層的関係解決を組み合わせた設定可能な分割手法"
       ],
       "applicableTechJa": "本セッションの「Late Chunking」(2026-08-30エントリ)とも関連する、RAGのチャンク分割戦略の1つ。専門分野特化のRAGを設計する際、単純な固定長分割より意味構造を保つ分割の方が精度が上がる、という具体例として参考になる。",
-      "score": 7
+      "score": 7,
+      "titleJa": "RAGにおける生物医学情報抽出のための設定可能なセマンティックチャンキング"
     },
     {
       "sysId": "ff1f6239938bc350043532edfaba10a8",
@@ -5154,7 +5470,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIは恒星間旅行の実現を後押しできるか"
     },
     {
       "sysId": "a71f6239938bc350043532edfaba109f",
@@ -5170,7 +5487,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "WhisperX向けコンテキスト対応インターリーブ・バッチング"
     },
     {
       "sysId": "d685a12593cf0350043532edfaba10bf",
@@ -5186,7 +5504,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "AIへのアクセス拡大における節目"
     },
     {
       "sysId": "0285a12593cf0350043532edfaba1062",
@@ -5202,7 +5521,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAIの「球充填問題」成果を読み解く"
     },
     {
       "sysId": "0685a12593cf0350043532edfaba1063",
@@ -5218,7 +5538,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Launch HN:スケーラブルなロボティクスデータパイプラインを構築する「Hebbian Robotics」(YC S26)"
     },
     {
       "sysId": "0a85a12593cf0350043532edfaba1064",
@@ -5234,7 +5555,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Show HN:AIエージェントに「声」と「態度」を与えたらどうなるか"
     },
     {
       "sysId": "0e85a12593cf0350043532edfaba1065",
@@ -5250,7 +5572,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "マルクス、ケインズ、そしてAI"
     },
     {
       "sysId": "0e85a12593cf0350043532edfaba10bd",
@@ -5266,7 +5589,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenAIのエンジニア、自分たちも理解していないAI生成カーネルを本番投入"
     },
     {
       "sysId": "4285a12593cf0350043532edfaba1066",
@@ -5282,7 +5606,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIスタートアップTrustedRouter、125万ドルを調達"
     },
     {
       "sysId": "4285a12593cf0350043532edfaba10be",
@@ -5298,7 +5623,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Ask HN:最適なAI環境構成とは?"
     },
     {
       "sysId": "4685a12593cf0350043532edfaba1062",
@@ -5314,7 +5640,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Show HN:xminチェックでAIエージェントによるPostgres書き込みを事前確認する「pg-dry-run」"
     },
     {
       "sysId": "4a85a12593cf0350043532edfaba1063",
@@ -5330,7 +5657,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "エージェント型AIの「信頼制御」"
     },
     {
       "sysId": "4e85a12593cf0350043532edfaba1064",
@@ -5346,7 +5674,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ChatGPT、EUでより厳しい規制に直面へ"
     },
     {
       "sysId": "8285a12593cf0350043532edfaba1065",
@@ -5362,7 +5691,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "「WikiSkill」、エージェントの経験を永続的なナレッジベースへ蓄積しスキルを進化させる"
     },
     {
       "sysId": "8685a12593cf0350043532edfaba1061",
@@ -5378,7 +5708,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「ブレットプルーフホスティング」監視週報(2026年8月31日週)"
     },
     {
       "sysId": "8685a12593cf0350043532edfaba1066",
@@ -5394,7 +5725,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Show HN:AIスタートアップTrustedRouter、125万ドルを調達"
     },
     {
       "sysId": "8685a12593cf0350043532edfaba10be",
@@ -5410,7 +5742,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Portronics、15W Qi2対応・カメラ型20000mAhモバイルバッテリーを発売"
     },
     {
       "sysId": "8a85a12593cf0350043532edfaba1062",
@@ -5426,7 +5759,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIでMarkdownからスライドを編集・発表"
     },
     {
       "sysId": "8e85a12593cf0350043532edfaba1063",
@@ -5442,7 +5776,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Show HN:コーディング・研究向けに2〜4倍安い「GLM 5.3」"
     },
     {
       "sysId": "c285a12593cf0350043532edfaba1064",
@@ -5458,7 +5793,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIが私にとって大切だったアクセシビリティツールを台無しにした"
     },
     {
       "sysId": "c685a12593cf0350043532edfaba1065",
@@ -5474,7 +5810,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "セキュリティエンジニアリングの視点から見るHugging Face事件"
     },
     {
       "sysId": "ca85a12593cf0350043532edfaba1061",
@@ -5490,7 +5827,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "KiCADとオープンツールによるAI活用のPCB設計"
     },
     {
       "sysId": "ce85a12593cf0350043532edfaba1062",
@@ -5506,7 +5844,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "オーストラリア、企業の導入の「遅さ」でAI経済ブームに乗り遅れるリスク"
     },
     {
       "sysId": "0285a12593cf0350043532edfaba1060",
@@ -5522,7 +5861,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "相互作用に敏感な特徴選択の発展 新たなRelief系アルゴリズムと生物医学データマイニングへの提言"
     },
     {
       "sysId": "0a85a12593cf0350043532edfaba105c",
@@ -5538,7 +5878,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "「QGPINNs」、量子グラフ上の非局所微分方程式を解く物理情報ニューラルネットワーク"
     },
     {
       "sysId": "0e85a12593cf0350043532edfaba105e",
@@ -5554,7 +5895,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ピークの間で学ぶ べき乗則異方性下でのカーネルリッジ回帰の精密な漸近挙動"
     },
     {
       "sysId": "4285a12593cf0350043532edfaba105f",
@@ -5570,7 +5912,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "テキストコーパスからの人間言語学習における形式的限界"
     },
     {
       "sysId": "4685a12593cf0350043532edfaba1060",
@@ -5586,7 +5929,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "幾何学を学ぶ存在としての動画生成モデル"
     },
     {
       "sysId": "4e85a12593cf0350043532edfaba105d",
@@ -5602,7 +5946,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "「Aero Hand Open」、器用な操作学習向けシミュレーション対応腱駆動ハンド"
     },
     {
       "sysId": "8285a12593cf0350043532edfaba105e",
@@ -5618,7 +5963,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "合成データ拡張推論のための「サイズ・重みフロンティア」学習"
     },
     {
       "sysId": "8685a12593cf0350043532edfaba105f",
@@ -5634,7 +5980,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 4
+      "score": 4,
+      "titleJa": "ブログ:オプティマイザ徹底比較"
     },
     {
       "sysId": "c685a12593cf0350043532edfaba105e",
@@ -5650,7 +5997,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "重み付きDikinウォークのd^2混合時間に関する2つの証明について"
     },
     {
       "sysId": "ca85a12593cf0350043532edfaba105f",
@@ -5666,7 +6014,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "プロセス横断バス上で動くエージェントハーネス「Logos」"
     },
     {
       "sysId": "11fb149d93878f10043532edfaba10d7",
@@ -5682,7 +6031,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "もう一つの音楽史をのぞく窓"
     },
     {
       "sysId": "15fb149d93878f10043532edfaba10d8",
@@ -5698,7 +6048,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「AI禁止の金曜日」"
     },
     {
       "sysId": "15fbd09d93878f10043532edfaba106a",
@@ -5714,7 +6065,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Show HN:対戦型マルチプレイヤーSnake「Snaketron」、14年ぶりに復活"
     },
     {
       "sysId": "19fb149d93878f10043532edfaba10d4",
@@ -5730,7 +6082,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Show HN:パワーユーザー向けデータベースアプリ構築ツール「Sapporta」"
     },
     {
       "sysId": "19fbd09d93878f10043532edfaba106b",
@@ -5746,7 +6099,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "エージェントスキルを構成するもの プログラミング言語という視点"
     },
     {
       "sysId": "1dfb149d93878f10043532edfaba10d5",
@@ -5762,7 +6116,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIコーディングで「フロー状態」に入る"
     },
     {
       "sysId": "51fb149d93878f10043532edfaba10d6",
@@ -5778,7 +6133,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "アイスランド国民、僅差の国民投票でEU加盟交渉入りに「反対」"
     },
     {
       "sysId": "55fb149d93878f10043532edfaba10d7",
@@ -5794,7 +6150,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "裁判官、AI生成の児童性的虐待素材は米憲法修正第1条で保護されると判断"
     },
     {
       "sysId": "59fb149d93878f10043532edfaba10d8",
@@ -5810,7 +6167,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「MAI Image」と「Reve 2.1」、GPT Image 2を上回るランキングに"
     },
     {
       "sysId": "59fbd09d93878f10043532edfaba106a",
@@ -5826,7 +6184,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「バイブコーディング」で脳が焼き切れていないか"
     },
     {
       "sysId": "5dfb149d93878f10043532edfaba10d4",
@@ -5842,7 +6201,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 4
+      "score": 4,
+      "titleJa": "AIエージェント向け無料・オープンソースのWeb検索ツール"
     },
     {
       "sysId": "91fb149d93878f10043532edfaba10d5",
@@ -5858,7 +6218,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "Show HN:AIエージェント向け韓国株式市場データ「FinBridge」(MCP対応)"
     },
     {
       "sysId": "95fb149d93878f10043532edfaba10d6",
@@ -5874,7 +6235,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Show HN:災害対応向けAI生成統合状況図「Open SAR-COP」"
     },
     {
       "sysId": "99fb149d93878f10043532edfaba10d7",
@@ -5890,7 +6252,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIインフラへの攻撃、この90日間の記録"
     },
     {
       "sysId": "9dfbd09d93878f10043532edfaba106a",
@@ -5906,7 +6269,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "音声のみのAIコンパニオン、興味深いウェブサイトを発見"
     },
     {
       "sysId": "d1fbd09d93878f10043532edfaba106b",
@@ -5922,7 +6286,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "2027年、AI向け電力が15GW不足する見通し"
     },
     {
       "sysId": "d5fb149d93878f10043532edfaba10d5",
@@ -5938,7 +6303,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "高度な人工知能における倫理的課題"
     },
     {
       "sysId": "d9fb149d93878f10043532edfaba10d6",
@@ -5954,7 +6320,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「不正だらけの社会」"
     },
     {
       "sysId": "ddfb149d93878f10043532edfaba10d7",
@@ -5970,7 +6337,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Openpyxl、無関係なセルを編集すると数式のキャッシュ値を静かに消失させる不具合"
     },
     {
       "sysId": "ddfbd09d93878f10043532edfaba1068",
@@ -5986,7 +6354,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「BROCS」、エンタープライズAI活用のためのフレームワーク"
     },
     {
       "sysId": "20c29ff4938fcb10043532edfaba1060",
@@ -6002,7 +6371,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Transformersの対照的探索(Contrastive Search)で人間レベルのテキスト生成"
     },
     {
       "sysId": "24c29ff4938fcb10043532edfaba1061",
@@ -6018,7 +6388,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Optimum Intel」とOpenVINOでモデルを高速化"
     },
     {
       "sysId": "28c29ff4938fcb10043532edfaba104f",
@@ -6034,7 +6405,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "図解:人間のフィードバックによる強化学習(RLHF)"
     },
     {
       "sysId": "28c29ff4938fcb10043532edfaba1062",
@@ -6050,7 +6422,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face Inference Endpoints入門"
     },
     {
       "sysId": "2cc29ff4938fcb10043532edfaba1050",
@@ -6066,7 +6439,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Transformersによる確率的時系列予測"
     },
     {
       "sysId": "2cc29ff4938fcb10043532edfaba105e",
@@ -6082,7 +6456,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ドキュメントAIの高速化"
     },
     {
       "sysId": "30c29ff4938fcb10043532edfaba1065",
@@ -6098,7 +6473,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「SetFit」、プロンプト不要の効率的な少数ショット学習"
     },
     {
       "sysId": "30c29ff4938fcb10043532edfaba106a",
@@ -6114,7 +6490,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Sentence Transformersモデルの学習とファインチューニング"
     },
     {
       "sysId": "30c29ff4938fcb10043532edfaba106f",
@@ -6130,7 +6507,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "DeepSpeedで大規模モデルの学習を高速化"
     },
     {
       "sysId": "30c29ff4938fcb10043532edfaba1074",
@@ -6146,7 +6524,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face、フェローシッププログラムを発表"
     },
     {
       "sysId": "30c29ff4938fcb10043532edfaba1079",
@@ -6162,7 +6541,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Habana LabsとHugging Face、Transformerモデル学習の高速化で提携"
     },
     {
       "sysId": "30c29ff4938fcb10043532edfaba107e",
@@ -6178,7 +6558,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "TransformersでWav2Vec2をn-gramで強化"
     },
     {
       "sysId": "30c29ff4938fcb10043532edfaba1083",
@@ -6194,7 +6575,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "リモートセンシング(衛星)画像とキャプションでCLIPをファインチューニング"
     },
     {
       "sysId": "30c29ff4938fcb10043532edfaba109f",
@@ -6210,7 +6592,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "実践・少数ショット学習 GPT-NeoとAccelerated Inference API"
     },
     {
       "sysId": "30c29ff4938fcb10043532edfaba10a4",
@@ -6226,7 +6609,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "事前学習済み言語モデルのチェックポイントをエンコーダ・デコーダモデルに活用"
     },
     {
       "sysId": "34c29ff4938fcb10043532edfaba1066",
@@ -6242,7 +6626,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "初めてのDecision Transformer学習"
     },
     {
       "sysId": "34c29ff4938fcb10043532edfaba106b",
@@ -6258,7 +6643,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "米国立AI研究リソース中間報告書へのコメント"
     },
     {
       "sysId": "34c29ff4938fcb10043532edfaba1070",
@@ -6274,7 +6660,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "IntelとHugging Face、機械学習ハードウェアアクセラレーションの民主化で提携"
     },
     {
       "sysId": "34c29ff4938fcb10043532edfaba1075",
@@ -6290,7 +6677,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OptimumとTransformersパイプラインによる高速推論"
     },
     {
       "sysId": "34c29ff4938fcb10043532edfaba107a",
@@ -6306,7 +6694,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face、AI研究レジデンシープログラムを発表"
     },
     {
       "sysId": "34c29ff4938fcb10043532edfaba107f",
@@ -6322,7 +6711,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Perceiver IO」、あらゆるモダリティに対応するスケーラブルな全注意機構モデル"
     },
     {
       "sysId": "34c29ff4938fcb10043532edfaba10a0",
@@ -6338,7 +6728,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "分散学習 TransformersとAmazon SageMakerで要約用BART/T5を学習"
     },
     {
       "sysId": "34c29ff4938fcb10043532edfaba10a5",
@@ -6354,7 +6745,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ブロックスパース行列でより小さく速い言語モデルを実現"
     },
     {
       "sysId": "38c29ff4938fcb10043532edfaba1067",
@@ -6370,7 +6762,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Diffusers」で使うStable Diffusion"
     },
     {
       "sysId": "38c29ff4938fcb10043532edfaba106c",
@@ -6386,7 +6779,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "アドバンテージ・アクター・クリティック(A2C)"
     },
     {
       "sysId": "38c29ff4938fcb10043532edfaba1071",
@@ -6402,7 +6796,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "GraphcoreとHugging Face、IPU対応Transformer新ラインアップを発表"
     },
     {
       "sysId": "38c29ff4938fcb10043532edfaba1076",
@@ -6418,7 +6813,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "PyTorch Fully Sharded Data Parallelで大規模モデル学習を高速化"
     },
     {
       "sysId": "38c29ff4938fcb10043532edfaba107b",
@@ -6434,7 +6830,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Transformersの制約付きビームサーチでテキスト生成を制御"
     },
     {
       "sysId": "38c29ff4938fcb10043532edfaba1080",
@@ -6450,7 +6847,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "データセットを対話的に閲覧できる「Data Measurements Tool」を発表"
     },
     {
       "sysId": "38c29ff4938fcb10043532edfaba10a1",
@@ -6466,7 +6864,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face TransformersでWav2Vec2を英語音声認識向けにファインチューニング"
     },
     {
       "sysId": "3cc29ff4938fcb10043532edfaba1063",
@@ -6482,7 +6881,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "日本語版Stable Diffusion"
     },
     {
       "sysId": "3cc29ff4938fcb10043532edfaba1068",
@@ -6498,7 +6898,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "transformers・accelerate・bitsandbytesで実現する大規模Transformer向け8ビット行列演算入門"
     },
     {
       "sysId": "3cc29ff4938fcb10043532edfaba106d",
