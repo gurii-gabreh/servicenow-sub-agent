@@ -6514,7 +6514,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "世界最大のオープン多言語言語モデル「BLOOM」を発表"
     },
     {
       "sysId": "3cc29ff4938fcb10043532edfaba1072",
@@ -6530,7 +6531,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Sempre HealthはExpert Acceleration Programをどう活用してMLロードマップを加速させたか"
     },
     {
       "sysId": "3cc29ff4938fcb10043532edfaba1077",
@@ -6546,7 +6548,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "教育機関向け「Hugging Face for Education」を発表"
     },
     {
       "sysId": "3cc29ff4938fcb10043532edfaba107c",
@@ -6562,7 +6565,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "🤗TransformersのWav2Vec2で大容量ファイルの音声認識を実現する方法"
     },
     {
       "sysId": "3cc29ff4938fcb10043532edfaba1081",
@@ -6578,7 +6582,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "コース開講記念コミュニティイベント開催"
     },
     {
       "sysId": "3cc29ff4938fcb10043532edfaba109d",
@@ -6594,7 +6599,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "インターネット越しの深層学習、言語モデルを協調的に学習する手法"
     },
     {
       "sysId": "3cc29ff4938fcb10043532edfaba10a2",
@@ -6610,7 +6616,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging FaceがPyTorch/XLA TPUsに対応"
     },
     {
       "sysId": "60c29ff4938fcb10043532edfaba1051",
@@ -6626,7 +6633,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "VQ-Diffusionとは"
     },
     {
       "sysId": "60c29ff4938fcb10043532edfaba105f",
@@ -6642,7 +6650,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Faceにおける推論ソリューション総まとめ"
     },
     {
       "sysId": "64c29ff4938fcb10043532edfaba1060",
@@ -6658,7 +6667,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "新しい料金プランを発表"
     },
     {
       "sysId": "68c29ff4938fcb10043532edfaba1061",
@@ -6674,7 +6684,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "🤗Evaluateで言語モデルのバイアスを評価する"
     },
     {
       "sysId": "6cc29ff4938fcb10043532edfaba104f",
@@ -6690,7 +6701,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "GPT-2からStable Diffusionまで、Hugging FaceがElixirコミュニティに登場"
     },
     {
       "sysId": "6cc29ff4938fcb10043532edfaba1062",
@@ -6706,7 +6718,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Stable DiffusionがJAX/Flaxに対応"
     },
     {
       "sysId": "70c29ff4938fcb10043532edfaba1064",
@@ -6722,7 +6735,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "超大規模言語モデルとその評価方法"
     },
     {
       "sysId": "70c29ff4938fcb10043532edfaba1069",
@@ -6738,7 +6752,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "機械学習モデル共有ツール「Skops」を発表"
     },
     {
       "sysId": "70c29ff4938fcb10043532edfaba106e",
@@ -6754,7 +6769,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Twitterで始める感情分析入門"
     },
     {
       "sysId": "70c29ff4938fcb10043532edfaba1073",
@@ -6770,7 +6786,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "研究ライフサイクルの中核に倫理原則を据える"
     },
     {
       "sysId": "70c29ff4938fcb10043532edfaba1078",
@@ -6786,7 +6803,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "機械学習でカスタマーサービスを強化する"
     },
     {
       "sysId": "70c29ff4938fcb10043532edfaba107d",
@@ -6802,7 +6820,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "🤗Hubの検索機能が大幅強化"
     },
     {
       "sysId": "70c29ff4938fcb10043532edfaba1082",
@@ -6818,7 +6837,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "大規模言語モデルは新たな「ムーアの法則」か"
     },
     {
       "sysId": "70c29ff4938fcb10043532edfaba109e",
@@ -6834,7 +6854,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "spaCyがHugging Face Hubに登場"
     },
     {
       "sysId": "70c29ff4938fcb10043532edfaba10a3",
@@ -6850,7 +6871,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face TransformersでTensorFlowモデルを高速化"
     },
     {
       "sysId": "74c29ff4938fcb10043532edfaba1065",
@@ -6866,7 +6888,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "倫理と社会ニュースレター 第1号"
     },
     {
       "sysId": "74c29ff4938fcb10043532edfaba106a",
@@ -6882,7 +6905,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "強化学習アルゴリズム「PPO」を解説"
     },
     {
       "sysId": "74c29ff4938fcb10043532edfaba106f",
@@ -6898,7 +6922,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hub上での評価機能「Evaluation on the Hub」を発表"
     },
     {
       "sysId": "74c29ff4938fcb10043532edfaba1074",
@@ -6914,7 +6939,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Gradio 3.0」がリリース"
     },
     {
       "sysId": "74c29ff4938fcb10043532edfaba1079",
@@ -6930,7 +6956,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "繰り返しを恐れない開発術"
     },
     {
       "sysId": "74c29ff4938fcb10043532edfaba107e",
@@ -6946,7 +6973,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face TransformersとAmazon SageMakerでGPT-J 6Bを推論デプロイ"
     },
     {
       "sysId": "74c29ff4938fcb10043532edfaba1083",
@@ -6962,7 +6990,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "StreamlitでHugging Face Spacesにモデルとデータセットを公開する"
     },
     {
       "sysId": "74c29ff4938fcb10043532edfaba109f",
@@ -6978,7 +7007,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Gradio 2.0でHugging Faceモデルを組み合わせて使う"
     },
     {
       "sysId": "74c29ff4938fcb10043532edfaba10a4",
@@ -6994,7 +7024,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "fairseqのWMT19翻訳システムをtransformersに移植"
     },
     {
       "sysId": "78c29ff4938fcb10043532edfaba1066",
@@ -7010,7 +7041,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Megatron-LMで言語モデルを学習する方法"
     },
     {
       "sysId": "78c29ff4938fcb10043532edfaba106b",
@@ -7026,7 +7058,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "🤗Datasetsに音声・画像分野の新ドキュメントが登場"
     },
     {
       "sysId": "78c29ff4938fcb10043532edfaba1070",
@@ -7042,7 +7075,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "機械学習責任者インタビュー 第3弾:金融業界編"
     },
     {
       "sysId": "78c29ff4938fcb10043532edfaba1075",
@@ -7058,7 +7092,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face、オープンで協調的な機械学習のため1億ドルを調達"
     },
     {
       "sysId": "78c29ff4938fcb10043532edfaba107a",
@@ -7074,7 +7109,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "独自データセットでセマンティックセグメンテーションモデルをファインチューニング"
     },
     {
       "sysId": "78c29ff4938fcb10043532edfaba107f",
@@ -7090,7 +7126,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "コード生成モデル「CodeParrot」をゼロから学習する"
     },
     {
       "sysId": "78c29ff4938fcb10043532edfaba10a0",
@@ -7106,7 +7143,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "BigBirdの「ブロックスパースアテンション」を理解する"
     },
     {
       "sysId": "78c29ff4938fcb10043532edfaba10a5",
@@ -7122,7 +7160,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Reformer、言語モデリングの限界に挑む"
     },
     {
       "sysId": "7cc29ff4938fcb10043532edfaba1067",
@@ -7138,7 +7177,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face TransformersとHabana GaudiでBERTを事前学習する"
     },
     {
       "sysId": "7cc29ff4938fcb10043532edfaba106c",
@@ -7154,7 +7194,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "敵対的データを使ってモデルを動的に学習する方法"
     },
     {
       "sysId": "7cc29ff4938fcb10043532edfaba1071",
@@ -7170,7 +7211,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hubに「プルリクエスト」と「ディスカッション」機能が登場"
     },
     {
       "sysId": "7cc29ff4938fcb10043532edfaba1076",
@@ -7186,7 +7228,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "KiliとHugging Face AutoTrainで意見分類モデルを構築"
     },
     {
       "sysId": "7cc29ff4938fcb10043532edfaba107b",
@@ -7202,7 +7245,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "BERT入門、最先端NLPモデルを徹底解説"
     },
     {
       "sysId": "7cc29ff4938fcb10043532edfaba1080",
@@ -7218,7 +7262,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Intel技術でPyTorchの分散ファインチューニングを高速化"
     },
     {
       "sysId": "7cc29ff4938fcb10043532edfaba109c",
@@ -7234,7 +7279,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "この夏、Hugging Faceで何が起きたか"
     },
     {
       "sysId": "7cc29ff4938fcb10043532edfaba10a1",
@@ -7250,7 +7296,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face論文紹介 2021年2月号:長距離Transformer"
     },
     {
       "sysId": "a0c29ff4938fcb10043532edfaba1050",
@@ -7266,7 +7313,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "タンパク質研究に挑む深層学習"
     },
     {
       "sysId": "a0c29ff4938fcb10043532edfaba1063",
@@ -7282,7 +7330,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "最適化物語:BLOOMの推論を速くするまで"
     },
     {
       "sysId": "a4c29ff4938fcb10043532edfaba1051",
@@ -7298,7 +7347,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face、インターンを募集中"
     },
     {
       "sysId": "a4c29ff4938fcb10043532edfaba105f",
@@ -7314,7 +7364,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "arXiv論文にHugging Faceの機械学習デモを埋め込み"
     },
     {
       "sysId": "a8c29ff4938fcb10043532edfaba1060",
@@ -7330,7 +7381,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "DiffusersでDreamboothを使いStable Diffusionを学習する"
     },
     {
       "sysId": "acc29ff4938fcb10043532edfaba1061",
@@ -7346,7 +7398,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "PyTorch DDPからAccelerate、Trainerまで、分散学習を手軽に極める"
     },
     {
       "sysId": "b0c29ff4938fcb10043532edfaba1068",
@@ -7362,7 +7415,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "🤗ViTをVertex AIにデプロイする"
     },
     {
       "sysId": "b0c29ff4938fcb10043532edfaba106d",
@@ -7378,7 +7432,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "BLOOM学習を支える技術"
     },
     {
       "sysId": "b0c29ff4938fcb10043532edfaba1072",
@@ -7394,7 +7449,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "実データ不要の効率的な表事前学習「TAPEX」入門"
     },
     {
       "sysId": "b0c29ff4938fcb10043532edfaba1077",
@@ -7410,7 +7466,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "機械学習責任者インタビュー"
     },
     {
       "sysId": "b0c29ff4938fcb10043532edfaba107c",
@@ -7426,7 +7483,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "🤗TransformersでViTを画像分類向けにファインチューニング"
     },
     {
       "sysId": "b0c29ff4938fcb10043532edfaba1081",
@@ -7442,7 +7500,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "🤗TransformersでXLSR-Wav2Vec2を低資源音声認識向けにファインチューニング"
     },
     {
       "sysId": "b0c29ff4938fcb10043532edfaba109d",
@@ -7458,7 +7517,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging FaceとGraphcoreが提携、IPU最適化Transformersを実現"
     },
     {
       "sysId": "b0c29ff4938fcb10043532edfaba10a2",
@@ -7474,7 +7534,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "高度なニューラルネットワークを作る前に押さえたい基本のポイント"
     },
     {
       "sysId": "b4c29ff4938fcb10043532edfaba1064",
@@ -7490,7 +7551,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AutoTrainで画像分類モデルを構築する"
     },
     {
       "sysId": "b4c29ff4938fcb10043532edfaba1069",
@@ -7506,7 +7568,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging FaceのTensorFlowに対する考え方"
     },
     {
       "sysId": "b4c29ff4938fcb10043532edfaba106e",
@@ -7522,7 +7585,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "PyTorchで学ぶ方策勾配法"
     },
     {
       "sysId": "b4c29ff4938fcb10043532edfaba1073",
@@ -7538,7 +7602,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Q学習入門 第1回"
     },
     {
       "sysId": "b4c29ff4938fcb10043532edfaba1078",
@@ -7554,7 +7619,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "🤗HubのCO2排出量対策、先陣を切る取り組み"
     },
     {
       "sysId": "b4c29ff4938fcb10043532edfaba107d",
@@ -7570,7 +7636,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Stable-baselines3がHugging Face Hubに登場"
     },
     {
       "sysId": "b4c29ff4938fcb10043532edfaba1082",
@@ -7586,7 +7653,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "10億ペアのデータで文埋め込みモデルを学習する"
     },
     {
       "sysId": "b4c29ff4938fcb10043532edfaba109e",
@@ -7602,7 +7670,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Amazon SageMakerでHugging Faceモデルを簡単デプロイ"
     },
     {
       "sysId": "b4c29ff4938fcb10043532edfaba10a3",
@@ -7618,7 +7687,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "DeepSpeedとFairScaleのZeROで、より大きく速く学習する"
     },
     {
       "sysId": "b8c29ff4938fcb10043532edfaba1065",
@@ -7634,7 +7704,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "DeepSpeedとAccelerateで驚異的に高速なBLOOM推論を実現"
     },
     {
       "sysId": "b8c29ff4938fcb10043532edfaba106a",
@@ -7650,7 +7721,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "機械学習開発の新形態「Private Hub」を発表"
     },
     {
       "sysId": "b8c29ff4938fcb10043532edfaba106f",
@@ -7666,7 +7738,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "埋め込み(Embeddings)入門"
     },
     {
       "sysId": "b8c29ff4938fcb10043532edfaba1074",
@@ -7682,7 +7755,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "機械学習責任者インタビュー 第2弾:SaaS業界編"
     },
     {
       "sysId": "b8c29ff4938fcb10043532edfaba1079",
@@ -7698,7 +7772,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Faceに「Decision Transformer」が登場"
     },
     {
       "sysId": "b8c29ff4938fcb10043532edfaba107e",
@@ -7714,7 +7789,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AutoNLPとProdigyで実践する能動学習"
     },
     {
       "sysId": "b8c29ff4938fcb10043532edfaba1083",
@@ -7730,7 +7806,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "GradioでSpacesにプロジェクトを公開する方法"
     },
     {
       "sysId": "b8c29ff4938fcb10043532edfaba109f",
@@ -7746,7 +7823,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "CPU上でBERT推論をスケールさせる 第1回"
     },
     {
       "sysId": "b8c29ff4938fcb10043532edfaba10a4",
@@ -7762,7 +7840,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "TransformersとRay Tuneでハイパーパラメータ探索"
     },
     {
       "sysId": "bcc29ff4938fcb10043532edfaba1066",
@@ -7778,7 +7857,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OpenRAIL、オープンで責任あるAIライセンスの枠組みを目指して"
     },
     {
       "sysId": "bcc29ff4938fcb10043532edfaba106b",
@@ -7794,7 +7874,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "TensorFlowとXLAでテキスト生成を高速化"
     },
     {
       "sysId": "bcc29ff4938fcb10043532edfaba1070",
@@ -7810,7 +7891,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "注釈付きで読み解く拡散モデル"
     },
     {
       "sysId": "bcc29ff4938fcb10043532edfaba1075",
@@ -7826,7 +7908,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "fastaiがHugging Face Hubに登場"
     },
     {
       "sysId": "bcc29ff4938fcb10043532edfaba107a",
@@ -7842,7 +7925,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face TransformersとAWS InferentiaでBERT推論を高速化"
     },
     {
       "sysId": "bcc29ff4938fcb10043532edfaba107f",
@@ -7858,7 +7942,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "初のML-Agents環境「Snowball Fight」を発表"
     },
     {
       "sysId": "bcc29ff4938fcb10043532edfaba10a0",
@@ -7874,7 +7959,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Amazon SageMakerとHugging Face、パートナーシップの全貌"
     },
     {
       "sysId": "bcc29ff4938fcb10043532edfaba10a5",
@@ -7890,7 +7976,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Transformersで学ぶテキスト生成、多様なデコード手法の使い分け"
     },
     {
       "sysId": "e0c29ff4938fcb10043532edfaba1062",
@@ -7906,7 +7993,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "大規模テキスト埋め込みベンチマーク「MTEB」を発表"
     },
     {
       "sysId": "e4c29ff4938fcb10043532edfaba1050",
@@ -7922,7 +8010,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Apple SiliconのCore MLでStable Diffusionを動かす"
     },
     {
       "sysId": "e4c29ff4938fcb10043532edfaba105e",
@@ -7938,7 +8027,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "機械学習責任者インタビュー 第4弾"
     },
     {
       "sysId": "e8c29ff4938fcb10043532edfaba1051",
@@ -7954,7 +8044,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "拡散モデルをテーマにしたライブイベント開催"
     },
     {
       "sysId": "e8c29ff4938fcb10043532edfaba105f",
@@ -7970,7 +8061,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "準同型暗号を使った暗号化データ上の感情分析"
     },
     {
       "sysId": "ecc29ff4938fcb10043532edfaba1060",
@@ -7986,7 +8078,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "🤗TransformersでWhisperを多言語音声認識向けにファインチューニング"
     },
     {
       "sysId": "f0c29ff4938fcb10043532edfaba1067",
@@ -8002,7 +8095,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face Spacesでタンパク質を可視化する"
     },
     {
       "sysId": "f0c29ff4938fcb10043532edfaba106c",
@@ -8018,7 +8112,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "TF ServingでHugging FaceのTensorFlow画像モデルをデプロイする"
     },
     {
       "sysId": "f0c29ff4938fcb10043532edfaba1071",
@@ -8034,7 +8129,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "スペースインベーダーで学ぶDeep Q-Learning"
     },
     {
       "sysId": "f0c29ff4938fcb10043532edfaba1076",
@@ -8050,7 +8146,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "深層強化学習入門"
     },
     {
       "sysId": "f0c29ff4938fcb10043532edfaba107b",
@@ -8066,7 +8163,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "🤗datasetsで実現する画像検索"
     },
     {
       "sysId": "f0c29ff4938fcb10043532edfaba1080",
@@ -8082,7 +8180,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "OptimumでIPU向けHugging Face Transformersを始める"
     },
     {
       "sysId": "f0c29ff4938fcb10043532edfaba10a1",
@@ -8098,7 +8197,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Google Cloudでサーバーレスなtransformersパイプラインを作った道のり"
     },
     {
       "sysId": "f0c29ff4938fcb10043532edfaba10a6",
@@ -8114,7 +8214,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "TransformersとTokenizersで新しい言語モデルをゼロから学習する方法"
     },
     {
       "sysId": "f4c29ff4938fcb10043532edfaba1063",
@@ -8130,7 +8231,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "データセット・モデルにDOI(デジタルオブジェクト識別子)を付与"
     },
     {
       "sysId": "f4c29ff4938fcb10043532edfaba1068",
@@ -8146,7 +8248,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "詳解:Hugging Face Optimum GraphcoreでのVision Transformer"
     },
     {
       "sysId": "f4c29ff4938fcb10043532edfaba106d",
@@ -8162,7 +8265,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Sentence Transformersでプレイリスト生成器を作る"
     },
     {
       "sysId": "f4c29ff4938fcb10043532edfaba1072",
@@ -8178,7 +8282,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Q学習入門 第2回(全2回)"
     },
     {
       "sysId": "f4c29ff4938fcb10043532edfaba1077",
@@ -8194,7 +8299,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Habana GaudiでTransformersを始める"
     },
     {
       "sysId": "f4c29ff4938fcb10043532edfaba107c",
@@ -8210,7 +8316,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Pythonで始める感情分析入門"
     },
     {
       "sysId": "f4c29ff4938fcb10043532edfaba1081",
@@ -8226,7 +8333,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "最新CPUでBERT系モデルの推論をスケールさせる 第2回"
     },
     {
       "sysId": "f4c29ff4938fcb10043532edfaba109d",
@@ -8242,7 +8350,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "大規模Transformers向け最適化ツール「Optimum」を発表"
     },
     {
       "sysId": "f4c29ff4938fcb10043532edfaba10a2",
@@ -8258,7 +8367,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "Hugging FaceのTransformersとRayで実現する検索拡張生成(RAG)"
     },
     {
       "sysId": "f8c29ff4938fcb10043532edfaba1064",
@@ -8274,7 +8384,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "🤗Accelerateが超大規模モデルを動かす仕組み、支えるのはPyTorch"
     },
     {
       "sysId": "f8c29ff4938fcb10043532edfaba1069",
@@ -8290,7 +8401,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "TF ServingでKubernetes上に🤗ViTをデプロイする"
     },
     {
       "sysId": "f8c29ff4938fcb10043532edfaba106e",
@@ -8306,7 +8418,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "いざ出発、初めての機械学習プロジェクトの始め方"
     },
     {
       "sysId": "f8c29ff4938fcb10043532edfaba1073",
@@ -8322,7 +8435,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "機械学習エキスパートに聞く:Sasha Luccioni氏"
     },
     {
       "sysId": "f8c29ff4938fcb10043532edfaba1078",
@@ -8338,7 +8452,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "機械学習エキスパートに聞く:Lewis Tunstall氏"
     },
     {
       "sysId": "f8c29ff4938fcb10043532edfaba107d",
@@ -8354,7 +8469,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "事例研究:Hugging Face Infinityと最新CPUでミリ秒レイテンシを実現"
     },
     {
       "sysId": "f8c29ff4938fcb10043532edfaba1082",
@@ -8370,7 +8486,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「コードとしての機械学習」の時代が到来"
     },
     {
       "sysId": "f8c29ff4938fcb10043532edfaba109e",
@@ -8386,7 +8503,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Sentence TransformersがHugging Face Hubに対応"
     },
     {
       "sysId": "f8c29ff4938fcb10043532edfaba10a3",
@@ -8402,7 +8520,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "🤗API利用者向けにTransformer推論を100倍高速化した方法"
     },
     {
       "sysId": "fcc29ff4938fcb10043532edfaba1065",
@@ -8418,7 +8537,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Diffusers最新アップデートまとめ"
     },
     {
       "sysId": "fcc29ff4938fcb10043532edfaba106a",
@@ -8434,7 +8554,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "Nyströmformer、ニュストローム法で自己注意を線形時間・線形メモリに近似"
     },
     {
       "sysId": "fcc29ff4938fcb10043532edfaba106f",
@@ -8450,7 +8571,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face OptimumでTransformersをONNXに変換する"
     },
     {
       "sysId": "fcc29ff4938fcb10043532edfaba1074",
@@ -8466,7 +8588,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Student Ambassador Program」参加者を募集開始"
     },
     {
       "sysId": "fcc29ff4938fcb10043532edfaba1079",
@@ -8482,7 +8605,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "機械学習エキスパートに聞く:Margaret Mitchell氏"
     },
     {
       "sysId": "fcc29ff4938fcb10043532edfaba107e",
@@ -8498,7 +8622,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "GradioがHugging Faceに参加"
     },
     {
       "sysId": "fcc29ff4938fcb10043532edfaba109f",
@@ -8514,7 +8639,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "分散学習ライブラリ「🤗Accelerate」を発表"
     },
     {
       "sysId": "fcc29ff4938fcb10043532edfaba10a4",
@@ -8530,7 +8656,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Transformerベースのエンコーダ・デコーダモデルを解説"
     },
     {
       "sysId": "10c25ff4938fcb10043532edfaba10ae",
@@ -8546,7 +8673,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "文書画像向けデータ拡張「TextImage Augmentation」を発表"
     },
     {
       "sysId": "10c25ff4938fcb10043532edfaba10b3",
@@ -8562,7 +8690,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Banque des Territoires(CDCグループ)×Polyconseil×Hugging Face、主権データソリューションでフランスの大型環境プログラムを強化"
     },
     {
       "sysId": "10c25ff4938fcb10043532edfaba10b8",
@@ -8578,7 +8707,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Artificial Analysis」がText-to-Imageリーダーボード&アリーナを開始"
     },
     {
       "sysId": "14c25ff4938fcb10043532edfaba10aa",
@@ -8594,7 +8724,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Accelerate 1.0.0」がリリース"
     },
     {
       "sysId": "14c25ff4938fcb10043532edfaba10af",
@@ -8610,7 +8741,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "LAVE、LLMによるDocmatixのゼロショットVQA評価は、ファインチューニングをまだ必要とするか"
     },
     {
       "sysId": "14c25ff4938fcb10043532edfaba10b4",
@@ -8626,7 +8758,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "GoogleのオープンLLM新版「Gemma 2」が登場"
     },
     {
       "sysId": "14c25ff4938fcb10043532edfaba10b9",
@@ -8642,7 +8775,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "Text Generation Inferenceの性能をベンチマークする"
     },
     {
       "sysId": "18c25ff4938fcb10043532edfaba10ab",
@@ -8658,7 +8792,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Flash Attention 2のパッキングでHugging Faceの学習効率を改善"
     },
     {
       "sysId": "18c25ff4938fcb10043532edfaba10b0",
@@ -8674,7 +8809,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "TGI Multi-LoRA、一度のデプロイで30モデルを同時提供"
     },
     {
       "sysId": "18c25ff4938fcb10043532edfaba10b5",
@@ -8690,7 +8826,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「データは力を合わせてこそ」、これまでとこれから"
     },
     {
       "sysId": "1cc25ff4938fcb10043532edfaba10ac",
@@ -8706,7 +8843,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "初のアテンション不要70億パラメータ強力モデル「Falcon Mamba」が登場"
     },
     {
       "sysId": "1cc25ff4938fcb10043532edfaba10b1",
@@ -8722,7 +8860,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging FaceとKerasHubの新たな統合を発表"
     },
     {
       "sysId": "1cc25ff4938fcb10043532edfaba10b6",
@@ -8738,7 +8877,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "DiffusersがStable Diffusion 3に対応"
     },
     {
       "sysId": "20c25ff4938fcb10043532edfaba10bd",
@@ -8754,7 +8894,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "アラビア語LLMのオープンリーダーボードを発表"
     },
     {
       "sysId": "20c25ff4938fcb10043532edfaba10c2",
@@ -8770,7 +8911,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Ryght、Hugging Faceの専門支援でヘルスケア・ライフサイエンス分野を強化するまでの道のり"
     },
     {
       "sysId": "20c25ff4938fcb10043532edfaba10c7",
@@ -8786,7 +8928,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "GaLore、コンシューマー向けハードウェアでの大規模モデル学習を前進させる"
     },
     {
       "sysId": "20c25ff4938fcb10043532edfaba10cc",
@@ -8802,7 +8945,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "🤗PEFTに新たなモデルマージ手法が追加"
     },
     {
       "sysId": "20c25ff4938fcb10043532edfaba10d1",
@@ -8818,7 +8962,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging FaceにおけるPatchTSMixer"
     },
     {
       "sysId": "20c29ff4938fcb10043532edfaba1025",
@@ -8834,7 +8979,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "チャットテンプレート、静かな性能低下の元凶に終止符"
     },
     {
       "sysId": "20c29ff4938fcb10043532edfaba102a",
@@ -8850,7 +8996,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "翼を広げて、「Falcon 180B」登場"
     },
     {
       "sysId": "20c29ff4938fcb10043532edfaba102f",
@@ -8866,7 +9013,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "実践3Dアセット生成、ステップバイステップガイド"
     },
     {
       "sysId": "20c29ff4938fcb10043532edfaba1034",
@@ -8882,7 +9030,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "倫理と社会ニュースレター 第4号:Text-to-Imageモデルのバイアス"
     },
     {
       "sysId": "20c29ff4938fcb10043532edfaba1039",
@@ -8898,7 +9047,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "オープンソースAIゲームジャムを開催"
     },
     {
       "sysId": "20c29ff4938fcb10043532edfaba103e",
@@ -8914,7 +9064,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Text-to-Videoモデルを深掘りする"
     },
     {
       "sysId": "20c29ff4938fcb10043532edfaba1043",
@@ -8930,7 +9081,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging FaceとFlowerで実践する連合学習"
     },
     {
       "sysId": "20c29ff4938fcb10043532edfaba1048",
@@ -8946,7 +9098,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "🤗PEFTで実現するパラメータ効率的ファインチューニング"
     },
     {
       "sysId": "20c29ff4938fcb10043532edfaba104d",
@@ -8962,7 +9115,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "グラフ機械学習入門"
     },
     {
       "sysId": "24c25ff4938fcb10043532edfaba10be",
@@ -8978,7 +9132,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ヘブライ語LLM向けオープンリーダーボードを発表"
     },
     {
       "sysId": "24c25ff4938fcb10043532edfaba10c3",
@@ -8994,7 +9149,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "Google公式のコード生成LLM「CodeGemma」登場"
     },
     {
       "sysId": "24c25ff4938fcb10043532edfaba10c8",
@@ -9010,7 +9166,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「WebSight」データセットでWebスクリーンショットからHTMLコードへの変換を実現"
     },
     {
       "sysId": "24c25ff4938fcb10043532edfaba10cd",
@@ -9026,7 +9183,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "SegMoE、Segmindによる拡散モデルのMixture of Experts"
     },
     {
       "sysId": "24c25ff4938fcb10043532edfaba10d2",
@@ -9042,7 +9200,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "独自のHugging Faceリーダーボードを作るガイド、Vectaraのハルシネーション・リーダーボードを例に"
     },
     {
       "sysId": "24c29ff4938fcb10043532edfaba1021",
@@ -9058,7 +9217,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AWS Inferentia2でLlamaの生成速度を劇的に向上"
     },
     {
       "sysId": "24c29ff4938fcb10043532edfaba1026",
@@ -9074,7 +9234,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "非エンジニア向けガイド:LLaMA 2チャットボットを学習させる"
     },
     {
       "sysId": "24c29ff4938fcb10043532edfaba102b",
@@ -9090,7 +9251,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "パスワードによるGit認証を廃止へ"
     },
     {
       "sysId": "24c29ff4938fcb10043532edfaba1030",
@@ -9106,7 +9268,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Agents.js」を発表、JavaScriptでLLMにツールを与える"
     },
     {
       "sysId": "24c29ff4938fcb10043532edfaba1035",
@@ -9122,7 +9285,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "低資源音声認識向けにMMSアダプターモデルをファインチューニング"
     },
     {
       "sysId": "24c29ff4938fcb10043532edfaba103a",
@@ -9138,7 +9302,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "bitsandbytesと4bit量子化・QLoRAでLLMをさらに身近に"
     },
     {
       "sysId": "24c29ff4938fcb10043532edfaba103f",
@@ -9154,7 +9319,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "無料枠のGoogle Colabで🧨diffusersを使いIFを動かす"
     },
     {
       "sysId": "24c29ff4938fcb10043532edfaba1044",
@@ -9170,7 +9336,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "24GBのコンシューマー向けGPUで200億パラメータLLMをRLHFファインチューニング"
     },
     {
       "sysId": "24c29ff4938fcb10043532edfaba1049",
@@ -9186,7 +9353,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Intel Sapphire RapidsでPyTorch Transformersを高速化 第2回"
     },
     {
       "sysId": "24c29ff4938fcb10043532edfaba104e",
@@ -9202,7 +9370,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "モデルカードとは何か"
     },
     {
       "sysId": "28c25ff4938fcb10043532edfaba10ba",
@@ -9218,7 +9387,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging FaceからAWS Inferentia2へモデルをデプロイする"
     },
     {
       "sysId": "28c25ff4938fcb10043532edfaba10bf",
@@ -9234,7 +9404,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "StarCoder2-Instruct、完全に透明で寛容なライセンスのコード生成向け自己アライメント"
     },
     {
       "sysId": "28c25ff4938fcb10043532edfaba10c4",
@@ -9250,7 +9421,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "🤗Optimum IntelとXeonで実現する超高速SetFit推論"
     },
     {
       "sysId": "28c25ff4938fcb10043532edfaba10c9",
@@ -9266,7 +9438,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「StarCoder2」と学習データセット「The Stack v2」を発表"
     },
     {
       "sysId": "28c25ff4938fcb10043532edfaba10ce",
@@ -9282,7 +9455,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging FaceにおけるPatch Time Series Transformer"
     },
     {
       "sysId": "28c25ff4938fcb10043532edfaba10d3",
@@ -9298,7 +9472,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "投機的デコードでWhisper推論を2倍高速化"
     },
     {
       "sysId": "28c29ff4938fcb10043532edfaba1022",
@@ -9314,7 +9489,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "パーソナルCopilot、自分専用のコーディングアシスタントを学習する"
     },
     {
       "sysId": "28c29ff4938fcb10043532edfaba1027",
@@ -9330,7 +9506,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "3Dガウシアンスプラッティング入門"
     },
     {
       "sysId": "28c29ff4938fcb10043532edfaba102c",
@@ -9346,7 +9523,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face HubがAWS Marketplaceに登場、AWSアカウントで支払い可能に"
     },
     {
       "sysId": "28c29ff4938fcb10043532edfaba1031",
@@ -9362,7 +9540,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AI WebTVを作ってみた"
     },
     {
       "sysId": "28c29ff4938fcb10043532edfaba1036",
@@ -9378,7 +9557,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "新しいコンテンツガイドライン・ポリシーを発表"
     },
     {
       "sysId": "28c29ff4938fcb10043532edfaba103b",
@@ -9394,7 +9574,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "InstructPix2PixでStable Diffusionを指示チューニングする"
     },
     {
       "sysId": "28c29ff4938fcb10043532edfaba1040",
@@ -9410,7 +9591,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AWS Inferentia2でHugging Face Transformersを高速化"
     },
     {
       "sysId": "28c29ff4938fcb10043532edfaba1045",
@@ -9426,7 +9608,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Diffusersライブラリ開発における倫理ガイドライン"
     },
     {
       "sysId": "28c29ff4938fcb10043532edfaba104a",
@@ -9442,7 +9625,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "LoRAで効率的にStable Diffusionをファインチューニングする"
     },
     {
       "sysId": "2cc25ff4938fcb10043532edfaba10bb",
@@ -9458,7 +9642,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "クラウドから開発者へ、Hugging FaceとMicrosoftが協業を深化"
     },
     {
       "sysId": "2cc25ff4938fcb10043532edfaba10c0",
@@ -9474,7 +9659,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Metaの新オープンLLM「Llama 3」が登場"
     },
     {
       "sysId": "2cc25ff4938fcb10043532edfaba10c5",
@@ -9490,7 +9676,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "バイナリ・スカラー埋め込み量子化で検索を大幅に高速・低コスト化"
     },
     {
       "sysId": "2cc25ff4938fcb10043532edfaba10ca",
@@ -9506,7 +9693,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "レッドチーム耐性リーダーボードを発表"
     },
     {
       "sysId": "2cc25ff4938fcb10043532edfaba10cf",
@@ -9522,7 +9710,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AIセキュリティ「LLM Safety Leaderboard」入門"
     },
     {
       "sysId": "2cc25ff4938fcb10043532edfaba10d4",
@@ -9538,7 +9727,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "SetFitABSA、SetFitによる少数ショットのアスペクトベース感情分析"
     },
     {
       "sysId": "2cc29ff4938fcb10043532edfaba1023",
@@ -9554,7 +9744,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "SDXLのシンプルな最適化手法を探る"
     },
     {
       "sysId": "2cc29ff4938fcb10043532edfaba1028",
@@ -9570,7 +9761,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "PyTorch FSDPでLlama 2 70Bをファインチューニングする"
     },
     {
       "sysId": "2cc29ff4938fcb10043532edfaba102d",
@@ -9586,7 +9778,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Swift Transformers」を公開、Appleデバイス上でLLMをオンデバイス実行"
     },
     {
       "sysId": "2cc29ff4938fcb10043532edfaba1032",
@@ -9602,7 +9795,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face Inference EndpointsでLLMをデプロイする"
     },
     {
       "sysId": "2cc29ff4938fcb10043532edfaba1037",
@@ -9618,7 +9812,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "DuckDBでHugging Face Hub上の5万件超のデータセットを分析する"
     },
     {
       "sysId": "2cc29ff4938fcb10043532edfaba103c",
@@ -9634,7 +9829,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ROCmで単一GPUからChatGPT風チャットボットを動かす"
     },
     {
       "sysId": "2cc29ff4938fcb10043532edfaba1041",
@@ -9650,7 +9846,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "StackLLaMA、RLHFでLLaMAを学習する実践ガイド"
     },
     {
       "sysId": "2cc29ff4938fcb10043532edfaba1046",
@@ -9666,7 +9863,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Fetch、AWS上のHugging FaceでAIツールを統合し開発時間を30%削減"
     },
     {
       "sysId": "2cc29ff4938fcb10043532edfaba104b",
@@ -9682,7 +9880,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Mask2FormerとOneFormerによる汎用画像セグメンテーション"
     },
     {
       "sysId": "50c25ff4938fcb10043532edfaba10ad",
@@ -9698,7 +9897,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ツール利用の作法を統一する"
     },
     {
       "sysId": "50c25ff4938fcb10043532edfaba10b2",
@@ -9714,7 +9914,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "PresidioによるHub上の個人情報(PII)自動検出を試す"
     },
     {
       "sysId": "50c25ff4938fcb10043532edfaba10b7",
@@ -9730,7 +9931,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "RLHFに「強化学習」を取り戻す"
     },
     {
       "sysId": "54c25ff4938fcb10043532edfaba10ae",
@@ -9746,7 +9948,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "Googleが「Gemma 2 2B」「ShieldGemma」「Gemma Scope」を公開"
     },
     {
       "sysId": "54c25ff4938fcb10043532edfaba10b3",
@@ -9762,7 +9965,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "データセット検索の新機能を発表"
     },
     {
       "sysId": "54c25ff4938fcb10043532edfaba10b8",
@@ -9778,7 +9982,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "LLM搭載NPCと触れ合える3D空間「NPC-Playground」を発表"
     },
     {
       "sysId": "58c25ff4938fcb10043532edfaba10aa",
@@ -9794,7 +9999,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging FaceがTruffleHogと提携、シークレット情報をスキャン"
     },
     {
       "sysId": "58c25ff4938fcb10043532edfaba10af",
@@ -9810,7 +10016,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Llama 3.1」登場、405B・70B・8Bで多言語対応・長文脈をサポート"
     },
     {
       "sysId": "58c25ff4938fcb10043532edfaba10b4",
@@ -9826,7 +10033,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "XLSCOUT、特許・知的財産向け埋め込みモデル「ParaEmbed 2.0」を発表、Hugging Faceが専門支援"
     },
     {
       "sysId": "58c25ff4938fcb10043532edfaba10b9",
@@ -9842,7 +10050,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "Sentence Transformersで埋め込みモデルを学習・ファインチューニングする"
     },
     {
       "sysId": "5cc25ff4938fcb10043532edfaba10ab",
@@ -9858,7 +10067,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Google Cloud Vertex AIにMeta Llama 3.1 405Bをデプロイする"
     },
     {
       "sysId": "5cc25ff4938fcb10043532edfaba10b0",
@@ -9874,7 +10084,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「SmolLM」、驚異の速さと高い性能を両立"
     },
     {
       "sysId": "5cc25ff4938fcb10043532edfaba10b5",
@@ -9890,7 +10101,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "マルチモーダル化への道、PreziがHubとExpert Support ProgramでMLロードマップを加速"
     },
     {
       "sysId": "60c25ff4938fcb10043532edfaba10bc",
@@ -9906,7 +10118,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "KVキャッシュ量子化で、より長い生成を可能にする"
     },
     {
       "sysId": "60c25ff4938fcb10043532edfaba10c1",
@@ -9922,7 +10135,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "GradioのReloadモードでAIアプリをあっという間に開発"
     },
     {
       "sysId": "60c25ff4938fcb10043532edfaba10c6",
@@ -9938,7 +10152,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "チャットボットのガードレールを競う「Chatbot Guardrails Arena」を発表"
     },
     {
       "sysId": "60c25ff4938fcb10043532edfaba10cb",
@@ -9954,7 +10169,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "マトリョーシカ埋め込みモデル入門"
     },
     {
       "sysId": "60c25ff4938fcb10043532edfaba10d0",
@@ -9970,7 +10186,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging FaceとGoogleがオープンAIで協業へ"
     },
     {
       "sysId": "60c25ff4938fcb10043532edfaba10d5",
@@ -9986,7 +10203,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AMD×🤗、AMD GPUで大規模言語モデルを箱出しのまま高速化"
     },
     {
       "sysId": "60c29ff4938fcb10043532edfaba1024",
@@ -10002,7 +10220,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Gradio-Lite」、ブラウザだけで完結するサーバーレスGradio"
     },
     {
       "sysId": "60c29ff4938fcb10043532edfaba1029",
@@ -10018,7 +10237,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "🤗Transformersが標準対応する量子化手法まとめ"
     },
     {
       "sysId": "60c29ff4938fcb10043532edfaba102e",
@@ -10034,7 +10254,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Inference EndpointsでMusicGenを一瞬でデプロイ"
     },
     {
       "sysId": "60c29ff4938fcb10043532edfaba1033",
@@ -10050,7 +10271,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "オープンな機械学習モデルでWebアプリ生成器を作る"
     },
     {
       "sysId": "60c29ff4938fcb10043532edfaba1038",
@@ -10066,7 +10288,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "fastTextがHugging Face Hubに登場"
     },
     {
       "sysId": "60c29ff4938fcb10043532edfaba103d",
@@ -10082,7 +10305,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Transformerの利点を備えたRNN「RWKV」を発表"
     },
     {
       "sysId": "60c29ff4938fcb10043532edfaba1042",
@@ -10098,7 +10322,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "倫理と社会ニュースレター 第3号:Hugging Faceにおける倫理的なオープンネス"
     },
     {
       "sysId": "60c29ff4938fcb10043532edfaba1047",
@@ -10114,7 +10339,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging FaceとAWSが提携、AIをより身近な存在に"
     },
     {
       "sysId": "60c29ff4938fcb10043532edfaba104c",
@@ -10130,7 +10356,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "PaddlePaddleがHugging Face Hubに登場"
     },
     {
       "sysId": "64c25ff4938fcb10043532edfaba10bd",
@@ -10146,7 +10373,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "呼び出しのライセンス、「Transformers Agents 2.0」を発表"
     },
     {
       "sysId": "64c25ff4938fcb10043532edfaba10c2",
@@ -10162,7 +10390,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "コミュニティ向け強力な80億パラメータ視覚言語モデル「Idefics2」を発表"
     },
     {
       "sysId": "64c25ff4938fcb10043532edfaba10c7",
@@ -10178,7 +10407,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "NVIDIA DGX CloudのH100 GPUでモデルを手軽に学習する"
     },
     {
       "sysId": "64c25ff4938fcb10043532edfaba10cc",
@@ -10194,7 +10424,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "合成データ、オープンソースでコスト・時間・CO2を節約する"
     },
     {
       "sysId": "64c25ff4938fcb10043532edfaba10d1",
@@ -10210,7 +10441,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "直接選好最適化(DPO)手法でLLMを選好チューニングする"
     },
     {
       "sysId": "64c29ff4938fcb10043532edfaba1020",
@@ -10226,7 +10458,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "コールドブートに別れを、LoRA推論を300%高速化した方法"
     },
     {
       "sysId": "64c29ff4938fcb10043532edfaba1025",
@@ -10242,7 +10475,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Inference APIで「AI Comic Factory」をデプロイする"
     },
     {
       "sysId": "64c29ff4938fcb10043532edfaba102a",
@@ -10258,7 +10492,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Fetch、Amazon SageMakerとHugging FaceでML処理遅延を50%削減"
     },
     {
       "sysId": "64c29ff4938fcb10043532edfaba102f",
@@ -10274,7 +10509,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "SD-SmallとSD-Tinyの知識蒸留コード・重みをオープンソース化"
     },
     {
       "sysId": "64c29ff4938fcb10043532edfaba1034",
@@ -10290,7 +10526,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Open LLM Leaderboardで今何が起きているのか"
     },
     {
       "sysId": "64c29ff4938fcb10043532edfaba1039",
@@ -10306,7 +10543,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Amazon SageMaker向け「Hugging Face LLM Inference Container」を発表"
     },
     {
       "sysId": "64c29ff4938fcb10043532edfaba103e",
@@ -10322,7 +10560,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "コード生成向け最先端LLM「StarCoder」を発表"
     },
     {
       "sysId": "64c29ff4938fcb10043532edfaba1043",
@@ -10338,7 +10577,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "diffusersで独自のControlNetを学習する"
     },
     {
       "sysId": "64c29ff4938fcb10043532edfaba1048",
@@ -10354,7 +10594,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "SpeechT5で実現する音声合成・音声認識、そしてその先へ"
     },
     {
       "sysId": "64c29ff4938fcb10043532edfaba104d",
@@ -10370,7 +10611,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ゲーム開発とAI:5日間で農業ゲームを作る 第1回"
     },
     {
       "sysId": "68c25ff4938fcb10043532edfaba10be",
@@ -10386,7 +10628,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Artificial Analysis」のLLM性能リーダーボードをHugging Faceに導入"
     },
     {
       "sysId": "68c25ff4938fcb10043532edfaba10c3",
@@ -10402,7 +10645,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Faceにおける公共政策への取り組み"
     },
     {
       "sysId": "68c25ff4938fcb10043532edfaba10c8",
@@ -10418,7 +10662,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「ConTextual」を発表、文字情報の多いシーンでマルチモーダルモデルはテキストと画像をどこまで統合的に推論できるか"
     },
     {
       "sysId": "68c25ff4938fcb10043532edfaba10cd",
@@ -10434,7 +10679,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "NPHardEvalリーダーボード、計算量クラスと動的更新でLLMの推論能力を明らかにする"
     },
     {
       "sysId": "68c25ff4938fcb10043532edfaba10d2",
@@ -10450,7 +10696,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Unsloth×🤗TRLでLLMファインチューニングを2倍高速化"
     },
     {
       "sysId": "68c29ff4938fcb10043532edfaba1021",
@@ -10466,7 +10713,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Faceと直接連携する「Prodigy-HF」を発表"
     },
     {
       "sysId": "68c29ff4938fcb10043532edfaba1026",
@@ -10482,7 +10730,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "Amazon SageMaker上のLlama 2をベンチマークする"
     },
     {
       "sysId": "68c29ff4938fcb10043532edfaba102b",
@@ -10498,7 +10747,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AutoGPTQとtransformersでLLMを軽量化する"
     },
     {
       "sysId": "68c29ff4938fcb10043532edfaba1030",
@@ -10514,7 +10764,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "オープンソースAIゲームジャム、結果発表"
     },
     {
       "sysId": "68c29ff4938fcb10043532edfaba1035",
@@ -10530,7 +10781,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Transformerは時系列予測に効く、その証明とAutoformer"
     },
     {
       "sysId": "68c29ff4938fcb10043532edfaba103a",
@@ -10546,7 +10798,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging FaceとMicrosoftが協業、Azureに「Hugging Face Model Catalog」を開設"
     },
     {
       "sysId": "68c29ff4938fcb10043532edfaba103f",
@@ -10562,7 +10815,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Databricks×Hugging Face、大規模言語モデルの学習・チューニングを最大40%高速化"
     },
     {
       "sysId": "68c29ff4938fcb10043532edfaba1044",
@@ -10578,7 +10832,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Kakao Brainが新しいViT・ALIGNモデルを公開"
     },
     {
       "sysId": "68c29ff4938fcb10043532edfaba1049",
@@ -10594,7 +10849,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "視覚言語モデルを深掘りする"
     },
     {
       "sysId": "68c29ff4938fcb10043532edfaba104e",
@@ -10610,7 +10866,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "機械学習のバイアスについて語ろう、倫理と社会ニュースレター第2号"
     },
     {
       "sysId": "6cc25ff4938fcb10043532edfaba10ba",
@@ -10626,7 +10883,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "シームレスな開発体験を実現する「Spaces Dev Mode」を発表"
     },
     {
       "sysId": "6cc25ff4938fcb10043532edfaba10bf",
@@ -10642,7 +10900,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "思考の連鎖(Chain of Thought)を測るオープンリーダーボードを発表"
     },
     {
       "sysId": "6cc25ff4938fcb10043532edfaba10c4",
@@ -10658,7 +10917,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Faceユーザー向けにサーバーレスGPU推論を提供開始"
     },
     {
       "sysId": "6cc25ff4938fcb10043532edfaba10c9",
@@ -10674,7 +10934,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "TTS Arena、実環境でText-to-Speechモデルをベンチマークする"
     },
     {
       "sysId": "6cc25ff4938fcb10043532edfaba10ce",
@@ -10690,7 +10951,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "実務ユースケースを測る「Enterprise Scenarios Leaderboard」を発表"
     },
     {
       "sysId": "6cc25ff4938fcb10043532edfaba10d3",
@@ -10706,7 +10968,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "2023年、オープンLLMの年を振り返る"
     },
     {
       "sysId": "6cc29ff4938fcb10043532edfaba1022",
@@ -10722,7 +10985,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "たった1行でHugging Faceのデータセットをインタラクティブに探索する"
     },
     {
       "sysId": "6cc29ff4938fcb10043532edfaba1027",
@@ -10738,7 +11002,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "物体検出リーダーボードを公開"
     },
     {
       "sysId": "6cc29ff4938fcb10043532edfaba102c",
@@ -10754,7 +11019,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "🤗TransformersでBarkを最適化する"
     },
     {
       "sysId": "6cc29ff4938fcb10043532edfaba1031",
@@ -10770,7 +11036,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "Hugging Faceにおけるオープンソースのテキスト生成・LLMエコシステム"
     },
     {
       "sysId": "6cc29ff4938fcb10043532edfaba1036",
@@ -10786,7 +11053,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging FaceとAMDが提携、CPU・GPU向けに最先端モデルを高速化"
     },
     {
       "sysId": "6cc29ff4938fcb10043532edfaba103b",
@@ -10802,7 +11070,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "BigCodeを支える大規模な近似重複除去技術"
     },
     {
       "sysId": "6cc29ff4938fcb10043532edfaba1040",
@@ -10818,7 +11087,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Transformersで実践するグラフ分類"
     },
     {
       "sysId": "6cc29ff4938fcb10043532edfaba1045",
@@ -10834,7 +11104,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging FaceがWitty Worksの文章作成アシスタント開発をどう加速させたか"
     },
     {
       "sysId": "6cc29ff4938fcb10043532edfaba104a",
@@ -10850,7 +11121,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "対話エージェントを「使える」ものにする条件とは"
     },
     {
       "sysId": "90c25ff4938fcb10043532edfaba10ac",
@@ -10866,7 +11138,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "失敗した実験「Infini-Attention」、それでも挑戦を続けるべき理由"
     },
     {
       "sysId": "90c25ff4938fcb10043532edfaba10b1",
@@ -10882,7 +11155,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "distilabelを活用してArgilla 2.0チャットボットを作った方法"
     },
     {
       "sysId": "90c25ff4938fcb10043532edfaba10b6",
@@ -10898,7 +11172,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "BigCodeBench、次世代の「HumanEval」"
     },
     {
       "sysId": "94c25ff4938fcb10043532edfaba10ad",
@@ -10914,7 +11189,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "XetHubがHugging Faceに参加"
     },
     {
       "sysId": "94c25ff4938fcb10043532edfaba10b2",
@@ -10930,7 +11206,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "視覚言語モデルのための選好最適化"
     },
     {
       "sysId": "94c25ff4938fcb10043532edfaba10b7",
@@ -10946,7 +11223,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "この混沌を整理する"
     },
     {
       "sysId": "98c25ff4938fcb10043532edfaba10a9",
@@ -10962,7 +11240,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "データセット向け「SQL Console」を発表"
     },
     {
       "sysId": "98c25ff4938fcb10043532edfaba10ae",
@@ -10978,7 +11257,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "QuantoとDiffusersでメモリ効率の良い拡散Transformerを実現"
     },
     {
       "sysId": "98c25ff4938fcb10043532edfaba10b3",
@@ -10994,7 +11274,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Intel Gaudi 2でタンパク質言語モデル「ProtST」を高速化"
     },
     {
       "sysId": "98c25ff4938fcb10043532edfaba10b8",
@@ -11010,7 +11291,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Intel Gaudi向けアシスト生成をさらに高速化"
     },
     {
       "sysId": "9cc25ff4938fcb10043532edfaba10aa",
@@ -11026,7 +11308,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "動画エンコーディングでロボティクス向けデータセットをスケールさせる"
     },
     {
       "sysId": "9cc25ff4938fcb10043532edfaba10af",
@@ -11042,7 +11325,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "WWDC24、Core MLでMistral 7Bを動かす"
     },
     {
       "sysId": "9cc25ff4938fcb10043532edfaba10b4",
@@ -11058,7 +11342,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Microsoft最先端の視覚言語モデル「Florence-2」をファインチューニングする"
     },
     {
       "sysId": "9cc25ff4938fcb10043532edfaba10b9",
@@ -11074,7 +11359,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Falcon 2」登場、110億パラメータの事前学習済み言語モデル兼VLM、5000億超トークン・11言語で学習"
     },
     {
       "sysId": "a0c25ff4938fcb10043532edfaba10bb",
@@ -11090,7 +11376,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Dell Enterprise Hubでオンプレミスに AIを構築する"
     },
     {
       "sysId": "a0c25ff4938fcb10043532edfaba10c0",
@@ -11106,7 +11393,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 3
+      "score": 3,
+      "titleJa": "何でもこなす万能選手、マルチパーパスなTransformerエージェント"
     },
     {
       "sysId": "a0c25ff4938fcb10043532edfaba10c5",
@@ -11122,7 +11410,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Pollen-Vision、ロボティクス向けゼロショット視覚モデルの統一インターフェース"
     },
     {
       "sysId": "a0c25ff4938fcb10043532edfaba10ca",
@@ -11138,7 +11427,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AI電子透かし入門、ツールと技術"
     },
     {
       "sysId": "a0c25ff4938fcb10043532edfaba10cf",
@@ -11154,7 +11444,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "🤗Optimum IntelとXeonでStarCoderを高速化、Q8/Q4量子化と投機的デコード"
     },
     {
       "sysId": "a0c25ff4938fcb10043532edfaba10d4",
@@ -11170,7 +11461,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging FaceにSOTAなMixture of Experts「Mixtral」が登場"
     },
     {
       "sysId": "a0c29ff4938fcb10043532edfaba1023",
@@ -11186,7 +11478,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "Hugging Face Inference Endpointsで埋め込みモデルをデプロイする"
     },
     {
       "sysId": "a0c29ff4938fcb10043532edfaba1028",
@@ -11202,7 +11495,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "本番環境でLLMを最適化する"
     },
     {
       "sysId": "a0c29ff4938fcb10043532edfaba102d",
@@ -11218,7 +11512,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "BentoMLでHugging Faceモデルをデプロイする、DeepFloyd IF実践編"
     },
     {
       "sysId": "a0c29ff4938fcb10043532edfaba1032",
@@ -11234,7 +11529,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Intel CPU上でStable Diffusionモデルをファインチューニングする"
     },
     {
       "sysId": "a0c29ff4938fcb10043532edfaba1037",
@@ -11250,7 +11546,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "基盤モデルは人間のようにデータへラベル付けできるか"
     },
     {
       "sysId": "a0c29ff4938fcb10043532edfaba103c",
@@ -11266,7 +11563,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "小さいほど良い、Xeon上の効率的な生成AI「Q8-Chat」"
     },
     {
       "sysId": "a0c29ff4938fcb10043532edfaba1041",
@@ -11282,7 +11580,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Substraでプライバシー保護AIを構築する"
     },
     {
       "sysId": "a0c29ff4938fcb10043532edfaba1046",
@@ -11298,7 +11597,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "大規模言語モデルへのレッドチーミング"
     },
     {
       "sysId": "a0c29ff4938fcb10043532edfaba104b",
@@ -11314,7 +11614,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Optimum+ONNX Runtime、Hugging Faceモデルの学習をより簡単・高速に"
     },
     {
       "sysId": "a4c25ff4938fcb10043532edfaba10bc",
@@ -11330,7 +11631,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Google最先端のオープン視覚言語モデル「PaliGemma」"
     },
     {
       "sysId": "a4c25ff4938fcb10043532edfaba10c1",
@@ -11346,7 +11648,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "「LiveCodeBench」リーダーボードを発表、コード生成LLMを汚染フリーかつ包括的に評価"
     },
     {
       "sysId": "a4c25ff4938fcb10043532edfaba10c6",
@@ -11362,7 +11665,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ノートPCで動くチャットボット、Intel Meteor Lake上のPhi-2"
     },
     {
       "sysId": "a4c25ff4938fcb10043532edfaba10cb",
@@ -11378,7 +11682,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Googleの新オープンLLM「Gemma」が登場"
     },
     {
       "sysId": "a4c25ff4938fcb10043532edfaba10d0",
@@ -11394,7 +11699,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "オープンソースLLMをLangChainエージェントとして使う"
     },
     {
       "sysId": "a4c25ff4938fcb10043532edfaba10d5",
@@ -11410,7 +11716,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Optimum-NVIDIA、たった1行のコードで超高速LLM推論を実現"
     },
     {
       "sysId": "a4c29ff4938fcb10043532edfaba1024",
@@ -11426,7 +11733,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ONNX Runtimeで13万超のHugging Faceモデルを高速化"
     },
     {
       "sysId": "a4c29ff4938fcb10043532edfaba1029",
@@ -11442,7 +11750,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "SafeCoder対クローズドソース系コーディングアシスタント"
     },
     {
       "sysId": "a4c29ff4938fcb10043532edfaba102e",
@@ -11458,7 +11767,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Huggy Lingo、機械学習でHugging Face Hubの言語メタデータを改善する"
     },
     {
       "sysId": "a4c29ff4938fcb10043532edfaba1033",
@@ -11474,7 +11784,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "複雑な生成AIユースケースにHugging Faceを活用する"
     },
     {
       "sysId": "a4c29ff4938fcb10043532edfaba1038",
@@ -11490,7 +11801,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Falcon」がHugging Faceエコシステムに着陸"
     },
     {
       "sysId": "a4c29ff4938fcb10043532edfaba103d",
@@ -11506,7 +11818,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "アシスト生成、低遅延テキスト生成への新たな道"
     },
     {
       "sysId": "a4c29ff4938fcb10043532edfaba1042",
@@ -11522,7 +11835,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "大規模言語モデルの高速推論、Habana Gaudi2アクセラレータ上のBLOOMZ"
     },
     {
       "sysId": "a4c29ff4938fcb10043532edfaba1047",
@@ -11538,7 +11852,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "BLIP-2によるゼロショット画像・テキスト生成"
     },
     {
       "sysId": "a4c29ff4938fcb10043532edfaba104c",
@@ -11554,7 +11869,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face DatasetsとTransformersで実践する画像類似度検索"
     },
     {
       "sysId": "a8c25ff4938fcb10043532edfaba10bd",
@@ -11570,7 +11886,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AWSアカウントでEnterprise Hubに申し込む"
     },
     {
       "sysId": "a8c25ff4938fcb10043532edfaba10c2",
@@ -11586,7 +11903,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "視覚言語モデルを解説する"
     },
     {
       "sysId": "a8c25ff4938fcb10043532edfaba10c7",
@@ -11602,7 +11920,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Quanto、Optimum向けPyTorch量子化バックエンド"
     },
     {
       "sysId": "a8c25ff4938fcb10043532edfaba10cc",
@@ -11618,7 +11937,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「AMD Pervasive AI Developer Contest」開催"
     },
     {
       "sysId": "a8c25ff4938fcb10043532edfaba10d1",
@@ -11634,7 +11954,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ONNX RuntimeとOliveでSD TurboとSDXL Turboの推論を高速化"
     },
     {
       "sysId": "a8c29ff4938fcb10043532edfaba1020",
@@ -11650,7 +11971,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Open LLM Leaderboard、「DROP」ベンチマークを深掘り"
     },
     {
       "sysId": "a8c29ff4938fcb10043532edfaba1025",
@@ -11666,7 +11988,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "倫理と社会ニュースレター 第5号:Hugging Face、ワシントンへ行く、そして2023年夏の所感"
     },
     {
       "sysId": "a8c29ff4938fcb10043532edfaba102a",
@@ -11682,7 +12005,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「AudioLDM 2」がさらに高速に"
     },
     {
       "sysId": "a8c29ff4938fcb10043532edfaba102f",
@@ -11698,7 +12022,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "高度なCore ML量子化でMac上のStable Diffusion XLを動かす"
     },
     {
       "sysId": "a8c29ff4938fcb10043532edfaba1034",
@@ -11714,7 +12039,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Faceに関するパネルディスカッション"
     },
     {
       "sysId": "a8c29ff4938fcb10043532edfaba1039",
@@ -11730,7 +12056,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "BERTopicとHugging Face Hubの統合を発表"
     },
     {
       "sysId": "a8c29ff4938fcb10043532edfaba103e",
@@ -11746,7 +12073,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face Unity APIのインストールと使い方"
     },
     {
       "sysId": "a8c29ff4938fcb10043532edfaba1043",
@@ -11762,7 +12090,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "JupyterとHugging Faceの融合"
     },
     {
       "sysId": "a8c29ff4938fcb10043532edfaba1048",
@@ -11778,7 +12107,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "物語を生成する、ゲーム開発とAI 第5回"
     },
     {
       "sysId": "a8c29ff4938fcb10043532edfaba104d",
@@ -11794,7 +12124,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Intel Sapphire RapidsでPyTorch Transformersを高速化 第1回"
     },
     {
       "sysId": "acc25ff4938fcb10043532edfaba10be",
@@ -11810,7 +12141,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face Inference Endpointsで実現する強力な音声認識・話者分離・投機的デコード"
     },
     {
       "sysId": "acc25ff4938fcb10043532edfaba10c3",
@@ -11826,7 +12158,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "Hugging FaceがWiz Researchと提携、AIセキュリティを強化"
     },
     {
       "sysId": "acc25ff4938fcb10043532edfaba10c8",
@@ -11842,7 +12175,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「データは力を合わせてこそ」、ArgillaとHugging Face Spacesでコミュニティ共創のデータセット作りを実現"
     },
     {
       "sysId": "acc25ff4938fcb10043532edfaba10cd",
@@ -11858,7 +12192,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "オープンLLMで実践する「憲法的AI(Constitutional AI)」"
     },
     {
       "sysId": "acc25ff4938fcb10043532edfaba10d2",
@@ -11874,7 +12209,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "効率的なText-to-Image生成モデル「aMUSEd」が登場"
     },
     {
       "sysId": "acc29ff4938fcb10043532edfaba1021",
@@ -11890,7 +12226,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "LLMの性能比較、LoRAによる災害ツイート分析でRoberta・Llama 2・Mistralを検証"
     },
     {
       "sysId": "acc29ff4938fcb10043532edfaba1026",
@@ -11906,7 +12243,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "PROユーザー向け推論サービス"
     },
     {
       "sysId": "acc29ff4938fcb10043532edfaba102b",
@@ -11922,7 +12260,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "エンタープライズ向けコーディングアシスタント「SafeCoder」を発表"
     },
     {
       "sysId": "acc29ff4938fcb10043532edfaba1030",
@@ -11938,7 +12277,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "🤗Diffusers、1周年おめでとう"
     },
     {
       "sysId": "acc29ff4938fcb10043532edfaba1035",
@@ -11954,7 +12294,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "Core MLでiPhone・iPad・Macでの Stable Diffusionを高速化"
     },
     {
       "sysId": "acc29ff4938fcb10043532edfaba103a",
@@ -11970,7 +12311,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging FaceとIBMが提携、次世代AI開発スタジオ「watsonx.ai」を展開"
     },
     {
       "sysId": "acc29ff4938fcb10043532edfaba103f",
@@ -11986,7 +12328,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "中国語版Hugging Faceブログを開設、中国語圏AIコミュニティとの連携を強化"
     },
     {
       "sysId": "acc29ff4938fcb10043532edfaba1044",
@@ -12002,7 +12345,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "機械学習で被災者支援と時間との闘いを後押しする"
     },
     {
       "sysId": "acc29ff4938fcb10043532edfaba1049",
@@ -12018,7 +12362,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Faceにおけるコンピュータビジョンの現在地"
     },
     {
       "sysId": "acc29ff4938fcb10043532edfaba104e",
@@ -12034,7 +12379,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "音声データセット完全ガイド"
     },
     {
       "sysId": "d0c25ff4938fcb10043532edfaba10ab",
@@ -12050,7 +12396,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Faceの過小評価されたツール5選"
     },
     {
       "sysId": "d0c25ff4938fcb10043532edfaba10b0",
@@ -12066,7 +12413,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "文書VQA向け大規模データセット「Docmatix」を発表"
     },
     {
       "sysId": "d0c25ff4938fcb10043532edfaba10b5",
@@ -12082,7 +12430,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "倫理と社会ニュースレター 第6号:より良いAIを作る、データ品質の重要性"
     },
     {
       "sysId": "d4c25ff4938fcb10043532edfaba10ac",
@@ -12098,7 +12447,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "ggml入門"
     },
     {
       "sysId": "d4c25ff4938fcb10043532edfaba10b1",
@@ -12114,7 +12464,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "NuminaMath、第1回AIMO Progress Prizeを制した舞台裏"
     },
     {
       "sysId": "d4c25ff4938fcb10043532edfaba10b6",
@@ -12130,7 +12481,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "DeepSpeedからFSDP、そしてまた戻る、Hugging Face Accelerateが繋ぐ分散学習"
     },
     {
       "sysId": "d8c25ff4938fcb10043532edfaba10ad",
@@ -12146,7 +12498,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "2024年セキュリティ機能ハイライト"
     },
     {
       "sysId": "d8c25ff4938fcb10043532edfaba10b2",
@@ -12162,7 +12515,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Google Cloud TPUがHugging Faceユーザーに開放"
     },
     {
       "sysId": "d8c25ff4938fcb10043532edfaba10b7",
@@ -12178,7 +12532,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "Amazon SageMaker向け「Hugging Face Embedding Container」を発表"
     },
     {
       "sysId": "dcc25ff4938fcb10043532edfaba10a9",
@@ -12194,7 +12549,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "HuggingChatに「コミュニティツール」機能を追加"
     },
     {
       "sysId": "dcc25ff4938fcb10043532edfaba10ae",
@@ -12210,7 +12566,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging FaceとNVIDIA NIMで実現するサーバーレス推論"
     },
     {
       "sysId": "dcc25ff4938fcb10043532edfaba10b3",
@@ -12226,7 +12583,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 4
+      "score": 4,
+      "titleJa": "TransformersのコードエージェントがGAIAベンチマークを制覇"
     },
     {
       "sysId": "dcc25ff4938fcb10043532edfaba10b8",
@@ -12242,7 +12600,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 2
+      "score": 2,
+      "titleJa": "Spacesのシークレット情報、セキュリティを強化"
     },
     {
       "sysId": "e0c25ff4938fcb10043532edfaba10ba",
@@ -12258,7 +12617,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「CyberSecEval 2」、大規模言語モデルのサイバーセキュリティリスクと能力を包括評価するフレームワーク"
     },
     {
       "sysId": "e0c25ff4938fcb10043532edfaba10bf",
@@ -12274,7 +12634,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "構造化生成でプロンプトの一貫性を高める"
     },
     {
       "sysId": "e0c25ff4938fcb10043532edfaba10c4",
@@ -12290,7 +12651,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face Dataset Viewer APIとMotherduck DuckDB-NSQL-7BによるText2SQL"
     },
     {
       "sysId": "e0c25ff4938fcb10043532edfaba10c9",
@@ -12306,7 +12668,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Intel Gaudi 2 AIアクセラレータ上のテキスト生成パイプライン"
     },
     {
       "sysId": "e0c25ff4938fcb10043532edfaba10ce",
@@ -12322,7 +12685,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face Text Generation InferenceがAWS Inferentia2に対応"
     },
     {
       "sysId": "e0c25ff4938fcb10043532edfaba10d3",
@@ -12338,7 +12702,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "世界中のLoRA学習スクリプトよ、団結せよ"
     },
     {
       "sysId": "e0c29ff4938fcb10043532edfaba1022",
@@ -12354,7 +12719,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face Hubに「ストレージリージョン」機能を追加"
     },
     {
       "sysId": "e0c29ff4938fcb10043532edfaba1027",
@@ -12370,7 +12736,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Rocket Money×Hugging Face、変動の激しいMLモデルを本番環境でスケールさせる"
     },
     {
       "sysId": "e0c29ff4938fcb10043532edfaba102c",
@@ -12386,7 +12753,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "最先端視覚言語モデルのオープンな再現実装「IDEFICS」を発表"
     },
     {
       "sysId": "e0c29ff4938fcb10043532edfaba1031",
@@ -12402,7 +12770,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Llama 2」登場、Hugging Faceで今すぐ利用可能"
     },
     {
       "sysId": "e0c29ff4938fcb10043532edfaba1036",
@@ -12418,7 +12787,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "LivebookノートブックをアプリとしてHugging Face Spacesにデプロイする"
     },
     {
       "sysId": "e0c29ff4938fcb10043532edfaba103b",
@@ -12434,7 +12804,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Safetensors、監査で安全性を確認しデフォルト形式へ"
     },
     {
       "sysId": "e0c29ff4938fcb10043532edfaba1040",
@@ -12450,7 +12821,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "SpacesでUnityゲームをホストする方法"
     },
     {
       "sysId": "e0c29ff4938fcb10043532edfaba1045",
@@ -12466,7 +12838,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "🧨DiffusersにControlNetを実装"
     },
     {
       "sysId": "e0c29ff4938fcb10043532edfaba104a",
@@ -12482,7 +12855,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "2Dアセット生成、ゲーム開発とAI 第4回"
     },
     {
       "sysId": "e0c29ff4938fcb10043532edfaba104f",
@@ -12498,7 +12872,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "学習・推論の速度比較、Habana Gaudi2対Nvidia A100 80GB"
     },
     {
       "sysId": "e4c25ff4938fcb10043532edfaba10bb",
@@ -12514,7 +12889,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "AMD Instinct MI300 GPU上で動くHugging Face"
     },
     {
       "sysId": "e4c25ff4938fcb10043532edfaba10c0",
@@ -12530,7 +12906,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 1
+      "score": 1,
+      "titleJa": "「Open Medical-LLM Leaderboard」、医療分野の大規模言語モデルをベンチマーク"
     },
     {
       "sysId": "e4c25ff4938fcb10043532edfaba10c5",
@@ -12546,7 +12923,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "完全初心者向けHugging Face Transformers入門"
     },
     {
       "sysId": "e4c25ff4938fcb10043532edfaba10ca",
@@ -12562,7 +12940,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging FaceでGemmaモデルをファインチューニングする"
     },
     {
       "sysId": "e4c25ff4938fcb10043532edfaba10cf",
@@ -12578,7 +12957,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Hallucinations Leaderboard」、大規模言語モデルのハルシネーションを測るオープンな取り組み"
     },
     {
       "sysId": "e4c25ff4938fcb10043532edfaba10d4",
@@ -12594,7 +12974,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Mixture of Expertsを解説する"
     },
     {
       "sysId": "e4c29ff4938fcb10043532edfaba1023",
@@ -12610,7 +12991,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "PPOによるRLHF実装、N個の重要ポイント"
     },
     {
       "sysId": "e4c29ff4938fcb10043532edfaba1028",
@@ -12626,7 +13008,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "高速な画像生成拡散モデル「Würstchen」を発表"
     },
     {
       "sysId": "e4c29ff4938fcb10043532edfaba102d",
@@ -12642,7 +13025,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "DPOでLlama 2をファインチューニングする"
     },
     {
       "sysId": "e4c29ff4938fcb10043532edfaba1032",
@@ -12658,7 +13042,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Transformers.jsで機械学習搭載のWebゲームを作る"
     },
     {
       "sysId": "e4c29ff4938fcb10043532edfaba1037",
@@ -12674,7 +13059,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "美術館・図書館・公文書館・博物館(GLAM)のためのHugging Face Hub"
     },
     {
       "sysId": "e4c29ff4938fcb10043532edfaba103c",
@@ -12690,7 +13076,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face、フランスデータ保護機関(CNIL)の強化支援プログラムに選定"
     },
     {
       "sysId": "e4c29ff4938fcb10043532edfaba1041",
@@ -12706,7 +13093,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Snorkel AI×Hugging Face、企業向けに基盤モデルの活用を解き放つ"
     },
     {
       "sysId": "e4c29ff4938fcb10043532edfaba1046",
@@ -12722,7 +13110,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Swift🧨Diffusers、Mac向け高速Stable Diffusion"
     },
     {
       "sysId": "e4c29ff4938fcb10043532edfaba104b",
@@ -12738,7 +13127,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "3Dアセット生成、ゲーム開発とAI 第3回"
     },
     {
       "sysId": "e8c25ff4938fcb10043532edfaba10bc",
@@ -12754,7 +13144,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face×LangChain、新たな連携パッケージを発表"
     },
     {
       "sysId": "e8c25ff4938fcb10043532edfaba10c1",
@@ -12770,7 +13161,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Hugging Face Endpointsでプライバシー保護推論を実行する"
     },
     {
       "sysId": "e8c25ff4938fcb10043532edfaba10c6",
@@ -12786,7 +13178,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Cosmopedia、大規模言語モデルの事前学習向け合成データを作る方法"
     },
     {
       "sysId": "e8c25ff4938fcb10043532edfaba10cb",
@@ -12802,7 +13195,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "「Open Ko-LLM Leaderboard」を発表、韓国語LLM評価エコシステムを牽引"
     },
     {
       "sysId": "e8c25ff4938fcb10043532edfaba10d0",
@@ -12818,7 +13212,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "🤗TransformersでW2V2-Bertを低資源音声認識向けにファインチューニング"
     },
     {
       "sysId": "e8c29ff4938fcb10043532edfaba1024",
@@ -12834,7 +13229,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "Cloud TPU v5e上のJAXでStable Diffusion XL推論を高速化"
     },
     {
       "sysId": "e8c29ff4938fcb10043532edfaba1029",
@@ -12850,7 +13246,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "T2I-AdaptersでSDXLの効率的な制御生成を実現"
     },
     {
       "sysId": "e8c29ff4938fcb10043532edfaba102e",
@@ -12866,7 +13263,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "完全準同型暗号(FHE)で大規模言語モデルを暗号化する"
     },
     {
       "sysId": "e8c29ff4938fcb10043532edfaba1033",
@@ -12882,7 +13280,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "視覚言語モデルを高速化、Habana Gaudi2上のBridgeTower"
     },
     {
       "sysId": "e8c29ff4938fcb10043532edfaba1038",
@@ -12898,7 +13297,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "UnityでAI音声認識を実装する"
     },
     {
       "sysId": "e8c29ff4938fcb10043532edfaba103d",
@@ -12914,7 +13314,8 @@
       "summaryJa": "",
       "pointsJa": [],
       "applicableTechJa": "",
-      "score": 0
+      "score": 0,
+      "titleJa": "StarCoderでコーディングアシスタントを作る"
     },
     {
       "sysId": "e8c29ff4938fcb10043532edfaba1042",
