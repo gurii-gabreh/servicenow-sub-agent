@@ -1,4 +1,4 @@
-name: 一時診断: Anthropic newsページのHTML構造確認(PTD-046拡張)
+name: "一時診断: Anthropic newsページのHTML構造確認(PTD-046拡張)"
 
 # 使い捨てワークフロー。servicenow/scripts/tmp_inspect_anthropic_news.mjsの実行専用。
 # 実際のタグ構造を確認できたら、このファイルとスクリプトの両方を削除すること。
