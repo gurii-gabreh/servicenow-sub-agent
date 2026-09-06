@@ -5,7 +5,7 @@
 // sys_rest_message_fnテーブルを直接クエリして「今ServiceNowが実際に何を調べる設定になっているか」
 // の真実を確認する。あわせてu_ai_research_itemの実際の収集実績(情報源ごとの件数)も確認する。
 
-import { createClient } from "./lib/servicenow_client.mjs";
+import { createClient, normalizeInstance } from "./lib/servicenow_client.mjs";
 
 const client = createClient({
   instance: process.env.SN_INSTANCE,
@@ -13,7 +13,30 @@ const client = createClient({
   clientSecret: process.env.SN_CLIENT_SECRET,
 });
 
+async function diagnoseToken() {
+  // 前回JSON.parseで失敗し原因(HTMLの中身)が見えなかったため、生レスポンスを確認する。
+  const INSTANCE = normalizeInstance(process.env.SN_INSTANCE) || "dev395932.service-now.com";
+  const res = await fetch(`https://${INSTANCE}/oauth_token.do`, {
+    method: "POST",
+    headers: {
+      Authorization: "Basic " + Buffer.from(`${process.env.SN_CLIENT_ID}:${process.env.SN_CLIENT_SECRET}`).toString("base64"),
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: "grant_type=client_credentials",
+  });
+  const text = await res.text();
+  console.log(`診断: HTTP ${res.status}, ${text.length} bytes`);
+  console.log(`本文先頭800文字:\n${text.slice(0, 800)}`);
+  try {
+    JSON.parse(text);
+    console.log("→ JSONとしてパース可能(正常)");
+  } catch (e) {
+    console.log(`→ JSONとしてパース不可: ${e.message}`);
+  }
+}
+
 async function main() {
+  await diagnoseToken();
   const token = await client.getToken();
   console.log("OAuthトークン取得成功\n");
 
