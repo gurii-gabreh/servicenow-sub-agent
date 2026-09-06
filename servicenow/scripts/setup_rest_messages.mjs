@@ -89,6 +89,11 @@ const REST_MESSAGES = [
       // 追加できる。中身はclaude-codeのバージョンリリース情報であり、一般的なブログ記事(モデル
       // 発表・研究発表等)までは含まない点に注意(README「情報源」参照)。
       { function_name: "anthropicreleases", rest_endpoint: "https://github.com/anthropics/claude-code/releases.atom" },
+      // 2026-09-06(実機検証済み、tmp_inspect_anthropic_news.mjs): 当初はNext.jsのクライアントサイド
+      // レンダリングにより生HTMLに記事一覧が含まれないと懸念していたが、実際にはサーバーサイドで
+      // 記事一覧(PublicationList領域)を含むHTMLが返ることを確認できたため採用した。RSSではなく
+      // 生ページのHTML解析(scheduled_job_ai_research_fetch.js側にfetchAnthropicNewsHtml()を実装)。
+      { function_name: "anthropicnews", rest_endpoint: "https://www.anthropic.com/news" },
     ],
   },
 ];

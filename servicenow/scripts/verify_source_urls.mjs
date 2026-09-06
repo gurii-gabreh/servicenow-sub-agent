@@ -98,18 +98,17 @@ const SOURCES = [
     expect: (body) => body.includes("<entry"),
     expectDesc: "<entry> を含むAtom XML(GitHub標準のReleasesフィード)",
   },
-  // 2026-09-06追記(ユーザー依頼: 取れる情報源は全て取る): www.anthropic.com/newsはRSS/Atomではなく
-  // 通常のWebページであり、Next.jsのクライアントサイドレンダリングにより、生HTMLを単純GETしただけ
-  // では記事一覧が含まれず空のJSシェルしか返らない可能性がある(このリポジトリを実装した
-  // セッションはanthropic.comへのネットワークアクセス自体がブロックされており実地確認できなかった)。
-  // 未知のスキーマを推測で決め打ちしない方針(CLAUDE.mdルール1)に従い、本番のパース処理には
-  // まだ組み込まず、まずこの検証ジョブ(実インターネットアクセスを持つGitHub Actions)で
-  // 「記事一覧らしきリンクが本当に生HTMLに含まれるか」を実地確認してから採否を判断する。
+  // 2026-09-06(実機検証済み): 当初はNext.jsのクライアントサイドレンダリングにより生HTMLに記事一覧が
+  // 含まれない懸念があったが、tmp_inspect_anthropic_news.mjsでの実地確認によりサーバーサイドで
+  // 記事一覧(PublicationList領域)を含むHTMLが返ることを確認した。scheduled_job_ai_research_fetch.js
+  // のfetchAnthropicNewsHtml()が依存する構造(PublicationList-module-scss-module__<hash>__listItem)が
+  // 実際に存在するかを、このチェックでも同じ条件で継続監視する(サイト再デプロイでクラス名の
+  // ハッシュ部分が変わっても、接頭辞・接尾辞が変わらない限りは検出できる設計)。
   {
-    label: "Anthropic News page (raw HTML, 未検証・実験的)",
+    label: "Anthropic News page (raw HTML)",
     url: "https://www.anthropic.com/news",
-    expect: (body) => (body.match(/href="\/news\//g) || []).length >= 5,
-    expectDesc: '生HTML中に href="/news/..." 形式のリンクが5件以上(記事一覧が生HTMLに含まれている場合の目安。含まれていなければクライアントサイドレンダリングのため生GETでは取得不可と判断し、情報源として採用しない)',
+    expect: (body) => /class="PublicationList-module-scss-module__\w+__listItem"/.test(body),
+    expectDesc: 'PublicationList-module-scss-module__<hash>__listItem 形式のクラスを持つ<li>要素(記事一覧)を含むHTML',
   },
 ];
 

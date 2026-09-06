@@ -11,7 +11,8 @@
 //   - "AI Research - Hacker News"  HTTPメソッド "search"
 //   - "AI Research - Blog RSS"     HTTPメソッド "openai" / "huggingface" / "mittechreview" /
 //                                   "marktechpost" / "bytebytego" / "infoq" / "martinfowler" /
-//                                   "architectureweekly" / "geminideepmind" / "anthropicreleases"
+//                                   "architectureweekly" / "geminideepmind" / "anthropicreleases" /
+//                                   "anthropicnews"
 // また u_ai_research_item テーブル(フィールド定義はREADME参照)が作成済みであること。
 //
 // 2026-08-29追記: Anthropic Blog(HTTPメソッド"anthropic")は情報源から除外した。実機検証
@@ -165,6 +166,20 @@
         return m ? stripTags(m[1]) : "";
     }
 
+    // 2026-09-06追記: www.anthropic.com/news専用。CSS Modulesのクラス名は
+    // "<接頭辞>-module-scss-module__<ビルド固有ハッシュ>__<意味を表す名前>"という形式で、ハッシュ部分は
+    // ビルド(サイト再デプロイ)のたびに変わりうる。ハッシュを推測せず、接頭辞と意味のある末尾だけに
+    // マッチさせることで、多少の再デプロイには耐えられるようにしている(ただしクラス構造自体が変わる
+    // ような大規模なサイト再設計には耐えられない。README「既知の制約」参照)。
+    function extractTagByClassSuffix(block, tagName, classPrefix, classSuffix) {
+        var re = new RegExp(
+            "<" + tagName + "[^>]*class=\"" + classPrefix + "[^\"]*" + classSuffix + "[^\"]*\"[^>]*>([\\s\\S]*?)<\\/" + tagName + ">",
+            "i"
+        );
+        var m = re.exec(block);
+        return m ? stripTags(m[1]) : "";
+    }
+
     // Atom形式は<link href="..." rel="alternate"/>のように自己終端タグの属性でURLを持つ
     // (RSS 2.0の<link>テキスト</link>とは異なる)。fetchBlogRssのリンク抽出フォールバック用。
     function extractAttr(block, tagName, attrName) {
@@ -266,6 +281,54 @@
         }
     }
 
+    // ---- Anthropic News (www.anthropic.com/news、RSSではなく生HTML) ----
+    // 2026-09-06追記(ユーザー依頼: 取れる情報源は全て取る): Anthropicは公式ブログRSSを提供していない
+    // (README「情報源」参照)が、このページ自体は(懸念していたクライアントサイドレンダリングではなく)
+    // サーバーサイドで記事一覧を含んだHTMLを返すことを、GitHub Actions実地検証
+    // (tmp_inspect_anthropic_news.mjs、実際の生HTML)で確認した。ページ内には「Featured」領域(トップの
+    // 注目記事、ネストが深く抽出しづらい)と「PublicationList」領域(時系列の全記事一覧、構造がシンプル)
+    // の2種類のリストがあるが、後者だけで全記事を時系列に網羅できるため、後者のみを対象にする。
+    function fetchAnthropicNewsHtml() {
+        try {
+            var r = new sn_ws.RESTMessageV2("AI Research - Blog RSS", "anthropicnews");
+            var response = r.execute();
+            if (response.getStatusCode() !== 200) {
+                stats.errors.push("Anthropic News: HTTP " + response.getStatusCode());
+                return;
+            }
+            var body = response.getBody();
+            // <li><a href="/news/xxx" class="PublicationList-module-scss-module__<hash>__listItem">...</a></li>
+            // ハッシュ部分(例: KxYrHG)はビルドのたびに変わりうるため、\w+で許容する。
+            var itemRe = /<li>\s*<a href="(\/news\/[^"]+)"[^>]*class="PublicationList-module-scss-module__\w+__listItem"[^>]*>([\s\S]*?)<\/a>\s*<\/li>/g;
+            var m;
+            var found = 0;
+            while ((m = itemRe.exec(body)) !== null) {
+                var href = m[1];
+                var block = m[2];
+                var dateText = extractTagByClassSuffix(block, "time", "PublicationList-module-scss-module__", "__date");
+                var subject = extractTagByClassSuffix(block, "span", "PublicationList-module-scss-module__", "__subject");
+                var title = extractTagByClassSuffix(block, "span", "PublicationList-module-scss-module__", "__title");
+                if (!title) continue; // タイトルが取れない=想定した構造ではない(サイト側の変更の可能性)ため安全にスキップ
+                insertItem({
+                    category: CATEGORY.AI_TREND,
+                    title: title,
+                    summary: subject ? ("(" + subject + ") Anthropic公式ニュース") : "Anthropic公式ニュース",
+                    sourceUrl: "https://www.anthropic.com" + href,
+                    sourceName: "Anthropic News",
+                    publishedAt: dateText
+                });
+                found++;
+            }
+            if (found === 0) {
+                // 想定した構造の記事が1件も取れなかった=サイトのHTML構造が変わった可能性が高い。
+                // 静かに0件のまま終わらせず、エラーとして記録して気づけるようにする。
+                stats.errors.push("Anthropic News: 想定した構造(PublicationList)の記事が0件。サイトのHTML構造が変わった可能性(README「既知の制約」参照)");
+            }
+        } catch (e) {
+            stats.errors.push("Anthropic News: " + e);
+        }
+    }
+
     // ---- 実行 ----
     fetchArxiv();
     fetchHackerNews();
@@ -279,6 +342,7 @@
     fetchBlogRss("architectureweekly", "architectureweekly", "Architecture Weekly");
     fetchBlogRss("geminideepmind", "geminideepmind", "Google DeepMind Blog (Gemini)");
     fetchBlogRss("anthropicreleases", "anthropicreleases", "Anthropic (claude-code releases via GitHub)");
+    fetchAnthropicNewsHtml();
 
     gs.info(
         "[AIResearchFetcher] inserted=" + stats.inserted +
