@@ -10,7 +10,7 @@
   },
   "generatedAt": "2026-09-06T04:57:16.358Z",
   "itemCount": 2481,
-  "curatedCount": 23,
+  "curatedCount": 29,
   "items": [
     {
       "sysId": "05859fcf93cb4f50043532edfaba1050",
@@ -70,11 +70,14 @@
       "fetchedAt": "2026-09-05 15:35:17",
       "createdAt": "2026-09-05 15:35:17",
       "rawSummary": "We look at NVIDIA Personal AI Router (PAIR), an open source virtual inference router that spreads local AI requests across the machines already on a home network. We cover how PAIR proxies existing Ollama and LM Studio endpoints so agent harnesses need no changes, and how its scheduler filters nodes on readiness, engine state, exact model presence, job load, and GPU utilization. We walk through NVIDIA's five-subagent demonstration, which averaged 18 minutes on one RTX Spark laptop against 8 minutes 48 seconds on a three-device cluster, and note why NVIDIA labels it unofficial rather than a benchmark. We also cover where PAIR will not help, including its single scheduling policy and its blindness to VRAM and model warmness.\nThe post NVIDIA Releases Personal AI Router (PAIR): An Open Source Virtual Inference Router that Distributes Local AI Requests Across RTX, DGX Spark, and Mac Nodes appeared first on MarkTechPost.",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 7
+      "curated": true,
+      "summaryJa": "NVIDIAが、手元にある複数の端末(RTX搭載PC・DGX Spark・Mac等)へローカルAI推論リクエストを分散させる、オープンソースの仮想推論ルーター「Personal AI Router(PAIR)」を公開。",
+      "pointsJa": [
+        "外部クラウドAPIを使わず、自宅・手元のマシン群だけで推論を分散処理する設計",
+        "無料・オフライン完結という方向性は、このプロジェクト群が重視する『永久無料』方針と親和性が高い"
+      ],
+      "applicableTechJa": "GitHub Actions上での埋め込み計算等、複数の無料実行環境への処理分散を考える上でのアイデア源になる(直接の採用対象ではない)。",
+      "score": 8
     },
     {
       "sysId": "b8859fcf93cb4f50043532edfaba1049",
@@ -102,11 +105,14 @@
       "fetchedAt": "2026-09-05 15:35:17",
       "createdAt": "2026-09-05 15:35:17",
       "rawSummary": "An AI agent is kind of an AI system where the agent performs the task autonomously and takes the decisions.",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 9
+      "curated": true,
+      "summaryJa": "ByteByteGoのニュースレター第224号。「MCP・RAG・AIエージェント」という3つの用語の違いと関係性を整理した解説回。MCPはエージェントが外部ツール・データへ接続するための標準プロトコル、RAGは外部知識を検索して回答に組み込む手法、エージェントはそれらを使って自律的にタスクを遂行する主体、という役割分担を図解している。",
+      "pointsJa": [
+        "MCP(Model Context Protocol)・RAG・AIエージェントは競合技術ではなく、組み合わせて使う補完関係にある",
+        "エージェント設計の全体像を掴む入門的な整理として、社内の技術選定議論の共有材料に使いやすい"
+      ],
+      "applicableTechJa": "MCP/RAG/エージェントの役割分担を社内向けに説明する際の参考資料として活用できる。",
+      "score": 10
     },
     {
       "sysId": "fc859fcf93cb4f50043532edfaba1049",
@@ -1142,11 +1148,14 @@
       "fetchedAt": "2026-09-04 15:35:08",
       "createdAt": "2026-09-04 15:35:08",
       "rawSummary": "",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 5
+      "curated": true,
+      "summaryJa": "AIコーディングエージェントが作成したプルリクエストの実際のマージ率を比較した調査結果。Claude 84%・Codex(OpenAI)74%・Devin 43%・人間85%という具体的な数値が示された。",
+      "pointsJa": [
+        "Claudeのコーディングエージェントとしてのマージ率(84%)は、人間(85%)にほぼ匹敵する水準まで来ているという実測値",
+        "エージェントの性能を「ベンチマークスコア」ではなく「実際にマージされた比率」という実運用に近い指標で比較している点が特徴"
+      ],
+      "applicableTechJa": "ハッカソン等でコーディングエージェントを使った開発を行う際の、期待できる実運用品質の目安として参考になる。",
+      "score": 6
     },
     {
       "sysId": "f8eb4e7a93c3cb50043532edfaba1047",
@@ -1270,11 +1279,14 @@
       "fetchedAt": "2026-09-03 15:35:14",
       "createdAt": "2026-09-03 15:35:14",
       "rawSummary": "We look at zg (zvec-grep), the local-first search layer that Qwen Developers just open-sourced under Apache 2.0. We explain how it puts ripgrep, BM25, and vector search behind a single interface, so an agent can move from a plain-language description to an exact line span without switching tools. We cover the deliberately small MCP surface, the on-device embedding catalog, and the authorization gate that stands between local content and remote models.\nThe post Qwen Developers Open-Sources zg (zvec-grep): A Local-First Search Layer Unifying ripgrep, BM25, and Vector Search appeared first on MarkTechPost.",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 8
+      "curated": true,
+      "summaryJa": "Qwen開発チームが、ripgrep(高速文字列検索)・BM25(キーワード検索)・ベクトル検索を1つに統合したローカル完結型の検索レイヤー「zg(zvec-grep)」をApache 2.0ライセンスでオープンソース公開。",
+      "pointsJa": [
+        "キーワード検索(BM25)とベクトル検索(意味検索)を1つのツールで併用できる設計",
+        "外部APIキー不要・完全ローカル実行という点で、このプロジェクト群の『永久無料』方針とも相性が良い"
+      ],
+      "applicableTechJa": "PTD-061で検討中の埋め込み(embedding)によるセマンティック検索の実装候補・参考実装として直接関連する。",
+      "score": 9
     },
     {
       "sysId": "6c52c12693cb0b50043532edfaba10f8",
@@ -4380,11 +4392,14 @@
       "fetchedAt": "2026-09-02 15:35:26",
       "createdAt": "2026-09-02 15:35:26",
       "rawSummary": "&lt;img src=\"https://res.infoq.com/presentations/enterprise-data-architecture-ai-agents/en/mediumimage/fabiane-nardon-medium-1787218382028.jpeg\"/&gt;&lt;p&gt;Fabiane Nardon shares how TOTVS prepares enterprise data for token-hungry AI agents. She discusses balancing deterministic logic and non-deterministic LLMs across precision, security, and cost. Nardon details using data mesh, low-latency database architectures, semantic ontologies, and dynamic MCP tool selection to optimize context windows and reduce token overhead in transactional systems.&lt;/p&gt; &lt;i&gt;By Fabiane Nardon&lt;/i&gt;",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 8
+      "curated": true,
+      "summaryJa": "ERPベンダーTOTVSのFabiane Nardon氏による講演。トークン消費が激しいAIエージェント向けに、既存の基幹業務システム(トランザクショナルなデータ)をどうMCP経由・セマンティックモデル化して提供するか、決定的なロジックと非決定的なAIの判断をどう住み分けるかを扱う。",
+      "pointsJa": [
+        "エンタープライズの既存データ層を、AIエージェントが扱いやすい形(MCP・セマンティックモデル)へ変換する設計の実例",
+        "「決定的なビジネスロジック」と「非決定的なAIの判断」をどこで線引きするかという、実務上重要な設計判断を扱っている"
+      ],
+      "applicableTechJa": "既存のGoogle Sheets/JSONデータをMCPサーバー経由でエージェントに渡す設計(このプロジェクト群のservicenow-sub-agent等)の参考になる。",
+      "score": 9
     },
     {
       "sysId": "79c8b78e93838750043532edfaba10da",
@@ -5513,11 +5528,14 @@
       "fetchedAt": "2026-09-02 15:35:14",
       "createdAt": "2026-09-02 15:35:14",
       "rawSummary": "",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 3
+      "curated": true,
+      "summaryJa": "Geminiのエージェント型動画解析機能が、従来手法と比べてトークン消費量を最大88%削減できたという報告。動画全体を毎回解析するのではなく、エージェントが必要な部分だけを判断して解析する設計によるもの。",
+      "pointsJa": [
+        "動画のような大容量データをAIエージェントに渡す際、全体を毎回解析させず必要部分だけに絞ることで大幅なコスト削減が可能",
+        "コスト・レイテンシの両面で、動画を扱うAIアプリのアーキテクチャ設計に直結する知見"
+      ],
+      "applicableTechJa": "動画・音声など大容量データを扱うアプリを作る場合、全体を毎回モデルに渡さず必要部分だけを渡す設計パターンとして応用できる。",
+      "score": 4
     },
     {
       "sysId": "beb8378e93838750043532edfaba107b",
