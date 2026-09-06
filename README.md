@@ -143,6 +143,16 @@ Studio(または「システム定義 > テーブル」)から新規テーブル
 
 2026-08-30、manager-room経由の依頼で`sc_cat_item`(カタログアイテム)更新時にログ出力するBusiness Ruleを追加した。これはAI研究パイプライン本体とは無関係の、ServiceNow PDI上の別要件への対応で、`.github/workflows/servicenow-business-rules.yml`(`servicenow/scripts/setup_business_rule_sc_cat_item.mjs`)として独立したワークフローで管理している(REST Message/Scheduled Job同期と混ぜると無関係な作業のたびにカタログアイテムが触られてしまうため、意図的に別ワークフローにした)。認証情報の登録手順は上記「REST Messageの自動作成」と共通。今後同様のBusiness Rule/Catalog Client Script/Flow Designer等の依頼が来た場合も、この形式(スキーマの動的確認・DRY_RUN・モックテスト・実機での動作確認までを1つのスクリプト+ワークフローにまとめる)を踏襲する想定。詳細な設計判断はconcept-log.json参照。
 
+## 将来の拡張(検討中、未実装): 埋め込み(embedding)によるセマンティック検索
+
+2026-09-06、`data/research-items.json`が2481件・約1.67MBまで増え、質問のたびに全件を読むと時間・トークンがかかる問題について、ユーザーとPTD-061として相談した(まだ実装していない、計画段階)。
+
+- **やりたいこと**: 現在のカテゴリ/日付ベースの構造化フィルタに加えて、キーワードが完全一致しなくても「意味が近い」記事を検索できるようにする(例:「医療」という単語がなくても「画像診断支援」の記事を「医療分野のAI活用」という質問で見つけられるようにする)
+- **方式**: 有料の外部埋め込みAPI(OpenAI等)は使わず、無料のオープンソース埋め込みモデル(Sentence Transformers系、例: `all-MiniLM-L6-v2`)をGitHub Actions上で実行し、各記事のタイトル+要約をベクトル化して保存する。質問時は同じモデルで質問文もベクトル化し、コサイン類似度で近い上位数件だけを抽出する
+- **コスト**: このリポジトリはpublicのためGitHub Actions実行時間は無制限・無料。埋め込みモデル自体も無料・オフライン実行可能(外部API・APIキー不要)なため、初期実装後の運用コストは金銭的に$0にできる見込み(CLAUDE.mdの「永久無料」方針と整合)
+- **実装規模**: 埋め込み生成スクリプト・類似度検索ロジック・日次差分更新の3点が必要で、軽微な変更とは言えない規模。progress-tracker-dashboardの方針(大きな実装はworker-roomへ依頼)に沿って別セッションへ依頼する想定
+- 詳細な技術的背景はprogress-tracker-dashboardの`data/concept-log.json`のCL-018、タスクの状態は`data/tasks.json`のPTD-061参照
+
 ## 意味のある実装判断の記録
 
 DB設計(単一テーブル+category列による分類、dedup_keyによる重複防止)や、REST Message + Scheduled Jobという構成についての判断根拠は、`gurii-gabreh/progress-tracker-dashboard`の`data/concept-log.json`にも記録している(CLAUDE.mdコア規則の指示に従い)。
