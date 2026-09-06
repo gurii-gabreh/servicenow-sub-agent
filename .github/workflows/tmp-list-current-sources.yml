@@ -1,0 +1,18 @@
+name: "一時診断: ServiceNow現在の情報源一覧(読み取り専用)"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  list:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - run: node servicenow/scripts/tmp_list_current_sources.mjs
+        env:
+          SN_INSTANCE: ${{ secrets.SERVICENOW_INSTANCE_URL }}
+          SN_CLIENT_ID: ${{ secrets.SERVICENOW_CLIENT_ID }}
+          SN_CLIENT_SECRET: ${{ secrets.SERVICENOW_CLIENT_SECRET }}
