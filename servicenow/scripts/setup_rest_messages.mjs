@@ -83,13 +83,24 @@ const REST_MESSAGES = [
       // ChatGPTは既存のopenaiメソッド(openai.com/blog/rss.xml→openai.com/news/rss.xmlへリダイレクト)
       // が同一の公式発表チャネルをカバーしているため、別メソッドは追加していない。詳細はREADME参照。
       { function_name: "geminideepmind", rest_endpoint: "https://deepmind.google/blog/rss.xml" },
+      // 2026-09-06(ユーザー依頼: 取れる情報源は全て取る): Anthropic公式のブログRSSは依然として
+      // 存在しないが、Anthropic自身が管理する公開GitHubリポジトリのReleases Atomフィードは
+      // GitHub標準機能として実在し(認証不要・GET、実機検証済み)、公式発表チャネルの一種として
+      // 追加できる。中身はclaude-codeのバージョンリリース情報であり、一般的なブログ記事(モデル
+      // 発表・研究発表等)までは含まない点に注意(README「情報源」参照)。
+      { function_name: "anthropicreleases", rest_endpoint: "https://github.com/anthropics/claude-code/releases.atom" },
     ],
   },
 ];
-// 2026-08-29: Anthropicは公式RSSフィードを提供していないことが実機検証(verify-source-urlsジョブ、
-// https://www.anthropic.com/rss.xml が404)で判明したため、情報源から除外した(ユーザー承認済み)。
-// 詳細はprogress-tracker-dashboardのconcept-log.json参照。以前の実行で既に作成されてしまった
-// 場合に備え、下記REMOVED_METHODSで明示的に削除する。
+// 2026-08-29: Anthropicは公式ブログRSSフィードを提供していないことが実機検証(verify-source-urlsジョブ、
+// https://www.anthropic.com/rss.xml が404)で判明したため、ブログ相当の情報源からは除外した
+// (ユーザー承認済み)。詳細はprogress-tracker-dashboardのconcept-log.json参照。以前の実行で既に
+// 作成されてしまった場合に備え、下記REMOVED_METHODSで明示的に削除する。
+// なお2026-09-06、代替としてanthropicreleases(上記)を追加した。また
+// https://www.anthropic.com/news の生HTML直接取得については、クライアントサイドレンダリング
+// (Next.js)により実際に記事一覧を含むか未検証のため、verify_source_urls.mjs側での実地検証結果を
+// 見てから採否を判断する(この時点ではREST Message化していない。CLAUDE.mdルール1「未知の
+// スキーマを推測で決め打ちしない」に基づく)。
 
 // 過去に存在した情報源のうち、廃止されたHTTPメソッド。存在すれば削除する(冪等: 無ければ何もしない)。
 const REMOVED_METHODS = [{ restMessageName: "AI Research - Blog RSS", function_name: "anthropic" }];

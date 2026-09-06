@@ -11,7 +11,7 @@
 //   - "AI Research - Hacker News"  HTTPメソッド "search"
 //   - "AI Research - Blog RSS"     HTTPメソッド "openai" / "huggingface" / "mittechreview" /
 //                                   "marktechpost" / "bytebytego" / "infoq" / "martinfowler" /
-//                                   "architectureweekly" / "geminideepmind"
+//                                   "architectureweekly" / "geminideepmind" / "anthropicreleases"
 // また u_ai_research_item テーブル(フィールド定義はREADME参照)が作成済みであること。
 //
 // 2026-08-29追記: Anthropic Blog(HTTPメソッド"anthropic")は情報源から除外した。実機検証
@@ -81,7 +81,10 @@
         architectureweekly: CATEGORY.ARCHITECTURE,
         // 2026-08-31追記(ユーザー依頼: Gemini追加): Google DeepMind BlogはGeminiモデルの発表を
         // 含むAI研究動向が主題のため、openaiと同じ観点2(AI技術動向)を割り当てた。
-        geminideepmind: CATEGORY.AI_TREND
+        geminideepmind: CATEGORY.AI_TREND,
+        // 2026-09-06追記(ユーザー依頼: 取れる情報源は全て取る): claude-codeのリリース情報は
+        // 「最新のAI技術でできること」の実例(新機能・改善)が中心のため観点2を割り当てた。
+        anthropicreleases: CATEGORY.AI_TREND
     };
 
     var stats = { inserted: 0, skipped: 0, errors: [] };
@@ -140,8 +143,20 @@
     }
 
     // ---- 汎用の正規表現ベース抽出ヘルパー ----
+    // 2026-09-06追記: GitHub ReleasesのAtomフィードは<content type="html">タグの中身がHTMLエンティティで
+    // エスケープされている(例: "&lt;h2&gt;What's changed&lt;/h2&gt;")。エンティティをデコードしてから
+    // タグを除去しないと、"&lt;h2&gt;"のような文字列がそのまま残ってしまうため、デコードを先に行う。
+    function decodeEntities(s) {
+        return (s || "")
+            .replace(/&lt;/g, "<")
+            .replace(/&gt;/g, ">")
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, "'")
+            .replace(/&amp;/g, "&");
+    }
+
     function stripTags(s) {
-        return (s || "").replace(/<!\[CDATA\[/g, "").replace(/\]\]>/g, "").replace(/<[^>]+>/g, "").trim();
+        return decodeEntities(s || "").replace(/<!\[CDATA\[/g, "").replace(/\]\]>/g, "").replace(/<[^>]+>/g, "").trim();
     }
 
     function extractTag(block, tagName) {
@@ -233,13 +248,17 @@
             items.forEach(function (block) {
                 // RSS 2.0(<link>テキスト</link>) → Atom(<link href="..."/>属性) → <guid> の順に試す
                 var link = extractTag(block, "link") || extractAttr(block, "link", "href") || extractTag(block, "guid");
+                // 2026-09-06追記: GitHub ReleasesのAtomフィードは<description>/<summary>を持たず、
+                // 本文は<content type="html">に入っている。また日付は<pubDate>/<published>ではなく
+                // <updated>のみを持つ(Atomの必須要素)。既存の他情報源(RSS 2.0中心)を壊さないよう、
+                // フォールバックの末尾に追加する形にした。
                 insertItem({
                     category: SOURCE_DEFAULT_CATEGORY[sourceKey],
                     title: extractTag(block, "title"),
-                    summary: extractTag(block, "description") || extractTag(block, "summary"),
+                    summary: extractTag(block, "description") || extractTag(block, "summary") || extractTag(block, "content"),
                     sourceUrl: link,
                     sourceName: sourceName,
-                    publishedAt: extractTag(block, "pubDate") || extractTag(block, "published")
+                    publishedAt: extractTag(block, "pubDate") || extractTag(block, "published") || extractTag(block, "updated")
                 });
             });
         } catch (e) {
@@ -259,6 +278,7 @@
     fetchBlogRss("martinfowler", "martinfowler", "Martin Fowler blog");
     fetchBlogRss("architectureweekly", "architectureweekly", "Architecture Weekly");
     fetchBlogRss("geminideepmind", "geminideepmind", "Google DeepMind Blog (Gemini)");
+    fetchBlogRss("anthropicreleases", "anthropicreleases", "Anthropic (claude-code releases via GitHub)");
 
     gs.info(
         "[AIResearchFetcher] inserted=" + stats.inserted +

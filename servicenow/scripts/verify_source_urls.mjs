@@ -92,6 +92,25 @@ const SOURCES = [
     expect: (body) => body.includes("<item") || body.includes("<entry"),
     expectDesc: "<item> または <entry> を含むRSS/Atom XML",
   },
+  {
+    label: "Anthropic (claude-code releases via GitHub, Atom)",
+    url: "https://github.com/anthropics/claude-code/releases.atom",
+    expect: (body) => body.includes("<entry"),
+    expectDesc: "<entry> を含むAtom XML(GitHub標準のReleasesフィード)",
+  },
+  // 2026-09-06追記(ユーザー依頼: 取れる情報源は全て取る): www.anthropic.com/newsはRSS/Atomではなく
+  // 通常のWebページであり、Next.jsのクライアントサイドレンダリングにより、生HTMLを単純GETしただけ
+  // では記事一覧が含まれず空のJSシェルしか返らない可能性がある(このリポジトリを実装した
+  // セッションはanthropic.comへのネットワークアクセス自体がブロックされており実地確認できなかった)。
+  // 未知のスキーマを推測で決め打ちしない方針(CLAUDE.mdルール1)に従い、本番のパース処理には
+  // まだ組み込まず、まずこの検証ジョブ(実インターネットアクセスを持つGitHub Actions)で
+  // 「記事一覧らしきリンクが本当に生HTMLに含まれるか」を実地確認してから採否を判断する。
+  {
+    label: "Anthropic News page (raw HTML, 未検証・実験的)",
+    url: "https://www.anthropic.com/news",
+    expect: (body) => (body.match(/href="\/news\//g) || []).length >= 5,
+    expectDesc: '生HTML中に href="/news/..." 形式のリンクが5件以上(記事一覧が生HTMLに含まれている場合の目安。含まれていなければクライアントサイドレンダリングのため生GETでは取得不可と判断し、情報源として採用しない)',
+  },
 ];
 
 async function checkOne(source) {

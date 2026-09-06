@@ -27,10 +27,12 @@ ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で�
 | Martin Fowler blog | Atom | `https://martinfowler.com/feed.atom` (実機検証済み、2026-08-30) |
 | Architecture Weekly | RSS | `https://www.architecture-weekly.com/feed` (実機検証済み、2026-08-31) |
 | Google DeepMind Blog (Gemini) | RSS | `https://deepmind.google/blog/rss.xml` (実機検証済み、2026-08-31。Geminiモデルの発表を含むAI研究ニュース) |
+| Anthropic (claude-code releases) | Atom(GitHub標準機能) | `https://github.com/anthropics/claude-code/releases.atom` (実機検証済み、2026-09-06。認証不要・GET。ブログ記事ではなくclaude-codeのバージョンリリース情報) |
 
 **2026-08-31、ユーザー依頼(Claude/Gemini/ChatGPTの公式サイトを追加)への対応**: 無料のRSS/Atomフィードのみで統一する方針(有料の開発者APIは使わない)で調査した結果は以下の通り。
 - **Gemini**: Google単体の公式Geminiブログ専用RSSは見当たらなかったが、Google DeepMind Blog(Geminiモデルの発表を含む)の公式RSS(`https://deepmind.google/blog/rss.xml`)を実地検証(HTTP 200・RSS 2.0)の上で採用した。
-- **Claude(Anthropic)**: 2026-08-29のCL-009調査時点、および2026-08-31のWeb検索での再調査時点のいずれにおいても、Anthropicは公式RSS/Atomフィードを提供していないことを確認した(`https://www.anthropic.com/rss.xml`はHTTP 404。非公式の第三者ミラー(GitHub上の個人プロジェクト等)は複数存在するが、信頼性・継続性の懸念から採用しない方針を継続している)。**未対応**。
+- **Claude(Anthropic)**: 2026-08-29のCL-009調査時点、および2026-08-31のWeb検索での再調査時点のいずれにおいても、Anthropicは公式ブログRSS/Atomフィードを提供していないことを確認した(`https://www.anthropic.com/rss.xml`はHTTP 404。非公式の第三者ミラー(GitHub上の個人プロジェクト等)は複数存在するが、信頼性・継続性の懸念から採用しない方針を継続している)。2026-09-06、ユーザーの「取れる情報源は全て取りたい」という依頼を受けて再調査し、Anthropic自身が管理する公開GitHubリポジトリ(`anthropics/claude-code`)にはGitHub標準機能のReleases Atomフィードが実在する(実機検証済み)ことを確認し、代替として採用した(表参照)。ただし中身は製品リリース情報のみで、モデル発表・研究発表などの一般的なブログ記事は含まない。**部分対応(リリース情報のみ)**。
+- **Anthropicニュースページ(`https://www.anthropic.com/news`)の生HTML直接取得について**: ブログRSSがない以上、より広い範囲のAnthropic公式情報を取るには生ページの解析という手段も考えられるが、このサイトはNext.js製でクライアントサイドレンダリングの可能性が高く、単純なGETリクエストでは記事一覧を含まない空のJSシェルしか返らない懸念がある(このリポジトリを実装したセッションはanthropic.comへの直接アクセスがネットワークポリシーでブロックされており実地確認できなかった)。未知のページ構造を推測でパースするコードを書くこと(CLAUDE.mdルール1「未知のスキーマを推測で決め打ちしない」に抵触)は避け、`servicenow/scripts/verify_source_urls.mjs`に実地検証用のチェック(実インターネットアクセスを持つGitHub Actions上で実行)を追加した。この検証で実際に記事一覧らしきリンクが確認できれば、本番のパース処理に組み込むかどうかを改めて判断する。**調査中(未採用)**。
 - **ChatGPT**: 既存の`openai`メソッド(`https://openai.com/blog/rss.xml`、実際は`https://openai.com/news/rss.xml`へリダイレクト)がOpenAIの公式発表チャネルであり、ChatGPT関連の発表もこの中に含まれるため、既存ソースで実質的にカバー済みと判断し、別メソッドは追加していない。ChatGPT製品自体の変更履歴(Release Notes、`openai.com/products/release-notes/`)にも個別のRSSフィードがある可能性があるが、正確な配信URLをWeb検索・実地検証のいずれでも特定できなかった(このworker-roomセッションはopenai.comへの直接アクセスが遮断されているため、ページ内のRSSリンクを直接確認する手段がない)。**未対応**。
 
 **2026-08-29、Anthropic Blogは情報源から除外した**: `https://www.anthropic.com/rss.xml`を`.github/workflows/servicenow-setup.yml`のverify-source-urlsジョブで実地検証したところHTTP 404(Next.jsアプリのエラーページ)が返り、調査の結果Anthropicは現在公式のRSSフィードを提供していないことが判明した(非公式の第三者ミラーは信頼性・継続性の観点から採用せず、ユーザー承認の上で情報源自体を4つに減らす方針にした)。
