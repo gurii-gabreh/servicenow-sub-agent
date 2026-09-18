@@ -39,6 +39,21 @@ const SOURCES = [
     expectDesc: "hits配列を含むJSON",
   },
   {
+    // 2026-09-18追加: category 6(世の中のニーズ・困りごと)用。setup_rest_messages.mjsの
+    // askhnメソッドと値を揃えること。
+    label: "Hacker News API (Ask HN)",
+    url: "http://hn.algolia.com/api/v1/search_by_date?tags=ask_hn&hitsPerPage=20",
+    expect: (body) => {
+      try {
+        const j = JSON.parse(body);
+        return Array.isArray(j.hits);
+      } catch {
+        return false;
+      }
+    },
+    expectDesc: "hits配列を含むJSON",
+  },
+  {
     label: "OpenAI Blog RSS",
     url: "https://openai.com/blog/rss.xml",
     expect: (body) => body.includes("<item") || body.includes("<entry"),

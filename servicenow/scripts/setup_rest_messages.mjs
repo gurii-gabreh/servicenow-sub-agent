@@ -50,6 +50,16 @@ const REST_MESSAGES = [
         rest_endpoint:
           "http://hn.algolia.com/api/v1/search_by_date?query=AI&tags=story&hitsPerPage=20",
       },
+      // 2026-09-18追加: category 6(世の中のニーズ・困りごと)用。"Ask HN"タグの投稿は
+      // 「〇〇で困っている」「△△のやり方」等、生のニーズ・悩みが書かれることが多いため、
+      // AIキーワードで絞らずtags=ask_hnのみで幅広く拾う(ユーザー指示「世の中のニーズを
+      // 常に蓄積してほしい」への対応。既存のHacker News REST Messageを流用し、新規の
+      // 情報源追加なしで実現できる)。
+      {
+        function_name: "askhn",
+        rest_endpoint:
+          "http://hn.algolia.com/api/v1/search_by_date?tags=ask_hn&hitsPerPage=20",
+      },
     ],
   },
   {

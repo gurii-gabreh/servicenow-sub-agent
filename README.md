@@ -1,8 +1,8 @@
 # servicenow-sub-agent
 
-ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で、AI・アプリ開発に関わる5つの観点を無料の外部情報源から定期的に自動収集し、1つのテーブルに蓄積するリサーチパイプライン。進捗・実装ナレッジは`gurii-gabreh/progress-tracker-dashboard`の`data/tasks.json`(タスクID: **PTD-046**)で一元管理している。
+ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で、AI・アプリ開発に関わる6つの観点を無料の外部情報源から定期的に自動収集し、1つのテーブルに蓄積するリサーチパイプライン。進捗・実装ナレッジは`gurii-gabreh/progress-tracker-dashboard`の`data/tasks.json`(タスクID: **PTD-046**)で一元管理している。
 
-## 対象の5観点
+## 対象の6観点
 
 | category値 | 観点 |
 |---|---|
@@ -11,6 +11,7 @@ ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で�
 | 3 | 今ある技術を組み合わせるとできる新しいこと |
 | 4 | AIが使われている分野や、使われやすいシチュエーション |
 | 5 | AIの流行 |
+| 6 | 世の中のニーズ・困りごと(2026-09-18追加。従来の1〜5は「AI/技術の供給側」の情報だったが、それと組み合わせて使える「需要側」の情報として追加した) |
 
 ## 情報源(すべて無料・認証不要の公開API/RSS)
 
@@ -18,6 +19,7 @@ ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で�
 |---|---|---|
 | arXiv | API(Atom XML) | `http://export.arxiv.org/api/query` |
 | Hacker News | API(JSON、Algolia) | `http://hn.algolia.com/api/v1/search_by_date` |
+| Hacker News (Ask HN) | API(JSON、Algolia) | `http://hn.algolia.com/api/v1/search_by_date?tags=ask_hn` (2026-09-18追加、category 6用。既存のHacker News REST Messageに`askhn`メソッドを追加しただけで新規の情報源登録は不要。AIキーワードで絞らずAsk HN投稿を幅広く拾い、生のニーズ・悩み(`story_text`)をsummaryに使う。実地検証はまだ) |
 | OpenAI Blog | RSS | `https://openai.com/blog/rss.xml` (実機検証済み、2026-08-29) |
 | Hugging Face Blog | RSS | `https://huggingface.co/blog/feed.xml` (実機検証済み、2026-08-29) |
 | MIT Technology Review AI | RSS | `https://www.technologyreview.com/topic/artificial-intelligence/feed/` (実機検証済み、2026-08-30。全体feedではなくAI特化のtopic feedを採用) |

@@ -56,7 +56,8 @@
         AI_TREND: "2",     // 最新のAI技術でできること・今後の技術動向
         COMBINATION: "3",  // 既存技術の組み合わせでできる新しいこと
         USE_CASE: "4",     // AIが使われている分野・使われやすいシチュエーション
-        FASHION: "5"       // AIの流行
+        FASHION: "5",      // AIの流行
+        NEEDS: "6"         // 2026-09-18追加: 世の中のニーズ・困りごと(ユーザー指示)
     };
 
     // 情報源ごとの既定カテゴリ。5観点は本来どの記事にも当てはまり得る横断的な視点のため、
@@ -247,6 +248,36 @@
         }
     }
 
+    // ---- Hacker News "Ask HN"(世の中のニーズ・困りごと、category 6) ----
+    // 2026-09-18追加、ユーザー指示「世の中のニーズと、常にAIで何ができるかを蓄積してほしい」。
+    // Ask HN投稿は「〇〇で困っている」「△△のやり方」等、生のニーズ・悩みが書かれることが
+    // 多いため採用した。通常のstoryと違い、投稿本文がstory_textフィールドに入っている
+    // (HTML形式)ため、decodeEntities+stripTagsでプレーンテキスト化してsummaryに使う。
+    function fetchAskHN() {
+        try {
+            var r = new sn_ws.RESTMessageV2("AI Research - Hacker News", "askhn");
+            var response = r.execute();
+            if (response.getStatusCode() !== 200) {
+                stats.errors.push("Hacker News (Ask HN): HTTP " + response.getStatusCode());
+                return;
+            }
+            var data = JSON.parse(response.getBody());
+            (data.hits || []).forEach(function (hit) {
+                var url = hit.url || ("https://news.ycombinator.com/item?id=" + hit.objectID);
+                insertItem({
+                    category: CATEGORY.NEEDS,
+                    title: hit.title || "",
+                    summary: stripTags(decodeEntities(hit.story_text || "")),
+                    sourceUrl: url,
+                    sourceName: "Hacker News (Ask HN)",
+                    publishedAt: hit.created_at || ""
+                });
+            });
+        } catch (e) {
+            stats.errors.push("Hacker News (Ask HN): " + e);
+        }
+    }
+
     // ---- ブログRSS(Anthropic / OpenAI / Hugging Face、いずれもRSS 2.0想定) ----
     function fetchBlogRss(httpMethodName, sourceKey, sourceName) {
         try {
@@ -332,6 +363,7 @@
     // ---- 実行 ----
     fetchArxiv();
     fetchHackerNews();
+    fetchAskHN();
     fetchBlogRss("openai", "openai", "OpenAI Blog");
     fetchBlogRss("huggingface", "huggingface", "Hugging Face Blog");
     fetchBlogRss("mittechreview", "mittechreview", "MIT Technology Review AI");
