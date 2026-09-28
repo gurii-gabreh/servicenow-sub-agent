@@ -5,7 +5,7 @@
 // 選び、このファイルの内容をそのまま貼り付けて保存する必要がある(コード変更のたびに
 // 再貼り付けが必要。gas/Code.gsと同じ制約。詳細はprogress-tracker-dashboardのREADME参照)。
 //
-// 前提: 下記3つのREST Message(認証不要・GET専用)がSystem Web Servicesに作成済みであること。
+// 前提: 下記4つのREST Message(認証不要・GET専用)がSystem Web Servicesに作成済みであること。
 // 詳細な設定値はこのリポジトリのREADME.md「セットアップ手順」を参照。
 //   - "AI Research - arXiv"        HTTPメソッド "search"
 //   - "AI Research - Hacker News"  HTTPメソッド "search"
@@ -13,6 +13,7 @@
 //                                   "marktechpost" / "bytebytego" / "infoq" / "martinfowler" /
 //                                   "architectureweekly" / "geminideepmind" / "anthropicreleases" /
 //                                   "anthropicnews"
+//   - "AI Research - Devpost"      HTTPメソッド "hackathons"(2026-09-29追加、category 7)
 // また u_ai_research_item テーブル(フィールド定義はREADME参照)が作成済みであること。
 //
 // 2026-08-29追記: Anthropic Blog(HTTPメソッド"anthropic")は情報源から除外した。実機検証
@@ -57,7 +58,10 @@
         COMBINATION: "3",  // 既存技術の組み合わせでできる新しいこと
         USE_CASE: "4",     // AIが使われている分野・使われやすいシチュエーション
         FASHION: "5",      // AIの流行
-        NEEDS: "6"         // 2026-09-18追加: 世の中のニーズ・困りごと(ユーザー指示)
+        NEEDS: "6",        // 2026-09-18追加: 世の中のニーズ・困りごと(ユーザー指示)
+        HACKATHON: "7"     // 2026-09-29追加: ハッカソン情報(PTD-065、次のハッカソン準備のための
+                            // 案件探し・入賞作品からのアイデア発想が目的。他の観点と違い「今応募
+                            // できる案件」という時間依存の性質を持つ)
     };
 
     // 情報源ごとの既定カテゴリ。5観点は本来どの記事にも当てはまり得る横断的な視点のため、
@@ -119,8 +123,14 @@
         return gr.next();
     }
 
+    // 2026-09-29追記: 他の情報源(記事・研究等)は「一度公開されたら内容が変わらない」前提で
+    // sourceUrlだけをdedupKeyにしているが、ハッカソン案件は同じURLのまま開催状況(open→ended)や
+    // 入賞発表の有無が後から変わる。この変化(特に「入賞発表済みになった」タイミング)を取りこぼさない
+    // よう、item.dedupSuffixが指定された場合はdedupKeyにのみ反映する(u_source_urlは常に実URLの
+    // ままにし、リンクとして正しく機能させる)。状態が変わるたびに新しい行が追加される設計のため、
+    // 同じハッカソンが複数行に渡って残る(古い状態のスナップショットとして、傾向データの一部になる)。
     function insertItem(item) {
-        var dedupKey = normalizeUrl(item.sourceUrl).substring(0, 255);
+        var dedupKey = (normalizeUrl(item.sourceUrl) + (item.dedupSuffix || "")).substring(0, 255);
         if (!dedupKey) {
             stats.skipped++;
             return;
@@ -360,6 +370,71 @@
         }
     }
 
+    // ---- Devpost ハッカソン一覧(category 7) ----
+    // 2026-09-29追加(PTD-065、ユーザー指示「次のハッカソン準備」): https://devpost.com/api/hackathons
+    // はDevpost公式サイト自身が使っている認証不要のJSON API(実機検証済み: ユーザーがブラウザで
+    // 直接アクセスし、有効なJSON応答を確認)。全ジャンル約14,000件の中からAI関連テーマ
+    // ("Machine Learning/AI"等)のものだけを抽出する。
+    //
+    // 入賞作品の中身(プロジェクトの詳細・技術スタック)は、このAPIには含まれず、Devpost自体にも
+    // 個別ハッカソンのプロジェクトギャラリー用の公開JSON APIが存在しない(実機検証で
+    // "<hackathon-slug>.devpost.com/project-gallery.json" もエラーになることを確認済み)。
+    // 正規表現でHTMLを解析するのではなく、servicenow-sub-agentのresearch-item-curationスキルと
+    // 同じ考え方で、入賞発表済み(winners_announced: true)のハッカソンについてはAI自身が
+    // submission_gallery_urlを直接読んで要約を書く方式にする(hackathon-winner-curationスキル、
+    // SKILL.md参照)。このscheduled jobの役割は、あくまで機械的な一覧収集とsubmission_gallery_url
+    // の保存までにとどめる。
+    function fetchDevpostHackathons() {
+        try {
+            var r = new sn_ws.RESTMessageV2("AI Research - Devpost", "hackathons");
+            var response = r.execute();
+            if (response.getStatusCode() !== 200) {
+                stats.errors.push("Devpost: HTTP " + response.getStatusCode());
+                return;
+            }
+            var data = JSON.parse(response.getBody());
+            (data.hackathons || []).forEach(function (h) {
+                var themeNames = (h.themes || []).map(function (t) { return t.name || ""; });
+                var isAiThemed = themeNames.some(function (name) {
+                    return /machine learning|artificial intelligence|\bai\b/i.test(name);
+                });
+                if (!isAiThemed) return; // AI関連テーマのみ対象(全ジャンルのノイズを避ける)
+
+                var winnersAnnounced = !!h.winners_announced;
+                var openState = h.open_state || "unknown";
+                // 状態が変わるたびに新しい行として残す(このdedupSuffixが無いと、最初に"open"で
+                // 見つけた時点でdedupされ、後で"ended"になっても入賞発表になっても二度と拾えない)。
+                var dedupSuffix = "#" + openState + (winnersAnnounced ? "-winners" : "");
+
+                var prizeAmount = stripTags(h.prize_amount || "");
+                var summaryParts = [
+                    "開催状況: " + openState + (winnersAnnounced ? "(入賞発表済み)" : ""),
+                    "テーマ: " + themeNames.join("・"),
+                    "賞金: " + prizeAmount,
+                    "応募期間: " + (h.submission_period_dates || ""),
+                    "登録者数: " + (h.registrations_count != null ? String(h.registrations_count) : "不明"),
+                    "主催: " + (h.organization_name || "")
+                ];
+                if (winnersAnnounced && h.submission_gallery_url) {
+                    // hackathon-winner-curationスキルが、このURLを目印に対象アイテムを探す。
+                    summaryParts.push("プロジェクトギャラリー: " + h.submission_gallery_url);
+                }
+
+                insertItem({
+                    category: CATEGORY.HACKATHON,
+                    title: h.title || "",
+                    summary: summaryParts.filter(function (s) { return !!s; }).join(" / "),
+                    sourceUrl: h.url || "",
+                    sourceName: "Devpost",
+                    publishedAt: "", // Devpost APIに公開日相当のフィールドが無いため空(u_fetched_atのみ)
+                    dedupSuffix: dedupSuffix
+                });
+            });
+        } catch (e) {
+            stats.errors.push("Devpost: " + e);
+        }
+    }
+
     // ---- 実行 ----
     fetchArxiv();
     fetchHackerNews();
@@ -375,6 +450,7 @@
     fetchBlogRss("geminideepmind", "geminideepmind", "Google DeepMind Blog (Gemini)");
     fetchBlogRss("anthropicreleases", "anthropicreleases", "Anthropic (claude-code releases via GitHub)");
     fetchAnthropicNewsHtml();
+    fetchDevpostHackathons();
 
     gs.info(
         "[AIResearchFetcher] inserted=" + stats.inserted +

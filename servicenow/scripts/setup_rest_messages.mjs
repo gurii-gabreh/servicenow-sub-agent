@@ -106,6 +106,17 @@ const REST_MESSAGES = [
       { function_name: "anthropicnews", rest_endpoint: "https://www.anthropic.com/news" },
     ],
   },
+  {
+    // 2026-09-29追加(PTD-065): category 7(ハッカソン情報)。devpost.com/api/hackathonsは
+    // Devpost公式サイト自身が使っている認証不要のJSON APIで、ユーザーがブラウザで直接
+    // アクセスして有効なJSONが返ることを実地検証済み(このワークルームのegress制限で
+    // curl/WebFetchからは直接検証できなかったため、ユーザー確認による実地検証)。
+    name: "AI Research - Devpost",
+    description: "PTD-065: Devpostハッカソン一覧API(認証不要・GET)",
+    methods: [
+      { function_name: "hackathons", rest_endpoint: "https://devpost.com/api/hackathons?page=1" },
+    ],
+  },
 ];
 // 2026-08-29: Anthropicは公式ブログRSSフィードを提供していないことが実機検証(verify-source-urlsジョブ、
 // https://www.anthropic.com/rss.xml が404)で判明したため、ブログ相当の情報源からは除外した

@@ -1,8 +1,8 @@
 # servicenow-sub-agent
 
-ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で、AI・アプリ開発に関わる6つの観点を無料の外部情報源から定期的に自動収集し、1つのテーブルに蓄積するリサーチパイプライン。進捗・実装ナレッジは`gurii-gabreh/progress-tracker-dashboard`の`data/tasks.json`(タスクID: **PTD-046**)で一元管理している。
+ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で、AI・アプリ開発に関わる7つの観点を無料の外部情報源から定期的に自動収集し、1つのテーブルに蓄積するリサーチパイプライン。進捗・実装ナレッジは`gurii-gabreh/progress-tracker-dashboard`の`data/tasks.json`(タスクID: **PTD-046**、ハッカソン関連は**PTD-065**)で一元管理している。
 
-## 対象の6観点
+## 対象の7観点
 
 | category値 | 観点 |
 |---|---|
@@ -12,6 +12,7 @@ ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で�
 | 4 | AIが使われている分野や、使われやすいシチュエーション |
 | 5 | AIの流行 |
 | 6 | 世の中のニーズ・困りごと(2026-09-18追加。従来の1〜5は「AI/技術の供給側」の情報だったが、それと組み合わせて使える「需要側」の情報として追加した) |
+| 7 | ハッカソン情報(2026-09-29追加、PTD-065。マネージャールームでの「次のハッカソン準備」相談から。1〜6が記事・トレンドという「読み物」なのに対し、これは「今応募できる案件」という性質の異なる情報。詳細は下記「ハッカソン情報(category 7)」参照) |
 
 ## 情報源(すべて無料・認証不要の公開API/RSS)
 
@@ -31,6 +32,7 @@ ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で�
 | Google DeepMind Blog (Gemini) | RSS | `https://deepmind.google/blog/rss.xml` (実機検証済み、2026-08-31。Geminiモデルの発表を含むAI研究ニュース) |
 | Anthropic (claude-code releases) | Atom(GitHub標準機能) | `https://github.com/anthropics/claude-code/releases.atom` (実機検証済み、2026-09-06。認証不要・GET。ブログ記事ではなくclaude-codeのバージョンリリース情報) |
 | Anthropic News | 生HTML(RSSではない) | `https://www.anthropic.com/news` (実機検証済み、2026-09-06。認証不要・GET。ページ内「PublicationList」領域の時系列記事一覧をパース。詳細は下記) |
+| Devpost | API(JSON) | `https://devpost.com/api/hackathons?page=1` (実機検証済み、2026-09-29。category 7用。詳細は下記「ハッカソン情報(category 7)」参照) |
 
 **2026-08-31、ユーザー依頼(Claude/Gemini/ChatGPTの公式サイトを追加)への対応**: 無料のRSS/Atomフィードのみで統一する方針(有料の開発者APIは使わない)で調査した結果は以下の通り。
 - **Gemini**: Google単体の公式Geminiブログ専用RSSは見当たらなかったが、Google DeepMind Blog(Geminiモデルの発表を含む)の公式RSS(`https://deepmind.google/blog/rss.xml`)を実地検証(HTTP 200・RSS 2.0)の上で採用した。
@@ -47,14 +49,23 @@ ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で�
 
 いずれもAPIキー・OAuth等の認証情報は不要。**ServiceNow認証情報や、万一将来他の情報源で認証が必要になった場合のAPIキー等は、このリポジトリには絶対にコミットしない**(ServiceNow PDI内のシステムプロパティ等でのみ保持する)。
 
+## ハッカソン情報(category 7、2026-09-29追加)
+
+マネージャールームでの相談(「次のハッカソンに向けての準備をしたい、作品案を考えるための情報が足りない」)から着手した、PTD-065の一部。1〜6が記事・トレンドという「読み物」の収集なのに対し、これは「今応募できる案件そのもの」という性質の異なる情報のため、独立した観点として追加した。
+
+- **Devpostの`/api/hackathons`は非公式ながら実際に動く公開JSON API**: Devpost自身は公式のAPIドキュメントを公開していないが、Devpostのサイト自体が裏で使っているのと同じエンドポイントで、認証不要・GETで叩ける。このリポジトリのworker-roomセッションはネットワークegress制限によりdevpost.comへ直接アクセスできなかったため、ユーザーがブラウザで直接アクセスして有効なJSON応答であることを確認した(実地検証、2026-09-29)。
+- **AIテーマのみ抽出**: 全ジャンル約14,000件のハッカソンが対象のAPIのため、`themes`配列に`Machine Learning/AI`(またはそれに類する名称)を含むものだけを`fetchDevpostHackathons()`で抽出する。
+- **状態遷移を追跡する専用の重複排除方式**: 他の情報源(記事・研究)は「一度公開されたら内容が変わらない」前提でURLだけを重複排除キーにしているが、ハッカソンは同じURLのまま開催状況(`open_state`: open→ended)や入賞発表の有無(`winners_announced`)が後から変わる。この変化(特に入賞発表のタイミング)を取りこぼさないよう、`insertItem()`に`dedupSuffix`(例: `#open`、`#ended-winners`)というオプション引数を追加し、状態が変わるたびに新しい行として記録されるようにした(`u_source_url`自体は常に実URLのまま)。**ユーザー指示により、期限切れ・終了済みのハッカソンも削除せず残す**(「今使えるか」だけでなく「世の中のハッカソンの傾向データ」としての価値があるため)。
+- **入賞作品の中身は別スキルでAIが読んで要約する**: `/api/hackathons`には入賞作品の詳細(プロジェクト名・技術スタック等)は含まれず、個別ハッカソンのプロジェクトギャラリーにも公開JSON APIは存在しない(`<slug>.devpost.com/project-gallery.json`も実地検証したがエラーになることを確認済み)。正規表現でHTMLを解析する(Anthropic Newsと同じ、壊れやすい手法)代わりに、`research-item-curation`スキルと同じ考え方で、`hackathon-winner-curation`スキル(`.claude/skills/hackathon-winner-curation/`)がAI自身に`submission_gallery_url`を読ませて日本語要約を書かせる方式にした。このscheduled jobの役割は、あくまで機械的な一覧収集(`winners_announced`・`submission_gallery_url`の保存)までにとどめる。
+
 ## アーキテクチャ
 
 ```
 [ServiceNow Scheduled Job] --日次実行-->
   各情報源をREST Message経由でGET
-    -> arXiv (Atom XML) / Hacker News (JSON) / Blog RSS(XML) をパース
+    -> arXiv (Atom XML) / Hacker News (JSON) / Blog RSS(XML) / Devpost (JSON) をパース
     -> 正規化(category/title/summary/source_url/source_name/published_at)
-    -> u_dedup_key(source_urlの正規化文字列)で重複チェック
+    -> u_dedup_key(source_urlの正規化文字列。ハッカソンのみ状態を表すdedupSuffixを追加)で重複チェック
     -> 新規のみ u_ai_research_item テーブルへ insert
 ```
 
@@ -103,6 +114,13 @@ Studio(または「システム定義 > テーブル」)から新規テーブル
 (2026-08-30〜31追記: PTD-048の追加候補6件、およびGemini(`geminideepmind`、PTD-057)を全て上記の通りHTTPメソッドとして追加した。既存の「AI Research - Blog RSS」レコード自体は増やさず、同じレコードにHTTPメソッドを追加する形で拡張している(新規REST Messageレコードを増やさない冪等設計を踏襲)。Martin Fowler blogはAtom形式のため、`scheduled_job_ai_research_fetch.js`側のリンク抽出処理に`<link href="...">`属性からの抽出フォールバックを追加した(詳細は下記「既知の制約」参照)。Architecture Weeklyは当初候補URL2件とも実地検証に失敗したが、追加調査で判明した`www`付きの正しいURL(`https://www.architecture-weekly.com/feed`)で実地検証OKとなり採用した)
 
 **2026-09-01、ServiceNow PDIへ実際に反映済み**: ユーザーの指示によりGitHub Actionsワークフローを`dry_run=false`で実行し(run #12)、上記7件のHTTPメソッド(`mittechreview`/`marktechpost`/`bytebytego`/`infoq`/`martinfowler`/`architectureweekly`/`geminideepmind`)を実際にServiceNow PDI上へ作成した(各sys_idをログで確認済み)。同時にScheduled Job(`AI Research Fetcher`)のscriptフィールドも最新のコードへ更新した。これで情報源は計11件(arXiv・Hacker News・Blog RSS 9メソッド)がServiceNow PDI上で稼働状態になっており、次回のScheduled Job実行(日次)から新規7情報源が収集対象に入る。`u_ai_research_item`への実際の書き込み確認は別途「4. 動作確認」の手順が必要。
+
+**REST Message: `AI Research - Devpost`**(2026-09-29追加、category 7)
+- HTTPメソッド `hackathons`: Endpoint `https://devpost.com/api/hackathons?page=1`(実機検証済み。ユーザーがブラウザで直接アクセスし、`hackathons`配列を含む有効なJSONを確認)
+
+**まだServiceNow PDIへは未反映**: 上記のscheduled_job_ai_research_fetch.js・setup_rest_messages.mjs・verify_source_urls.mjsの変更はこのリポジトリへのcommitまでで、実際にPDIへ反映するには下記のいずれかが必要。
+1. `.github/workflows/servicenow-setup.yml`を`dry_run=false`でworkflow_dispatch実行(REST Message「AI Research - Devpost」の新規作成)
+2. `sync-scheduled-job`ジョブ(自動実行 or 手動trigger)で、Scheduled Jobのscript本文を最新化(こちらはコード変更のたびに毎回必要)
 
 #### REST Messageの自動作成(GitHub Actions、2026-08-29追加)
 

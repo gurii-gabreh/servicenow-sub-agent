@@ -125,6 +125,22 @@ const SOURCES = [
     expect: (body) => /class="PublicationList-module-scss-module__\w+__listItem"/.test(body),
     expectDesc: 'PublicationList-module-scss-module__<hash>__listItem 形式のクラスを持つ<li>要素(記事一覧)を含むHTML',
   },
+  {
+    // 2026-09-29追加(PTD-065、category 7): setup_rest_messages.mjsのhackathonsメソッドと
+    // 値を揃えること。ユーザーがブラウザで直接アクセスし、有効なJSON(hackathons配列・
+    // meta.total_count等)が返ることを確認済み。
+    label: "Devpost hackathons API",
+    url: "https://devpost.com/api/hackathons?page=1",
+    expect: (body) => {
+      try {
+        const j = JSON.parse(body);
+        return Array.isArray(j.hackathons);
+      } catch {
+        return false;
+      }
+    },
+    expectDesc: "hackathons配列を含むJSON",
+  },
 ];
 
 async function checkOne(source) {
