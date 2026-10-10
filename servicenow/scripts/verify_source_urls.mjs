@@ -141,6 +141,48 @@ const SOURCES = [
     },
     expectDesc: "hackathons配列を含むJSON",
   },
+  // 2026-10-10追加(category 8: 世の中の動向・SEO/マーケティング業界)。setup_rest_messages.mjsの
+  // searchenginejournal/mozblogメソッドと値を揃えること。
+  {
+    label: "Search Engine Journal RSS",
+    url: "https://www.searchenginejournal.com/feed/",
+    expect: (body) => body.includes("<item") || body.includes("<entry"),
+    expectDesc: "<item> または <entry> を含むRSS/Atom XML",
+  },
+  {
+    // moz.com/blog/feedのリダイレクト先(plain http版だと環境によって名前解決に失敗するため、
+    // https版を直接検証する。setup_rest_messages.mjsのmozblogメソッドと値を揃えること)。
+    label: "Moz Blog RSS (feedpress.me)",
+    url: "https://feedpress.me/mozblog",
+    expect: (body) => body.includes("<item") || body.includes("<entry"),
+    expectDesc: "<item> または <entry> を含むRSS/Atom XML",
+  },
+  // 2026-10-10追加(category 9: 働き方の動向)。setup_rest_messages.mjsの
+  // fastcompanyworklife/allworkspace/guardianwork/epiメソッドと値を揃えること。
+  {
+    label: "Fast Company (Work Life) RSS",
+    url: "https://www.fastcompany.com/work-life/rss",
+    expect: (body) => body.includes("<item") || body.includes("<entry"),
+    expectDesc: "<item> または <entry> を含むRSS/Atom XML",
+  },
+  {
+    label: "Allwork.Space RSS",
+    url: "https://allwork.space/feed/",
+    expect: (body) => body.includes("<item") || body.includes("<entry"),
+    expectDesc: "<item> または <entry> を含むRSS/Atom XML",
+  },
+  {
+    label: "The Guardian (Work & Careers) RSS",
+    url: "https://www.theguardian.com/money/work-and-careers/rss",
+    expect: (body) => body.includes("<item") || body.includes("<entry"),
+    expectDesc: "<item> または <entry> を含むRSS/Atom XML",
+  },
+  {
+    label: "Economic Policy Institute RSS",
+    url: "https://www.epi.org/feed/",
+    expect: (body) => body.includes("<item") || body.includes("<entry"),
+    expectDesc: "<item> または <entry> を含むRSS/Atom XML",
+  },
 ];
 
 async function checkOne(source) {

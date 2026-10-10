@@ -104,6 +104,18 @@ const REST_MESSAGES = [
       // 記事一覧(PublicationList領域)を含むHTMLが返ることを確認できたため採用した。RSSではなく
       // 生ページのHTML解析(scheduled_job_ai_research_fetch.js側にfetchAnthropicNewsHtml()を実装)。
       { function_name: "anthropicnews", rest_endpoint: "https://www.anthropic.com/news" },
+      // 2026-10-10追加: category 8(世の中の動向・SEO/マーケティング業界)・category 9(働き方の動向)。
+      // manager-roomでの個人キャリア実績作り相談から、Google Trends自体は無料・規約クリーンな
+      // 取得手段が無く見送り、代わりに公式RSSを提供している業界メディアを採用した経緯は
+      // progress-tracker-dashboardのconcept-log.json参照。全て実地検証済み(HTTP 200・<item>形式)。
+      // Moz Blogは"https://moz.com/blog/feed"がリダイレクトするplain-http版の
+      // "http://feedpress.me/mozblog"だと環境によって解決に失敗するため、https版を直接指定する。
+      { function_name: "searchenginejournal", rest_endpoint: "https://www.searchenginejournal.com/feed/" },
+      { function_name: "mozblog", rest_endpoint: "https://feedpress.me/mozblog" },
+      { function_name: "fastcompanyworklife", rest_endpoint: "https://www.fastcompany.com/work-life/rss" },
+      { function_name: "allworkspace", rest_endpoint: "https://allwork.space/feed/" },
+      { function_name: "guardianwork", rest_endpoint: "https://www.theguardian.com/money/work-and-careers/rss" },
+      { function_name: "epi", rest_endpoint: "https://www.epi.org/feed/" },
     ],
   },
   {

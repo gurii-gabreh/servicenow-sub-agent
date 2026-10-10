@@ -1,8 +1,8 @@
 # servicenow-sub-agent
 
-ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で、AI・アプリ開発に関わる7つの観点を無料の外部情報源から定期的に自動収集し、1つのテーブルに蓄積するリサーチパイプライン。進捗・実装ナレッジは`gurii-gabreh/progress-tracker-dashboard`の`data/tasks.json`(タスクID: **PTD-046**、ハッカソン関連は**PTD-065**)で一元管理している。
+ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で、AI・アプリ開発・個人のキャリア実績作りに関わる9つの観点を無料の外部情報源から定期的に自動収集し、1つのテーブルに蓄積するリサーチパイプライン。進捗・実装ナレッジは`gurii-gabreh/progress-tracker-dashboard`の`data/tasks.json`(タスクID: **PTD-046**、ハッカソン関連は**PTD-065**、SEO/働き方動向関連は**PTD-071**)で一元管理している。
 
-## 対象の7観点
+## 対象の9観点
 
 | category値 | 観点 |
 |---|---|
@@ -13,6 +13,8 @@ ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で�
 | 5 | AIの流行 |
 | 6 | 世の中のニーズ・困りごと(2026-09-18追加。従来の1〜5は「AI/技術の供給側」の情報だったが、それと組み合わせて使える「需要側」の情報として追加した) |
 | 7 | ハッカソン情報(2026-09-29追加、PTD-065。マネージャールームでの「次のハッカソン準備」相談から。1〜6が記事・トレンドという「読み物」なのに対し、これは「今応募できる案件」という性質の異なる情報。詳細は下記「ハッカソン情報(category 7)」参照) |
+| 8 | 世の中の動向(SEO・マーケティング業界の視点から、2026-10-10追加。詳細は下記「SEO/働き方の動向(category 8/9)」参照) |
+| 9 | 働き方の動向(最先端/一般的/近未来的、2026-10-10追加。詳細は下記「SEO/働き方の動向(category 8/9)」参照) |
 
 ## 情報源(すべて無料・認証不要の公開API/RSS)
 
@@ -33,6 +35,12 @@ ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で�
 | Anthropic (claude-code releases) | Atom(GitHub標準機能) | `https://github.com/anthropics/claude-code/releases.atom` (実機検証済み、2026-09-06。認証不要・GET。ブログ記事ではなくclaude-codeのバージョンリリース情報) |
 | Anthropic News | 生HTML(RSSではない) | `https://www.anthropic.com/news` (実機検証済み、2026-09-06。認証不要・GET。ページ内「PublicationList」領域の時系列記事一覧をパース。詳細は下記) |
 | Devpost | API(JSON) | `https://devpost.com/api/hackathons?page=1` (実機検証済み、2026-09-29。category 7用。詳細は下記「ハッカソン情報(category 7)」参照) |
+| Search Engine Journal | RSS | `https://www.searchenginejournal.com/feed/` (実機検証済み、2026-10-10。category 8用) |
+| Moz Blog | RSS | `https://feedpress.me/mozblog` (実機検証済み、2026-10-10。category 8用。`moz.com/blog/feed`はこのURLへリダイレクトされるが、リダイレクト先がplain httpのため実行環境によって名前解決に失敗することがあり、https版のこのURLを直接指定する) |
+| Fast Company (Work Life) | RSS | `https://www.fastcompany.com/work-life/rss` (実機検証済み、2026-10-10。category 9用・最先端の働き方) |
+| Allwork.Space | RSS | `https://allwork.space/feed/` (実機検証済み、2026-10-10。category 9用・最先端の働き方) |
+| The Guardian (Work & Careers) | RSS | `https://www.theguardian.com/money/work-and-careers/rss` (実機検証済み、2026-10-10。category 9用・一般的な働き方) |
+| Economic Policy Institute (EPI) | RSS | `https://www.epi.org/feed/` (実機検証済み、2026-10-10。category 9用・近未来的な働き方、労働市場の研究機関) |
 
 **2026-08-31、ユーザー依頼(Claude/Gemini/ChatGPTの公式サイトを追加)への対応**: 無料のRSS/Atomフィードのみで統一する方針(有料の開発者APIは使わない)で調査した結果は以下の通り。
 - **Gemini**: Google単体の公式Geminiブログ専用RSSは見当たらなかったが、Google DeepMind Blog(Geminiモデルの発表を含む)の公式RSS(`https://deepmind.google/blog/rss.xml`)を実地検証(HTTP 200・RSS 2.0)の上で採用した。
@@ -58,6 +66,15 @@ ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で�
 - **状態遷移を追跡する専用の重複排除方式**: 他の情報源(記事・研究)は「一度公開されたら内容が変わらない」前提でURLだけを重複排除キーにしているが、ハッカソンは同じURLのまま開催状況(`open_state`: open→ended)や入賞発表の有無(`winners_announced`)が後から変わる。この変化(特に入賞発表のタイミング)を取りこぼさないよう、`insertItem()`に`dedupSuffix`(例: `#open`、`#ended-winners`)というオプション引数を追加し、状態が変わるたびに新しい行として記録されるようにした(`u_source_url`自体は常に実URLのまま)。**ユーザー指示により、期限切れ・終了済みのハッカソンも削除せず残す**(「今使えるか」だけでなく「世の中のハッカソンの傾向データ」としての価値があるため)。
 - **入賞作品の中身は別スキルでAIが読んで要約する**: `/api/hackathons`には入賞作品の詳細(プロジェクト名・技術スタック等)は含まれず、個別ハッカソンのプロジェクトギャラリーにも公開JSON APIは存在しない(`<slug>.devpost.com/project-gallery.json`も実地検証したがエラーになることを確認済み)。正規表現でHTMLを解析する(Anthropic Newsと同じ、壊れやすい手法)代わりに、`research-item-curation`スキルと同じ考え方で、`hackathon-winner-curation`スキル(`.claude/skills/hackathon-winner-curation/`)がAI自身に`submission_gallery_url`を読ませて日本語要約を書かせる方式にした。このscheduled jobの役割は、あくまで機械的な一覧収集(`winners_announced`・`submission_gallery_url`の保存)までにとどめる。
 
+## SEO/働き方の動向(category 8/9、2026-10-10追加)
+
+manager-roomでの個人のキャリア実績作りの相談(37歳の節目に、資格試験の勉強と並行して、仕事以外の場での実績作りの手段を増やしたい)から、情報収集手段を広げられないか検討した一部。「SEOキーワードから世の中の動向を調査したい」「働き方(最先端/一般的/近未来的)を調査したい」という要望があり、以下の経緯で情報源を選定した。
+
+- **Google Trendsは見送った**: 検索ボリューム指数そのものを無料・利用規約上クリーンに取得する公式手段(API)が存在しない。無料の代替手段はpytrends等の非公式スクレイパーのみで、Googleの利用規約上「automated queries」が明確に禁止されている領域に抵触するグレーゾーンのため、採用しなかった(詳細はprogress-tracker-dashboardのconcept-log.json参照)。
+- **公式RSSを提供している業界メディアを採用**: 代わりに、サイト側が機械読み取り用に正式に用意しているRSS/Atomフィードのみを対象にした(スクレイピングではないため利用規約上の懸念が無い)。category 8(世の中の動向・SEO/マーケティング業界)はSearch Engine Journal・Moz Blog、category 9(働き方の動向)はFast Company(Work Life)・Allwork.Space(いずれも最先端)・The Guardian(Work & Careers、一般的)・Economic Policy Institute(近未来的・労働市場の研究機関)を採用した。全件、実際にcurlでHTTP 200・`<item>`形式のRSSであることを実地検証済み(2026-10-10)。
+- **見送った候補**: Hacker BackNews/HBR/BBC Worklife/HR Executive/SHRM/WEFのagenda feedは、URLが現在のサイト構成と合わず404、またはWAF(Webアプリケーションファイアウォール)によるアクセス拒否(403)で取得できなかったため見送った。架空のURLを使わない方針(CLAUDE.mdルール1)に基づき、確認できたものだけを採用している。
+- **u_category選択肢(Choice)の追加が別途必要**: このリポジトリのスクリプトはsys_rest_message/sys_rest_message_fnのみを自動作成し、u_ai_research_itemのu_categoryフィールドのChoice定義automationは行っていない(category 6/7の追加時も同様)。ServiceNow Studio側で、u_categoryのChoiceリストに`8`(世の中の動向・SEO)・`9`(働き方の動向)を手動で追加する必要がある。
+
 ## アーキテクチャ
 
 ```
@@ -79,7 +96,7 @@ Studio(または「システム定義 > テーブル」)から新規テーブル
 
 | フィールド名(列名) | 型 | 長さ/選択肢 | 説明 |
 |---|---|---|---|
-| `u_category` | Choice | 1〜5(上表参照) | 観点分類 |
+| `u_category` | Choice | 1〜9(上表「対象の9観点」参照) | 観点分類 |
 | `u_title` | String | 200 | タイトル |
 | `u_summary` | String | 4000 | 要約 |
 | `u_source_url` | String | 1024 | 出典URL |

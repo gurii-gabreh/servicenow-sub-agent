@@ -12,9 +12,20 @@
 //   - "AI Research - Blog RSS"     HTTPメソッド "openai" / "huggingface" / "mittechreview" /
 //                                   "marktechpost" / "bytebytego" / "infoq" / "martinfowler" /
 //                                   "architectureweekly" / "geminideepmind" / "anthropicreleases" /
-//                                   "anthropicnews"
+//                                   "anthropicnews" / "searchenginejournal" / "mozblog" /
+//                                   "fastcompanyworklife" / "allworkspace" / "guardianwork" / "epi"
+//                                   (末尾6件は2026-10-10追加、category 8/9)
 //   - "AI Research - Devpost"      HTTPメソッド "hackathons"(2026-09-29追加、category 7)
 // また u_ai_research_item テーブル(フィールド定義はREADME参照)が作成済みであること。
+//
+// 2026-10-10追記: category 8(世の中の動向・SEO/マーケティング業界)・category 9(働き方の動向)を
+// 追加した。manager-roomでの「個人の実績作り」相談(キャリア構築のための調査手段の拡張)から、
+// SEOキーワード経由の世の中の動向調査と、働き方(最先端/一般的/近未来的)の調査が可能か検討し、
+// Google Trends自体は無料・規約クリーンな取得手段が無かったため見送り、代わりに公式RSSを
+// 提供している業界メディアを採用した(詳細はprogress-tracker-dashboardのconcept-log.json参照)。
+// u_category選択肢(Choice)に8・9を追加する作業は、過去のcategory 6/7と同様にServiceNow Studio側で
+// 手動登録が必要(このリポジトリのスクリプトはsys_rest_message/sys_rest_message_fnのみを自動化
+// しており、u_ai_research_itemのChoice定義automationは対象外。README「セットアップ手順」参照)。
 //
 // 2026-08-29追記: Anthropic Blog(HTTPメソッド"anthropic")は情報源から除外した。実機検証
 // (servicenow/scripts/verify_source_urls.mjs)で https://www.anthropic.com/rss.xml が
@@ -59,9 +70,11 @@
         USE_CASE: "4",     // AIが使われている分野・使われやすいシチュエーション
         FASHION: "5",      // AIの流行
         NEEDS: "6",        // 2026-09-18追加: 世の中のニーズ・困りごと(ユーザー指示)
-        HACKATHON: "7"     // 2026-09-29追加: ハッカソン情報(PTD-065、次のハッカソン準備のための
+        HACKATHON: "7",    // 2026-09-29追加: ハッカソン情報(PTD-065、次のハッカソン準備のための
                             // 案件探し・入賞作品からのアイデア発想が目的。他の観点と違い「今応募
                             // できる案件」という時間依存の性質を持つ)
+        SEO_TREND: "8",    // 2026-10-10追加: 世の中の動向(SEO・マーケティング業界の視点から)
+        WORK_STYLE: "9"     // 2026-10-10追加: 働き方の動向(最先端/一般的/近未来的)
     };
 
     // 情報源ごとの既定カテゴリ。5観点は本来どの記事にも当てはまり得る横断的な視点のため、
@@ -90,7 +103,20 @@
         geminideepmind: CATEGORY.AI_TREND,
         // 2026-09-06追記(ユーザー依頼: 取れる情報源は全て取る): claude-codeのリリース情報は
         // 「最新のAI技術でできること」の実例(新機能・改善)が中心のため観点2を割り当てた。
-        anthropicreleases: CATEGORY.AI_TREND
+        anthropicreleases: CATEGORY.AI_TREND,
+        // 2026-10-10追記: Search Engine Journal/Moz BlogはSEO・マーケティング業界の専門メディアで、
+        // 観点8(世の中の動向、SEO視点)として追加した。
+        searchenginejournal: CATEGORY.SEO_TREND,
+        mozblog: CATEGORY.SEO_TREND,
+        // 2026-10-10追記: 働き方に関する調査(観点9)。Fast Company Work Life/Allwork.Spaceは
+        // リモートワーク・AI活用等の最先端の働き方を扱う専門メディア、The Guardian(Work & Careers)は
+        // 一般的な労働ニュースを扱う主要メディア、Economic Policy Institute(EPI)は労働市場・政策の
+        // シンクタンクで近未来的な観点を補う(いずれも機械的な既定値であり、正確な分類は人が後で
+        // 読み替えてよい)。
+        fastcompanyworklife: CATEGORY.WORK_STYLE,
+        allworkspace: CATEGORY.WORK_STYLE,
+        guardianwork: CATEGORY.WORK_STYLE,
+        epi: CATEGORY.WORK_STYLE
     };
 
     var stats = { inserted: 0, skipped: 0, errors: [] };
@@ -451,6 +477,12 @@
     fetchBlogRss("anthropicreleases", "anthropicreleases", "Anthropic (claude-code releases via GitHub)");
     fetchAnthropicNewsHtml();
     fetchDevpostHackathons();
+    fetchBlogRss("searchenginejournal", "searchenginejournal", "Search Engine Journal");
+    fetchBlogRss("mozblog", "mozblog", "Moz Blog");
+    fetchBlogRss("fastcompanyworklife", "fastcompanyworklife", "Fast Company (Work Life)");
+    fetchBlogRss("allworkspace", "allworkspace", "Allwork.Space");
+    fetchBlogRss("guardianwork", "guardianwork", "The Guardian (Work & Careers)");
+    fetchBlogRss("epi", "epi", "Economic Policy Institute");
 
     gs.info(
         "[AIResearchFetcher] inserted=" + stats.inserted +
