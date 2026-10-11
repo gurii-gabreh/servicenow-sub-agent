@@ -26,6 +26,17 @@ jobs:
           SN_INSTANCE: ${{ secrets.SERVICENOW_INSTANCE_URL }}
           SN_CLIENT_ID: ${{ secrets.SERVICENOW_CLIENT_ID }}
           SN_CLIENT_SECRET: ${{ secrets.SERVICENOW_CLIENT_SECRET }}
+      # 2026-10-11追加(調査用、一時的): 2026-09-28以降、GitHub Push Protectionが
+      # data/research-items.json内の文字列を「OpenAI API Key」と誤検知してpushが
+      # 拒否され続けている(13回連続失敗)。push失敗時は内容を誰も確認できないため、
+      # push成否に関わらず生成直後のJSONをアーティファクトとして保存し、原因調査
+      # できるようにする。原因箇所を特定・対処した後にこのステップは削除してよい。
+      - name: Upload research-items.json as artifact (調査用)
+        uses: actions/upload-artifact@v4
+        with:
+          name: research-items-json
+          path: data/research-items.json
+          retention-days: 3
       - name: Commit and push if changed
         run: |
           # 新規ファイル(未追跡)は `git diff` に出ないため、先にaddしてから
