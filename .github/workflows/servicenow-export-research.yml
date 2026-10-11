@@ -37,34 +37,6 @@ jobs:
           name: research-items-json
           path: data/research-items.json
           retention-days: 3
-      # 2026-10-11追加(調査用、一時的): アーティファクトのダウンロード経路(Azure Blob)が
-      # 調査環境のネットワーク制限で使えなかったため、ジョブログへ直接出力する手段も追加。
-      # OpenAI形式のAPIキーらしき文字列(sk-で始まる20文字以上の英数字)を検索し、該当行の
-      # 周辺(タイトル・出典URL等)と、値自体はマスクして(先頭6文字+...+末尾4文字)出力する
-      # (実際に有効な鍵だった場合にログへ生で残さないため)。原因箇所特定後は削除してよい。
-      - name: Grep for suspicious key-like strings (調査用)
-        run: |
-          node -e '
-            const fs = require("fs");
-            const text = fs.readFileSync("data/research-items.json", "utf8");
-            const lines = text.split("\n");
-            const re = /sk-[A-Za-z0-9]{20,}/g;
-            let found = 0;
-            lines.forEach((line, i) => {
-              let m;
-              while ((m = re.exec(line)) !== null) {
-                found++;
-                const val = m[0];
-                const masked = val.length > 10 ? val.slice(0,6) + "..." + val.slice(-4) : "(short)";
-                console.log(`[MATCH] line ${i+1}: masked=${masked} length=${val.length}`);
-                console.log(`  context: ${lines.slice(Math.max(0,i-3), i+2).join(" | ").slice(0,500)}`);
-              }
-            });
-            console.log(`合計 ${found} 件の一致`);
-            if (found === 0) console.log("sk-パターンには一致しなかった。別のパターンの可能性あり(行12218周辺を別途確認要)。");
-            console.log("--- 行12210〜12226(参考、該当行周辺をそのまま表示) ---");
-            lines.slice(12209, 12226).forEach((l, idx) => console.log(`${12210+idx}: ${l}`));
-          '
       - name: Commit and push if changed
         run: |
           # 新規ファイル(未追跡)は `git diff` に出ないため、先にaddしてから
@@ -78,4 +50,21 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git commit -m "chore: update research-items.json via servicenow-export-research workflow"
-          git push
+          # 2026-10-11追加(調査用、一時的): 2026-09-28以降、GitHub Push Protectionが
+          # data/research-items.json内の文字列を「OpenAI API Key」と誤検知してpushが
+          # 拒否され続けている(14回連続失敗)。該当行番号はファイルが毎回再生成されるたびに
+          # ズレるため事前のgrepでは特定できないと判明した(2026-10-11、12218→14842と変化)。
+          # push失敗時のエラーメッセージ自体に実際の行番号(path: ...json:N)が含まれるため、
+          # それをその場で読み取り、ローカルにまだ残っているコミット済みファイルから該当行を
+          # 表示する。原因箇所特定・対処後はこのif分岐は削除してよい。
+          if ! git push 2> push_error.log; then
+            cat push_error.log
+            LINE=$(grep -oP 'data/research-items\.json:\K[0-9]+' push_error.log | head -1)
+            if [ -n "$LINE" ]; then
+              echo "=== push protectionが検知した行(${LINE}行目)の前後を表示 ==="
+              sed -n "$((LINE-5)),$((LINE+3))p" data/research-items.json
+            else
+              echo "行番号をエラーメッセージから抽出できなかった"
+            fi
+            exit 1
+          fi
