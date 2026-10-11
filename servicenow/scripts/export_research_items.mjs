@@ -74,17 +74,44 @@ async function fetchAllRows(client, token) {
   return rows;
 }
 
+// 2026-10-11追加(PTD-058追補): 収集元(特にHacker NewsのAsk HN投稿)の本文に、投稿者が
+// 誤って貼り付けた実在しそうなAPIキーがそのまま含まれていたことがあり、GitHub Push
+// Protectionがそれを検知してpushが2026-09-28以降14回連続で失敗していた(原因調査の経緯は
+// progress-tracker-dashboardのdata/tasks.json PTD-058参照)。GitHub側の「許可」機能で
+// 回避するのではなく、こちらのデータ取り込み時点でキー形式の文字列を黒塗りする方針にした
+// (元が公開投稿由来でも、実在しそうな認証情報をそのまま自分たちのリポジトリへ恒久的に
+// 残すのは避けるべきと判断。将来また同様の投稿が収集されても同じ問題が再発しないようにする)。
+const SECRET_PATTERNS = [
+  /sk-[A-Za-z0-9_-]{20,}/g, // OpenAI(sk-/sk-proj-/sk-svcacct-等、いずれもsk-始まり)
+  /gh[pousr]_[A-Za-z0-9]{36,}/g, // GitHub Personal/OAuth/App/Refresh token
+  /AKIA[0-9A-Z]{16}/g, // AWS Access Key ID
+  /AIza[0-9A-Za-z_-]{35}/g, // Google API Key
+  /xox[baprs]-[0-9A-Za-z-]{10,}/g, // Slack token
+];
+
+function redactSecrets(text) {
+  if (!text) return text;
+  let result = text;
+  for (const pattern of SECRET_PATTERNS) {
+    result = result.replace(pattern, (match) => {
+      const head = match.slice(0, 6);
+      return `${head}***REDACTED(${match.length}chars)***`;
+    });
+  }
+  return result;
+}
+
 function normalizeRow(row) {
   return {
     sysId: row.sys_id,
     category: Number(row.u_category) || null,
-    title: row.u_title || "",
+    title: redactSecrets(row.u_title || ""),
     sourceName: row.u_source_name || "",
     sourceUrl: row.u_source_url || "",
     publishedAt: row.u_published_at || "",
     fetchedAt: row.u_fetched_at || "",
     createdAt: row.sys_created_on || "",
-    rawSummary: row.u_summary || "",
+    rawSummary: redactSecrets(row.u_summary || ""),
   };
 }
 

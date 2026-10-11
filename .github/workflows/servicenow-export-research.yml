@@ -26,17 +26,6 @@ jobs:
           SN_INSTANCE: ${{ secrets.SERVICENOW_INSTANCE_URL }}
           SN_CLIENT_ID: ${{ secrets.SERVICENOW_CLIENT_ID }}
           SN_CLIENT_SECRET: ${{ secrets.SERVICENOW_CLIENT_SECRET }}
-      # 2026-10-11追加(調査用、一時的): 2026-09-28以降、GitHub Push Protectionが
-      # data/research-items.json内の文字列を「OpenAI API Key」と誤検知してpushが
-      # 拒否され続けている(13回連続失敗)。push失敗時は内容を誰も確認できないため、
-      # push成否に関わらず生成直後のJSONをアーティファクトとして保存し、原因調査
-      # できるようにする。原因箇所を特定・対処した後にこのステップは削除してよい。
-      - name: Upload research-items.json as artifact (調査用)
-        uses: actions/upload-artifact@v4
-        with:
-          name: research-items-json
-          path: data/research-items.json
-          retention-days: 3
       - name: Commit and push if changed
         run: |
           # 新規ファイル(未追跡)は `git diff` に出ないため、先にaddしてから
@@ -50,13 +39,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git commit -m "chore: update research-items.json via servicenow-export-research workflow"
-          # 2026-10-11追加(調査用、一時的): 2026-09-28以降、GitHub Push Protectionが
-          # data/research-items.json内の文字列を「OpenAI API Key」と誤検知してpushが
-          # 拒否され続けている(14回連続失敗)。該当行番号はファイルが毎回再生成されるたびに
-          # ズレるため事前のgrepでは特定できないと判明した(2026-10-11、12218→14842と変化)。
-          # push失敗時のエラーメッセージ自体に実際の行番号(path: ...json:N)が含まれるため、
-          # それをその場で読み取り、ローカルにまだ残っているコミット済みファイルから該当行を
-          # 表示する。原因箇所特定・対処後はこのif分岐は削除してよい。
+          # 2026-10-11追加: GitHub Push Protectionがシークレットらしき文字列を検知してpushを
+          # 拒否した場合に備えた恒久的な安全網。2026-09-28〜10-11、HNのAsk HN投稿内に含まれていた
+          # 実在しそうなOpenAI APIキー(sk-svcacct-形式)がpushを14回連続でブロックした実例があり、
+          # export_research_items.mjs側にredactSecrets()を追加して対処済みだが、今後
+          # SECRET_PATTERNSでカバーしていない別の形式のキーが収集される可能性もあるため、
+          # push失敗時はエラーメッセージから実際の行番号を読み取り、該当行をその場で
+          # 表示できるようにしておく(経緯はprogress-tracker-dashboardのtasks.json PTD-058参照)。
           if ! git push 2> push_error.log; then
             cat push_error.log
             LINE=$(grep -oP 'data/research-items\.json:\K[0-9]+' push_error.log | head -1)
