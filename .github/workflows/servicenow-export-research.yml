@@ -37,6 +37,34 @@ jobs:
           name: research-items-json
           path: data/research-items.json
           retention-days: 3
+      # 2026-10-11追加(調査用、一時的): アーティファクトのダウンロード経路(Azure Blob)が
+      # 調査環境のネットワーク制限で使えなかったため、ジョブログへ直接出力する手段も追加。
+      # OpenAI形式のAPIキーらしき文字列(sk-で始まる20文字以上の英数字)を検索し、該当行の
+      # 周辺(タイトル・出典URL等)と、値自体はマスクして(先頭6文字+...+末尾4文字)出力する
+      # (実際に有効な鍵だった場合にログへ生で残さないため)。原因箇所特定後は削除してよい。
+      - name: Grep for suspicious key-like strings (調査用)
+        run: |
+          node -e '
+            const fs = require("fs");
+            const text = fs.readFileSync("data/research-items.json", "utf8");
+            const lines = text.split("\n");
+            const re = /sk-[A-Za-z0-9]{20,}/g;
+            let found = 0;
+            lines.forEach((line, i) => {
+              let m;
+              while ((m = re.exec(line)) !== null) {
+                found++;
+                const val = m[0];
+                const masked = val.length > 10 ? val.slice(0,6) + "..." + val.slice(-4) : "(short)";
+                console.log(`[MATCH] line ${i+1}: masked=${masked} length=${val.length}`);
+                console.log(`  context: ${lines.slice(Math.max(0,i-3), i+2).join(" | ").slice(0,500)}`);
+              }
+            });
+            console.log(`合計 ${found} 件の一致`);
+            if (found === 0) console.log("sk-パターンには一致しなかった。別のパターンの可能性あり(行12218周辺を別途確認要)。");
+            console.log("--- 行12210〜12226(参考、該当行周辺をそのまま表示) ---");
+            lines.slice(12209, 12226).forEach((l, idx) => console.log(`${12210+idx}: ${l}`));
+          '
       - name: Commit and push if changed
         run: |
           # 新規ファイル(未追跡)は `git diff` に出ないため、先にaddしてから
