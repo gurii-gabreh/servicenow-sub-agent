@@ -42,7 +42,7 @@ ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で�
 | Allwork.Space | RSS | `https://allwork.space/feed/` (実機検証済み、2026-10-10。category 9用・最先端の働き方) |
 | The Guardian (Work & Careers) | RSS | `https://www.theguardian.com/money/work-and-careers/rss` (実機検証済み、2026-10-10。category 9用・一般的な働き方) |
 | Economic Policy Institute (EPI) | RSS | `https://www.epi.org/feed/` (実機検証済み、2026-10-10。category 9用・近未来的な働き方、労働市場の研究機関) |
-| YouTube Data API v3 | API(JSON) | `https://www.googleapis.com/youtube/v3/search` ・ `https://www.googleapis.com/youtube/v3/videos` (**未検証**、2026-10-18追加。category 2/5/10用。**唯一APIキー認証が必要**。詳細は下記「YouTube Data API v3(category 2/5/10)」参照) |
+| YouTube Data API v3 | API(JSON) | `https://www.googleapis.com/youtube/v3/search` ・ `https://www.googleapis.com/youtube/v3/videos` (実機検証済み、2026-10-18追加・同日中に方式修正。category 2/5/10用。**唯一APIキー認証が必要**。詳細は下記「YouTube Data API v3(category 2/5/10)」参照) |
 
 **2026-08-31、ユーザー依頼(Claude/Gemini/ChatGPTの公式サイトを追加)への対応**: 無料のRSS/Atomフィードのみで統一する方針(有料の開発者APIは使わない)で調査した結果は以下の通り。
 - **Gemini**: Google単体の公式Geminiブログ専用RSSは見当たらなかったが、Google DeepMind Blog(Geminiモデルの発表を含む)の公式RSS(`https://deepmind.google/blog/rss.xml`)を実地検証(HTTP 200・RSS 2.0)の上で採用した。
@@ -84,8 +84,9 @@ manager-roomでの相談(「AIの最新技術」+「世の中のトレンドと�
 - **3種類のメソッドで2つの観点をカバー**: `aitech`(category 2、AI関連キーワードを新着順で検索)・`aitrend`(category 5、同じAI関連キーワードを再生回数順で検索)・`trendjp`/`trendworld`(category 10、日本/世界の急上昇動画をジャンル問わず取得)。世界分は`regionCode=US`を代用指標としている(YouTube Data APIに「世界共通」の値は無く、国コード必須のため)。
 - **新設: category 10(世の中の話題・トレンド)**: 既存のcategory 2・5はAI関連に限定されるため、ジャンルを問わない世の中全般のトレンドを再生回数で捉える観点として追加した。**u_category選択肢(Choice)に`10`を追加する作業がServiceNow Studio側で別途必要**(category 6/7/8/9と同様)。
 - **APIキーの扱い(このパイプライン初の認証付き情報源)**: `servicenow/scripts/setup_youtube_api_key.mjs`が、GitHub Actions SecretsのYOUTUBE_API_KEYを読み、ServiceNow PDI側のシステムプロパティ`youtube.api_key`(type: password2、暗号化保存)へ設定する。このリポジトリのどのファイルにもキーの値は一切現れない。
-- **${変数}事前登録の落とし穴を回避する設計**: 他の情報源が検索クエリを静的URLに埋め込んでいる理由(`${変数}`はHTTPメソッド側の「Variable」定義に事前登録しないと置換されずエラーも出ずに空振りする、という既知の落とし穴)はAPIキーには使えない(キーをコミットすることになってしまう)。代わりに、`scheduled_job_ai_research_fetch.js`側で`RESTMessageV2.setQueryParameter("key", apiKey)`を実行時に呼び、クエリパラメータとして付与する設計にした。これなら(a)`${変数}`の事前登録が一切不要(b)コミットされるコードのどこにもキーの値が現れない、の両方を満たせる。
-- **【重要・未検証】**: `setQueryParameter`はServiceNow公式ドキュメント上のRESTMessageV2標準メソッドだが、このセッションはServiceNow PDIへ対話的にログインする手段が無く、実機での動作確認ができていない。GitHub Actionsで`dry_run=false`実行後、Scheduled Jobを1回実行し、`u_ai_research_item`に`u_source_name`が"YouTube"系のレコードが実際に挿入されるか確認すること。空振りする場合は、`setQueryParameter`ではなく`${変数}`+事前登録(sys_rest_message_fn側のVariables related list)が必要な可能性を疑うこと。
+- **${変数}事前登録の落とし穴を回避する設計**: 他の情報源が検索クエリを静的URLに埋め込んでいる理由(`${変数}`はHTTPメソッド側の「Variable」定義に事前登録しないと置換されずエラーも出ずに空振りする、という既知の落とし穴)はAPIキーには使えない(キーをコミットすることになってしまう)。
+- **【2026-10-18・実機検証の結果、方式を修正】**: 当初`RESTMessageV2.setQueryParameter("key", apiKey)`で実行時にクエリパラメータを付与する設計にしていたが、`dry_run=false`実行後にScheduled Jobを実行して`check_fetch_log.mjs`(syslog確認用の診断スクリプト、下記参照)でログを確認したところ、4メソッド全てでGoogle側から`"Method doesn't allow unregistered callers...Please use API Key"`というHTTP 403(=キーが一切渡っていないことを示すエラー)が返っていることが判明した。システムプロパティ自体は正しく読めていた(未設定スキップではなく実際にリクエストが送信されていた)ため、`setQueryParameter`がこのPDIのバージョンでは期待通り機能していないと判断し、より確実な`RESTMessageV2.setEndpoint()`(エンドポイントURL自体を実行時に丸ごと上書きする標準メソッド)で、`setup_rest_messages.mjs`側と同じベースURL(キー無し)に`&key=...`を実行時に追加する方式へ修正した(`scheduled_job_ai_research_fetch.js`の`YOUTUBE_ENDPOINTS`参照)。これも(a)`${変数}`の事前登録が一切不要(b)コミットされるコードのどこにもキーの値が現れない、という当初の設計意図は維持している。
+- **診断用スクリプト**: `servicenow/scripts/check_fetch_log.mjs`(+ `.github/workflows/servicenow-check-logs.yml`)が、Scheduled Jobの実行結果(`gs.info`/`gs.error`でsyslogへ出力される`[AIResearchFetcher] inserted=... skipped=... errors=[...]`)を読み取り専用で確認できる。ServiceNow PDIへ対話的にログインできない場合の標準的な動作確認手段として、今後も再利用できる。
 - **無料枠の範囲内**: 1日4回の呼び出し(`search.list`×2=200クォータ単位、`videos.list`×2=数単位)で、YouTube Data API v3の無料枠(1日10,000クォータ単位)の2%程度にとどまる。
 
 ## アーキテクチャ

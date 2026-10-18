@@ -487,6 +487,26 @@
         }
     }
 
+    // 2026-10-18追記・実機検証で判明した修正: 当初RESTMessageV2.setQueryParameter("key", apiKey)で
+    // 実行時にキーを付与する設計にしていたが、実機確認(check_fetch_log.mjs経由でsyslogを確認)した
+    // ところ、4メソッド全てでGoogle側から「Method doesn't allow unregistered callers...Please use
+    // API Key」という、キーが一切渡っていないことを示すHTTP 403が返っていることが判明した。
+    // システムプロパティ自体は正しく読めていた(未設定スキップのメッセージではなく実際にリクエストが
+    // 送信されていた)ため、原因はsetQueryParameterがこのPDIのバージョンでは期待通り機能しなかった
+    // ことだと判断した。より確実な RESTMessageV2.setEndpoint() (エンドポイントURL自体を実行時に
+    // 丸ごと上書きする、公式ドキュメントに長く記載されている標準メソッド)で、setup_rest_messages.mjs
+    // 側のエンドポイント(キー無し)と同じベースURLに"&key=..."を実行時に追加する方式へ変更した。
+    // ベースURLはsetup_rest_messages.mjsのREST_MESSAGES定義と必ず一致させること(値を変える場合は
+    // 両方のファイルを同じ値に揃える、arXiv/Hacker Newsの静的URLと同じ注意点)。
+    var YOUTUBE_ENDPOINTS = {
+        aitech: "https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&order=date&maxResults=10&q=" +
+            encodeURIComponent('AI OR "人工知能" OR "機械学習" OR Claude OR "生成AI"'),
+        aitrend: "https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&order=viewCount&maxResults=10&q=" +
+            encodeURIComponent('AI OR "人工知能" OR "機械学習" OR Claude OR "生成AI"'),
+        trendjp: "https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&regionCode=JP&maxResults=10",
+        trendworld: "https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&regionCode=US&maxResults=10"
+    };
+
     // ---- YouTube Data API v3(category 2/5/10、唯一APIキー認証が必要) ----
     // 2026-10-18追加。manager-roomでの相談(「AIの最新技術」+「世の中のトレンドとして再生回数が
     // 多いキーワード」を知りたい、日本・世界両方)への対応。数値を人間が読みやすい桁区切りに
@@ -515,7 +535,7 @@
                 return;
             }
             var r = new sn_ws.RESTMessageV2("AI Research - YouTube", httpMethodName);
-            r.setQueryParameter("key", apiKey);
+            r.setEndpoint(YOUTUBE_ENDPOINTS[httpMethodName] + "&key=" + encodeURIComponent(apiKey));
             var response = r.execute();
             if (response.getStatusCode() !== 200) {
                 stats.errors.push(sourceLabel + ": HTTP " + response.getStatusCode() + " " + response.getBody());
@@ -553,7 +573,7 @@
                 return;
             }
             var r = new sn_ws.RESTMessageV2("AI Research - YouTube", httpMethodName);
-            r.setQueryParameter("key", apiKey);
+            r.setEndpoint(YOUTUBE_ENDPOINTS[httpMethodName] + "&key=" + encodeURIComponent(apiKey));
             var response = r.execute();
             if (response.getStatusCode() !== 200) {
                 stats.errors.push(sourceLabel + ": HTTP " + response.getStatusCode() + " " + response.getBody());
