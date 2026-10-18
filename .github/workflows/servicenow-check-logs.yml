@@ -1,0 +1,22 @@
+name: ServiceNowログ確認(診断用、PTD-089)
+
+# 手動実行専用(workflow_dispatch)。読み取り専用で、ServiceNow PDI側には一切書き込まない。
+# Scheduled Job「AI Research Fetcher」が出力したgs.info/gs.errorのログ(syslogテーブル)を
+# 確認し、直近の実行結果(inserted/skipped/errors)をワークフローのログへ出力する。
+on:
+  workflow_dispatch:
+
+jobs:
+  check-fetch-log:
+    name: AI Research Fetcherのログ確認
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - run: node servicenow/scripts/check_fetch_log.mjs
+        env:
+          SN_INSTANCE: ${{ secrets.SERVICENOW_INSTANCE_URL }}
+          SN_CLIENT_ID: ${{ secrets.SERVICENOW_CLIENT_ID }}
+          SN_CLIENT_SECRET: ${{ secrets.SERVICENOW_CLIENT_SECRET }}
