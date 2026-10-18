@@ -129,6 +129,48 @@ const REST_MESSAGES = [
       { function_name: "hackathons", rest_endpoint: "https://devpost.com/api/hackathons?page=1" },
     ],
   },
+  {
+    // 2026-10-18追加: category 2(AI最新技術)・5(AIの流行)・10(世の中の話題・トレンド)。
+    // manager-roomでの相談(「AIの最新技術」+「世の中のトレンドとして再生回数が多いキーワード」を
+    // 知りたい、日本・世界両方)への対応。YouTube Data API v3は他19情報源と異なりAPIキー認証が
+    // 必須。エンドポイントにキーを含めない(${変数}埋め込みもしない)設計にし、キーは実行時に
+    // RESTMessageV2.setQueryParameter("key", ...)で付与する
+    // (scheduled_job_ai_research_fetch.js参照。理由はそちらのコメントに詳述)。
+    // そのため、ここに定義するエンドポイントは常にkeyパラメータを含まない。
+    name: "AI Research - YouTube",
+    description: "PTD-089: YouTube Data API v3(認証はAPIキー、実行時にsetQueryParameterで付与)",
+    methods: [
+      // category 2用: AI関連キーワードを新着順(order=date)で検索。
+      {
+        function_name: "aitech",
+        rest_endpoint:
+          "https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&order=date&maxResults=10&q=" +
+          encodeURIComponent('AI OR "人工知能" OR "機械学習" OR Claude OR "生成AI"'),
+      },
+      // category 5用: 同じAI関連キーワードを再生回数順(order=viewCount)で検索。
+      // search.listのレスポンスには再生回数の数値自体は含まれない(並び順のみ反映)。
+      {
+        function_name: "aitrend",
+        rest_endpoint:
+          "https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&order=viewCount&maxResults=10&q=" +
+          encodeURIComponent('AI OR "人工知能" OR "機械学習" OR Claude OR "生成AI"'),
+      },
+      // category 10用: 日本の急上昇動画(ジャンル問わず)。part=statisticsで再生回数を含める。
+      {
+        function_name: "trendjp",
+        rest_endpoint:
+          "https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&regionCode=JP&maxResults=10",
+      },
+      // category 10用: 世界の急上昇動画(regionCode=USをグローバル指標として代用。
+      // YouTube Data APIはregionCode必須で「世界共通」の値は無いため、manager-roomでの
+      // 相談時にUSを代理指標とする前提で合意した)。
+      {
+        function_name: "trendworld",
+        rest_endpoint:
+          "https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&regionCode=US&maxResults=10",
+      },
+    ],
+  },
 ];
 // 2026-08-29: Anthropicは公式ブログRSSフィードを提供していないことが実機検証(verify-source-urlsジョブ、
 // https://www.anthropic.com/rss.xml が404)で判明したため、ブログ相当の情報源からは除外した

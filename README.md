@@ -1,8 +1,8 @@
 # servicenow-sub-agent
 
-ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で、AI・アプリ開発・個人のキャリア実績作りに関わる9つの観点を無料の外部情報源から定期的に自動収集し、1つのテーブルに蓄積するリサーチパイプライン。進捗・実装ナレッジは`gurii-gabreh/progress-tracker-dashboard`の`data/tasks.json`(タスクID: **PTD-046**、ハッカソン関連は**PTD-065**、SEO/働き方動向関連は**PTD-071**)で一元管理している。
+ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で、AI・アプリ開発・個人のキャリア実績作りに関わる10の観点を無料の外部情報源から定期的に自動収集し、1つのテーブルに蓄積するリサーチパイプライン。進捗・実装ナレッジは`gurii-gabreh/progress-tracker-dashboard`の`data/tasks.json`(タスクID: **PTD-046**、ハッカソン関連は**PTD-065**、SEO/働き方動向関連は**PTD-071**、YouTube関連は**PTD-089**)で一元管理している。
 
-## 対象の9観点
+## 対象の10観点
 
 | category値 | 観点 |
 |---|---|
@@ -15,8 +15,9 @@ ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で�
 | 7 | ハッカソン情報(2026-09-29追加、PTD-065。マネージャールームでの「次のハッカソン準備」相談から。1〜6が記事・トレンドという「読み物」なのに対し、これは「今応募できる案件」という性質の異なる情報。詳細は下記「ハッカソン情報(category 7)」参照) |
 | 8 | 世の中の動向(SEO・マーケティング業界の視点から、2026-10-10追加。詳細は下記「SEO/働き方の動向(category 8/9)」参照) |
 | 9 | 働き方の動向(最先端/一般的/近未来的、2026-10-10追加。詳細は下記「SEO/働き方の動向(category 8/9)」参照) |
+| 10 | 世の中の話題・トレンド(YouTube再生回数ベース、ジャンル問わず。2026-10-18追加、PTD-089。詳細は下記「YouTube Data API v3(category 2/5/10)」参照) |
 
-## 情報源(すべて無料・認証不要の公開API/RSS)
+## 情報源(YouTube以外は全て無料・認証不要の公開API/RSS。YouTubeのみAPIキーが必要)
 
 | 情報源 | 種別 | エンドポイント |
 |---|---|---|
@@ -41,6 +42,7 @@ ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で�
 | Allwork.Space | RSS | `https://allwork.space/feed/` (実機検証済み、2026-10-10。category 9用・最先端の働き方) |
 | The Guardian (Work & Careers) | RSS | `https://www.theguardian.com/money/work-and-careers/rss` (実機検証済み、2026-10-10。category 9用・一般的な働き方) |
 | Economic Policy Institute (EPI) | RSS | `https://www.epi.org/feed/` (実機検証済み、2026-10-10。category 9用・近未来的な働き方、労働市場の研究機関) |
+| YouTube Data API v3 | API(JSON) | `https://www.googleapis.com/youtube/v3/search` ・ `https://www.googleapis.com/youtube/v3/videos` (**未検証**、2026-10-18追加。category 2/5/10用。**唯一APIキー認証が必要**。詳細は下記「YouTube Data API v3(category 2/5/10)」参照) |
 
 **2026-08-31、ユーザー依頼(Claude/Gemini/ChatGPTの公式サイトを追加)への対応**: 無料のRSS/Atomフィードのみで統一する方針(有料の開発者APIは使わない)で調査した結果は以下の通り。
 - **Gemini**: Google単体の公式Geminiブログ専用RSSは見当たらなかったが、Google DeepMind Blog(Geminiモデルの発表を含む)の公式RSS(`https://deepmind.google/blog/rss.xml`)を実地検証(HTTP 200・RSS 2.0)の上で採用した。
@@ -55,7 +57,7 @@ ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で�
 
 **Architecture Weeklyの候補URLについて(2026-08-30→31で解決)**: 当初の候補URL2通り(`architecture-weekly.com/feed`・`softwarearchitectureweekly.substack.com/feed`)は両方とも実地検証に失敗した(前者はfetch failed=名前解決/接続失敗、後者はHTTP 403=Cloudflareのbot対策によるチャレンジページ)。CL-009の教訓(URLの実在は推測せず実地検証する)に従い、いずれの候補URLを採用すべきか・あるいは別の正しいURLがあるのかを推測で決めず、progress-tracker-dashboard側に相談事項(PTD-056)として記録しユーザー確認待ちとした。ユーザーの追加調査で、Architecture Weekly(運営: Oskar Dudycz)のSubstackカスタムドメインは"www"付きの`www.architecture-weekly.com`であると判明し、`https://www.architecture-weekly.com/feed`を改めて実地検証したところHTTP 200・RSS 2.0であることを確認できたため、これを採用した。
 
-いずれもAPIキー・OAuth等の認証情報は不要。**ServiceNow認証情報や、万一将来他の情報源で認証が必要になった場合のAPIキー等は、このリポジトリには絶対にコミットしない**(ServiceNow PDI内のシステムプロパティ等でのみ保持する)。
+YouTube Data API v3を除く全てはAPIキー・OAuth等の認証情報が不要。**ServiceNow認証情報や、YouTube Data API v3のAPIキーのような認証が必要な情報源のキー等は、このリポジトリには絶対にコミットしない**(ServiceNow PDI内のシステムプロパティ等でのみ保持する。YouTubeでの実際の設計は下記参照)。
 
 ## ハッカソン情報(category 7、2026-09-29追加)
 
@@ -74,6 +76,17 @@ manager-roomでの個人のキャリア実績作りの相談(37歳の節目に�
 - **公式RSSを提供している業界メディアを採用**: 代わりに、サイト側が機械読み取り用に正式に用意しているRSS/Atomフィードのみを対象にした(スクレイピングではないため利用規約上の懸念が無い)。category 8(世の中の動向・SEO/マーケティング業界)はSearch Engine Journal・Moz Blog、category 9(働き方の動向)はFast Company(Work Life)・Allwork.Space(いずれも最先端)・The Guardian(Work & Careers、一般的)・Economic Policy Institute(近未来的・労働市場の研究機関)を採用した。全件、実際にcurlでHTTP 200・`<item>`形式のRSSであることを実地検証済み(2026-10-10)。
 - **見送った候補**: Hacker BackNews/HBR/BBC Worklife/HR Executive/SHRM/WEFのagenda feedは、URLが現在のサイト構成と合わず404、またはWAF(Webアプリケーションファイアウォール)によるアクセス拒否(403)で取得できなかったため見送った。架空のURLを使わない方針(CLAUDE.mdルール1)に基づき、確認できたものだけを採用している。
 - **u_category選択肢(Choice)の追加が別途必要**: このリポジトリのスクリプトはsys_rest_message/sys_rest_message_fnのみを自動作成し、u_ai_research_itemのu_categoryフィールドのChoice定義automationは行っていない(category 6/7の追加時も同様)。ServiceNow Studio側で、u_categoryのChoiceリストに`8`(世の中の動向・SEO)・`9`(働き方の動向)を手動で追加する必要がある。
+
+## YouTube Data API v3(category 2/5/10、2026-10-18追加、PTD-089)
+
+manager-roomでの相談(「AIの最新技術」+「世の中のトレンドとして再生回数が多いキーワード」を知りたい、対象は日本・世界の両方)から着手。他の19情報源と違い、YouTube Data API v3は**APIキー認証が必須**という点が、このパイプライン初めての制約だった。
+
+- **3種類のメソッドで2つの観点をカバー**: `aitech`(category 2、AI関連キーワードを新着順で検索)・`aitrend`(category 5、同じAI関連キーワードを再生回数順で検索)・`trendjp`/`trendworld`(category 10、日本/世界の急上昇動画をジャンル問わず取得)。世界分は`regionCode=US`を代用指標としている(YouTube Data APIに「世界共通」の値は無く、国コード必須のため)。
+- **新設: category 10(世の中の話題・トレンド)**: 既存のcategory 2・5はAI関連に限定されるため、ジャンルを問わない世の中全般のトレンドを再生回数で捉える観点として追加した。**u_category選択肢(Choice)に`10`を追加する作業がServiceNow Studio側で別途必要**(category 6/7/8/9と同様)。
+- **APIキーの扱い(このパイプライン初の認証付き情報源)**: `servicenow/scripts/setup_youtube_api_key.mjs`が、GitHub Actions SecretsのYOUTUBE_API_KEYを読み、ServiceNow PDI側のシステムプロパティ`youtube.api_key`(type: password2、暗号化保存)へ設定する。このリポジトリのどのファイルにもキーの値は一切現れない。
+- **${変数}事前登録の落とし穴を回避する設計**: 他の情報源が検索クエリを静的URLに埋め込んでいる理由(`${変数}`はHTTPメソッド側の「Variable」定義に事前登録しないと置換されずエラーも出ずに空振りする、という既知の落とし穴)はAPIキーには使えない(キーをコミットすることになってしまう)。代わりに、`scheduled_job_ai_research_fetch.js`側で`RESTMessageV2.setQueryParameter("key", apiKey)`を実行時に呼び、クエリパラメータとして付与する設計にした。これなら(a)`${変数}`の事前登録が一切不要(b)コミットされるコードのどこにもキーの値が現れない、の両方を満たせる。
+- **【重要・未検証】**: `setQueryParameter`はServiceNow公式ドキュメント上のRESTMessageV2標準メソッドだが、このセッションはServiceNow PDIへ対話的にログインする手段が無く、実機での動作確認ができていない。GitHub Actionsで`dry_run=false`実行後、Scheduled Jobを1回実行し、`u_ai_research_item`に`u_source_name`が"YouTube"系のレコードが実際に挿入されるか確認すること。空振りする場合は、`setQueryParameter`ではなく`${変数}`+事前登録(sys_rest_message_fn側のVariables related list)が必要な可能性を疑うこと。
+- **無料枠の範囲内**: 1日4回の呼び出し(`search.list`×2=200クォータ単位、`videos.list`×2=数単位)で、YouTube Data API v3の無料枠(1日10,000クォータ単位)の2%程度にとどまる。
 
 ## アーキテクチャ
 
@@ -96,7 +109,7 @@ Studio(または「システム定義 > テーブル」)から新規テーブル
 
 | フィールド名(列名) | 型 | 長さ/選択肢 | 説明 |
 |---|---|---|---|
-| `u_category` | Choice | 1〜9(上表「対象の9観点」参照) | 観点分類 |
+| `u_category` | Choice | 1〜10(上表「対象の10観点」参照) | 観点分類 |
 | `u_title` | String | 200 | タイトル |
 | `u_summary` | String | 4000 | 要約 |
 | `u_source_url` | String | 1024 | 出典URL |

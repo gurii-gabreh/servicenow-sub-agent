@@ -16,6 +16,8 @@
 //                                   "fastcompanyworklife" / "allworkspace" / "guardianwork" / "epi"
 //                                   (末尾6件は2026-10-10追加、category 8/9)
 //   - "AI Research - Devpost"      HTTPメソッド "hackathons"(2026-09-29追加、category 7)
+//   - "AI Research - YouTube"      HTTPメソッド "aitech" / "aitrend" / "trendjp" / "trendworld"
+//                                   (2026-10-18追加、category 2/5/10。唯一APIキー認証が必要)
 // また u_ai_research_item テーブル(フィールド定義はREADME参照)が作成済みであること。
 //
 // 2026-10-10追記: category 8(世の中の動向・SEO/マーケティング業界)・category 9(働き方の動向)を
@@ -59,6 +61,23 @@
 // 検索クエリや件数を変えたい場合は、setup_rest_messages.mjs(またはREST Message自体の
 // エンドポイント設定)側を書き換えること。このファイル側にsetStringParameterNoEscapeは
 // もう不要(エンドポイントに値が埋め込み済みのため)。
+//
+// 2026-10-18追記: YouTube Data API v3(category 2/5/10用)を追加した。他19情報源と異なり
+// APIキー認証が必須のため、上記の${変数}事前登録の落とし穴に加えて「APIキーをこの
+// リポジトリに絶対にコミットしない」という制約(README「情報源」参照)も満たす必要がある。
+// このため、エンドポイントにキーを埋め込む(${変数}方式)のではなく、RESTMessageV2の
+// setQueryParameter("key", ...)で実行時にクエリパラメータとして付与する設計にした。
+// この方式なら(a)${変数}の事前登録が一切不要(b)エンドポイントURL自体にもコミットされる
+// コードのどこにもキーの値が現れない、の両方を満たせる。キー自体はServiceNow PDI側の
+// システムプロパティ"youtube.api_key"(type: password2、暗号化保存)にのみ保持し、
+// servicenow/scripts/setup_youtube_api_key.mjsがGitHub Actions Secrets経由で設定する
+// (このリポジトリにコミットされることは無い)。
+// 【未検証】setQueryParameterはServiceNow公式ドキュメント上のRESTMessageV2標準メソッドだが、
+// このセッションはServiceNow PDIへ対話的にログインする手段が無く実機検証できていない。
+// 実際にPDIへ反映後、Scheduled Jobを1回実行してu_ai_research_itemへの挿入結果を確認すること
+// (README「動作確認」参照)。もし空振りする場合はsetQueryParameterではなく
+// setStringParameterNoEscape+${変数}の事前登録(sys_rest_message_fn側のVariables related list)
+// を疑うこと。
 
 (function () {
     "use strict";
@@ -74,7 +93,14 @@
                             // 案件探し・入賞作品からのアイデア発想が目的。他の観点と違い「今応募
                             // できる案件」という時間依存の性質を持つ)
         SEO_TREND: "8",    // 2026-10-10追加: 世の中の動向(SEO・マーケティング業界の視点から)
-        WORK_STYLE: "9"     // 2026-10-10追加: 働き方の動向(最先端/一般的/近未来的)
+        WORK_STYLE: "9",    // 2026-10-10追加: 働き方の動向(最先端/一般的/近未来的)
+        TREND_GENERAL: "10" // 2026-10-18追加: 世の中の話題・トレンド(YouTube再生回数ベース、
+                            // ジャンル問わず)。manager-roomでのYouTube Data API活用相談から、
+                            // 「AIの最新技術」(→2)「AIの流行」(→5)とは別に、ジャンルを問わない
+                            // 世の中全般のトレンドを再生回数で捉える観点として新設した。
+                            // 【要手動登録】u_ai_research_item.u_category のChoiceリストに
+                            // "10"を追加する作業がServiceNow Studio側で別途必要(category 6/7/8/9と
+                            // 同様、README「セットアップ手順」参照)。
     };
 
     // 情報源ごとの既定カテゴリ。5観点は本来どの記事にも当てはまり得る横断的な視点のため、
@@ -461,6 +487,101 @@
         }
     }
 
+    // ---- YouTube Data API v3(category 2/5/10、唯一APIキー認証が必要) ----
+    // 2026-10-18追加。manager-roomでの相談(「AIの最新技術」+「世の中のトレンドとして再生回数が
+    // 多いキーワード」を知りたい、日本・世界両方)への対応。数値を人間が読みやすい桁区切りに
+    // する簡易ヘルパー(ServiceNowのRhino/ES5エンジンはNumber.toLocaleString("ja-JP")の
+    // ロケール引数を確実にサポートしない可能性があるため、自前で実装する)。
+    function formatNumber(n) {
+        var s = String(n);
+        var sign = "";
+        if (s.charAt(0) === "-") { sign = "-"; s = s.substring(1); }
+        var out = "";
+        for (var i = 0; i < s.length; i++) {
+            if (i > 0 && (s.length - i) % 3 === 0) out += ",";
+            out += s.charAt(i);
+        }
+        return sign + out;
+    }
+
+    // search.list系(キーワード検索)。"aitech"(category 2、新着順)・"aitrend"(category 5、
+    // 再生回数順)の両方で共用する。search.listのレスポンスには統計情報(再生回数等)は
+    // 含まれないため、summaryには概要欄とチャンネル名のみを使う。
+    function fetchYouTubeSearch(httpMethodName, category, sourceLabel) {
+        try {
+            var apiKey = gs.getProperty("youtube.api_key", "");
+            if (!apiKey) {
+                stats.errors.push(sourceLabel + ": システムプロパティ youtube.api_key が未設定のためスキップ");
+                return;
+            }
+            var r = new sn_ws.RESTMessageV2("AI Research - YouTube", httpMethodName);
+            r.setQueryParameter("key", apiKey);
+            var response = r.execute();
+            if (response.getStatusCode() !== 200) {
+                stats.errors.push(sourceLabel + ": HTTP " + response.getStatusCode() + " " + response.getBody());
+                return;
+            }
+            var data = JSON.parse(response.getBody());
+            (data.items || []).forEach(function (it) {
+                var videoId = it.id && it.id.videoId;
+                if (!videoId) return;
+                var snippet = it.snippet || {};
+                var summaryParts = [];
+                if (snippet.description) summaryParts.push(stripTags(snippet.description).substring(0, 300));
+                if (snippet.channelTitle) summaryParts.push("チャンネル: " + snippet.channelTitle);
+                insertItem({
+                    category: category,
+                    title: snippet.title || "",
+                    summary: summaryParts.join(" / "),
+                    sourceUrl: "https://www.youtube.com/watch?v=" + videoId,
+                    sourceName: sourceLabel,
+                    publishedAt: snippet.publishedAt || ""
+                });
+            });
+        } catch (e) {
+            stats.errors.push(sourceLabel + ": " + e);
+        }
+    }
+
+    // videos.list?chart=mostPopular(地域別トレンド動画一覧、category 10)。こちらは統計情報
+    // (再生回数)を直接含むレスポンスのため、summaryに再生回数を含められる。
+    function fetchYouTubeTrending(httpMethodName, sourceLabel) {
+        try {
+            var apiKey = gs.getProperty("youtube.api_key", "");
+            if (!apiKey) {
+                stats.errors.push(sourceLabel + ": システムプロパティ youtube.api_key が未設定のためスキップ");
+                return;
+            }
+            var r = new sn_ws.RESTMessageV2("AI Research - YouTube", httpMethodName);
+            r.setQueryParameter("key", apiKey);
+            var response = r.execute();
+            if (response.getStatusCode() !== 200) {
+                stats.errors.push(sourceLabel + ": HTTP " + response.getStatusCode() + " " + response.getBody());
+                return;
+            }
+            var data = JSON.parse(response.getBody());
+            (data.items || []).forEach(function (it) {
+                var videoId = it.id;
+                if (!videoId) return;
+                var snippet = it.snippet || {};
+                var statistics = it.statistics || {};
+                var summaryParts = [];
+                if (statistics.viewCount) summaryParts.push("再生回数: " + formatNumber(statistics.viewCount));
+                if (snippet.channelTitle) summaryParts.push("チャンネル: " + snippet.channelTitle);
+                insertItem({
+                    category: CATEGORY.TREND_GENERAL,
+                    title: snippet.title || "",
+                    summary: summaryParts.join(" / "),
+                    sourceUrl: "https://www.youtube.com/watch?v=" + videoId,
+                    sourceName: sourceLabel,
+                    publishedAt: snippet.publishedAt || ""
+                });
+            });
+        } catch (e) {
+            stats.errors.push(sourceLabel + ": " + e);
+        }
+    }
+
     // ---- 実行 ----
     fetchArxiv();
     fetchHackerNews();
@@ -483,6 +604,10 @@
     fetchBlogRss("allworkspace", "allworkspace", "Allwork.Space");
     fetchBlogRss("guardianwork", "guardianwork", "The Guardian (Work & Careers)");
     fetchBlogRss("epi", "epi", "Economic Policy Institute");
+    fetchYouTubeSearch("aitech", CATEGORY.AI_TREND, "YouTube (AI最新技術)");
+    fetchYouTubeSearch("aitrend", CATEGORY.FASHION, "YouTube (AI流行・再生回数順)");
+    fetchYouTubeTrending("trendjp", "YouTube (急上昇・日本)");
+    fetchYouTubeTrending("trendworld", "YouTube (急上昇・世界)");
 
     gs.info(
         "[AIResearchFetcher] inserted=" + stats.inserted +

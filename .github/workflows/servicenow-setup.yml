@@ -6,6 +6,10 @@ name: ServiceNowセットアップ・同期(PTD-048/049)
 # 登録した上で実行すること。SERVICENOW_INSTANCE_URLは "dev395932.service-now.com" のような
 # ホスト名でも "https://dev395932.service-now.com" のような完全なURLでもどちらでもよい
 # (lib/servicenow_client.mjs側で正規化する)。手順の詳細はREADME.md「セットアップ手順」参照。
+#
+# PTD-089(YouTube Data API v3)を使う場合は、追加でYOUTUBE_API_KEYも同じ場所に登録すること。
+# 未登録でもワークフロー自体は失敗せず、setup-youtube-api-keyジョブがスキップのログを
+# 出すだけで、他のジョブには影響しない。
 on:
   workflow_dispatch:
     inputs:
@@ -38,6 +42,22 @@ jobs:
           SN_INSTANCE: ${{ secrets.SERVICENOW_INSTANCE_URL }}
           SN_CLIENT_ID: ${{ secrets.SERVICENOW_CLIENT_ID }}
           SN_CLIENT_SECRET: ${{ secrets.SERVICENOW_CLIENT_SECRET }}
+          DRY_RUN: ${{ inputs.dry_run }}
+
+  setup-youtube-api-key:
+    name: YouTube APIキーをシステムプロパティへ設定(PTD-089)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - run: node servicenow/scripts/setup_youtube_api_key.mjs
+        env:
+          SN_INSTANCE: ${{ secrets.SERVICENOW_INSTANCE_URL }}
+          SN_CLIENT_ID: ${{ secrets.SERVICENOW_CLIENT_ID }}
+          SN_CLIENT_SECRET: ${{ secrets.SERVICENOW_CLIENT_SECRET }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           DRY_RUN: ${{ inputs.dry_run }}
 
   sync-scheduled-job:
