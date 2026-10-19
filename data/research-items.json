@@ -344,11 +344,14 @@
       "fetchedAt": "2026-10-18 15:35:37",
       "createdAt": "2026-10-18 15:35:37",
       "rawSummary": "Anthropic pide que trates bien a Claude. Y es que la empresa detrás de Claude ha actualizado sus normas de uso y ha incluido ... / チャンネル: Diario ABC",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 2
+      "curated": true,
+      "summaryJa": "AnthropicがClaudeの利用規約(Usage Policy)を更新し、Claudeへの配慮ある接し方を促す記載を加えたことを報じるスペイン語ニュース動画。",
+      "pointsJa": [
+        "Anthropic自身が利用規約の中で「Claudeへの配慮」に言及した点が話題になっている",
+        "AIモデルとの関わり方・倫理的側面への関心が一般メディアでも取り上げられている事例"
+      ],
+      "applicableTechJa": "このプロジェクト群もAnthropicのClaude(Claude Code)を中核に使っているため、Anthropic自身のポリシー動向は直接関係する。実務的な影響は現時点では無いが、動向として把握しておく価値がある。",
+      "score": 3
     },
     {
       "sysId": "c1f1f00d93885714043532edfaba104b",
@@ -392,11 +395,14 @@
       "fetchedAt": "2026-10-18 15:35:37",
       "createdAt": "2026-10-18 15:35:37",
       "rawSummary": "Discover how AI is transforming supply chain management. Descartes' new data mine agent promises up to 90% less research ... / チャンネル: Third Stage Consulting Group",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 3
+      "curated": true,
+      "summaryJa": "物流・サプライチェーン管理にAIを導入する動きを紹介するショート動画。Descartesの新しい「データマイニングエージェント」が調査時間を最大90%削減すると紹介している。",
+      "pointsJa": [
+        "業務特化型のAIエージェント(データマイニング・調査タスクの自動化)の実例",
+        "「最大90%の時間削減」という具体的な効果指標を提示している"
+      ],
+      "applicableTechJa": "特定業務(ここではサプライチェーン調査)を自動化するAIエージェントの設計パターンは、servicenow-sub-agent自体の情報収集エージェントと同じ方向性の実例として参考になる。",
+      "score": 4
     },
     {
       "sysId": "89f1f00d93885714043532edfaba1049",
@@ -424,11 +430,14 @@
       "fetchedAt": "2026-10-18 15:35:37",
       "createdAt": "2026-10-18 15:35:37",
       "rawSummary": "美国人工智能公司Anthropic的CEO阿莫代伊不久前发出警告：未来一至五年，一半的初级白领职位可能消失，所谓的初级白领工作 ... / チャンネル: Astro 本地圈",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 2
+      "curated": true,
+      "summaryJa": "AnthropicのCEOが「今後1〜5年で初級ホワイトカラー職の半数が消失し得る」と警告したことを受け、AIによる若手雇用への影響を報じる中国語ニュース動画。",
+      "pointsJa": [
+        "Anthropic CEOの発言という、発信源の信頼性が比較的高い警告",
+        "初級ホワイトカラー職という具体的な対象を挙げている点が、一般的なAI脅威論より実務的"
+      ],
+      "applicableTechJa": "直接の技術的関連は薄いが、AI活用が進む業界動向として、このプロジェクト群が目指す「AIで業務を効率化する」方向性の社会的背景を把握する材料になる。",
+      "score": 3
     },
     {
       "sysId": "cdf1f00d93885714043532edfaba1049",
@@ -504,11 +513,14 @@
       "fetchedAt": "2026-10-18 15:35:37",
       "createdAt": "2026-10-18 15:35:37",
       "rawSummary": "ローカルAIと対話してコミュニケーションを取ったり、世界を構築して一緒に暮らす事ができるゲームを作った。ローカルAI性能 ... / チャンネル: ハニービーVRGamer",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 0
+      "curated": true,
+      "summaryJa": "ローカルAI(オンデバイスで動作するAIモデル)と対話しながら一緒に世界を構築できるVRサンドボックスゲームを個人開発者が制作した、という紹介動画。",
+      "pointsJa": [
+        "クラウドAPIに依存しない「ローカルAI」をゲーム/VR体験に組み込んだ実例",
+        "個人開発者による実装であり、小規模でも実現可能な設計の参考になりうる"
+      ],
+      "applicableTechJa": "このプロジェクト群は「永久無料」制約(claude-core-rules.mdルール9)を重視しており、API課金が発生しないローカルAIの活用例は将来のコスト面の参考になりうる方向性。ただし現状のタスク群に直接適用する予定は無い。",
+      "score": 1
     },
     {
       "sysId": "05f1f00d93885714043532edfaba104a",
@@ -536,11 +548,14 @@
       "fetchedAt": "2026-10-18 15:35:37",
       "createdAt": "2026-10-18 15:35:37",
       "rawSummary": "Artificial Intelligence | ഏജന്‍റ് എഐയും ഏജന്‍റ് സ്വോമും. നമ്മൾ ഓരോ ഘട്ടത്തിലും ... / チャンネル: News18 Kerala",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 3
+      "curated": true,
+      "summaryJa": "「Agent AI」「Agent Swarm(AIエージェントの群れ)」という概念を一般向けに解説する、インドのニュース解説動画。",
+      "pointsJa": [
+        "単体のAIエージェントではなく、複数エージェントが協調する「Agent Swarm」という発展形を扱っている",
+        "一般ニュース媒体でもマルチエージェント概念が取り上げられるようになっている動向を示す"
+      ],
+      "applicableTechJa": "progress-tracker-dashboard自体がmanager-room/worker-room、サブエージェントといった複数エージェント運用の仕組みを持っており、「Agent Swarm」的な設計思想の一般認知度・報道動向として参考になる。",
+      "score": 4
     },
     {
       "sysId": "41f1f00d93885714043532edfaba1046",
@@ -552,11 +567,14 @@
       "fetchedAt": "2026-10-18 15:35:37",
       "createdAt": "2026-10-18 15:35:37",
       "rawSummary": "이 부분은 클로드 신기능 모드 활용 영상의 일부입니다. 모드의 개념 및 사용법 전부를 다룬 전체 영상은 여기서 볼 수 있습니다. / チャンネル: Aiden의 친절한 AI",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 2
+      "curated": true,
+      "summaryJa": "Claude Codeの新機能「mods」の活用方法を紹介する韓国語の解説動画(フル動画の一部切り出し)。",
+      "pointsJa": [
+        "Claude Code自体の新機能を扱っており、このプロジェクト群が日々使っているツールそのものの情報",
+        "「mods」機能の具体的な使い方を扱っている点で実務的に参照価値が高い"
+      ],
+      "applicableTechJa": "このセッション自身がClaude Codeで動いているため、Claude Codeの新機能(mods)は直接活用を検討する価値がある。本編(フル動画)を確認し、必要なら別途ナレッジとして記録を検討してもよい。",
+      "score": 3
     },
     {
       "sysId": "85f1f00d93885714043532edfaba1046",
@@ -568,11 +586,13 @@
       "fetchedAt": "2026-10-18 15:35:37",
       "createdAt": "2026-10-18 15:35:37",
       "rawSummary": "Ai ragazzi restano i compiti che l'AI non prende. #MCC #Clip #Eventi. / チャンネル: Marco Camisani Calzolari - MCC",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 0
+      "curated": true,
+      "summaryJa": "「AIが引き受けない宿題・課題が子どもたちに残る」という視点で、教育現場でのAI活用の限界を論じるイタリア語の短いコメント動画。",
+      "pointsJa": [
+        "AIを「万能な代替」としてではなく「AIがやらない/できない部分」という視点で論じている点が、一般的なAI賛美一辺倒の報道と異なる"
+      ],
+      "applicableTechJa": "直接の技術的関連は薄いが、「AIに任せられる範囲とそうでない範囲」という線引きの視点は、このプロジェクト群でのAI活用判断(何を自動化し何を人の判断に残すか)にも通じる考え方。",
+      "score": 1
     },
     {
       "sysId": "09f1f00d93885714043532edfaba104b",
@@ -616,11 +636,13 @@
       "fetchedAt": "2026-10-18 15:35:37",
       "createdAt": "2026-10-18 15:35:37",
       "rawSummary": "チャンネル: Astro 本地圈",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 0
+      "curated": true,
+      "summaryJa": "AnthropicのCEOの「初級ホワイトカラー職が消失し得る」という警告を扱った中国語ニュースショート動画(同チャンネルの別動画01f1f00d93885714043532edfaba1047と同一ニュース素材の別カット)。",
+      "pointsJa": [
+        "同じニュースが複数の切り出し動画として再生回数ランキングに複数回現れている、メディア側の配信パターンの一例"
+      ],
+      "applicableTechJa": "技術的な新規性は無く、同系ニュース動画(01f1f00d93885714043532edfaba1047)と同じ分析が当てはまる。",
+      "score": 1
     },
     {
       "sysId": "c9f1f00d93885714043532edfaba1046",
