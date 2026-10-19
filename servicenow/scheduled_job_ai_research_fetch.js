@@ -501,11 +501,28 @@
     var YOUTUBE_ENDPOINTS = {
         aitech: "https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&order=date&maxResults=10&q=" +
             encodeURIComponent('AI OR "人工知能" OR "機械学習" OR Claude OR "生成AI"'),
+        // 2026-10-19改善(PTD-090): 単体の"AI"(bareのOR項、2文字)を削除した。再生回数順
+        // (order=viewCount)×全期間が対象の検索と組み合わさると、"Ai, Amor"(ポルトガル語の
+        // 歌、無関係)やMrBeast動画(タグの偶然一致)等の無関係な動画が再生回数の多さだけで
+        // 上位に来てしまうノイズの原因になっていたため(YouTube調査結果を確認したユーザーとの
+        // 相談で判明)。"artificial intelligence"という具体的な英語フレーズに置き換えた。
+        // setup_rest_messages.mjsのaitrend定義とq部分は必ず一致させること(publishedAfterは
+        // 実行時刻依存のためそちら側の静的定義には含めない、下記fetchYouTubeSearch参照)。
         aitrend: "https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&order=viewCount&maxResults=10&q=" +
-            encodeURIComponent('AI OR "人工知能" OR "機械学習" OR Claude OR "生成AI"'),
+            encodeURIComponent('"artificial intelligence" OR "人工知能" OR "機械学習" OR Claude OR "生成AI"'),
         trendjp: "https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&regionCode=JP&maxResults=10",
         trendworld: "https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&regionCode=US&maxResults=10"
     };
+
+    // 2026-10-19追加(PTD-090改善A): order=viewCountは全期間が対象のため、話題になって
+    // からずっと再生数が多い古い動画ばかり拾ってしまう(「今の流行」から外れる)。
+    // publishedAfter(RFC3339形式、UTC)を直近N日に絞ることで「直近の流行」に近づける。
+    // GlideDateTime.getValue()はUTCで"yyyy-MM-dd HH:mm:ss"形式を返すため、TとZに置換する。
+    function getPublishedAfterIso(days) {
+        var gdt = new GlideDateTime();
+        gdt.addDaysUTC(-days);
+        return gdt.getValue().replace(" ", "T") + "Z";
+    }
 
     // ---- YouTube Data API v3(category 2/5/10、唯一APIキー認証が必要) ----
     // 2026-10-18追加。manager-roomでの相談(「AIの最新技術」+「世の中のトレンドとして再生回数が
@@ -527,15 +544,19 @@
     // search.list系(キーワード検索)。"aitech"(category 2、新着順)・"aitrend"(category 5、
     // 再生回数順)の両方で共用する。search.listのレスポンスには統計情報(再生回数等)は
     // 含まれないため、summaryには概要欄とチャンネル名のみを使う。
-    function fetchYouTubeSearch(httpMethodName, category, sourceLabel) {
+    function fetchYouTubeSearch(httpMethodName, category, sourceLabel, recentDays) {
         try {
             var apiKey = gs.getProperty("youtube.api_key", "");
             if (!apiKey) {
                 stats.errors.push(sourceLabel + ": システムプロパティ youtube.api_key が未設定のためスキップ");
                 return;
             }
+            var endpoint = YOUTUBE_ENDPOINTS[httpMethodName] + "&key=" + encodeURIComponent(apiKey);
+            if (recentDays) {
+                endpoint += "&publishedAfter=" + encodeURIComponent(getPublishedAfterIso(recentDays));
+            }
             var r = new sn_ws.RESTMessageV2("AI Research - YouTube", httpMethodName);
-            r.setEndpoint(YOUTUBE_ENDPOINTS[httpMethodName] + "&key=" + encodeURIComponent(apiKey));
+            r.setEndpoint(endpoint);
             var response = r.execute();
             if (response.getStatusCode() !== 200) {
                 stats.errors.push(sourceLabel + ": HTTP " + response.getStatusCode() + " " + response.getBody());
@@ -625,7 +646,7 @@
     fetchBlogRss("guardianwork", "guardianwork", "The Guardian (Work & Careers)");
     fetchBlogRss("epi", "epi", "Economic Policy Institute");
     fetchYouTubeSearch("aitech", CATEGORY.AI_TREND, "YouTube (AI最新技術)");
-    fetchYouTubeSearch("aitrend", CATEGORY.FASHION, "YouTube (AI流行・再生回数順)");
+    fetchYouTubeSearch("aitrend", CATEGORY.FASHION, "YouTube (AI流行・再生回数順)", 30);
     fetchYouTubeTrending("trendjp", "YouTube (急上昇・日本)");
     fetchYouTubeTrending("trendworld", "YouTube (急上昇・世界)");
 

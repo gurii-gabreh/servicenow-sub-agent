@@ -147,13 +147,22 @@ const REST_MESSAGES = [
           "https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&order=date&maxResults=10&q=" +
           encodeURIComponent('AI OR "人工知能" OR "機械学習" OR Claude OR "生成AI"'),
       },
-      // category 5用: 同じAI関連キーワードを再生回数順(order=viewCount)で検索。
+      // category 5用: AI関連キーワードを再生回数順(order=viewCount)で検索。
       // search.listのレスポンスには再生回数の数値自体は含まれない(並び順のみ反映)。
+      // 2026-10-19改善(PTD-090): 単体の"AI"というbareのOR項を削除した(2文字のため、
+      // "Ai, Amor"(ポルトガル語の歌、"Ai"="Oh"の意)のような無関係な動画や、タグの
+      // 偶然の一致(MrBeast動画等)まで拾ってしまうノイズの原因になっていたため)。
+      // 代わりに"artificial intelligence"という具体的な英語フレーズを追加した。
+      // なお実際の実行時クエリ(publishedAfterでの直近N日への絞り込みを含む)は
+      // scheduled_job_ai_research_fetch.jsのYOUTUBE_ENDPOINTS.aitrendがsetEndpoint()で
+      // 都度上書きするため、ここのrest_endpointは「キー無しのベース定義」として
+      // q部分のみ両ファイルで一致させればよい(publishedAfterは実行時刻依存の値のため
+      // 静的なこの定義には含めない)。
       {
         function_name: "aitrend",
         rest_endpoint:
           "https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&order=viewCount&maxResults=10&q=" +
-          encodeURIComponent('AI OR "人工知能" OR "機械学習" OR Claude OR "生成AI"'),
+          encodeURIComponent('"artificial intelligence" OR "人工知能" OR "機械学習" OR Claude OR "生成AI"'),
       },
       // category 10用: 日本の急上昇動画(ジャンル問わず)。part=statisticsで再生回数を含める。
       {
