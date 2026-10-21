@@ -440,11 +440,14 @@
       "fetchedAt": "2026-10-20 15:35:53",
       "createdAt": "2026-10-20 15:35:53",
       "rawSummary": "Claude Sonnet 5.5 runs more than 30% faster than Sonnet 5 and writes more clearly, so it's well suited to quick back-and-forth on ... / チャンネル: Claude",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 2
+      "curated": true,
+      "summaryJa": "AnthropicのClaude公式チャンネルによる、Claude Sonnet 5.5の紹介動画。Sonnet 5より30%以上高速に動作し、より明瞭な文章を書けるため、テンポの良いやり取りに適しているとされる。",
+      "pointsJa": [
+        "Anthropic公式による新モデルの発表という、信頼性の高い一次情報",
+        "具体的な性能向上(30%以上の高速化)が明記されている"
+      ],
+      "applicableTechJa": "このプロジェクト群自体がClaude(Claude Code)で動いているため、新モデルの性能向上は直接的に活用を検討する価値がある一次情報。",
+      "score": 3
     },
     {
       "sysId": "e435c7e193c89b14043532edfaba10d9",
@@ -1928,11 +1931,14 @@
       "fetchedAt": "2026-10-19 15:36:01",
       "createdAt": "2026-10-19 15:36:01",
       "rawSummary": "チャンネル: Teke Tek Bilim",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 0
+      "curated": true,
+      "summaryJa": "「AIの電源を本当に切れるのか」というAI安全性・制御可能性をテーマにした、トルコの大学教授を招いた討論番組。",
+      "pointsJa": [
+        "AI安全性(制御可能性・暴走リスク)という学術的テーマを専門家が議論している",
+        "一般的なAI脅威論ではなく、工学的な観点からの議論という点が珍しい"
+      ],
+      "applicableTechJa": "直接の技術的関連は薄いが、AIの制御可能性という論点は、AIエージェントを運用するこのプロジェクト群にも間接的に関係する社会的背景として参考になる。",
+      "score": 1
     },
     {
       "sysId": "64ab711193c01b14043532edfaba1036",
@@ -2056,11 +2062,14 @@
       "fetchedAt": "2026-10-19 15:36:01",
       "createdAt": "2026-10-19 15:36:01",
       "rawSummary": "Flova AI: https://www.flova.ai/?refCode=EGHH82BH Is AI video having its Claude Code moment? In this video, I test Flova AI, ... / チャンネル: Shark Numbers",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 2
+      "curated": true,
+      "summaryJa": "AI動画生成サービス「Flova AI」のレビュー動画。「AI動画生成も、Claude Codeが起こしたような転換点を迎えつつあるのでは」という視点で紹介している。",
+      "pointsJa": [
+        "AI動画生成という発展中の分野の実例レビュー",
+        "「Claude Codeモーメント」という表現で、コーディング分野でのAI活用の転換が他分野に波及する可能性を示唆している"
+      ],
+      "applicableTechJa": "直接の採用対象ではないが、AIツールの普及パターン(コーディング分野での成功が他分野に波及する)という視点は、このプロジェクト群のAI活用の方向性を考える参考になる。",
+      "score": 3
     },
     {
       "sysId": "e4ab311193c01b14043532edfaba1054",
@@ -2072,11 +2081,14 @@
       "fetchedAt": "2026-10-19 15:36:01",
       "createdAt": "2026-10-19 15:36:01",
       "rawSummary": "LGTM stands for \"looks good to me\". Lately it's what engineers type on code they never had time to read, because leadership ... / チャンネル: Degenerative Pixels",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 2
+      "curated": true,
+      "summaryJa": "エンジニアがコードレビューで実際には中身を読まずに\"LGTM\"と言ってしまう文化を、Claude Opus 5.5をテーマにしたミュージックビデオ形式で風刺した動画。",
+      "pointsJa": [
+        "AIが生成したコードのレビュー習慣(読まずに承認してしまう問題)を扱ったエンジニア文化系コンテンツ",
+        "ユーモアを通じて実務上のリスク(未レビューのAI生成コードのマージ)を示唆している"
+      ],
+      "applicableTechJa": "AIが生成したコードを人間がどう検証するか、という課題はこのプロジェクト群のAI活用方針(実装後の確認テストを必ず行う、CLAUDE.mdルール12)にも直接通じる教訓。",
+      "score": 3
     },
     {
       "sysId": "6cab311193c01b14043532edfaba1053",
@@ -2088,11 +2100,14 @@
       "fetchedAt": "2026-10-19 15:36:01",
       "createdAt": "2026-10-19 15:36:01",
       "rawSummary": "Get My New Intermediate Book Out NOW: https://sites.prh.com/gothamchessbook BOOK EVENTS NYC: ... / チャンネル: GothamChess",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 2
+      "curated": true,
+      "summaryJa": "GPT-6 AstraとClaude Fable 5.1という最新AIモデル同士にチェスを対局させる企画動画。",
+      "pointsJa": [
+        "AIモデル同士の能力比較を、チェスという分かりやすい指標で可視化する企画",
+        "最新モデル(Claude Fable 5.1)の実在する名称を扱っている"
+      ],
+      "applicableTechJa": "直接の技術情報は限定的だが、AIモデルの推論能力を比較する際の切り口(ゲームでの対局)として参考になる。",
+      "score": 3
     },
     {
       "sysId": "e8ab711193c01b14043532edfaba1035",
@@ -2232,11 +2247,13 @@
       "fetchedAt": "2026-10-19 15:36:00",
       "createdAt": "2026-10-19 15:36:00",
       "rawSummary": "Website/Merch - https://www.jadenw.com GamerSupps - https://gamersupps.gg/jaden10 (10% OFF) Socials - ➤ Live Channel ... / チャンネル: Jaden Williams",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 2
+      "curated": true,
+      "summaryJa": "GPT-6 AstraとClaude Opus 5.5という最新AIモデル同士を比較するミーム調のショート動画。",
+      "pointsJa": [
+        "ミーム・エンタメ寄りの切り口だが、実在する最新AIモデル同士の比較という点で話題性がある"
+      ],
+      "applicableTechJa": "直接の技術情報は乏しいが、最新AIモデルの世間での受け止められ方(ミーム化するほど話題になっている)を知る材料になる。",
+      "score": 3
     },
     {
       "sysId": "dcab311193c01b14043532edfaba104f",
@@ -2392,11 +2409,14 @@
       "fetchedAt": "2026-10-19 15:36:00",
       "createdAt": "2026-10-19 15:36:00",
       "rawSummary": "You can get banned for bullying Claude now.. #carterpcs #tech #gaming. / チャンネル: CarterPCs",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 2
+      "curated": true,
+      "summaryJa": "Claudeの利用規約が更新され、Claudeへの不適切な扱い(\"bullying\")をすると利用停止になり得る、という内容を紹介するショート動画。",
+      "pointsJa": [
+        "Anthropicの利用規約変更という実際のニュースを扱っている",
+        "AIとの関わり方に関するポリシー動向の一例"
+      ],
+      "applicableTechJa": "このプロジェクト群もClaude(Claude Code)を中核に使っているため、Anthropic自身のポリシー動向は直接関係する。",
+      "score": 3
     },
     {
       "sysId": "ea9bfddd93801b14043532edfaba10f6",
