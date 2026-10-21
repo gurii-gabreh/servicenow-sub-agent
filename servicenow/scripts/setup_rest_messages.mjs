@@ -158,11 +158,14 @@ const REST_MESSAGES = [
       // 都度上書きするため、ここのrest_endpointは「キー無しのベース定義」として
       // q部分のみ両ファイルで一致させればよい(publishedAfterは実行時刻依存の値のため
       // 静的なこの定義には含めない)。
+      // 2026-10-21追記: bareの"Claude"が俳優"Jean-Claude Van Damme"にも誤マッチしていた
+      // ことが実データで判明したため、-"Jean-Claude"(Boolean NOT)を追加して除外した
+      // (詳細はscheduled_job_ai_research_fetch.js側のコメント参照)。
       {
         function_name: "aitrend",
         rest_endpoint:
           "https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&order=viewCount&maxResults=10&q=" +
-          encodeURIComponent('"artificial intelligence" OR "人工知能" OR "機械学習" OR Claude OR "生成AI"'),
+          encodeURIComponent('"artificial intelligence" OR "人工知能" OR "機械学習" OR Claude OR "生成AI" -"Jean-Claude"'),
       },
       // category 10用: 日本の急上昇動画(ジャンル問わず)。part=statisticsで再生回数を含める。
       {

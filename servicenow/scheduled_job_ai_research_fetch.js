@@ -506,10 +506,19 @@
         // 歌、無関係)やMrBeast動画(タグの偶然一致)等の無関係な動画が再生回数の多さだけで
         // 上位に来てしまうノイズの原因になっていたため(YouTube調査結果を確認したユーザーとの
         // 相談で判明)。"artificial intelligence"という具体的な英語フレーズに置き換えた。
+        // 2026-10-21追記: 改善A適用後の実データで、クエリに残っている bare の "Claude" が
+        // AIのClaudeだけでなく俳優名"Jean-Claude Van Damme"にも誤マッチしていることが
+        // 判明した(実例: "Jean-Claude Van Damme Finds the Rhythm"、"Hard Target (1993) |
+        // Jean-Claude Van Damme vs. The Hunters" の2件)。YouTube Data API のq引数は
+        // Boolean NOT(-)演算子をサポートするため、-"Jean-Claude"を追加して除外した。
+        // なお "#mobilelegends #claude"(ゲームのハッシュタグ)・アニメクリップ等への誤マッチは
+        // クエリ側での一般化した除外が難しいため、research-item-curationスキルによる収集後の
+        // AI判断(改善B)側で引き続き弾く方針とした(クエリ改善だけでは完全にはゼロにできない
+        // ことを実データで確認済み、CL-044参照)。
         // setup_rest_messages.mjsのaitrend定義とq部分は必ず一致させること(publishedAfterは
         // 実行時刻依存のためそちら側の静的定義には含めない、下記fetchYouTubeSearch参照)。
         aitrend: "https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&order=viewCount&maxResults=10&q=" +
-            encodeURIComponent('"artificial intelligence" OR "人工知能" OR "機械学習" OR Claude OR "生成AI"'),
+            encodeURIComponent('"artificial intelligence" OR "人工知能" OR "機械学習" OR Claude OR "生成AI" -"Jean-Claude"'),
         trendjp: "https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&regionCode=JP&maxResults=10",
         trendworld: "https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&regionCode=US&maxResults=10"
     };
