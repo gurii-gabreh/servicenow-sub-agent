@@ -147,6 +147,21 @@
 
     var stats = { inserted: 0, skipped: 0, errors: [] };
 
+    // 2026-11-06追加(PTD-124診断用、ユーザー指摘): 挿入0〜1件/日という異常が続いていたため、
+    // どの情報源で何が空になっているかを情報源ごとに1件だけサンプルログする。原因判明後は
+    // この診断ログは削除してよい(恒久的な仕組みではない)。
+    var diagLogged = {};
+    function diagLogSample(sourceName, item, dedupKey) {
+        if (diagLogged[sourceName]) return;
+        diagLogged[sourceName] = true;
+        gs.info(
+            "[AIResearchFetcherDiag] source=" + sourceName +
+            " title=\"" + String(item.title || "").substring(0, 60) + "\"" +
+            " sourceUrl=\"" + String(item.sourceUrl || "") + "\"" +
+            " dedupKey=\"" + String(dedupKey || "") + "\""
+        );
+    }
+
     function normalizeUrl(url) {
         if (!url) return "";
         return url.trim().replace(/\/+$/, "").toLowerCase();
@@ -183,6 +198,7 @@
     // 同じハッカソンが複数行に渡って残る(古い状態のスナップショットとして、傾向データの一部になる)。
     function insertItem(item) {
         var dedupKey = (normalizeUrl(item.sourceUrl) + (item.dedupSuffix || "")).substring(0, 255);
+        diagLogSample(item.sourceName || "(unknown)", item, dedupKey);
         if (!dedupKey) {
             stats.skipped++;
             return;
