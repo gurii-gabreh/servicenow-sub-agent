@@ -20,6 +20,16 @@
 //                                   (2026-10-18追加、category 2/5/10。唯一APIキー認証が必要)
 // また u_ai_research_item テーブル(フィールド定義はREADME参照)が作成済みであること。
 //
+// 2026-11-06追記(PTD-124): ServiceNow PDI(dev395932)がリクレーム(自動回収)され
+// テーブルを再作成した際、u_categoryしか作られておらず残り7フィールド(u_title/u_summary/
+// u_source_url/u_source_name/u_published_at/u_fetched_at/u_dedup_key)が無い状態のまま
+// このジョブが数日間動き続けていた。ServiceNowはGlideRecordで存在しないフィールドへの
+// 代入・addQueryを例外無く黙って無視するため、挿入は常にinserted=0〜1件・残り全件が
+// 「スキップ(重複/空)」として記録される(実際には空フィールドのため重複ではなく、
+// u_dedup_keyが存在しないためalreadyExists()のクエリ条件が効かずテーブルに1件でもあれば
+// 常にtrueを返していたことが原因と判明)。テーブル再作成時は、READMEのフィールド定義表
+// (8フィールド全て)を必ず作り切ること。
+//
 // 2026-10-10追記: category 8(世の中の動向・SEO/マーケティング業界)・category 9(働き方の動向)を
 // 追加した。manager-roomでの「個人の実績作り」相談(キャリア構築のための調査手段の拡張)から、
 // SEOキーワード経由の世の中の動向調査と、働き方(最先端/一般的/近未来的)の調査が可能か検討し、
@@ -147,21 +157,6 @@
 
     var stats = { inserted: 0, skipped: 0, errors: [] };
 
-    // 2026-11-06追加(PTD-124診断用、ユーザー指摘): 挿入0〜1件/日という異常が続いていたため、
-    // どの情報源で何が空になっているかを情報源ごとに1件だけサンプルログする。原因判明後は
-    // この診断ログは削除してよい(恒久的な仕組みではない)。
-    var diagLogged = {};
-    function diagLogSample(sourceName, item, dedupKey) {
-        if (diagLogged[sourceName]) return;
-        diagLogged[sourceName] = true;
-        gs.info(
-            "[AIResearchFetcherDiag] source=" + sourceName +
-            " title=\"" + String(item.title || "").substring(0, 60) + "\"" +
-            " sourceUrl=\"" + String(item.sourceUrl || "") + "\"" +
-            " dedupKey=\"" + String(dedupKey || "") + "\""
-        );
-    }
-
     function normalizeUrl(url) {
         if (!url) return "";
         return url.trim().replace(/\/+$/, "").toLowerCase();
@@ -198,7 +193,6 @@
     // 同じハッカソンが複数行に渡って残る(古い状態のスナップショットとして、傾向データの一部になる)。
     function insertItem(item) {
         var dedupKey = (normalizeUrl(item.sourceUrl) + (item.dedupSuffix || "")).substring(0, 255);
-        diagLogSample(item.sourceName || "(unknown)", item, dedupKey);
         if (!dedupKey) {
             stats.skipped++;
             return;
