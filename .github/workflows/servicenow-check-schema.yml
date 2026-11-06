@@ -1,0 +1,22 @@
+name: ServiceNowテーブルスキーマ確認(診断用、PTD-124)
+
+# 手動実行専用(workflow_dispatch)。読み取り専用で、ServiceNow PDI側には一切書き込まない。
+# u_ai_research_itemテーブルの既存行を全フィールド取得し、u_dedup_keyフィールドが
+# 実在するかを直接確認する(挿入0件問題の原因調査用、一時的な診断ワークフロー)。
+on:
+  workflow_dispatch:
+
+jobs:
+  check-schema:
+    name: u_ai_research_itemのスキーマ確認
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - run: node servicenow/scripts/check_table_schema.mjs
+        env:
+          SN_INSTANCE: ${{ secrets.SERVICENOW_INSTANCE_URL }}
+          SN_CLIENT_ID: ${{ secrets.SERVICENOW_CLIENT_ID }}
+          SN_CLIENT_SECRET: ${{ secrets.SERVICENOW_CLIENT_SECRET }}
