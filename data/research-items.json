@@ -10,8 +10,25 @@
     "6": "世の中のニーズ・困りごと",
     "7": "ハッカソン情報(応募できる案件・入賞作品)"
   },
-  "generatedAt": "2026-11-05T07:11:06.968Z",
-  "itemCount": 0,
+  "generatedAt": "2026-11-06T07:10:39.222Z",
+  "itemCount": 1,
   "curatedCount": 0,
-  "items": []
+  "items": [
+    {
+      "sysId": "4e563f66c318d310cfcfbd43e40131aa",
+      "category": 2,
+      "title": "",
+      "sourceName": "",
+      "sourceUrl": "",
+      "publishedAt": "",
+      "fetchedAt": "",
+      "createdAt": "2026-11-05 08:00:15",
+      "rawSummary": "",
+      "curated": false,
+      "summaryJa": "",
+      "pointsJa": [],
+      "applicableTechJa": "",
+      "score": 0
+    }
+  ]
 }
