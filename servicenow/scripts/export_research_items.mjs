@@ -143,8 +143,9 @@ async function main() {
 
   const existing = loadExisting();
   const existingBySysId = new Map((existing.items || []).map((it) => [it.sysId, it]));
+  const freshSysIds = new Set(rawRows.map((row) => row.sys_id));
 
-  const mergedItems = rawRows.map((row) => {
+  const freshItems = rawRows.map((row) => {
     const normalized = normalizeRow(row);
     const prior = existingBySysId.get(normalized.sysId);
     const merged = {
@@ -158,6 +159,17 @@ async function main() {
     return merged;
   });
 
+  // 2026-11-06追記(PTD-124関連、ユーザー指摘): ServiceNow PDIのリクレーム(自動回収)で
+  // u_ai_research_itemテーブルの全件が消滅した後、このスクリプトが「今のテーブルの行だけ」で
+  // ファイルを上書きしてしまい、過去に収集・キュレーション済みだった5622件(キュレーション済み184件)が
+  // research-items.json側からも消えてしまった。収集した生データ・キュレーション結果は本来
+  // 蓄積する一方の設計のため、ServiceNow側に無い(行が消えた)sysIdでも既存分は切り捨てず残す。
+  const staleItems = (existing.items || [])
+    .filter((it) => !freshSysIds.has(it.sysId))
+    .map((it) => ({ ...it, score: scoreItem(it) }));
+
+  const mergedItems = [...freshItems, ...staleItems];
+
   // sys_created_on 降順(新しい順)。ServiceNow側のORDERBYDESCと合わせて明示的にも並べ替える。
   mergedItems.sort((a, b) => (b.createdAt || "").localeCompare(a.createdAt || ""));
 
@@ -170,7 +182,9 @@ async function main() {
       "curated:trueの項目のみsummaryJa/pointsJa/applicableTechJa(日本語の概要・ポイント・活かせる技術)が" +
       "付与されている。curated:falseは収集元の生データ(title/rawSummaryは元記事のまま、英語が多い)のみ。" +
       "servicenow/scripts/export_research_items.mjs(GitHub Actions)による自動生成・マージ。" +
-      "日本語要約フィールドはこのスクリプトでは上書きしない(Claudeによる手動キュレーションのみが更新する)。",
+      "日本語要約フィールドはこのスクリプトでは上書きしない(Claudeによる手動キュレーションのみが更新する)。" +
+      "ServiceNow側のテーブルから行が無くなっても(PDIリクレーム等を含む)このファイル側では切り捨てない、" +
+      "蓄積一方の設計(2026-11-06、ユーザー指摘により変更。PTD-124参照)。",
     categories: CATEGORY_LABELS,
     generatedAt: new Date().toISOString(),
     itemCount: mergedItems.length,
