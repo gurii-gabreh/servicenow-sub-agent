@@ -11,9 +11,142 @@
     "7": "ハッカソン情報(応募できる案件・入賞作品)"
   },
   "generatedAt": "2026-11-07T06:23:35.652Z",
-  "itemCount": 8286,
-  "curatedCount": 345,
+  "itemCount": 8293,
+  "curatedCount": 352,
   "items": [
+    {
+      "sysId": "x-research-grok-2026-11-07-01",
+      "category": 1,
+      "title": "Claude Code中心のSkills/hooks/subagents/MCPを組み合わせたマルチエージェント運用の普及",
+      "sourceName": "X (Grok経由)",
+      "sourceUrl": "https://x.com/thedelost/status/2114016386896773177",
+      "publishedAt": "",
+      "fetchedAt": "2026-11-07T10:33:10.916989+00:00",
+      "createdAt": "2026-11-07",
+      "rawSummary": "@delostの投稿: AnthropicのAgent Skillsがオープン仕様になり、GitHub上に135エージェント+35スキル+プラグインのリポジトリが急増、ツール切り替え可能なマーケットプレイスも登場(いいね724・リポスト84・ブックマーク1256)。@Promixyzの投稿: Claude Code+LangGraph+BullMQ+Git worktree+Playwrightで『AIエンジニアリングチーム』を組む具体例。@addyosmani関連の実践記事はいいね1.9万超・リポスト約3000・ブックマーク4.7万超の大きな反響(Grok X検索経由で取得)。",
+      "curated": true,
+      "summaryJa": "AnthropicのAgent Skillsがオープン仕様化し、GitHub上でエージェント・スキル・プラグインのリポジトリが急増している。Claude Code+LangGraph+BullMQ+Git worktree+Playwrightを組み合わせ、1人で並列作業・自動テストまで回す『AIエンジニアリングチーム』構成が広まっている。",
+      "pointsJa": [
+        "Agent Skillsのオープン仕様化で、スキル・プラグインの共有エコシステムが急速に育っている(135エージェント+35スキルのリポジトリ急増)",
+        "Git worktreeでエージェントの作業を隔離し、Playwright(MCP)で自動テストする構成は、まさに本プロジェクトが既に採用しているisolation:worktreeパターンと同じ方向性",
+        "@addyosmani関連の記事が1.9万いいね超という大きな反響は、この種の実践ノウハウへの関心の高さを示している"
+      ],
+      "applicableTechJa": "本プロジェクトのsubagent-role-orchestrationスキル(司令塔・Research・実装・テストの役割分担、isolation:worktreeでの並列実装)は、まさにこの投稿群が紹介する構成と同じ方向性を独自に実現済みであることが確認できた。Agent Skillsのオープン仕様・マーケットプレイスは、将来.claude/skills配下の既存スキル群を外部共有する際の参考になりうる。",
+      "score": 7
+    },
+    {
+      "sysId": "x-research-grok-2026-11-07-02",
+      "category": 5,
+      "title": "デザイナーのコーディングエージェント移行とデザイナー向け専用IDE(proto_ide)の登場",
+      "sourceName": "X (Grok経由)",
+      "sourceUrl": "https://x.com/maayanalbert/status/2118872746415509578",
+      "publishedAt": "",
+      "fetchedAt": "2026-11-07T10:33:10.916989+00:00",
+      "createdAt": "2026-11-07",
+      "rawSummary": "@maayanalbertの投稿: デザイナーの3/4がデザインツールではなくコーディングエージェントを使っているという調査結果を受け、Claude Code/Cursorの形をしつつデザイナーが欲しい機能を全部載せた専用IDE「proto_ide」を発表(いいね442・リポスト45・ブックマーク290、Grok X検索経由で取得)。",
+      "curated": true,
+      "summaryJa": "デザイナーの多くが従来のデザインツールではなくコーディングエージェントを使い始めているという調査結果を受け、Claude Code/Cursorに似た形でデザイナー向け機能を備えた専用IDE「proto_ide」が発表された。",
+      "pointsJa": [
+        "デザイナー自身がコーディングエージェントでUI/フロントエンドまで作る流れが広がっている実例",
+        "既存のAIコーディングツールの『形』を踏襲しつつ、特定職種(デザイナー)向けに機能を絞ったIDEという製品の作り方"
+      ],
+      "applicableTechJa": "本プロジェクトのデザイン設計フェーズ(design-spec-kickoffスキル)は人間(ユーザー)がAIと相談しながら進める方式だが、将来的にUI実装そのものもエージェントへより任せる方向へ進む際の、業界側の動向として参考になる。",
+      "score": 4
+    },
+    {
+      "sysId": "x-research-grok-2026-11-07-03",
+      "category": 3,
+      "title": "AIだけで回す人間ゼロのショート動画エージェンシー・プロモ動画制作",
+      "sourceName": "X (Grok経由)",
+      "sourceUrl": "https://x.com/Y0urDumble/status/2116341413755453670",
+      "publishedAt": "",
+      "fetchedAt": "2026-11-07T10:33:10.916989+00:00",
+      "createdAt": "2026-11-07",
+      "rawSummary": "@Y0urDumbleの投稿: Opus 5.5が$5,000相当のモーションスタジオを置き換え、App Storeスクレイピング→ストーリーボード→2.5D動画生成→投稿→創業者へのピッチまで完走し48時間で83万再生を達成(いいね338・ブックマーク652)。@whoisbaifuの投稿: ClaudeでSeedance 2.5を操作し素材生成→実機画面合成するプロモ動画制作チュートリアル(いいね382・ブックマーク293・ビュー33万超)。いずれもGrok X検索経由で取得。",
+      "curated": true,
+      "summaryJa": "Claude Code(Opus系)とBlender MCP・ElevenLabs・Remotion等を組み合わせ、人間が介在せずにショート動画の企画・生成・投稿・営業ピッチまでを自動化する事例が複数報告されている。48時間で83万再生を達成した例もある。",
+      "pointsJa": [
+        "App Storeのスクレイピング→ストーリーボード→動画生成→投稿→ピッチ、という一連の工程を全てAIエージェントに任せる構成が実際に機能している実例",
+        "個人開発アプリの宣伝動画を無料・低コストで量産できる可能性を示す"
+      ],
+      "applicableTechJa": "本プロジェクト群(progress-tracker-dashboard等)は現状、宣伝動画の自動生成は行っていないが、GitHub Actions上で定期実行する形でこの種の構成を取り入れる余地はある。ただし有料のAPI(ElevenLabs等)を使う前提のため、CLAUDE.mdルール9(永久無料)との整合性は要検討。",
+      "score": 5
+    },
+    {
+      "sysId": "x-research-grok-2026-11-07-04",
+      "category": 1,
+      "title": "LLM出力を直接UIに変換する「Generative UI」の本格登場(Vercel AI SDK)",
+      "sourceName": "X (Grok経由)",
+      "sourceUrl": "https://x.com/rauchg/status/2118856239719608353",
+      "publishedAt": "",
+      "fetchedAt": "2026-11-07T10:33:10.916989+00:00",
+      "createdAt": "2026-11-07",
+      "rawSummary": "Vercel CEOの@rauchgの投稿: AI SDK+Chat SDK+json-renderで『LLMから直接UIを生成する』Generative UIが、人間-エージェント間インタラクションの主流になるとの主張(いいね1497・ブックマーク1604、Grok X検索経由で取得)。",
+      "curated": true,
+      "summaryJa": "VercelのAI SDK・Chat SDK・json-renderを組み合わせ、LLMの出力をそのままUIコンポーネントへ変換する「Generative UI」が紹介されている。会話(チャット)からUIを直接生成する方式が今後の主流になるという主張。",
+      "pointsJa": [
+        "LLMの出力をテキストではなく構造化されたUIコンポーネントとして直接レンダリングする設計パターン",
+        "Slack/Teams等のチャットUI上で会話からその場でUIを生成する発想"
+      ],
+      "applicableTechJa": "本プロジェクト群は静的サイト+JSON正本という構成が中心で、チャット上でのGenerative UI生成は現状のアーキテクチャとは異なる方向性。ただし将来、ダッシュボード上でAIに「このデータをグラフ化して」のような指示を出す機能を検討する際の参考事例にはなりうる。",
+      "score": 4
+    },
+    {
+      "sysId": "x-research-grok-2026-11-07-05",
+      "category": 2,
+      "title": "Gemini Omni 1.2 Flash(動画生成、コスト30%減)のリリース反応",
+      "sourceName": "X (Grok経由)",
+      "sourceUrl": "https://x.com/Google/status/2118390406316728555",
+      "publishedAt": "",
+      "fetchedAt": "2026-11-07T10:33:10.916989+00:00",
+      "createdAt": "2026-11-07",
+      "rawSummary": "@Googleの公式投稿: Gemini Omni 1.2 Flash(動画生成)がコスト30%減・15秒クリップ・会話編集対応・カメラ制御強化で注目を集めている(いいね3305・リポスト336・ビュー73万超、Grok X検索経由で取得)。",
+      "curated": true,
+      "summaryJa": "GoogleがGemini Omni 1.2 Flash(動画生成モデル)を発表。従来比コスト30%減、15秒クリップ生成、会話形式での編集、カメラ制御の強化が特徴で、大きな反響を呼んでいる。",
+      "pointsJa": [
+        "動画生成モデルのコスト低下が続いており、個人開発でも動画コンテンツ生成を検討しやすくなっている"
+      ],
+      "applicableTechJa": "x-research-grok-2026-11-07-03(AI動画エージェンシー)と組み合わせると、個人開発アプリの宣伝動画制作コストがさらに下がる可能性がある。ただし本プロジェクトの永久無料方針との整合性は別途要検討。",
+      "score": 3
+    },
+    {
+      "sysId": "x-research-grok-2026-11-07-06",
+      "category": 1,
+      "title": "マルチエージェント運用のコスト管理・セキュリティの実践パターン(役割分担・サンドボックス化)",
+      "sourceName": "X (Grok経由)",
+      "sourceUrl": "https://x.com/m4lkxx/status/2115775972536434946",
+      "publishedAt": "",
+      "fetchedAt": "2026-11-07T10:33:10.916989+00:00",
+      "createdAt": "2026-11-07",
+      "rawSummary": "@m4lkxxの投稿: Grok Botで75%のトークンが『古い会話の再読』に消えていた事例を報告し、CHIEF/OPS/CHECKER/SPECIALISTSのような役割分担・6ボット構成でコストを大幅削減する設計を公開(いいね776・ブックマーク2594)。@bradmenezesの投稿: CISO視点で『デスクトップ実行は汚い』、Claude Code拡張の悪意ある事例を挙げ、エフェメラル・サンドボックスへの移行を予測(いいね279・ブックマーク188)。いずれもGrok X検索経由で取得。",
+      "curated": true,
+      "summaryJa": "マルチエージェント運用でトークンの75%が『古い会話の再読』に消えていたという実例から、役割分担(CHIEF/OPS/CHECKER/SPECIALISTS)やイベント駆動への切り替えでコストを大幅削減する設計が紹介されている。あわせて、デスクトップでのAIエージェント実行はセキュリティリスクが高く、使い捨て(エフェメラル)のサンドボックス環境へ移行すべきという指摘もある。",
+      "pointsJa": [
+        "『古い会話の再読』がトークン消費の大半を占めるという具体的な数字(75%)は、長時間セッションのコンテキスト管理の重要性を裏付ける",
+        "役割分担によるコスト削減という考え方は、本プロジェクトの司令塔/Research/実装/テストの役割分担(subagent-role-orchestration)と同じ方向性",
+        "AIエージェントをデスクトップで直接実行するリスクへの指摘は、サンドボックス・ワークツリー分離の重要性を裏付ける"
+      ],
+      "applicableTechJa": "本プロジェクトはCL-018(embedding検索の構想)やmanager-room-log.jsonでの要約運用など、まさに『古い会話の再読コスト』を抑える工夫を既に重ねてきている。今回の75%という具体的な数字は、その方針の妥当性を裏付ける外部実例として参考になる。デスクトップ実行リスクの指摘は、GitHub Actions上でのスクリプト実行(ネットワークegress制限込み)という現行構成がある程度理にかなっていることの裏付けにもなる。",
+      "score": 6
+    },
+    {
+      "sysId": "x-research-grok-2026-11-07-07",
+      "category": 2,
+      "title": "AIがAI自身の開発を加速させている(自己改善速度)への危機感",
+      "sourceName": "X (Grok経由)",
+      "sourceUrl": "https://x.com/ochyai/status/2118953142733992445",
+      "publishedAt": "",
+      "fetchedAt": "2026-11-07T10:33:10.916989+00:00",
+      "createdAt": "2026-11-07",
+      "rawSummary": "@expokun/@ochyaiの投稿: Anthropic社内データとして、開発速度が約2倍になりその8割がAI自身の貢献という推定が紹介され、再帰的自己改善の手前ではないかという指摘(いいね1088・リポスト138、Grok X検索経由で取得)。",
+      "curated": true,
+      "summaryJa": "Anthropic社内の開発速度が約2倍になり、その8割がAI自身による貢献だったという推定が紹介され、AIがAI自身の開発を加速させる「再帰的自己改善」に近づいているのではないかという危機感が議論されている。",
+      "pointsJa": [
+        "AI企業自身の開発プロセスにおいて、AIが人間の開発速度を大きく上回る形で貢献しているという具体的な推定値"
+      ],
+      "applicableTechJa": "本プロジェクト自体がClaude Codeを使った開発効率化(サブエージェント並列化等)を進めている立場であり、この話題は直接の実装には繋がらないが、AIへの依存度が上がることへの一般的な懸念として留意する程度。",
+      "score": 3
+    },
     {
       "sysId": "x-research-2026-11-07-01",
       "category": 1,
