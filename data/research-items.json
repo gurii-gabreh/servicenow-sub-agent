@@ -11,9 +11,120 @@
     "7": "ハッカソン情報(応募できる案件・入賞作品)"
   },
   "generatedAt": "2026-11-07T06:23:35.652Z",
-  "itemCount": 8280,
-  "curatedCount": 339,
+  "itemCount": 8286,
+  "curatedCount": 345,
   "items": [
+    {
+      "sysId": "x-research-2026-11-07-01",
+      "category": 1,
+      "title": "Claude Code GitHub Actions + Spec Kitによる仕様駆動開発の実践報告",
+      "sourceName": "X (Felo X Research経由)",
+      "sourceUrl": "",
+      "publishedAt": "",
+      "fetchedAt": "2026-11-07T10:07:36.553294+00:00",
+      "createdAt": "2026-11-07",
+      "rawSummary": "Insight Edgeのインターン生による実践レポート。Claude Code GitHub ActionsとSpec Kit(/specify, /clarify, /plan, /tasks, /implementの各コマンド)を組み合わせ、オセロ対戦アプリの開発をGitHubのブラウザ上のコメント操作のみで完結させたという報告。具体的ないいね・リポスト数は不明だが、AIエージェント時代の開発手法として複数の関連記事で紹介されている(Felo X Researchによる集計、個別投稿へのリンクなし)。",
+      "curated": true,
+      "summaryJa": "Claude Code GitHub ActionsとGitHub公式のSpec Kit(要件定義→明確化→計画→タスク分解→実装を順にコマンド実行する仕様駆動開発フレームワーク)を組み合わせ、ブラウザのコメント操作だけでアプリ(オセロ対戦)を完成させたという実践報告。",
+      "pointsJa": [
+        "/specify→/clarify→/plan→/tasks→/implementという5段階のコマンドで、要件定義から実装まで一貫してAIエージェントに進行させる具体的な型を示している",
+        "開発者がローカル環境を開かず、GitHub上のコメントだけで開発が完結したという報告は、非エンジニアでも扱える開発フローの実例になる"
+      ],
+      "applicableTechJa": "本プロジェクト群はCCR(manager-room/worker-room)+サブエージェントという独自の役割分担で類似のことを実現しているが、Spec Kitの「明確化(clarify)」を明示的な1ステップとして挟む点は、CLAUDE.mdルール10(不明点は必ず質問する)・ルール21(次工程を勝手に進めない)を機械的なコマンドとして型化する発想として参考になる。",
+      "score": 5
+    },
+    {
+      "sysId": "x-research-2026-11-07-02",
+      "category": 4,
+      "title": "Claude Codeの業務活用40のコマンド・ワークフロー・Tips(デジライズCEO)",
+      "sourceName": "X (Felo X Research経由)",
+      "sourceUrl": "",
+      "publishedAt": "",
+      "fetchedAt": "2026-11-07T10:07:36.553294+00:00",
+      "createdAt": "2026-11-07",
+      "rawSummary": "デジライズCEOのチャエン氏が、海外でバズったClaude Code活用法をベースに実務で使える活用法40個をまとめた記事。ファイル整理・リネームの自動化、Gmail/Slack/Driveとの連携ワークフロー、議事録・提案書・レポート作成の効率化、リサーチ・競合調査の自動化など、非エンジニア向けの活用例を含む。投稿は173いいね・1.7Kリポスト・2.2K表示を記録し、関連する「非エンジニア向けClaude Code講座」には832名が申し込んだ(Felo X Researchによる集計、個別投稿へのリンクなし)。",
+      "curated": true,
+      "summaryJa": "Claude Codeを「コーディング専用ツール」ではなく、ファイル整理・メール/チャット連携・議事録作成・リサーチなど非エンジニアの業務全般を任せる「業務インフラ」として使う40の活用法をまとめた記事。反響が大きく(173いいね・1.7Kリポスト)、非エンジニア向け講座にも832名が申し込むなど注目度が高い。",
+      "pointsJa": [
+        "コーディング以外(ファイル整理、Gmail/Slack/Drive連携、議事録・提案書作成、リサーチ自動化)への応用が、非エンジニア層にも支持されている実例",
+        "「個人の実績作り」「キャリア構築のための調査手段」といった本プロジェクトの過去の関心領域と重なる、Claude Codeの非開発業務への応用事例集として参照価値がある"
+      ],
+      "applicableTechJa": "本プロジェクト自体がClaude Codeを開発以外(manager-room-log.jsonの要約、日次ルーティン、研究収集のキュレーション等)にも使っており、この記事が挙げる「業務インフラ化」の方向性と一致する。具体的な40項目の内容(個別コマンド)までは確認できていないため、必要であれば別途ユーザーに詳細を確認して取り込みを検討できる。",
+      "score": 6
+    },
+    {
+      "sysId": "x-research-2026-11-07-03",
+      "category": 1,
+      "title": "Claude Code GitHub Actionsの普及(@claudeメンションでのPRレビュー・実装自動化)",
+      "sourceName": "X (Felo X Research経由)",
+      "sourceUrl": "",
+      "publishedAt": "",
+      "fetchedAt": "2026-11-07T10:07:36.553294+00:00",
+      "createdAt": "2026-11-07",
+      "rawSummary": "GitHub Actions上でClaudeが自律動作する「Claude Code GitHub Actions」について、@claudeメンションでAIに指示を出し、コードレビュー・実装・ドキュメント更新まで自動化できる仕組みが紹介されている。Anthropic API・AWS Bedrock・Google Vertex AIの複数認証に対応し、セットアップは/install-github-appコマンドのみで完了するとされる。具体的な反応数は不明(Felo X Researchによる集計、個別投稿へのリンクなし)。",
+      "curated": true,
+      "summaryJa": "GitHub上でPRやIssueに`@claude`とメンションするだけでClaudeが自律的にコードレビュー・実装・ドキュメント更新を行う「Claude Code GitHub Actions」の活用が、日本のX上でも共有されている。Anthropic API/Bedrock/Vertex AIの複数認証に対応し、`/install-github-app`のみでセットアップできる手軽さが紹介されている。",
+      "pointsJa": [
+        "`@claude`メンション一つでPRレビュー・実装・ドキュメント更新まで自律実行できる点は、現在のGitHub Actionsベースの自動化(servicenow-setup.yml等、スクリプト起動のみ)よりさらに踏み込んだエージェント型CI/CDの一例",
+        "複数のクラウド認証(Bedrock/Vertex AI含む)に対応している点は、将来Anthropic API以外の認証経路を検討する際の参考情報になる"
+      ],
+      "applicableTechJa": "本プロジェクト群のGitHub Actionsは現状「決まったNode.jsスクリプトを起動するだけ」の自動化に留まっており、`@claude`メンションでのレビュー自動化等は導入していない。コードレビュー(/code-reviewスキル等)をPRコメント経由で自動トリガーする発想は、将来の運用改善候補として参考になる程度。",
+      "score": 4
+    },
+    {
+      "sysId": "x-research-2026-11-07-04",
+      "category": 1,
+      "title": "Graphify: コード依存関係を可視化するオープンソースツール",
+      "sourceName": "X (Felo X Research経由)",
+      "sourceUrl": "",
+      "publishedAt": "",
+      "fetchedAt": "2026-11-07T10:07:36.553294+00:00",
+      "createdAt": "2026-11-07",
+      "rawSummary": "個人開発においてAIコーディングツール(Claude Code・Codex等)を使った開発サイクルが共有される中、コードの依存関係を可視化するオープンソースツール「Graphify」が話題になっているという紹介(Felo X Researchによる集計、具体的な機能詳細・個別投稿へのリンクなし)。",
+      "curated": true,
+      "summaryJa": "AIコーディングツールを使った個人開発の効率化の文脈で、コードベースの依存関係を可視化するオープンソースツール「Graphify」が紹介されている。詳細な機能や対応言語はFeloの集計からは確認できなかった。",
+      "pointsJa": [
+        "依存関係の可視化ツールは、AIエージェントに大規模な改修を任せる前に影響範囲を把握する目的で使われる傾向がある、という文脈で言及されている"
+      ],
+      "applicableTechJa": "ツール自体の詳細(対応言語・無料かどうか等)が未確認のため、現時点では採用の可否を判断できない。progress-tracker-dashboard等、複数リポジトリ・多数のJSONファイルが絡み合う構成の見通しを良くする目的で、必要であれば詳細調査を別途行う価値はある。",
+      "score": 3
+    },
+    {
+      "sysId": "x-research-2026-11-07-05",
+      "category": 2,
+      "title": "X(旧Twitter)のアルゴリズムがGrok AI主導で刷新",
+      "sourceName": "X (Felo X Research経由)",
+      "sourceUrl": "",
+      "publishedAt": "2025-11",
+      "fetchedAt": "2026-11-07T10:07:36.553294+00:00",
+      "createdAt": "2026-11-07",
+      "rawSummary": "2025年11月にXのアルゴリズムが大幅にアップデートされ、Elon Musk氏が「アルゴリズムは11月までには完全にAIによるものになる」と発言。Xは2026年に創業以来最も野心的な広告プラットフォームの再構築を表明し、AIが利用者の反応を予測して投稿表示順を決める仕組みに刷新したとされる(Felo X Researchによる集計、個別投稿へのリンクなし)。",
+      "curated": true,
+      "summaryJa": "XのタイムラインアルゴリズムがGrok AIを使って全面的に書き換えられ、ユーザーの反応を予測して投稿の表示順を決める方式へ移行したという話題。2026年中に広告プラットフォーム自体も再構築すると表明されている。",
+      "pointsJa": [
+        "大規模SNSのレコメンドアルゴリズム自体がAI(Grok)主導に置き換わった実例として、AIが使われる分野が「コンテンツ生成」から「配信ロジックそのもの」へ広がっていることを示す"
+      ],
+      "applicableTechJa": "本プロジェクト群に配信アルゴリズムを扱うアプリは無く直接の技術的関連は薄いが、「AIにX運用のおすすめ投稿順の仕組みが変わった」ことは、今回Felo X Researchを使う上での前提情報(収集される投稿の傾向が変わりうる)として留意する価値がある。",
+      "score": 3
+    },
+    {
+      "sysId": "x-research-2026-11-07-06",
+      "category": 2,
+      "title": "ServiceNow Build Agentが主要AIコーディングツール内で動作するよう拡張",
+      "sourceName": "X (Felo X Research経由)",
+      "sourceUrl": "",
+      "publishedAt": "",
+      "fetchedAt": "2026-11-07T10:07:36.553294+00:00",
+      "createdAt": "2026-11-07",
+      "rawSummary": "ServiceNow Studio内のBuild Agentが、主要なAIコーディングツール内でも動作するようになり、自然言語プロンプトだけで本番レベルのアプリやAIエージェントを構築できるようになったという話題(Felo X Researchによる集計、具体的な対応ツール名・個別投稿へのリンクなし)。",
+      "curated": true,
+      "summaryJa": "ServiceNow Studioの「Build Agent」機能が、外部のAIコーディングツール環境内でも使えるよう拡張され、自然言語プロンプトから本番レベルのアプリ・AIエージェントを構築できるようになったという話題。",
+      "pointsJa": [
+        "ServiceNow自身が、自社UI内だけでなく外部AIコーディングツールとの連携を広げている動きとして、servicenow-sub-agentのREST Message手動セットアップ(PTD-048)のような手作業が将来自動化されうる可能性を示唆する"
+      ],
+      "applicableTechJa": "具体的にどのAIコーディングツールと連携するのか(Claude Code自体を含むのか)がFeloの集計からは確認できていないため、本プロジェクトのservicenow-sub-agentセットアップ作業への直接の影響は現時点では不明。継続して情報を追う価値はある。",
+      "score": 4
+    },
     {
       "sysId": "03d4f643c3589710cfcfbd43e4013102",
       "category": 10,
