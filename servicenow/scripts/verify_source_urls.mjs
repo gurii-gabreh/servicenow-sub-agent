@@ -183,6 +183,40 @@ const SOURCES = [
     expect: (body) => body.includes("<item") || body.includes("<entry"),
     expectDesc: "<item> または <entry> を含むRSS/Atom XML",
   },
+  // 2026-11-08追加候補(category 11: 開発の失敗談・よくあるエラー、要件定義〜実装〜テスト)。
+  // manager-roomでの相談「要件定義・実装・テスト含めて、開発時の失敗談やよくあるエラーを
+  // 収集しておいたほうが良い」への対応。実地検証前の候補のため、まずこのチェックで
+  // HTTP 200・想定形式かを確認してから、setup_rest_messages.mjs・scheduled_job側へ反映する。
+  {
+    label: "Qiita タグ「ポエム」RSS (候補, category 11)",
+    url: "https://qiita.com/tags/%E3%83%9D%E3%82%A8%E3%83%A0/feed.atom",
+    expect: (body) => body.includes("<entry"),
+    expectDesc: "<entry> を含むAtom XML",
+  },
+  {
+    label: "Qiita タグ「アンチパターン」RSS (候補, category 11)",
+    url: "https://qiita.com/tags/%E3%82%A2%E3%83%B3%E3%83%81%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3/feed.atom",
+    expect: (body) => body.includes("<entry"),
+    expectDesc: "<entry> を含むAtom XML",
+  },
+  {
+    label: "Zenn トピック「postmortem」RSS (候補, category 11)",
+    url: "https://zenn.dev/topics/postmortem/feed",
+    expect: (body) => body.includes("<item") || body.includes("<entry"),
+    expectDesc: "<item> または <entry> を含むRSS/Atom XML",
+  },
+  {
+    label: "dev.to タグ「postmortem」RSS (候補, category 11)",
+    url: "https://dev.to/feed/tag/postmortem",
+    expect: (body) => body.includes("<item") || body.includes("<entry"),
+    expectDesc: "<item> または <entry> を含むRSS/Atom XML",
+  },
+  {
+    label: "dev.to タグ「debugging」RSS (候補, category 11)",
+    url: "https://dev.to/feed/tag/debugging",
+    expect: (body) => body.includes("<item") || body.includes("<entry"),
+    expectDesc: "<item> または <entry> を含むRSS/Atom XML",
+  },
 ];
 
 async function checkOne(source) {
