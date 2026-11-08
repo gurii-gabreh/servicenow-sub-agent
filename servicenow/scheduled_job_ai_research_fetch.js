@@ -13,8 +13,11 @@
 //                                   "marktechpost" / "bytebytego" / "infoq" / "martinfowler" /
 //                                   "architectureweekly" / "geminideepmind" / "anthropicreleases" /
 //                                   "anthropicnews" / "searchenginejournal" / "mozblog" /
-//                                   "fastcompanyworklife" / "allworkspace" / "guardianwork" / "epi"
-//                                   (末尾6件は2026-10-10追加、category 8/9)
+//                                   "fastcompanyworklife" / "allworkspace" / "guardianwork" / "epi" /
+//                                   "qiitapoem" / "qiitaantipattern" / "zennpostmortem" /
+//                                   "devtopostmortem" / "devtodebugging"
+//                                   (guardianwork〜epiの4件は2026-10-10追加、category 8/9。
+//                                   qiitapoem〜devtodebuggingの5件は2026-11-08追加、category 11)
 //   - "AI Research - Devpost"      HTTPメソッド "hackathons"(2026-09-29追加、category 7)
 //   - "AI Research - YouTube"      HTTPメソッド "aitech" / "aitrend" / "trendjp" / "trendworld"
 //                                   (2026-10-18追加、category 2/5/10。唯一APIキー認証が必要)
@@ -104,13 +107,19 @@
                             // できる案件」という時間依存の性質を持つ)
         SEO_TREND: "8",    // 2026-10-10追加: 世の中の動向(SEO・マーケティング業界の視点から)
         WORK_STYLE: "9",    // 2026-10-10追加: 働き方の動向(最先端/一般的/近未来的)
-        TREND_GENERAL: "10" // 2026-10-18追加: 世の中の話題・トレンド(YouTube再生回数ベース、
+        TREND_GENERAL: "10", // 2026-10-18追加: 世の中の話題・トレンド(YouTube再生回数ベース、
                             // ジャンル問わず)。manager-roomでのYouTube Data API活用相談から、
                             // 「AIの最新技術」(→2)「AIの流行」(→5)とは別に、ジャンルを問わない
                             // 世の中全般のトレンドを再生回数で捉える観点として新設した。
                             // 【要手動登録】u_ai_research_item.u_category のChoiceリストに
                             // "10"を追加する作業がServiceNow Studio側で別途必要(category 6/7/8/9と
                             // 同様、README「セットアップ手順」参照)。
+        DEV_FAILURE: "11"  // 2026-11-08追加: 開発の失敗談・よくあるエラー(要件定義〜実装〜テスト)。
+                            // manager-roomでの相談「要件定義・実装・テスト含めて、開発時の失敗談や
+                            // よくあるエラーを収集しておいたほうが良い」への対応。1〜10が「供給側の
+                            // 技術動向」中心なのに対し、これは開発プロセス自体の実体験・失敗事例という
+                            // 性質の異なる情報。【要手動登録】u_categoryのChoiceリストに"11"を追加する
+                            // 作業がServiceNow Studio側で別途必要(category 6/7/8/9/10と同様)。
     };
 
     // 情報源ごとの既定カテゴリ。5観点は本来どの記事にも当てはまり得る横断的な視点のため、
@@ -152,7 +161,17 @@
         fastcompanyworklife: CATEGORY.WORK_STYLE,
         allworkspace: CATEGORY.WORK_STYLE,
         guardianwork: CATEGORY.WORK_STYLE,
-        epi: CATEGORY.WORK_STYLE
+        epi: CATEGORY.WORK_STYLE,
+        // 2026-11-08追記: 開発の失敗談・よくあるエラー(観点11)。Qiita「ポエム」タグは個人の
+        // 開発経験談・振り返り記事が多く投稿される場であることから、「アンチパターン」タグは
+        // 設計・実装上の失敗パターンの記事が中心であることから採用。Zenn「postmortem」トピックは
+        // 障害・失敗の振り返り記事専門。dev.to「postmortem」「debugging」タグは英語圏の同種記事を
+        // 補う(いずれも機械的な既定値であり、正確な分類は人が後で読み替えてよい)。
+        qiitapoem: CATEGORY.DEV_FAILURE,
+        qiitaantipattern: CATEGORY.DEV_FAILURE,
+        zennpostmortem: CATEGORY.DEV_FAILURE,
+        devtopostmortem: CATEGORY.DEV_FAILURE,
+        devtodebugging: CATEGORY.DEV_FAILURE
     };
 
     var stats = { inserted: 0, skipped: 0, errors: [] };
@@ -664,6 +683,11 @@
     fetchBlogRss("allworkspace", "allworkspace", "Allwork.Space");
     fetchBlogRss("guardianwork", "guardianwork", "The Guardian (Work & Careers)");
     fetchBlogRss("epi", "epi", "Economic Policy Institute");
+    fetchBlogRss("qiitapoem", "qiitapoem", "Qiita (タグ: ポエム)");
+    fetchBlogRss("qiitaantipattern", "qiitaantipattern", "Qiita (タグ: アンチパターン)");
+    fetchBlogRss("zennpostmortem", "zennpostmortem", "Zenn (トピック: postmortem)");
+    fetchBlogRss("devtopostmortem", "devtopostmortem", "dev.to (タグ: postmortem)");
+    fetchBlogRss("devtodebugging", "devtodebugging", "dev.to (タグ: debugging)");
     fetchYouTubeSearch("aitech", CATEGORY.AI_TREND, "YouTube (AI最新技術)");
     fetchYouTubeSearch("aitrend", CATEGORY.FASHION, "YouTube (AI流行・再生回数順)", 30);
     fetchYouTubeTrending("trendjp", "YouTube (急上昇・日本)");

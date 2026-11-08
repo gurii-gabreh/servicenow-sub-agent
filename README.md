@@ -1,8 +1,8 @@
 # servicenow-sub-agent
 
-ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で、AI・アプリ開発・個人のキャリア実績作りに関わる10の観点を無料の外部情報源から定期的に自動収集し、1つのテーブルに蓄積するリサーチパイプライン。進捗・実装ナレッジは`gurii-gabreh/progress-tracker-dashboard`の`data/tasks.json`(タスクID: **PTD-046**、ハッカソン関連は**PTD-065**、SEO/働き方動向関連は**PTD-071**、YouTube関連は**PTD-089**)で一元管理している。
+ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で、AI・アプリ開発・個人のキャリア実績作りに関わる11の観点を無料の外部情報源から定期的に自動収集し、1つのテーブルに蓄積するリサーチパイプライン。進捗・実装ナレッジは`gurii-gabreh/progress-tracker-dashboard`の`data/tasks.json`(タスクID: **PTD-046**、ハッカソン関連は**PTD-065**、SEO/働き方動向関連は**PTD-071**、YouTube関連は**PTD-089**)で一元管理している。
 
-## 対象の10観点
+## 対象の11観点
 
 | category値 | 観点 |
 |---|---|
@@ -16,6 +16,7 @@ ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で�
 | 8 | 世の中の動向(SEO・マーケティング業界の視点から、2026-10-10追加。詳細は下記「SEO/働き方の動向(category 8/9)」参照) |
 | 9 | 働き方の動向(最先端/一般的/近未来的、2026-10-10追加。詳細は下記「SEO/働き方の動向(category 8/9)」参照) |
 | 10 | 世の中の話題・トレンド(YouTube再生回数ベース、ジャンル問わず。2026-10-18追加、PTD-089。詳細は下記「YouTube Data API v3(category 2/5/10)」参照) |
+| 11 | 開発の失敗談・よくあるエラー(要件定義〜実装〜テスト、2026-11-08追加。詳細は下記「開発の失敗談・よくあるエラー(category 11)」参照) |
 
 ## 情報源(YouTube以外は全て無料・認証不要の公開API/RSS。YouTubeのみAPIキーが必要)
 
@@ -43,6 +44,11 @@ ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で�
 | The Guardian (Work & Careers) | RSS | `https://www.theguardian.com/money/work-and-careers/rss` (実機検証済み、2026-10-10。category 9用・一般的な働き方) |
 | Economic Policy Institute (EPI) | RSS | `https://www.epi.org/feed/` (実機検証済み、2026-10-10。category 9用・近未来的な働き方、労働市場の研究機関) |
 | YouTube Data API v3 | API(JSON) | `https://www.googleapis.com/youtube/v3/search` ・ `https://www.googleapis.com/youtube/v3/videos` (実機検証済み、2026-10-18追加・同日中に方式修正。category 2/5/10用。**唯一APIキー認証が必要**。詳細は下記「YouTube Data API v3(category 2/5/10)」参照) |
+| Qiita (タグ: ポエム) | Atom | `https://qiita.com/tags/ポエム/feed.atom` (実機検証済み、2026-11-08。category 11用。個人の開発経験談・振り返り記事が多く投稿されるタグ) |
+| Qiita (タグ: アンチパターン) | Atom | `https://qiita.com/tags/アンチパターン/feed.atom` (実機検証済み、2026-11-08。category 11用) |
+| Zenn (トピック: postmortem) | RSS | `https://zenn.dev/topics/postmortem/feed` (実機検証済み、2026-11-08。category 11用) |
+| dev.to (タグ: postmortem) | RSS | `https://dev.to/feed/tag/postmortem` (実機検証済み、2026-11-08。category 11用・英語圏) |
+| dev.to (タグ: debugging) | RSS | `https://dev.to/feed/tag/debugging` (実機検証済み、2026-11-08。category 11用・英語圏) |
 
 **2026-08-31、ユーザー依頼(Claude/Gemini/ChatGPTの公式サイトを追加)への対応**: 無料のRSS/Atomフィードのみで統一する方針(有料の開発者APIは使わない)で調査した結果は以下の通り。
 - **Gemini**: Google単体の公式Geminiブログ専用RSSは見当たらなかったが、Google DeepMind Blog(Geminiモデルの発表を含む)の公式RSS(`https://deepmind.google/blog/rss.xml`)を実地検証(HTTP 200・RSS 2.0)の上で採用した。
@@ -84,6 +90,14 @@ manager-roomでの相談(「AIの最新技術」+「世の中のトレンドと�
 - **3種類のメソッドで2つの観点をカバー**: `aitech`(category 2、AI関連キーワードを新着順で検索)・`aitrend`(category 5、同じAI関連キーワードを再生回数順で検索)・`trendjp`/`trendworld`(category 10、日本/世界の急上昇動画をジャンル問わず取得)。世界分は`regionCode=US`を代用指標としている(YouTube Data APIに「世界共通」の値は無く、国コード必須のため)。
 - **新設: category 10(世の中の話題・トレンド)**: 既存のcategory 2・5はAI関連に限定されるため、ジャンルを問わない世の中全般のトレンドを再生回数で捉える観点として追加した。**u_category選択肢(Choice)に`10`を追加する作業がServiceNow Studio側で別途必要**(category 6/7/8/9と同様)。
 - **APIキーの扱い(このパイプライン初の認証付き情報源)**: `servicenow/scripts/setup_youtube_api_key.mjs`が、GitHub Actions SecretsのYOUTUBE_API_KEYを読み、ServiceNow PDI側のシステムプロパティ`youtube.api_key`(type: password2、暗号化保存)へ設定する。このリポジトリのどのファイルにもキーの値は一切現れない。
+
+## 開発の失敗談・よくあるエラー(category 11、2026-11-08追加)
+
+manager-roomでの相談(「要件定義・実装・テスト含めて、開発時の失敗談やよくあるエラーを収集しておいたほうが良いかなと考えている」)への対応。1〜10が「AI/技術の供給側の動向」中心なのに対し、これは開発プロセス自体の実体験・失敗事例という性質の異なる情報。
+
+- **日本語圏(Qiita/Zenn)+英語圏(dev.to)の両方をカバー**: 既存の情報源が日英両方をカバーしている方針(例: category 8/9は英語圏のみ、category 2系はYouTubeで日英両方)に合わせ、個人開発者の失敗談が集まりやすいQiita「ポエム」「アンチパターン」タグ、障害の振り返り専門のZenn「postmortem」トピック、同種の英語圏記事を補うdev.to「postmortem」「debugging」タグを採用した。全件、`verify_source_urls.mjs`によるGitHub Actions実地検証でHTTP 200・想定形式(`<entry>`または`<item>`を含むAtom/RSS)を確認済み(2026-11-08)。
+- **タグ・トピックの選定方針**: 要件定義・実装・テストの3フェーズを横断的にカバーする狙いだが、各プラットフォームに「要件定義の失敗」単体のタグは無いため、より包括的な「開発の振り返り・失敗談」系のタグ・トピックを採用した。要件定義段階の失敗談もこれらのタグの中に投稿される実例があるため、フェーズを絞ったタグより広めに収集する方針にした。
+- **u_category選択肢(Choice)の追加が別途必要**: 他のcategory追加時と同様、ServiceNow Studio側で、u_categoryのChoiceリストに`11`(開発の失敗談・よくあるエラー)を手動で追加する必要がある。
 - **${変数}事前登録の落とし穴を回避する設計**: 他の情報源が検索クエリを静的URLに埋め込んでいる理由(`${変数}`はHTTPメソッド側の「Variable」定義に事前登録しないと置換されずエラーも出ずに空振りする、という既知の落とし穴)はAPIキーには使えない(キーをコミットすることになってしまう)。
 - **【2026-10-18・実機検証の結果、方式を修正】**: 当初`RESTMessageV2.setQueryParameter("key", apiKey)`で実行時にクエリパラメータを付与する設計にしていたが、`dry_run=false`実行後にScheduled Jobを実行して`check_fetch_log.mjs`(syslog確認用の診断スクリプト、下記参照)でログを確認したところ、4メソッド全てでGoogle側から`"Method doesn't allow unregistered callers...Please use API Key"`というHTTP 403(=キーが一切渡っていないことを示すエラー)が返っていることが判明した。システムプロパティ自体は正しく読めていた(未設定スキップではなく実際にリクエストが送信されていた)ため、`setQueryParameter`がこのPDIのバージョンでは期待通り機能していないと判断し、より確実な`RESTMessageV2.setEndpoint()`(エンドポイントURL自体を実行時に丸ごと上書きする標準メソッド)で、`setup_rest_messages.mjs`側と同じベースURL(キー無し)に`&key=...`を実行時に追加する方式へ修正した(`scheduled_job_ai_research_fetch.js`の`YOUTUBE_ENDPOINTS`参照)。これも(a)`${変数}`の事前登録が一切不要(b)コミットされるコードのどこにもキーの値が現れない、という当初の設計意図は維持している。
 - **診断用スクリプト**: `servicenow/scripts/check_fetch_log.mjs`(+ `.github/workflows/servicenow-check-logs.yml`)が、Scheduled Jobの実行結果(`gs.info`/`gs.error`でsyslogへ出力される`[AIResearchFetcher] inserted=... skipped=... errors=[...]`)を読み取り専用で確認できる。ServiceNow PDIへ対話的にログインできない場合の標準的な動作確認手段として、今後も再利用できる。

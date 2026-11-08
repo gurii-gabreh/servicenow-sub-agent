@@ -116,6 +116,15 @@ const REST_MESSAGES = [
       { function_name: "allworkspace", rest_endpoint: "https://allwork.space/feed/" },
       { function_name: "guardianwork", rest_endpoint: "https://www.theguardian.com/money/work-and-careers/rss" },
       { function_name: "epi", rest_endpoint: "https://www.epi.org/feed/" },
+      // 2026-11-08追加(category 11: 開発の失敗談・よくあるエラー、要件定義〜実装〜テスト)。
+      // manager-roomでの相談「要件定義・実装・テスト含めて、開発時の失敗談やよくあるエラーを
+      // 収集しておいたほうが良い」への対応。全5件、verify_source_urls.mjsで実地検証済み
+      // (HTTP 200・<entry>または<item>を含む想定形式)。
+      { function_name: "qiitapoem", rest_endpoint: "https://qiita.com/tags/%E3%83%9D%E3%82%A8%E3%83%A0/feed.atom" },
+      { function_name: "qiitaantipattern", rest_endpoint: "https://qiita.com/tags/%E3%82%A2%E3%83%B3%E3%83%81%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3/feed.atom" },
+      { function_name: "zennpostmortem", rest_endpoint: "https://zenn.dev/topics/postmortem/feed" },
+      { function_name: "devtopostmortem", rest_endpoint: "https://dev.to/feed/tag/postmortem" },
+      { function_name: "devtodebugging", rest_endpoint: "https://dev.to/feed/tag/debugging" },
     ],
   },
   {
