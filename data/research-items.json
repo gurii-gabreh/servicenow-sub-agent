@@ -10,9 +10,9 @@
     "6": "世の中のニーズ・困りごと",
     "7": "ハッカソン情報(応募できる案件・入賞作品)"
   },
-  "generatedAt": "2026-11-08T06:31:47.235Z",
-  "itemCount": 8364,
-  "curatedCount": 352,
+  "generatedAt": "2026-11-08T15:27:52.234902+00:00",
+  "itemCount": 8368,
+  "curatedCount": 356,
   "items": [
     {
       "sysId": "1b9906d3c3101b10cfcfbd43e4013126",
@@ -134911,6 +134911,83 @@
       "pointsJa": [],
       "applicableTechJa": "",
       "score": 1
+    },
+    {
+      "sysId": "x-research-grok-2026-11-08-01",
+      "category": 1,
+      "title": "エージェント・ハーネス(Harness)設計への注目 ― Harness→Closed Loops→Self-Improvingという成熟モデル",
+      "sourceName": "X (Grok経由)",
+      "sourceUrl": "https://x.com/0xSanabi/status/2119106909919674598",
+      "publishedAt": "",
+      "fetchedAt": "2026-11-08T15:27:52.234902+00:00",
+      "createdAt": "2026-11-08",
+      "rawSummary": "@0xSanabiの投稿: Anthropicエンジニアの発言を引用し「99%はOpusをGoogle検索のように使っているだけだが、上位1%は50以上のエージェントを1つのHarnessで動かしている」と解説し、Harness→Closed Loops→Self-Improvingという成熟モデルを紹介。別の調査投稿では36,487リポジトリを調査した結果、ほぼ全てにトリガーはあるがチェック・状態・終了条件が欠けているケースが多いと指摘(いいね4,700超・リポスト約800・ブックマーク2.2万超、Grok X検索経由で取得)。",
+      "curated": true,
+      "summaryJa": "単純なプロンプトやcronの代わりに「Harness(ハーネス)」として状態・チェック・終了条件を持たせ、エージェントを自律的に動かし続ける設計が話題になっている。36,487リポジトリの調査では、ほぼ全てにトリガーはあるがチェック・状態・終了条件が欠けているケースが多いと指摘されている。",
+      "pointsJa": [
+        "トリガーだけでなく、状態管理・チェック・終了条件を持たせることが「使えるエージェント」と「おもちゃ」を分ける、という具体的な設計指針",
+        "「Harness→Closed Loops→Self-Improving」という段階モデルは、本プロジェクトの現在地(GitHub Actionsでのトリガー実行中心)を客観的に位置づける参考になる",
+        "36,487リポジトリ調査という大規模な実例に基づく指摘で、説得力が高い"
+      ],
+      "applicableTechJa": "本プロジェクト群はGitHub Actions上での定期実行(トリガー)が中心だが、終了条件・状態管理は個別スクリプトの中に閉じている。状態ファイル(例: 処理済みIDの記録)を明示的に外部化し、チェック・終了条件を持つ「Harness」として設計し直す余地があるか、既存のverify_source_urls.mjs等の仕組みと合わせて今後検討する価値がある。",
+      "score": 7
+    },
+    {
+      "sysId": "x-research-grok-2026-11-08-02",
+      "category": 1,
+      "title": "マルチエージェントの階層組織化(Chief of Staff + Lead体制)の実践拡大",
+      "sourceName": "X (Grok経由)",
+      "sourceUrl": "https://x.com/brian_armstrong/status/2119112609223827547",
+      "publishedAt": "",
+      "fetchedAt": "2026-11-08T15:27:52.234902+00:00",
+      "createdAt": "2026-11-08",
+      "rawSummary": "Coinbase CEOの@brian_armstrongの投稿: 各フォーカス領域にLeadエージェントを常時走らせ、Chief of Staffが統括する階層構造を実践。レビューは優先キュー(ローカルWebアプリ)に集約し、音声+ショートカットで処理、スクリーンショット・デモ動画付きのレビューをバッチでこなすスタイルに変更したと報告(いいね7,700超・ブックマーク1万超)。ゲーム開発向けにClaude Codeへ「スタジオ階層」(Director→Department Lead→Specialist)を持たせたオープンソース例(Godot/Unity/Unreal対応)も紹介。いずれもGrok X検索経由で取得。",
+      "curated": true,
+      "summaryJa": "1つのエージェントに全部任せるのではなく、Chief of Staff+各領域のLeadエージェント+Sub-agentsという階層構造で運用する実践例が増えている。レビューを優先キューに集約し音声+ショートカットでバッチ処理するスタイルも報告されている。",
+      "pointsJa": [
+        "階層型のエージェント組織構造(Chief→Lead→Sub-agents)という具体的な運用パターン",
+        "レビューを1つの優先キューに集約し、バッチで処理するという、承認待ちの手間を減らす運用の工夫",
+        "ゲーム開発向けのオープンソース実装(スタジオ階層)という具体的な参考実装の存在"
+      ],
+      "applicableTechJa": "本プロジェクトのsubagent-role-orchestrationスキル(司令塔・Research・実装・テストの役割分担)は、このChief of Staff+Lead体制と同じ方向性を既に独自に実現済みであることが確認できた。レビューを優先キューに集約する運用は、現状のworktree実装レビューを司令塔が順番に取り込む運用の改善余地として参考になる。",
+      "score": 8
+    },
+    {
+      "sysId": "x-research-grok-2026-11-08-03",
+      "category": 3,
+      "title": "100超エージェント協調による大規模クリエイティブ制作(短編フィルム自動生成)",
+      "sourceName": "X (Grok経由)",
+      "sourceUrl": "https://x.com/tetsuoai/status/2119341048367665201",
+      "publishedAt": "",
+      "fetchedAt": "2026-11-08T15:27:52.234902+00:00",
+      "createdAt": "2026-11-08",
+      "rawSummary": "@tetsuoaiの投稿: 26時間51分・101億トークン・131エージェントで5分26秒の短編フィルムを完成。Claude Opus・Grok・ローカルモデル・Blender等を組み合わせた(いいね1,000超・リポスト176、Grok X検索経由で取得)。",
+      "curated": true,
+      "summaryJa": "131エージェント・2万回以上のモデル呼び出しを使い、Claude Opus・Grok・ローカルモデル・Blenderなどを組み合わせて音楽付き短編フィルムを完走させる事例が報告されている。",
+      "pointsJa": [
+        "複数のAIモデル(Claude・Grok・ローカルモデル)を1つの制作フローの中で役割分担して組み合わせる構成",
+        "大規模なエージェント協調(131体)でも実際に最終成果物(動画)まで完走できることを示す実例"
+      ],
+      "applicableTechJa": "x-research-2026-11-07-03(AI動画エージェンシー)と同系統の話題。本プロジェクト群は現状動画生成機能を持たないが、将来宣伝動画等を検討する際、複数モデルを組み合わせる構成の参考になる。有料APIを使う前提の部分は、CLAUDE.mdルール9(永久無料)との整合性を別途検討する必要がある。",
+      "score": 3
+    },
+    {
+      "sysId": "x-research-grok-2026-11-08-04",
+      "category": 2,
+      "title": "DeepSeek V4.1 Flash Ultrafast(1,000トークン/秒超)のVercel AI Gateway採用",
+      "sourceName": "X (Grok経由)",
+      "sourceUrl": "https://x.com/vercel_dev/status/2119119166510862752",
+      "publishedAt": "",
+      "fetchedAt": "2026-11-08T15:27:52.234902+00:00",
+      "createdAt": "2026-11-08",
+      "rawSummary": "@vercel_devの投稿: DeepSeek V4.1 Flash 1017 UltrafastをVercel AI Gatewayに追加、1,000トークン/秒超の速度でコーディング・推論・エージェント向けと明記(いいね1,000超、Grok X検索経由で取得)。複数の関連投稿で「Opus 5.5を超えるモデルは当分来ないのでは」というニュアンスも見られた。",
+      "curated": true,
+      "summaryJa": "DeepSeek V4.1 Flash Ultrafast(1,000トークン/秒超の高速推論モデル)がVercel AI Gatewayに追加され、コーディング・推論・エージェント向けとして注目されている。",
+      "pointsJa": [
+        "高速・低コストな推論モデルの選択肢が増えており、リアルタイム性が求められる用途での活用余地が広がっている"
+      ],
+      "applicableTechJa": "本プロジェクト群は現状Claude Codeに統一しているため直接の採用予定はないが、将来的に高速応答が必要な補助的タスク(軽量な分類・要約等)を検討する際の選択肢として記録しておく。",
+      "score": 2
     }
   ]
 }
