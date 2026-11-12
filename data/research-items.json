@@ -11,8 +11,8 @@
     "7": "ハッカソン情報(応募できる案件・入賞作品)"
   },
   "generatedAt": "2026-11-12T07:32:16.969Z",
-  "itemCount": 8929,
-  "curatedCount": 392,
+  "itemCount": 8931,
+  "curatedCount": 394,
   "items": [
     {
       "sysId": "1300b2a4c3205350cfcfbd43e4013158",
@@ -10573,6 +10573,46 @@
       ],
       "applicableTechJa": "具体的にどのAIコーディングツールと連携するのか(Claude Code自体を含むのか)がFeloの集計からは確認できていないため、本プロジェクトのservicenow-sub-agentセットアップ作業への直接の影響は現時点では不明。継続して情報を追う価値はある。",
       "score": 6
+    },
+    {
+      "sysId": "x-research-felo-2026-11-11-01",
+      "category": 1,
+      "title": "robots.txtでAI学習拒否を一括指定する共通トークン「__usage_ai-training」",
+      "sourceName": "X (Felo X Research経由・報道/公式で裏付け確認)",
+      "sourceUrl": "https://www.itmedia.co.jp/news/article/2611/01/2000002776/",
+      "publishedAt": "2026-11-01",
+      "fetchedAt": "2026-11-12T16:26:41.607941+00:00",
+      "createdAt": "2026-11-11",
+      "rawSummary": "Felo AIの「X上のAI・開発トレンド」調査結果に「AI学習の拒否をrobots.txtで一括指定する動き」との記述があり(出典URLなし)、2026-11-11にWebSearchで裏付けを確認した。2026年10月30日(米国時間)にOpenAI・Google・Microsoft等が、robots.txtのUser-agent行に共通トークン__usage_ai-trainingを書いてDisallow: /とすることで、AI学習に使わないでほしいという意思を参加各社へまとめて伝える仕組みへの対応を表明。ITmediaが2026-11-01に報道。元はIETF個人ドラフトdraft-kelley-aipref-training-preference-signal-00で、正式な標準ではない。OpenAI公式ブログ「Making it easier for websites to express AI training preferences」(https://openai.com/index/helping-websites-express-ai-training-preferences、2026-10-30、本データ内にも自動収集済み)でも「共通のrobots.txtシグナルに従う」と表明。対応時期は報道により差があり(Bingは2027年2月1日から等)、2026-11-01時点で実際に従う企業は公式には未確認とする解説もある。一次ページ(ietf.org・各社公式)はセッションのネットワーク制限で本文未閲覧、WebSearch要約ベース。",
+      "curated": true,
+      "summaryJa": "robots.txtに「User-agent: __usage_ai-training」「Disallow: /」と書くだけで、AI学習に使わないでほしいという意思を、参加する複数のAI企業へまとめて伝えられる仕組み。OpenAI・Google・Microsoft等が2026年10月30日に対応を表明した。ページの取得そのものを止める仕組みではない。",
+      "pointsJa": [
+        "これまでGPTBot・ClaudeBot・Google-Extended等、クローラーを1社ずつ名前で拒否していたのを、1つの共通トークンで済ませられる",
+        "元はIETFの個人ドラフトで正式標準ではなく、各社の実際の対応時期にはばらつきがある(当面は名前指定の従来方式が確実)",
+        "robots.txt自体に強制力は無く(RFC 9309)、本当に守りたい情報は認証で保護する必要がある点は変わらない"
+      ],
+      "applicableTechJa": "ブログ(naruya0724.com)やGitHub Pagesで公開しているアプリ群で、AI学習への利用を拒否したい場合に使える。一方、AI検索で紹介されたい場合は拒否しない方がよい面もあるため、導入するかはサイトごとに判断が必要(未導入、別途相談)。",
+      "score": 3
+    },
+    {
+      "sysId": "x-research-felo-2026-11-11-02",
+      "category": 4,
+      "title": "就業者の32.4%が業務で生成AIを活用(パーソル総合研究所調査)",
+      "sourceName": "X (Felo X Research経由・報道/公式で裏付け確認)",
+      "sourceUrl": "https://www.excite.co.jp/news/article/Prtimes_2026-02-03-111116-68/",
+      "publishedAt": "2026-02-03",
+      "fetchedAt": "2026-11-12T16:26:41.607941+00:00",
+      "createdAt": "2026-11-11",
+      "rawSummary": "Felo AIの調査結果に「2026年現在、就業者の32.4%が生成AIを実務に活用しており、ChatGPTやGeminiが主流」との記述があり(出典URLなし)、2026-11-11にWebSearchで調査元を確認した。数字の出典はパーソル総合研究所「生成AIとはたらき方に関する実態調査」。調査期間2025年10月24〜28日、インターネット調査、全国の就業者(スクリーニング19,855人、本調査は正規雇用者3,000人)、公表2026年2月3日(PR TIMES配信、URLはexcite掲載の転載)。業務での生成AI利用率32.4%(推計約1,840万人)、日常生活での利用は39.9%。Feloの「2026年現在」は不正確(調査は2025年10月)、「ChatGPT/Geminiが主流」「活用事例19選のアンケート」はこの調査の結果としては確認できなかった。一次ページ(パーソル総研公式・PR TIMES本体)はネットワーク制限で本文未閲覧、複数の報道(MONOist・マイナビニュース等)の要約で一致を確認。",
+      "curated": true,
+      "summaryJa": "パーソル総合研究所の調査(2025年10月実施、2026年2月公表)によると、業務で生成AIを使っている就業者は32.4%(推計約1,840万人)で、日常生活での利用は39.9%だった。",
+      "pointsJa": [
+        "業務で生成AIを使う人は、就業者の約3人に1人という規模感",
+        "Feloの調査結果は「2026年現在」としていたが、実際の調査時期は2025年10月で、ツール別の内訳(ChatGPT・Gemini)はこの調査では確認できない",
+        "二次情報ツールの数字は、元の調査の時期・対象・条件まで遡って確認しないとずれることがある、という実例"
+      ],
+      "applicableTechJa": "ブログ記事などで生成AIの普及度を書く際の裏付けデータとして使える。その場合は「パーソル総合研究所・2025年10月調査で32.4%」と調査時期・条件を添えて引用する。",
+      "score": 3
     },
     {
       "sysId": "03d4f643c3589710cfcfbd43e4013102",
