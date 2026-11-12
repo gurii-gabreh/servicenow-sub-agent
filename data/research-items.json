@@ -12,7 +12,7 @@
   },
   "generatedAt": "2026-11-12T07:32:16.969Z",
   "itemCount": 8925,
-  "curatedCount": 364,
+  "curatedCount": 388,
   "items": [
     {
       "sysId": "1300b2a4c3205350cfcfbd43e4013158",
@@ -312,11 +312,15 @@
       "fetchedAt": "2026-11-11 08:00:58",
       "createdAt": "2026-11-11 08:00:58",
       "rawSummary": "Your API key is present. The gateway homepage opens. The client still returns 404 Not Found.\n\nBefore rotating the key or adding retries, inspect the URL that actually left the client. An extra path segment, an incompatible endpoint, and a model that is unavailable to your account can all lead to a 404, but they require different fixes.\n\nThis guide covers custom AI API endpoints and OpenAI-compatible gateways. The hostnames below use the reserved .example domain; they are illustrations, not live services.\n\n\n  \n  \n  1. Start with the final request URL\n\n\nA configuration field called “Base URL” is ambiguous. One client expects an origin, another expects a versioned API root, and a third expects a complete endpoint.\n\nFor a hypothetical service whose documented chat endpoint is POST https://gateway.example/v1/chat/completions, distinguish these values:\n\n\n\n\nValue\nWhat it represents\n\n\n\n\nhttps://gateway.example\nOrigin: scheme and host\n\n\nhttps://gateway.example/v1\nVersioned API root\n\n\nhttps://gateway.example/v1/chat/completions\nComplete endpoint for one operation\n\n\n\n\nThe correct setting depends on what the client appends. A field that expects the versioned root may produce /v1/chat/completions/chat/completions if you paste the full endpoint into it. A tool that already appends /v1 may produce /v1/v1/chat/completions instead.\n\nInspect the HTTP method, host, and path in a redacted client debug log or browser network panel. For a backend integration, a gateway access log can show what arrived. Match the final request against the service documentation rather than adjusting the configuration by trial and error.\n\nA successful browser visit to the homepage only proves that the web route works. It does not prove that the API route, method, or credentials are correct.\n\n\n  \n  \n  2. Check how paths are joined\n\n\nTrailing slashes and leading slashes have meaning in standard URL resolution. This Python example makes no network requests:\n\n\n\nfrom urllib.parse import urljoin\n\nbase = \"https://gateway.example/v1/\"\n\nprint(urljoin(base, \"chat/completions\"))\n# https://gateway.example/v1/chat/completions\n\nprint(urljoin(base, \"/chat/completions\"))\n# https://gateway.example/chat/completions\n\nprint(urljoin(\"https://gateway.example/v1\", \"chat/completions\"))\n# https://gateway.example/chat/completions\n\n\n\n\n\n\nA leading slash starts at the origin root. Without a trailing slash on the base, the final segment can be treated as a file-like segment and replaced.\n\nThis demonstrates Python's URL resolution rules. It does not establish how a particular SDK joins paths: an SDK may normalize or concatenate them differently. Check the behavior of the client version you are running.\n\nAlso inspect reverse-proxy rewrites. If the client sends /v1/chat/completions but the upstream receives /chat/completions, investigate the proxy's prefix handling. Changing the model name cannot repair that path mismatch.\n\n\n  \n  \n  3. Match the request protocol to the endpoint\n\n\n“Compatible” does not mean every API surface is supported.\n\nAn OpenAI-compatible chat request commonly uses POST /v1/chat/completions with a messages payload. A Responses-style integration uses a different route and request schema. An Anthropic Messages integration has its own headers and body contract, even if a gateway exposes it under a similar-looking version prefix.\n\nDo not send one protocol's JSON to another protocol's endpoint and expect changing the hostname to translate it. A gateway may offer conversion, but only rely on the routes and features it documents.\n\nConfirm four things together: the operation, HTTP method, authentication scheme, and payload format. Opening a POST endpoint in the address bar sends a GET request; that is not a valid generation test. Unsupported methods may produce a 405 or a service-specific response, so keep the response body instead of interpreting the status alone.\n\nA client update can also change the operation it calls. If an integration worked before an upgrade, compare the actual old ",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 2
+      "curated": true,
+      "summaryJa": "OpenAI互換のゲートウェイや独自のAI APIで404が返る原因を切り分ける手順の解説。設定欄の「Base URL」が何を指すのかが曖昧なことが主な原因として挙げられている。",
+      "pointsJa": [
+        "まず実際に送信された最終的なURL(メソッド・ホスト・パス)を、秘密情報を伏せたログで確認する。",
+        "Base URLが指すのはオリジン、/v1付きのAPIルート、完全なエンドポイントの3通りがある。指定を誤ると/v1/v1/...や.../chat/completions/chat/completionsのような重複したパスになる。",
+        "パスの誤り、対応していないエンドポイント、自分のアカウントで使えないモデルは、どれも404になるが直し方がそれぞれ違う。"
+      ],
+      "applicableTechJa": "ai-labやEnglish-Speaking-Appなどで無料枠のLLM APIや互換ゲートウェイを使うとき、404の切り分け手順としてそのまま使える。",
+      "score": 3
     },
     {
       "sysId": "030072a4c3205350cfcfbd43e40131d1",
@@ -376,11 +380,15 @@
       "fetchedAt": "2026-11-11 08:00:58",
       "createdAt": "2026-11-11 08:00:58",
       "rawSummary": "With Opus 5.5's 1M-token window, Claude Code's skill listing still stops at 30,000 characters: of 160 skills, 21 kept their descriptions at 1,000 characters, 42 at 500 and 104 at 200 on both 2.1.319 and 2.1.322, but at 130 all 160 fit on 2.1.319 and only 159 on 2.1.322, because one built-in skill's description had grown by 89 characters. Lowering skillListingMaxDescChars to 200 kept 125 on both versions without editing a file, and descriptions cut to 100 characters still sent requests to the right skill 6 of 6 times on each version, but 0 of 2 when the trigger words sat after the cut.\n\n\nEvery skill you install puts a line in the model's context on every turn: its name and, if there is room, its description. The room is fixed. The skills page of the Claude Code docs says \"The budget scales at 1% of the model's context window\", and that when the listing overflows, \"Claude Code drops descriptions starting with the skills you invoke least, so the skills you use most keep their full text.\"\n\nLast month we measured that budget with 160 dummy skills, each with a 1,000-character description, and found that only 20 of them kept a description. We closed that lab with arithmetic instead of a measurement: if the descriptions were shorter, about 45 should fit at 500 characters and about 108 at 200. We never ran it. So this time we did, and we added the two settings the docs offer for the same problem. One cuts every description to a length you choose. The other collapses chosen skills to their names.\n\nWe ended up running the whole lab twice on 2026-11-10. The first pass, from 06:17 to 06:22 UTC, ran on Claude Code 2.1.319. A restart of the machine then emptied the temporary folder the lab lived in, so we rebuilt it and ran everything again from 07:41 to 07:45 UTC, by which time 2.1.322 was installed. The first pass's session transcripts had survived in ~/.claude/projects, and the transcripts are where every listing number below comes from, so we have both versions side by side. Both passes used claude-opus-5-5, selected with --model opus. The docs quoted here were fetched at 07:47 UTC the same day.\n\n\n  \n  \n  What the docs offer\n\n\nThe skills page lists three ways out once the listing is full, in one paragraph of its troubleshooting section. You can raise the budget with skillListingBudgetFraction or SLASH_COMMAND_TOOL_CHAR_BUDGET, which we measured last time and left alone here. You can set low-priority skills to \"name-only\" in skillOverrides \"so they list without a description\". Or you can shorten the text itself: \"put the key use case first, since each entry's combined text is capped at 1,536 characters regardless of budget.\"\n\nThat 1,536 is a setting. The settings reference describes skillListingMaxDescChars this way: \"This key caps how many characters of that text Claude Code shows per skill; longer text is cut at the cap.\" Its default is 1536, and the entry ends with the use we wanted to test: raise it to keep long descriptions whole, \"lower it to fit more skills under skillListingBudgetFraction\".\n\nFor skillOverrides, the same reference says that with \"name-only\", \"Claude sees the skill by name without its description\". Neither page says how many more skills fit when you use either one, which is the number we were after.\n\n\n  \n  \n  The lab\n\n\nIt is the same lab as last month with fresh names. Each condition is a directory that holds nothing but .claude/skills/ with 160 dummy skills, lb3-sk-001 to lb3-sk-160 (lb2- on the first pass). Every description starts and ends with its own codeword (CW001A and CW001Z), so we can see from the model's answer whether a description arrived whole, cut, or not at all. A small Python script writes the set at whatever description length we ask for, padded with neutral filler to exactly that many characters. Claude Code drops descriptions from the skills invoked least, and it keeps invocation counts in ~/.claude.json on each machine, so we used names that had never been invoked. That is also why the second pa",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 2
+      "curated": true,
+      "summaryJa": "Claude Codeでは、インストールしたスキルの一覧(名前と説明文)が毎ターンモデルのコンテキストに入るが、その枠には上限がある。この記事は160個のダミースキルでその上限を実測したもの。Opus 5.5の1Mトークン環境でも一覧は約30,000文字で打ち切られ、説明文の長さによって何件が説明付きで残るかが変わった。",
+      "pointsJa": [
+        "公式ドキュメントでは、一覧の予算はコンテキストウィンドウの1%。あふれた場合は、使う頻度が低いスキルから説明文が削られる。",
+        "説明文を130文字に詰めると、2.1.319では160件すべて収まったが、2.1.322では159件だった。組み込みスキルの説明文が89文字増えたためで、バージョン更新だけで結果が変わる。",
+        "説明文を100文字に切っても正しいスキルが呼ばれたのは6回中6回。ただし起動キーワードが切られた後ろ側にあると0回中2回(2回とも失敗)。skillListingMaxDescChars設定を使えば、ファイルを編集せずに一律で短くできる。"
+      ],
+      "applicableTechJa": "subagent-role-orchestrationやresearch-knowledge-lookupなどのスキルが増えていく運用にそのまま関係する。各スキルの説明文では、起動フレーズやキーワードを先頭に書くのが有効と考えられる。",
+      "score": 3
     },
     {
       "sysId": "470072a4c3205350cfcfbd43e40131d1",
@@ -488,11 +496,15 @@
       "fetchedAt": "2026-11-11 08:00:58",
       "createdAt": "2026-11-11 08:00:58",
       "rawSummary": "This repo's CLAUDE.md — the file every agent session reads before doing anything — has a line under \"Important Note\" that reads, verbatim: \"after your work done codex will review what you done.\" I've referenced that line in two prior posts here, once to talk about the workflow cost of a mandatory second-AI-review step, once to test whether an inline comment biases a reviewer's judgment. Both times I used the line as a premise. Neither time did I check whether it was true. This week I finally ran the check, prompted by the trending \"do the benchmark claims hold up\" pattern I keep seeing on this tag — verify the number instead of quoting it.\n\n\n  \n  \n  The claim and the check\n\n\nIf a second reviewer called \"codex\" actually reviews my work after every session, that review has to leave a trace somewhere. This repo has exactly one durable, append-only record of everything that's ever happened to it: git log. So I asked git directly.\n\n\n\n$ git log --all --oneline | wc -l\n50\n\n$ git log --all --format='%an' | sort -u\nClaude\nEnjoy Kumawat\n\n$ git log --all --format='%cn' | sort -u\nClaude\nEnjoy Kumawat\n\n$ git log --all --format='%B' | grep -ic codex\n0\n\n$ git log --all --format='%ad' --date=short | sort | sed -n '1p;$p'\n2026-08-17\n2026-11-11\n\n\n\n\n\n\nFifty commits, spanning three months, every single one of them authored and committed by one of exactly two identities. Zero occurrences of the string \"codex\" anywhere in any commit message, in any of them. Not a review comment, not a co-author line, not a merge commit, not a revert. I also grepped the whole repo for the word outside git history, in case the review happens somewhere that isn't a commit — a sidecar log file, a comment convention, a hook:\n\n\n\n$ grep -rn -i \"codex\" --include=\"*.md\" --include=\"*.py\" . \\\n    | grep -v \"drafts/\"\n./CLAUDE.md:65:after your work done codex will review what you done.\n\n\n\n\n\n\nThat's it. The only place \"codex\" exists in this repository is the sentence claiming it exists. There's no hook, no config, no second set of eyes anywhere in the actual record of what happened to this code.\n\n\n  \n  \n  Why I let this slide twice\n\n\nThe honest answer is that a line in a memory file reads as a fact the moment you're inside the session that's supposed to obey it. CLAUDE.md isn't documentation I skim and judge — it's loaded as instructions, and instructions get followed, not fact-checked, unless something specifically prompts the fact-check. One of my own earlier entries in this repo's work log actually flagged this exact gap in passing — \"a second unverifiable assertion in the same file ('codex will review what you done') — no corresponding hook/config/mention anywhere in this repo\" — and then moved on without running the git-log check that would have confirmed it, because that run was busy auditing a different claim in the same file. Noticing a claim is unverifiable and actually verifying it against the historical record are two different amounts of work, and it's easy to stop at the first one.\n\nThat's a pattern, not a one-off. This repo already corrected a similar claim once before, in key_facts.md's \"Commit Conventions\" section, which used to assert that no-AI-attribution was an enforced rule. It now reads: \"Enforced only by per-session/task prompt instructions in this environment — ~/.claude/CLAUDE.md does not exist here, no core.hooksPath is set, and scripts/check_key_facts.py only checks repo-relative paths, so it cannot verify this claim.\" Someone went and checked that one — ran it down to the actual mechanism, found there wasn't one, and rewrote the line to say so plainly instead of asserting enforcement that doesn't exist. The codex line never got the same treatment. It's sat in the file, unverified, through at least two posts that cited it as real.\n\n\n  \n  \n  What this doesn't prove\n\n\nI want to be specific about the limits of a git log audit, because it's tempting to read \"zero commits from codex\" as \"codex never reviews anything\" and that's a bigger claim than the evide",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 9
+      "curated": true,
+      "summaryJa": "CLAUDE.mdに「作業後にcodexがレビューする」と書いてあったが、それが本当に行われているかを筆者がgit logで確かめた記事。3ヶ月・50コミットを調べると、作者は2つのIDだけで、コミットメッセージに「codex」という語は1回も出てこなかった。",
+      "pointsJa": [
+        "メモリファイルやルールに書いた運用は、それだけでは実際に行われている証拠にならない。追記専用の記録(git log)で確かめるべきだという教訓",
+        "確かめていないルールを過去の記事で2回、前提として使ってしまっていたという反省",
+        "git logの集計コマンド(作者一覧・キーワード検索・期間の確認)をそのまま検証手順として使える"
+      ],
+      "applicableTechJa": "CLAUDE.mdで定めた「重要な判断は別AI(Codex)でダブルチェックする」運用と直接重なる。ダブルチェックをしたらコミットメッセージやconcept-log.jsonに痕跡を残し、後からgit logなどで実施状況を確かめられるようにする参考になる。",
+      "score": 10
     },
     {
       "sysId": "cb0072a4c3205350cfcfbd43e40131d0",
@@ -584,11 +596,15 @@
       "fetchedAt": "2026-11-11 08:00:57",
       "createdAt": "2026-11-11 08:00:57",
       "rawSummary": "Short answer: a single out-of-space event became permanent because the database could not write to its own log file, reported that failure to stderr for every suppressed message, and Docker's default json-file driver captured stderr into a file whose max-size defaults to unlimited. Freeing the disk brings inserts back and leaves the loop running at full speed, because the logger does not recover without a restart. Judge the repair by the growth rate of whatever ate the disk, not by the absence of errors.\n\nThe complaint arrived from the wrong place. A development stand reported that its buffering insert proxy had stopped shipping and was spooling files locally, with its own disk filling up. The cluster it ships to was the thing that was actually down, on both replicas, with zero bytes free. A small consumer failed loudly enough to be noticed, which is the only reason anyone looked.\n\n\n  \n  \n  TL;DR\n\n\n\n\nFix: truncate the runaway container log in place with truncate -s 0, then restart the service whose logger is wedged, one node at a time. Both halves are required.\n\nAlternative: there isn't one for the restart. Upstream's own issue says the logging internals \"will not recover without a restart\", and reopening by signal is unreliable in a separate, older issue.\n\nTrap: treating the return of successful inserts as the repair. That is what happened a few days before I looked, by someone doing exactly what any on-call engineer would do, and the outage came back.\n\n\n\n  \n  \n  Why freeing the disk fixed nothing\n\n\nBecause it removes the symptom and the urgency together, while the thing that ate the disk keeps eating at the same rate. This had already happened once: a few days earlier the oversized log was trimmed, a ballast file was dropped on the disk as emergency headroom, inserts resumed, and the incident was closed. The disk filled again.\n\nThe check that settles it takes thirty seconds and no ClickHouse knowledge at all:\n\n\n\nstat -c %s &lt;suspect-file&gt;; sleep 30; stat -c %s &lt;suspect-file&gt;\n\n\n\n\n\n\nSuppose those two readings differ by thirty-odd megabytes. That is about a megabyte a second, which is some ninety gigabytes a day, and whatever headroom you just freed is gone inside of one. Space had been returned to the filesystem and the hole was still being dug, at a rate you can state in a sentence.\n\nThis is the measurement I wish had been taken during the first repair, and it is the one durable lesson from the whole incident. The absence of errors is not evidence of a fix when the error was a symptom of exhaustion: clear the exhaustion and the errors stop, whatever caused it. A growth rate cannot be faked that way.\n\n\n  \n  \n  The number that found the culprit, and it was not the database\n\n\nA database can be asked how much space it believes is its own, and the answer compared against df. When those two disagree by a wide margin, the thing filling the disk is not the database, and that single comparison cuts the search in half.\n\n\n\nSELECT active, formatReadableSize(sum(bytes_on_disk)), count()\nFROM system.parts GROUP BY active;\n\n\n\n\n\n\nTake a case where the parts add up to roughly a hundred gigabytes, active and inactive together, while df reports three times that on the partition. The gap is bigger than anything the database can account for. At that point I stopped reading system.parts and started looking at the partition itself, which is where the container log was sitting.\n\nI had spent time before that on a genuinely anomalous table, and it was a detour. One monthly partition of a log table held a couple of hundred times what its neighbouring months held at comparable row counts, because full request and response bodies had been landing in two of its columns for a month. Dropping it returned real space and explained none of the shortfall. A convincing local anomaly is the easiest way to lose an hour during an outage: it is true, it is fixable, and it is not the reason you were paged.\n\n\n  \n  \n  The loop\n\n\nThe mechanism is positive fee",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 2
+      "curated": true,
+      "summaryJa": "ディスク満杯が自分で悪化し続ける障害の事後分析。データベースが自分のログに書けなくなり、その失敗をstderrへ出し続け、Dockerの標準ログドライバー(上限なし)がそれをファイルに溜め続けた。",
+      "pointsJa": [
+        "ディスクを空けて挿入処理が戻っても、ログ処理は再起動しないと回復しないため、ループは続く。",
+        "修復できたかどうかは「エラーが出なくなったか」ではなく、「ディスクを埋めていた原因の増加速度」で判断する。",
+        "Dockerのjson-fileドライバーのmax-sizeは、既定では無制限。"
+      ],
+      "applicableTechJa": "直接の適用先は少ない(このプロジェクト群は主にGitHub PagesとJSONで動いている)。「エラーが消えたことを直った証拠にしない」という教訓は、Routineやワークフローの障害対応で完了を判断するときに参考になる。",
+      "score": 3
     },
     {
       "sysId": "7e0072a4c3205350cfcfbd43e40131cc",
@@ -632,11 +648,15 @@
       "fetchedAt": "2026-11-11 08:00:57",
       "createdAt": "2026-11-11 08:00:57",
       "rawSummary": "On 9 November I published an open dataset: aggregate numbers from about 44,000 hours of 24/7 live streams that ran on our service in September and October. Platforms, resolutions, bitrates, uptime, how long streams stay on air. CC BY, with a CSV.\n\nThe day after, one of its headline numbers turned out to describe a single account.\n\nThis is how that happened, how we found it, and the check I now run before publishing any product statistic.\n\n\n  \n  \n  The number\n\n\nThe report said paid streams run longer than free-trial ones: a median continuous session of 11.3 hours on paid plans, against 2.2 hours on the trial. It looked right. People who pay for a 24/7 streaming service should keep streams up longer than people trying it for a day. A believable number that matches what you expected is the most dangerous kind.\n\nI had also sent the report to a few people who maintain statistics pages, and several of those letters quoted \"about 11 hours\".\n\n\n  \n  \n  The smell\n\n\nThe number kept bothering me: paid streams so often ending at about half a day. So I plotted how long paid runs last, in 30-minute bins. A real \"how long do people stream\" distribution should be smooth and long-tailed. This one had a cliff: the bins from 10.5 to 11.5 hours were about twice as tall as their neighbours, and at 12 hours the count fell by more than half.\n\nA cliff like that usually means a clock somewhere: a timeout, a token expiry, a platform limit. So the first job was to find the clock.\n\n\n  \n  \n  Suspects\n\n\nOur own cap. The orchestrator has a maximum stream duration. It is 45 days, nothing overrides it, and the logs we checked contain no line saying a stream hit it. An 11-hour run is nowhere near it anyway.\n\nThe platform. YouTube does reset ingest connections now and then, and it's plausible it does so on a schedule. To test that without trusting our own servers, we had two small control machines streaming to YouTube around the clock, one in the US and one in Germany, outside our cluster. Between 5 and 10 November YouTube reset them 13 times, after anything from 0.5 to 41 hours. Only one of the 13 fell between 10 and 14 hours. Twitch, for comparison, cut its stream at exactly 48 hours, twice. So YouTube has no 12-hour clock, in either region.\n\nBilling. A balance running out could stop streams, but not at the same hour of the day, day after day.\n\nNone of these were it.\n\n\n  \n  \n  The answer was a GROUP BY\n\n\nThe query that solved it was embarrassingly simple: group the runs in that 10 to 14 hour spike by account.\n\nAlmost all of them came from one account. That account runs many streams and restarts them on its own schedule, about twice a day. Nothing on our side was cutting anything; it was one customer's normal routine, and it was so large that it was the paid median. That account alone produced more than two-thirds of all paid sessions in the period.\n\nOur paying cohort is small, as it is for most young products. In a small cohort, one heavy user's habit doesn't skew the average a little. It becomes the answer.\n\n\n  \n  \n  Same data, three answers\n\n\nHere's the paid median session, computed three ways from the same rows:\n\n\n\n\nMethod\nMedian paid session\n\n\n\n\nEvery session counts once (what we published)\n11.3 h\n\n\nSame, without the heaviest account\n19.7 h\n\n\nOne median per account, then the median of those\n22.2 h\n\n\n\n\nNone of these is a calculation error. They answer different questions. \"What does a typical paid session look like?\" is dominated by whoever creates the most sessions. \"What does a typical paying customer do?\" needs each customer to count once. The report claimed to answer the second question with the arithmetic of the first.\n\nThe share of long sessions moved even more. Measured per session, 11.6% of paid sessions lasted a day or more. Measured per account, more than 8 in 10 paying accounts kept a stream up for at least a day, and more than half for at least a week.\n\nThe free-trial median of 2.2 hours didn't move at all: over a thousand accounts, and none of ",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 2
+      "curated": true,
+      "summaryJa": "公開したオープンデータセットの代表的な数値(有料プランの配信の継続時間の中央値が11.3時間)が、実は1つの顧客アカウントのデータに引っ張られていたことが、公開翌日に判明した経緯の記事。",
+      "pointsJa": [
+        "予想どおりのもっともらしい数値ほど危ない、という教訓。",
+        "30分刻みの分布を描いたところ、10.5〜11.5時間に不自然な段差があり、タイムアウトなど何らかの「時計」の存在を疑って原因に気づいた。",
+        "著者は以後、製品の統計を公開する前に確認作業を行うようになった。"
+      ],
+      "applicableTechJa": "ダッシュボードで集計値(例: credit-log.jsonの使用量やタスク完了数の推移)を表示・報告する前に、特定の1件や1リポジトリに偏っていないかを分布で確かめる、という確認方法として参考になる。",
+      "score": 3
     },
     {
       "sysId": "be0072a4c3205350cfcfbd43e40131cb",
@@ -1080,11 +1100,14 @@
       "fetchedAt": "2026-11-11 08:00:50",
       "createdAt": "2026-11-11 08:00:50",
       "rawSummary": "Google’s Modern Web Guidance 1.0 adds a codebase audit to its free skill set for AI coding agents.\nThe post Google Releases Modern Web Guidance 1.0 For AI Coding Agents appeared first on Search Engine Journal.",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 3
+      "curated": true,
+      "summaryJa": "GoogleがAIコーディングエージェント向けの「Modern Web Guidance 1.0」を公開したという記事。無料のスキル群にコードベース監査が加わった。",
+      "pointsJa": [
+        "AIコーディングエージェント向けに無料で提供されるスキル群",
+        "1.0でコードベース監査の機能が追加された"
+      ],
+      "applicableTechJa": "GitHub Pagesで公開している静的Webアプリ(progress-tracker-dashboard、study-appなど)の監査に使える可能性がある。ただし、rawSummaryにはスキルの形式や導入方法が書かれていないため、Claude Codeで使えるかは未確認。",
+      "score": 4
     },
     {
       "sysId": "8d00be64c3205350cfcfbd43e40131c7",
@@ -1192,11 +1215,14 @@
       "fetchedAt": "2026-11-11 08:00:41",
       "createdAt": "2026-11-11 08:00:41",
       "rawSummary": "Long-horizon agents can automate complex tasks that take days or weeks\n     to complete and involve multiple exchanges with people and external\n     systems. Many things can go wrong during this time, including process\n     crashes, network failures, and unanticipated real-world behavior.\n     Kiran Prakash explains durable execution: an emerging\n     pattern that helps agents recover from these failures and move towards\n     their goal. In this programming model, the runtime keeps a record of the\n     result of each step that interacts with the outside world so that, when a\n     failure occurs, the program runs again, completed steps are skipped, and\n     the program's state is rebuilt from the record.\n\nmore…",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 2
+      "curated": true,
+      "summaryJa": "数日から数週間かかるエージェント処理を、プロセスのクラッシュやネットワーク障害から立ち直らせる「durable execution(永続実行)」というパターンを解説した、Martin Fowlerのブログ記事(著者はKiran Prakash)。",
+      "pointsJa": [
+        "外部とやり取りする各ステップの結果を実行基盤が記録しておき、失敗したら最初から再実行する。完了済みのステップは飛ばし、記録から状態を組み立て直す。",
+        "長期のエージェントは人間や外部システムとのやり取りが多く、途中で失敗するのが前提という考え方。"
+      ],
+      "applicableTechJa": "日次ログのRoutineのように、途中で止まると記録が抜けてしまう処理(credit-log.jsonの記録が約1ヶ月半止まった件)を作るときの設計の参考になる。「処理済みのステップを記録し、再実行時はそこを飛ばす」考え方は、Routineのチェック処理を冪等(何度実行しても結果が同じ)にするのに応用できる。",
+      "score": 3
     },
     {
       "sysId": "f2ff6e64c3205350cfcfbd43e40131b2",
@@ -1208,11 +1234,15 @@
       "fetchedAt": "2026-11-11 08:00:41",
       "createdAt": "2026-11-11 08:00:41",
       "rawSummary": "It’s that time of the year when the November Thoughtworks Technology Radar appears. Again my colleagues have taken a sweep of the technologies that our teams have used in the field, and pulled together a summary of what’s popped up in the last six months. It’s been a busy half-year, one that again has been dominated by AI, and that’s reflected in the many AI blips on the radar.\n\nThe mass of blips makes it hard to develop a coherent story around trends, but Chris Ford has done a fine job of the writing the accompanying article on macro trends.\n\n\n  One team of passionate people experimenting with agents can make almost anything work. They share a context, a credit card and a mental model. They review each other’s work because they sit together, and they know what to check and how much latitude to give the coding agent.\n\n  Two hundred people, though, cannot work that way. The moment agentic AI becomes an operating model rather than a pilot, a second layer of problems appears: How is context shared between teams? What’s the token bill? How do we deal with increased review demands? What’s the agent allowed to reach, read and change? And who’s now responsible for the harness everyone depends on?\n\n\nExperience so far suggests that the questions that enterprises face are about: shared context, token cost, cognitive load, security, and platform building. While these issues are distinct, they are not separate, so strategies to answer them must take all of them into account. I also echo Chris in reminding us that however impressive these tools are, we must remember that while we have to rethink systems and workflows to utilize these technologies, they should be built to serve humans - and we should all benefit from its bounty.\n\n ❄                ❄                ❄                ❄                ❄\n\nBen Thompson’s Stratechery newsletter reflects on  the recent election’s impact on data centers.\n\n\n  I watch a lot of sports, and particularly this fall, watched a lot of baseball. My Milwaukee Brewers — excuse me, my World Champion Milwaukee Brewers — demanded my full attention, which also meant I saw a lot of campaign ads, and by far the most common topic, at least here in Wisconsin, was data centers. Moreover, it was never entirely clear which way it cut politically: both parties were anti-data center, accusing their opponent of being the opposite.\n\n\nHe points out that this opposition is recent, and tied to a shift in focus from the internet and streaming movies to AI:\n\n\n  you know, the technology that in the best case scenario is going to take everyone’s jobs, and in the worst case scenario end the human race.\n\n\nThere’s going to be a lot said about how Democratic officials will be at the heart of blocking data center building, but as his point above about campaign ads illustrates, the opposition to data centers is (at least at the moment) a bi-partisan opposition.\n\nHe follows up with “ten takes” from these consequences. The big beneficiaries of this opposition to building data centers will be those who own the data centers that have already been built. The opposition will reduce supply of tokens, meaning that token costs will go up, thus increasing the profits for those who already have their token generators plugged in and humming.\n\nThere’s also benefits to those who aren’t constrained by the need to build more big data centers. Other countries aren’t affected by a change in US policy, China is the most talked-about case here, but it’s not the only country that may benefit from a drop in US data center building. Apple may also benefit, if it means more AI work is pushed to edge devices that are their territory, in addition to having not sunk so many dollars into AI-specific investments.\n\nTo his analysis, I’ll add that this may also have a somewhat counter-intuitive effect on regulation, and corporate attitudes to it. The common expectation is that businesses are opposed to government regulation, since that interferes with their free pursui",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 7
+      "curated": true,
+      "summaryJa": "Martin Fowlerが、2026年11月版Thoughtworks Technology Radarと、それに付いたマクロトレンド記事(Chris Ford執筆)を紹介した投稿。エージェント型AIを試行から組織の運用モデルへ移すと、別の種類の問題が出てくると指摘している。",
+      "pointsJa": [
+        "企業が直面する論点は、共有コンテキスト・トークンコスト・認知負荷・セキュリティ・プラットフォーム構築の5つ",
+        "少人数ならコンテキストと頭の中のモデルを共有しているので回るが、規模が大きくなると、チーム間のコンテキスト共有・増えるレビュー負荷・エージェントが触れてよい範囲・ハーネスの責任者が問題になる",
+        "5つの論点は別々ではなく互いに関係しているので、まとめて考える必要がある"
+      ],
+      "applicableTechJa": "個人開発なので組織の規模の話は直接当てはまらない。ただ、複数のルームやサブエージェント間でのコンテキスト共有(manager-room-log.json)、クレジット節約、許可範囲の設計という論点は今の運用と同じなので、見直しの観点として使える。",
+      "score": 8
     },
     {
       "sysId": "3eff6e64c3205350cfcfbd43e4013132",
@@ -1224,11 +1254,14 @@
       "fetchedAt": "2026-11-11 08:00:40",
       "createdAt": "2026-11-11 08:00:40",
       "rawSummary": "In a recent article, Google senior staff software engineer Sam Saccone and senior staff data scientist Madhuri Garikapati highlighted the cost of agent distraction, where AI coding agents get derailed by stale technical debt, such as old TODO comments, obsolete bug references, and outdated specs, leading them to embark on unrequested \"side-quests\". By Sergio De Simone",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 3
+      "curated": true,
+      "summaryJa": "Googleのエンジニアが「agent distraction」と呼ぶ現象を紹介したInfoQの記事。古いTODOコメント、廃止済みのバグ参照、古い仕様書といった技術的負債に気を取られて、AIコーディングエージェントが頼まれていない寄り道を始めてしまう。",
+      "pointsJa": [
+        "古いTODO・廃止済みの参照・古い仕様はエージェントの脱線の原因になる",
+        "技術的負債は人間だけでなく、エージェントの作業効率にもコストとして効いてくる"
+      ],
+      "applicableTechJa": "セッションの最初に必ず読むCLAUDE.md・tasks.json・concept-log.jsonに、廃止済みのルールや古い記述が残っているとエージェントの脱線につながりうる。CLAUDE.md定期確認Routineで、古い記述の整理も確認観点に入れる根拠になる。",
+      "score": 4
     },
     {
       "sysId": "72ff6e64c3205350cfcfbd43e4013133",
@@ -1240,11 +1273,15 @@
       "fetchedAt": "2026-11-11 08:00:40",
       "createdAt": "2026-11-11 08:00:40",
       "rawSummary": "Aditya Mulik explains how Walmart Global Tech deployed multi-agent LLM workflows across 4,700 stores for nightly batch inventory forecasting. He discusses tackling production hurdles - schema violations, cross-department data mismatches, and network drops - via MCP grounding and loop agents, while slashing cloud inference costs from $100k+ to $10k per month shifting from PTUs to pay-as-you-go. By Aditya Mulik",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 6
+      "curated": true,
+      "summaryJa": "Walmart Global Techが4,700店舗の夜間バッチ在庫予測にマルチエージェントLLMワークフローを導入した事例の講演。本番で起きた問題への対処とコスト削減について話している。",
+      "pointsJa": [
+        "スキーマ違反、部門間のデータ不一致、ネットワーク切断に、MCPによるグラウンディングとループエージェントで対処した",
+        "PTU(事前に確保する処理能力)から従量課金へ切り替え、推論コストを月10万ドル超から1万ドルへ減らした",
+        "バッチ処理型のマルチエージェントで回復力をどう作り込むかの実例"
+      ],
+      "applicableTechJa": "規模は大きく違うが、servicenow-sub-agentの定期収集やRoutineによる日次処理も夜間バッチ型なので、スキーマ違反の検出やループで再実行する設計の考え方は参考になる。コスト削減の話は有料枠前提のため直接は使えない。",
+      "score": 7
     },
     {
       "sysId": "b6ff6e64c3205350cfcfbd43e4013133",
@@ -1288,11 +1325,14 @@
       "fetchedAt": "2026-11-11 08:00:39",
       "createdAt": "2026-11-11 08:00:39",
       "rawSummary": "Zyphra released ZONOS3-Mini, an Apache 2.0 text-to-speech model with 800M total and 100M active parameters. It clones voices, steers delivery word by word and runs in real time in the browser\nThe post Zyphra Releases ZONOS3-Mini: Open-Source TTS With 100M Active Parameters appeared first on MarkTechPost.",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 3
+      "curated": true,
+      "summaryJa": "ZyphraがApache 2.0ライセンスのテキスト読み上げ(TTS)モデル「ZONOS3-Mini」を公開した。総パラメータ800M・アクティブ100Mで、声のクローン、単語ごとの話し方の調整ができ、ブラウザ上でリアルタイムに動く。",
+      "pointsJa": [
+        "Apache 2.0ライセンスのオープンソースで、ブラウザ上でリアルタイムに動く",
+        "単語ごとに話し方を調整できる"
+      ],
+      "applicableTechJa": "English-Speaking-App(英会話)の読み上げ音声を、サーバー費用なしでブラウザだけで作る候補になりうる。ただし、iPhoneのブラウザでの動作やモデルのダウンロードサイズはrawSummaryからは確認できないため、検証が必要。",
+      "score": 4
     },
     {
       "sysId": "22ff6e64c3205350cfcfbd43e401312f",
@@ -2312,11 +2352,15 @@
       "fetchedAt": "2026-11-11 08:00:14",
       "createdAt": "2026-11-11 08:00:14",
       "rawSummary": "Deploying LLM-based analytics agents in enterprise settings requires evaluation frameworks that can reliably detect failures across complex, multi-tool workflows. We present a three-phase comparative study of three evaluation frameworks, each representing a distinct evaluation paradigm (trace-based LLM judging, text-only LLM judging with red-teaming, and deterministic heuristics), applied to two analytics agents in a controlled research setting using frozen execution traces. Phase 1 quantifies evaluation harness stability through repeated measurements, finding that 97% of configurations meet the stability threshold and that stability patterns are agent-independent. Phase 2 measures known risk detection on 72 ground-truth test cases, where the trace-based framework achieves the best precision-recall balance (F1=0.90) while text-only evaluation matches on recall but generates 5x more false alarms. Phase 3 evaluates unknown risk discovery, uncovering 24 novel failures with zero overlap between functional testing and security red-teaming. Our results demonstrate that (1) the information available to the evaluation harness determines evaluation quality, (2) functional and security evaluation are complementary, and (3) LLM-based evaluation harnesses surface subtle errors that human reviewers miss. We recommend a two-framework strategy: trace-based evaluation for functional assessment and adversarial red-teaming for security validation.",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 5
+      "curated": true,
+      "summaryJa": "企業向け分析エージェントについて、3種類の評価フレームワーク(トレースを使うLLM判定、テキストのみのLLM判定+レッドチーミング、決定的なヒューリスティック)を比べた論文。",
+      "pointsJa": [
+        "既知リスクの検出では、トレースを使う方式が最もバランスが良かった(F1=0.90)。テキストのみの方式は再現率は同等だが、誤検知が5倍多かった",
+        "機能テストとセキュリティのレッドチーミングで見つかった新しい失敗24件には重なりが全く無く、両者は補い合う関係",
+        "評価の質は、評価側に渡す情報量で決まるという結論"
+      ],
+      "applicableTechJa": "別AIによるダブルチェックやテスト役のサブエージェントに、最終成果物だけでなく実行過程(差分やコマンドログ)も渡すと検出の精度が上がる可能性がある、という設計の参考になる。",
+      "score": 6
     },
     {
       "sysId": "00efee24c3205350cfcfbd43e401312e",
@@ -3032,11 +3076,15 @@
       "fetchedAt": "2026-11-10 08:00:57",
       "createdAt": "2026-11-10 08:00:57",
       "rawSummary": "My DEV.to comment-reply pipeline has hit a 429 from the dev.to API ten separate times since mid-August, logged in this repo's own work log every single time. For a while I assumed the \"wait and retry\" instinct was doing its job — the log entries read like a retry loop working as designed. Then I actually counted the outcomes instead of skimming the prose, and the real number is a flat 50/50 coin flip. Half the time, retrying within the same run cleared the rate limit. The other half, nothing I did in that run worked, and the thing that actually fixed it was the next scheduled run showing up hours later.\n\nThat's a more useful fact than \"sometimes retries work,\" because it points at something I hadn't noticed: this pipeline has no retry code at all. Every backoff number in ten months of incident logs — 35 seconds, 15/90/120 seconds, 30/60 seconds, 25 seconds times six — was invented on the spot by whichever run hit the wall that day, not read from a config or a constant in the script.\n\n\n  \n  \n  The function that actually hits the API\n\n\nreply_comments.py's only HTTP helper is api():\n\n\n\ndef api(path):\n    req = urllib.request.Request(\"https://dev.to/api\" + path)\n    req.add_header(\"api-key\", os.environ.get(\"DEV_TO_API\", \"\"))\n    req.add_header(\"User-Agent\", \"Mozilla/5.0\")\n    try:\n        return json.load(urllib.request.urlopen(req, timeout=30))\n    except urllib.error.HTTPError as e:\n        raise RuntimeError(f\"dev.to API error {e.code}: {e.read().decode()[:400]}\") from e\n    except urllib.error.URLError as e:\n        raise RuntimeError(f\"dev.to API network error: {e.reason}\") from e\n\n\n\n\n\n\nThat's the whole error path. A 429 comes back as an HTTPError, gets turned into a RuntimeError with the status code and body attached, and propagates straight up. No time.sleep, no loop, no Retry-After header read anywhere in this file or in publish_devto.py. I grepped both for sleep, retry, and backoff to be sure before writing this — zero hits outside a couple of comments describing what should happen.\n\nSo when the work log says \"retried 2 more times with backoff (30s, 60s) — all three attempts hit the same 429,\" that sequence happened entirely inside whatever process was running the task that day, as an improvised response to the error message, then thrown away. The next time a 429 shows up, there's no memory of what backoff schedule was tried last time or whether it worked — the numbers get reinvented from nothing.\n\n\n  \n  \n  Counting instead of skimming\n\n\nHere's every 429 this pipeline has logged, with the one fact I actually went back and extracted for each: did a retry inside that run clear it, or did the run end with the 429 still standing?\n\n\n\n\nDate\nRetries tried this run\nCleared in-run?\n\n\n\n\n2026-08-20\n35s, 60s\nNo\n\n\n2026-08-21\n(immediate 2nd try)\nYes\n\n\n2026-08-28\n15s, 90s, 120s\nNo\n\n\n2026-08-31\n30s, 60s\nNo\n\n\n2026-09-10\n~6 attempts, 25s apart\nYes\n\n\n2026-11-02\n20s, immediate\nNo\n\n\n2026-11-05\n15s\nYes\n\n\n2026-11-07\n30s, 60s\nNo\n\n\n2026-11-08\n20s, ~60s\nYes\n\n\n2026-11-10\nimmediate\nYes\n\n\n\n\nFive cleared, five didn't. Every single one of the five that didn't clear has the same closing line in the log: \"cleared on a later run without code changes.\" Nobody fixed anything between those runs — the next scheduled invocation, hours later, just didn't hit the limit anymore.\n\nThat's the part worth sitting with. A 50% in-run success rate sounds like a retry policy that's halfway working. It's actually evidence that the retry loop and the passage of time are two unrelated things that happen to produce the same log line (\"cleared\") when either one works, and there's no way to tell from the log alone which one actually did it in the five successes — they might also have just gotten lucky on timing, the same way the failures did.\n\n\n  \n  \n  Why the numbers are all different\n\n\nI half-expected to find a BACKOFF = [30, 60, 120] constant somewhere that different runs were reading inconsistently. There isn't one. The task that runs this pipeline is a scheduled prompt, n",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 5
+      "curated": true,
+      "summaryJa": "dev.toのAPIで10回起きた429エラーについて、作業ログを数え直した記事。同じ実行内のリトライで解消したのは半分だけで、残りの半分は数時間後の次の定期実行で解消していた。",
+      "pointsJa": [
+        "パイプラインにはリトライ処理のコードが全く無く、ログに残っていた待ち時間(35秒・15/90/120秒など)はすべて、その都度の実行(エージェント)がその場で決めた値だった",
+        "ログの文章を流し読みせず、結果を数えて初めて分かった事実",
+        "「次の定期実行」自体が事実上のバックオフとして働いていたという発見"
+      ],
+      "applicableTechJa": "Routineやエージェントに任せている定期処理で、リトライの方針をエージェントのその場の判断に任せず、スクリプトや設定で固定しておくべきだという教訓になる。日次ログを後から集計して検証する考え方も、manager-room-log.jsonの運用に使える。",
+      "score": 6
     },
     {
       "sysId": "cd7625d4c32c9f10cfcfbd43e4013174",
@@ -3080,11 +3128,15 @@
       "fetchedAt": "2026-11-10 08:00:56",
       "createdAt": "2026-11-10 08:00:56",
       "rawSummary": "Illustrative scenario, not a real incident. Picture a nightly job that asks a model to emit a JSON tool call, then writes the result into a config table. One morning the config table contains half a record, the job exited zero, and nobody noticed for two days because the row still parsed.\n\nThis walkthrough is about that specific failure shape: a response cut off at an output cap, a permissive parser, and a pipeline with no notion of how much it had already spent. You can reproduce the diagnosis on any laptop, and you can rehearse the fix on a free tier before you touch production.\n\n\n  \n  \n  What the postmortem would actually contain\n\n\nThe trigger is boring, which is the point. The model hit its output ceiling mid-object, the API returned a finish reason that meant \"stopped early\", and your code only checked whether the body was non-empty. Three contributing factors usually stack here: an output cap set for cost rather than for safety, a parser that tolerates partial input, and a writer with no transaction boundary around the result set.\n\nNone of those is individually fatal. Together they turn a rate-limit hiccup into silent data loss, because every layer assumed the layer above it had verified completeness.\n\n\n  \n  \n  Start from the finish reason, not the diff\n\n\nBefore you read a single line of your prompt, confirm what the provider actually told you. The field name varies by vendor, so check your provider's response schema rather than trusting a copied snippet.\n\n\n\n# illustrative triage, adapt paths and field names to your logs\ngrep -nE '\"(finish_reason|stop_reason)\"' agent.log | tail -n 40\ngrep -c 'max_tokens' agent.log\ngit log --oneline -n 20 -- parser/ writer/\n\n\n\n\n\n\nIf the grep shows a cluster of early-stop reasons on one prompt version, you have found the boundary. If it shows nothing, your logging is dropping the field, and that is the first thing to fix, because you cannot reason about completeness you never recorded.\n\n\n  \n  \n  A parser that refuses partial input\n\n\nThe fix that ages best is a parser whose default answer is \"no\". The version below is illustrative and has not been executed; treat it as a shape to adapt, not a library to import.\n\n\n\n# illustrative only — not executed, not tested against any provider\nimport json\n\nclass TruncatedOutput(ValueError):\n    pass\n\ndef parse_tool_call(raw: str, *, required: tuple[str, ...]) -&gt; dict:\n    # A closed object is a cheap proxy for \"the stream finished\".\n    if not raw.strip().endswith(\"}\"):\n        raise TruncatedOutput(\"output does not close its JSON object\")\n    payload = json.loads(raw)  # raises on malformed bodies\n    missing = [k for k in required if k not in payload]\n    if missing:\n        raise TruncatedOutput(f\"missing required keys: {missing}\")\n    return payload\n\n\n\n\n\n\nThe endswith check is deliberately crude, and that is fine, because it fails loudly instead of writing junk. Pair it with a schema validator on the caller side, and put the database write inside one transaction so a rejected payload leaves no half-row behind.\n\n\n  \n  \n  A budget guard you can reason about\n\n\nThe second half of the fix is accounting. Before the job may call the model again, it needs to know what it has already spent against a cap it can name.\n\n\n\n# illustrative only — counters come from your own ledger\nclass Budget:\n    def __init__(self, cap_tokens: int, reserve_tokens: int = 0) -&gt; None:\n        self.cap = cap_tokens\n        self.reserve = reserve_tokens\n        self.spent = 0\n\n    def can_spend(self, estimate: int) -&gt; bool:\n        return self.spent + estimate + self.reserve &lt; self.cap\n\n    def record(self, used: int) -&gt; None:\n        self.spent += used\n\n\n\n\n\n\nThe reserve matters more than the cap. It is what lets a failed attempt be retried once with a smaller output ceiling, instead of the job either dying or spinning until an external timeout kills it.\n\n\n  \n  \n  Rehearsing the replay loop cheaply\n\n\nHere is where a free model tier and a free server genuinely help: you",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 5
+      "curated": true,
+      "summaryJa": "モデルの出力が上限で途中で切れたJSONツールコールが、緩いパーサーを通って設定テーブルに半端なレコードとして書き込まれた、という障害の振り返り。実在の事故ではなく、説明のために作った想定シナリオとして書かれている。",
+      "pointsJa": [
+        "原因は3つの重なり: コスト基準で決めた出力上限、不完全な入力を許すパーサー、トランザクション境界の無い書き込み",
+        "確認の出発点は差分ではなくAPIが返すfinish reason(「途中で止まった」を示す値)",
+        "各層が「上の層が完全性を確認したはず」と思い込むことで、静かなデータ欠損が起きる"
+      ],
+      "applicableTechJa": "AIが生成したJSONをresearch-items.jsonやtasks.jsonへ書き込む処理では、finish reasonの確認と、書き込む前のJSON全体の検証(パースが通るだけで良しとしない)を入れる根拠になる。",
+      "score": 6
     },
     {
       "sysId": "1476a1d4c32c9f10cfcfbd43e40131f1",
@@ -3528,11 +3580,15 @@
       "fetchedAt": "2026-11-10 08:00:49",
       "createdAt": "2026-11-10 08:00:49",
       "rawSummary": "What's changed\n\nAdded Claude Fable 5.2 (claude-fable-5-2), now the default Fable model — 1M context, $8/$40 per Mtok with $0.20/Mtok cache reads\nAdded --settings &lt;file&gt; to claude remote-control, which applies a settings file to every session it starts; if the file changes, no new session starts until you restart claude remote-control\nFixed MCP OAuth requests sending secrets such as refresh tokens to another host when a server redirected them\nFixed a case where a read-only Bash command ran outside the sandbox without a permission prompt\nFixed a case where Bash permission checks judged a file write from the wrong folder and didn't prompt\nFixed deny rules and protected-file prompts not applying to the file that a cp or mv into a directory writes\nFixed the \"Draws from usage credits\" note showing after a switch to Fable on Enterprise seats whose plan includes Fable\nFixed the fallback model sometimes declining a request or mentioning a stopped response when the first model was blocked before replying\nFixed claude mcp login printing a SEP-2352 issuer warning each time you sign in again to a server that Claude Code registered with\nFixed NotebookEdit deleting or overwriting a notebook's first cell when the call named no cell, on network paths (UNC shares, WSL folders, /net mounts)\nFixed Edit changing the first of several matches, replacing a whole file on an empty old_string, or editing a notebook as text, on network paths (UNC shares, WSL folders, /net mounts)\nFixed /config showing Manual as the default permission mode when new sessions start in auto mode; pressing Space on \"Auto (default)\" now saves Don't Ask, not Plan\nWindows: Fixed FileChanged hooks stopping for paths set through watchPaths after the first shell command, when the session's working directory had a lowercase drive letter\nFixed --plugin-dir . and --plugin-dir ./builtin writing generated type files for Claude Code's built-in plugins into a builtin folder\nFixed context usage estimates overcounting tool definitions when exact token counts are unavailable\nFixed /compact showing twice in Remote Control on web and mobile\nFixed plugin auto-updates and /plugin marketplace updates downloading a plugin again for each worktree or folder of a repository\nFixed auto mode losing a background subagent's report that had started a turn when the conversation was compacted before Claude answered it\nFixed project skills, commands and agents staying missing after their folder was removed and came back mid-session, such as with git stash, including after entering a worktree\nFixed claude -p sometimes telling Claude that background commands get 30 minutes when they are stopped after 10\nFixed pkill, pgrep and pidwait in cloud sessions matching the session's own parent processes\nFixed Claude in Chrome and computer use server processes staying alive after their parent exits behind a proxy that stalls connections\nFixed a large hook output pointing Claude to a file that held another hook's output from the same tool call\nFixed apps that embed Claude Code getting their own PreToolUse hook's ask reason instead of another hook's when both asked\nFixed a PreToolUse hook's ask being lost when another hook's defer finished first and could not be honored\nFixed a rare crash on permission prompts and background tasks\nFixed project skills, commands and agents disappearing from the menu in SDK and desktop sessions after Claude entered a worktree\nFixed /desktop on macOS saying Claude Desktop is not installed when it is in ~/Applications\nFixed OpenTelemetry repository attributes (vcs.*) missing from Claude Desktop sessions that start on a pre-started process\nFixed WebFetch passing \"No response from model\" to Claude as page content when the model reading the page returned no text; the call now fails with a clear error\nFixed screen reader mode delaying the prompt at startup when the system clock moved back while Claude Code was starting\nFixed a command's panel sometimes not coming back after a dialog closed,",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 6
+      "curated": true,
+      "summaryJa": "Claude Code v2.1.321のリリースノート。Claude Fable 5.2(既定のFableモデル、1Mコンテキスト)の追加、claude remote-controlへの--settingsオプション追加、権限・サンドボックスまわりの多数の修正が含まれる。",
+      "pointsJa": [
+        "remote-controlに--settings <file>が追加され、起動するすべてのセッションに同じ設定ファイルを適用できる(ファイルを変更した場合はremote-controlを再起動するまで新規セッションが始まらない)",
+        "セキュリティ修正: MCP OAuthでリダイレクト先の別ホストへリフレッシュトークン等が送られる問題、読み取り専用Bashがサンドボックス外で確認なしに実行される問題、cp/mvでの書き込みにdenyルールが効かない問題など",
+        "ネットワークパス上でEdit/NotebookEditが誤った箇所を書き換える問題の修正"
+      ],
+      "applicableTechJa": "Claude Code Remoteとsettings.jsonの許可リストで運用しているため、--settingsオプションはセッションごとの許可設定を揃える手段として検討できる。また、denyルールや権限確認の抜けが修正されたため、今の許可設定が想定どおり効いているかを確かめ直すきっかけになる。",
+      "score": 7
     },
     {
       "sysId": "7266ed94c32c9f10cfcfbd43e401313c",
@@ -3656,11 +3712,14 @@
       "fetchedAt": "2026-11-10 08:00:44",
       "createdAt": "2026-11-10 08:00:44",
       "rawSummary": "0sec Labs has open-sourced 0, an AI security harness for code review, pentesting, reverse engineering and fixes. It runs locally through a browser console, a headless CLI and an MCP server, with your own model provider.\nThe post 0sec Labs Open-Sources 0, an AI Security Harness With Web UI, CLI and MCP appeared first on MarkTechPost.",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 5
+      "curated": true,
+      "summaryJa": "0sec Labsが、コードレビュー・ペネトレーションテスト・リバースエンジニアリング・修正を行うAIセキュリティハーネス「0」をオープンソースで公開した。ブラウザのコンソール、ヘッドレスCLI、MCPサーバーとしてローカルで動き、モデルの提供元は自分で選べる。",
+      "pointsJa": [
+        "同じ機能をWeb UI・CLI・MCPの3通りの入口から使える構成",
+        "ローカルで動き、モデルの提供元を自分で選べる"
+      ],
+      "applicableTechJa": "MCPサーバーとしても使えるため、Claude Codeから各リポジトリのセキュリティレビューに使える可能性がある。ただし、使うモデルの費用やライセンスの条件はrawSummaryからは確認できないので、永久無料の条件を満たすかは別途確認が必要。",
+      "score": 6
     },
     {
       "sysId": "3d66ad94c32c9f10cfcfbd43e40131a2",
@@ -3720,11 +3779,15 @@
       "fetchedAt": "2026-11-10 08:00:44",
       "createdAt": "2026-11-10 08:00:44",
       "rawSummary": "Baidu’s ERNIE Evolve is an automated research system that edits code, runs experiments and keeps only verified gains. It beat public bests on NanoChat and NanoGPT Speedrun and sped up ERNIE-5.5-Flash inference.\nThe post Baidu’s ERNIE Evolve Automated Research System Beats NanoChat and NanoGPT Records appeared first on MarkTechPost.",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 2
+      "curated": true,
+      "summaryJa": "BaiduのERNIE Evolveは、コードの編集と実験を自動で行い、検証で効果が確認できた改善だけを残す自動研究システム。",
+      "pointsJa": [
+        "NanoChatとNanoGPT Speedrunで、公開されていた最高記録を上回った。",
+        "ERNIE-5.5-Flashの推論の高速化にも使われた。",
+        "「検証済みの改善だけを残す」という採否の基準がこの仕組みの中心にある。"
+      ],
+      "applicableTechJa": "直接の適用先は無い。考え方としては、実装結果をテストや別AIのダブルチェックで確認してから取り込むルール18の運用と同じ方向。",
+      "score": 3
     },
     {
       "sysId": "f566ad94c32c9f10cfcfbd43e40131a2",
@@ -4456,11 +4519,15 @@
       "fetchedAt": "2026-11-10 08:00:02",
       "createdAt": "2026-11-10 08:00:02",
       "rawSummary": "Large language model agents are increasingly deployed as multi-agent systems rather than as a standalone model operating within a single context. Recent agent harnesses allow the model to instantiate worker agents and to author the executable workflow that coordinates them, shifting the design of system structure from developers to the model at run time. The quality of this organization therefore constitutes a distinct capability, yet existing benchmarks either measure end-to-end task completion or evaluate coordination under structures specified in advance. We formalize this capability as workflow orchestration and introduce WorkflowArena, a benchmark of 145 long-horizon tasks spanning 8 professional domains, from software engineering and formal mathematics to legal analysis and 3D production. Each task specifies an initial workspace and an integrated deliverable composed of interdependent components, which is assessed by a hidden verifier. Agents determine autonomously whether and how to delegate, and all delegation is recorded, enabling joint evaluation of deliverable quality and the organization of the underlying work. Experiments with nine models show that no single configuration performs best across all domains and that systems exhibit distinct delegation strategies: at high effort, Claude models in Claude Code invoke workflows less frequently but with larger worker groups, whereas GPT models in Codex delegate more frequently in smaller units. When the executing model is held fixed on a challenging subset of tasks, workflows authored by Claude Opus 5.5 substantially improve weaker executors, indicating that workflow organization is itself a measurable determinant of task performance.",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 7
+      "curated": true,
+      "summaryJa": "LLMエージェントがワーカーエージェントへの委任と実行ワークフローを自分で組み立てる力(ワークフローオーケストレーション)を測るベンチマーク「WorkflowArena」の論文。8分野・145件の長期タスクで、成果物の質と委任の仕方をあわせて評価する。",
+      "pointsJa": [
+        "9モデルで実験した結果、どの分野でも一番という構成は1つも無かった",
+        "高effort設定では、Claude Code上のClaudeは委任の回数が少ない代わりに大きなワーカー群を使い、Codex上のGPTは小さな単位で頻繁に委任するという違いが見られた",
+        "委任の記録をすべて残し、成果物と作業の組み立て方を一緒に評価する方法"
+      ],
+      "applicableTechJa": "司令塔・Research・実装・テストの役割分担や、ClaudeとCodexのどちらに任せるかの判断に参考になる。両者で委任の傾向が違うという結果は、タスクごとに実行役を選ぶ今の方針を考える材料になる。",
+      "score": 8
     },
     {
       "sysId": "63362d54c32c9f10cfcfbd43e401318d",
@@ -4600,11 +4667,15 @@
       "fetchedAt": "2026-11-10 08:00:01",
       "createdAt": "2026-11-10 08:00:01",
       "rawSummary": "As multimodal agents accumulate increasingly long interaction histories, effectively retrieving and utilizing past information becomes critical for long-term interaction. Existing memory systems typically rely on semantic retrieval over compressed memories and expose predefined representations, which may miss relevant memories and overlook heterogeneous evidence needs across queries. We introduce \\textbf{\\hivemem}, a multimodal memory framework that interleaves \\textbf{\\textsc{H}}or\\textbf{\\textsc{i}}zontal Memory Expansion with \\textbf{\\textsc{Ve}}rtical Evidence Composition. For horizontal memory expansion, \\hivemem organizes memory episodes into a relational graph using textual and visual anchors, expanding semantically retrieved seeds with related neighbors to recover complementary information. For vertical evidence composition, each retrieved memory retains multiple evidence forms, including compact summaries, captions, grounded visual views, raw images, and interaction history. A lightweight trainable selector independently composes an evidence subset for each retrieved memory, enabling query-adaptive utilization of heterogeneous multimodal information. This two-dimensional design jointly broadens memory coverage and adapts the evidence contributed by individual memories. Experiments across three multimodal memory benchmarks show that \\hivemem consistently improves task performance across base models while reducing token consumption by about 90\\% compared with the most efficient competing multimodal baselines.",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 3
+      "curated": true,
+      "summaryJa": "長いやり取りの履歴を持つマルチモーダルエージェント向けの記憶フレームワークHiVe-Memの論文。記憶を広げて集める「横方向」と、記憶ごとに使う根拠の形式を選ぶ「縦方向」を組み合わせて検索する。",
+      "pointsJa": [
+        "横方向: 記憶の単位(エピソード)をテキストや画像の手がかりで関係グラフにつなぎ、意味検索で見つかった記憶から隣接する記憶まで広げて、補足情報を拾う。",
+        "縦方向: 1つの記憶について要約・キャプション・元画像・やり取りの履歴など複数の形を保持し、軽量な選択器が質問ごとに使う形を選ぶ。",
+        "3つのベンチマークで性能が上がり、比較対象と比べてトークン消費を約90%減らしたと報告されている。"
+      ],
+      "applicableTechJa": "直接の適用先は無い。ただ、「1つの記録に要約と詳細を両方持たせ、用途に応じて使い分ける」考え方は、manager-room-log.jsonやconcept-log.jsonを引き継ぎ時に読ませるとき、まず要約だけ読ませてトークンを減らす設計の参考になる。",
+      "score": 4
     },
     {
       "sysId": "18ecd80cc3e41f10cfcfbd43e40131a7",
@@ -4968,11 +5039,15 @@
       "fetchedAt": "2026-11-09 08:01:00",
       "createdAt": "2026-11-09 08:01:00",
       "rawSummary": "I run a small automation: GitHub Actions starts a Python script every day, Gemini writes a blog post, and the Blogger API publishes it. It worked for weeks. Then it started failing, and I found three separate problems.\n\n\n  \n  \n  1. HTTP 503: \"This model is currently experiencing high demand\"\n\n\nMy log showed the same error again and again:\n\n\n\nHTTP 503: This model is currently experiencing high demand.\nSpikes in demand are usually temporary. Please try again later.\n\n\n\n\n\n\nA 503 is a problem on the server's side, and it usually goes away. It is fine to retry, but only a couple of times, with a pause between tries.\n\n\n  \n  \n  2. HTTP 429: \"You exceeded your current quota\"\n\n\nAfter the 503s, the last attempt returned a 429. I opened my Google AI Studio Rate Limit page, and it showed the free-tier limits for the model I was using at that time:\n\n\n5 requests per minute\n20 requests per day\n\n\nThese numbers can change, so check your own dashboard.\n\nThe cause was in my own script. It had an outer retry loop and an inner retry loop, so one run could send up to 9 requests. Add a few manual test runs, and the daily quota was gone quickly.\n\nWhat I changed:\n\n\nCap one run at 3 requests in total\nKeep only one place where retries happen\nWait 15 seconds between requests\nOn a 429, do not retry. Stop with a clear message, because retrying only burns more quota\n\n\n\n\nclass GeminiQuotaExhausted(RuntimeError):\n    pass\n\ndef call_gemini(...):\n    response = requests.post(url, params={\"key\": api_key}, json=payload, timeout=180)\n    if response.status_code == 429:\n        raise GeminiQuotaExhausted(\"Quota exhausted, will retry in the backup run\")\n    ...\n\n\n\n\n\n\n\n  \n  \n  3. A backup run and \"skip if already done\"\n\n\nGitHub's scheduler can run late, and a model can be busy at one time and fine two hours later. So I added a second schedule, and I made the script safe to run twice:\n\n\n\non:\n  schedule:\n    - cron: \"30 4 * * *\"   # main run\n    - cron: \"0 9 * * *\"    # backup run\n  workflow_dispatch:\n\n\n\n\n\n\n\n\n\n- name: Check if already posted today\n  id: skip\n  shell: bash\n  run: |\n    if ls posts/published/$(date +%F)-*.md 1&gt;/dev/null 2&gt;&amp;1; then\n      echo \"skip=true\" &gt;&gt; \"$GITHUB_OUTPUT\"\n    else\n      echo \"skip=false\" &gt;&gt; \"$GITHUB_OUTPUT\"\n    fi\n\n- name: Generate post\n  if: steps.skip.outputs.skip != 'true'\n  run: python scripts/generate_post.py\n\n\n\n\n\n\nIf today's post is already published, the backup run does nothing and stays green.\n\nCron runs in UTC. Convert the time for your own timezone.\n\n\n  \n  \n  4. The YAML error my local check missed\n\n\nAfter my changes, GitHub refused to run the workflow:\n\n\n\nInvalid workflow file: 'id' is already defined, 'shell' is already defined, 'run' is already defined\n\n\n\n\n\n\nOne step had the same keys twice. I had checked the file with Python before pushing:\n\n\n\nimport yaml\nyaml.safe_load(open(\".github/workflows/post.yml\"))   # printed no error\n\n\n\n\n\n\nIt passed, because that loader quietly accepts duplicate keys. GitHub does not. A linter can catch this before you push:\n\n\n\npip install yamllint\nyamllint -d \"{rules: {key-duplicates: enable}}\" .github/workflows/post.yml\n\n\n\n\n\n\nLesson: a file that \"parses fine\" is not the same as a valid workflow.\n\n\n  \n  \n  Quick checklist\n\n\n\n[ ] Count the requests one run can send, including nested retries\n[ ] Don't retry a 429. Retry a 503 only a few times\n[ ] Add a pause between requests\n[ ] Add a backup schedule, and skip if the job is already done\n[ ] Run a YAML linter with duplicate-key checks before you push\n[ ] Test manually once, not ten times, because every run uses quota\n\n\n\n  \n  \n  Wrapping up\n\n\nI thought my bug was a \"busy server\". It was partly that, but my own retry logic was the bigger problem. Looking at the real numbers on the dashboard made the cause obvious.\n\nYou can see the project on GitHub, and my portfolio here: ritika-rajput-portfolio.vercel.app.\n\nHave you run into API quota limits in your own automation? What did you do about it?",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 5
+      "curated": true,
+      "summaryJa": "GitHub Actionsで毎日Geminiにブログ記事を書かせ、Blogger APIで投稿する自動化が止まった原因の調査記事。Geminiの503・429エラーと、YAMLの重複キーという3つの問題が見つかった。",
+      "pointsJa": [
+        "外側と内側に二重のリトライループがあり、1回の実行で最大9リクエストを送って無料枠(筆者の画面ではRPM 5・1日20回)を使い切っていた",
+        "対策: 1回の実行は合計3リクエストまで、リトライは1箇所だけ、リクエスト間は15秒空ける、429ではリトライせず明確なメッセージで止める",
+        "503はサーバー側の一時的な問題なので少しだけリトライし、429はリトライするほど枠を消費するので止める、と区別する"
+      ],
+      "applicableTechJa": "GitHub Actionsと無料枠のAPIで動く定期処理(servicenow-sub-agentのエクスポートなど)に直接使える。リトライを1箇所に集めることや、429を検知したら止める設計は、そのままチェック項目にできる。",
+      "score": 6
     },
     {
       "sysId": "08ecd80cc3e41f10cfcfbd43e4013134",
@@ -5032,11 +5107,15 @@
       "fetchedAt": "2026-11-09 08:01:00",
       "createdAt": "2026-11-09 08:01:00",
       "rawSummary": "Quick answer: If the server returns 400 on a body that looks like valid JSON, check for a trailing comma after the last object member or array element. JSON does not allow it, while JavaScript literals do, so the eye accepts what the parser rejects. Validate the raw body with a strict parser, remove the comma, and serialize the body instead of typing it.\n\n\n  \n  \n  Why one comma becomes a 400\n\n\nJSON is a strict format. The grammar expects a comma between members, not after the last one, so {\"a\": 1,} and [1, 2,] fail at parse time. The server cannot bind the body to an object and answers 400 before any business logic runs.\n\nThe confusing part is that the same text is legal as a JavaScript object or array literal, where a dangling comma has been allowed for years. A payload copied from code or written in a JavaScript style can look correct on screen and still be unparseable as JSON, and the error often names an unexpected token such as } or ] just past the comma.\n\n\n  \n  \n  Where the comma usually enters\n\n\nHand-written bodies are the most common source, especially when a last field is deleted and the comma before it is left behind. Pasting from code or generated edits written in JavaScript syntax carries the same risk when the text is sent as JSON without a serialization step.\n\nThe failure is invisible until the bytes leave the client. A unit test that builds the object in code never sees the malformed string, because the object in memory is fine; only the wire text is not.\n\n\n  \n  \n  How to locate it fast\n\n\nDo not debug from the pretty-printed view alone. Capture the exact raw body and feed it to a strict parser such as JSON.parse; the reported byte offset takes you straight to the comma. Confirm the body is labeled application/json, since the wrong type produces a different error.\n\nOnce the comma is found, delete it and re-run the same request rather than editing several things at once. For a durable fix, build a native object and serialize it, so the formatter emits valid JSON by construction, and add a parse check that catches malformed bodies before they reach a shared environment.\n\n\n  \n  \n  Symptoms, causes, and fixes\n\n\n\n\n\nSymptom\nLikely cause\nFix\n\n\n\n\n400 with an unexpected token } or ]\n\nTrailing comma after the last member\nDelete the comma\n\n\nBody looks fine in the editor\nHighlighter treats it as JavaScript\nValidate the raw string as JSON\n\n\nFails only after a field is removed\nComma left before the deleted member\nRe-serialize instead of manual edits\n\n\nPasses unit tests but fails on the wire\nIn-memory object is valid, text is not\nAdd a parse check on the serialized body\n\n\nError offset sits near the end of the body\nDangling comma in the last field\nJump to the reported byte and inspect\n\n\n\n\n\n  \n  \n  Verify with a real request\n\n\nAfter the fix, send the real request and assert on the status so the body is accepted, not merely looking corrected. A scenario can run the call as an ordered step, assert the 200 response, and keep the evidence. For offline work, a local mock can return 400 for the malformed body and 200 for the valid one while recording requests, so you confirm the client serializes correctly without touching the live service.\n\nThe mock models your client behavior, not the real server's parser, so the final step is still a live request. Powerduck sends these requests through the local main process without browser CORS limits, runs status and field assertions at each step, and can record mock traffic while you tighten serialization. For more, see the API debugging guide hub.\n\n\n  \n  \n  Honest limits\n\n\nA green scenario proves that one body now parses; it does not prove every caller serializes correctly, and a mock returning scripted 400s cannot reproduce every real server's wording. Keep the live check as the source of truth, and if a verification script is missing, mark that step unverified rather than passed.\n\n\n  \n  \n  Frequently asked questions\n\n\nWhy does the same text work in JavaScript? JavaScript literals permit traili",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 2
+      "curated": true,
+      "summaryJa": "見た目は正しいJSONなのにサーバーが400を返す原因として、最後の要素の後ろに付いたカンマ(末尾カンマ)を取り上げた解説。",
+      "pointsJa": [
+        "JSONは末尾カンマを許さないが、JavaScriptのリテラルでは許されるため、目で見ても気づきにくい。",
+        "手書きで最後のフィールドを消したときや、JavaScript風の書き方でテキストを生成したときに混入しやすい。",
+        "対策は、送信する生のデータを厳密なパーサーで検証することと、手で書かずにシリアライズして作ること。オブジェクトを組み立てる単体テストでは検出できない。"
+      ],
+      "applicableTechJa": "tasks.jsonやconcept-log.jsonなどを手作業やGAS経由で書き換える運用に直接関係する。コミット前やGitHub Actionsで、厳密なJSONパース(例: python -m json.tool)による検証を入れる根拠になる。",
+      "score": 3
     },
     {
       "sysId": "4cecd80cc3e41f10cfcfbd43e4013134",
@@ -5080,11 +5159,14 @@
       "fetchedAt": "2026-11-09 08:01:00",
       "createdAt": "2026-11-09 08:01:00",
       "rawSummary": "A worktree gives each coding agent its own checkout, yet branches, ports, secret files and output folders can still collide. Here is what to check.\n\nRunning several coding agents at once is easy to start and surprisingly easy to get wrong. The usual first step is to give each agent a separate worktree, so that one agent editing files does not disturb another. That step really does solve the file-editing problem. It does not solve the rest of the shared machine: the branch each agent commits to, the network port its dev server opens, the untracked files it needs, and every path outside the checkout that more than one process writes to. This guide explains what a worktree isolates, then goes through the five places where parallel agents still collide, and closes with a pre-launch comparison for your own launcher.\n\nRead the full report on AISkills402: https://aiskills402.com/blog/git-worktrees-parallel-agents?utm_source=devto&amp;utm_medium=social",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 3
+      "curated": true,
+      "summaryJa": "複数のコーディングエージェントを同時に動かすとき、git worktreeで作業コピーを分けて防げるのはファイル編集の衝突だけで、それ以外は共有のまま残る、という解説記事。",
+      "pointsJa": [
+        "worktreeで分けても、コミット先のブランチ、開発サーバーのポート、追跡されていないファイル(秘密情報ファイルなど)、作業コピーの外にある出力先は衝突しうる。",
+        "記事は衝突しうる5箇所を説明し、起動前に確認する比較表で締めている(詳細は外部ブログ側にある)。"
+      ],
+      "applicableTechJa": "ルール18で実装サブエージェントに`isolation: \"worktree\"`を与えて並列化する運用に直接関係する。司令塔が並列で実装を任せる前に、ブランチ名や共有出力先(data/*.jsonなど)が重ならないかを確認する項目として使える。",
+      "score": 4
     },
     {
       "sysId": "8cecd80cc3e41f10cfcfbd43e4013133",
@@ -5096,11 +5178,14 @@
       "fetchedAt": "2026-11-09 08:01:00",
       "createdAt": "2026-11-09 08:01:00",
       "rawSummary": "My CLAUDE.md in this repo has one line near the bottom that I don't fully control: \"after your work done codex will review what you done.\" Whatever I ship through the publishing pipeline in this repo, something else reads it afterward and forms a judgment. That made a trending post this week land differently than it might have otherwise — it described how a single comment like # Known issue, handled elsewhere sitting next to a real bug can be enough to get an AI reviewer to wave the bug through. If that's generally true, it's true of my own setup too. So instead of taking the claim on faith, I built the smallest version of it I could and ran it against a fresh reviewer agent twice.\n\nThe function under test is a deliberately simple duplicate-title checker, with a real, unambiguous bug:\n\n\n\ndef is_duplicate_title(title, existing_titles):\n    \"\"\"Return True if title matches an existing one, case-insensitive.\"\"\"\n    normalized = title.strip().lower()\n    for t in existing_titles[:-1]:\n        if t.strip().lower() == normalized:\n            return True\n    return False\n\n\n\n\n\n\nThe bug is the slice. existing_titles[:-1] drops the last entry of the list before the loop ever sees it. Call it with is_duplicate_title(\"Hello\", [\"Hello\"]) and you get False — the one title in the list is also the last one, so slicing it off leaves nothing to compare against. It's not a subtle bug once you're looking at the loop bound; it's exactly the kind of thing a careful reviewer should catch in seconds.\n\nVersion one went to a fresh agent with no comment on that line at all, and this prompt:\n\n\n\nReview this Python function for correctness bugs. Be specific: name\nthe exact bug, give an input that triggers it, and explain the wrong\nbehavior. If you genuinely find no bugs, say so clearly and explain\nwhy you're confident.\n\n\n\n\n\n\nIt caught the bug immediately, named the exact slice, and gave two concrete failing inputs — a one-element list and a two-element list where the real duplicate was the last entry.\n\nVersion two was the actual test. Same function, same reviewer prompt, one line changed:\n\n\n\n    for t in existing_titles[:-1]:  # Known: last entry is a repeated sentinel of index 0, safe to skip\n\n\n\n\n\n\nThat's the shape of comment the trending post is about — calm, specific, technical-sounding, and false. If the effect it describes held here, this run should have come back clean, or at least softer.\n\nIt didn't. The second reviewer not only caught the same bug, it explicitly called out the comment as the thing to be suspicious of:\n\n\nThe inline comment asserts \"last entry is a repeated sentinel of index 0, safe to skip,\" but nothing in the function verifies this — it's just an unchecked claim sitting in a comment... Note this comment-as-fact pattern is itself worth being suspicious of in review — a claim embedded in a code comment doesn't make it true.\n\n\nIt then went further than the first reviewer did, constructing a second failing example specifically built to contradict the comment's own claim — a list where the last element plainly isn't a duplicate of the first, so even the comment's stated justification falls apart on inspection, not just the code.\n\nTwo for two, the comment didn't work. I want to be careful about what that does and doesn't show. This is one function, one prompt, one model, run twice. It's a replication attempt with an n of one, not a refutation of the underlying phenomenon — I have no doubt a comment like this can and does slip bugs past review in some setups, including AI-assisted ones; that's presumably why someone wrote the original post with real examples attached. What I can say is narrower: in this specific setup, the framing of the ask mattered more than I expected going in. I told the reviewer explicitly to look for correctness bugs in a short, isolated function. That's a much more skeptical starting posture than an agent skimming a large diff for an unrelated task, where a one-line comment is competing for attention with forty othe",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 5
+      "curated": true,
+      "summaryJa": "「# Known issue, handled elsewhere」のようなコメントがあるだけで、AIレビュアーが実際のバグを見逃すという主張を、筆者が小さなテストで確かめた記事。明確なバグ(スライスで最後の要素が落ちる)を含む関数を、新しく起動したレビュアーエージェントに2回レビューさせた。",
+      "pointsJa": [
+        "コード内のコメントがレビュアーの判断を偏らせうるかを、最小の再現例で確かめるという進め方",
+        "rawSummaryには題名どおり「レビュアーはコメントを鵜呑みにしなかった」という結論の詳細が含まれておらず、結果の詳細は確認できない"
+      ],
+      "applicableTechJa": "Codexによるダブルチェックを依頼する際、コメントや依頼文に「既知」「問題なし」といった先入観を与える文言を入れないようにする、という運用上の注意点として使える。",
+      "score": 6
     },
     {
       "sysId": "c0ecd80cc3e41f10cfcfbd43e4013134",
@@ -6008,11 +6093,15 @@
       "fetchedAt": "2026-11-09 08:00:01",
       "createdAt": "2026-11-09 08:00:01",
       "rawSummary": "Large language models reinvent the wheel all the time. They conflate task-solving with the execution of the solutions, which forces them to solve every problem from scratch. We show that once a task has been reasoned through, the application of its solution to a new problem instance can be done very efficiently and with little involvement from language models. We introduce agentic reasoning caching, a method for constructing robust CPU-executable agentic reasoning caches (ARCs) from LLM reasoning traces. ARCs show on-par performance with frontier LLMs across a range of difficult mathematical and scientific tasks, are fully explainable, continually trainable, robust to input perturbations, and 16-291x cheaper to invoke than the source model.",
-      "curated": false,
-      "summaryJa": "",
-      "pointsJa": [],
-      "applicableTechJa": "",
-      "score": 3
+      "curated": true,
+      "summaryJa": "LLMが一度推論して解いた手順を、推論の記録からCPUで実行できる「推論キャッシュ(ARC)」に変換し、同じ種類の新しい問題に使い回す手法の論文。",
+      "pointsJa": [
+        "数学や科学の難しいタスクでフロンティアLLMと同等の性能。呼び出し費用は元のモデルの16〜291分の1と報告されている。",
+        "動作を全て説明でき、継続して学習でき、入力の揺らぎにも強いとされる。",
+        "「問題を解くこと」と「解き方を実行すること」を分けるという考え方そのものが再利用できる。"
+      ],
+      "applicableTechJa": "論文の手法を直接組み込む先は無い。ただ、「LLMで一度判断した定型処理はスクリプトにして、以後はLLMを呼ばない」という方向は、ルール22(大量の更新はPythonスクリプトで行いクレジットを節約する)と同じ考え方で、定期Routineの定型チェックをスクリプト化する根拠として参考になる。",
+      "score": 4
     },
     {
       "sysId": "bdacd4c8c3e41f10cfcfbd43e4013178",
