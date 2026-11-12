@@ -53,6 +53,12 @@ const CATEGORY_LABELS = {
   // category 7(ハッカソン情報)追加のタイミングで一緒に修正した。
   6: "世の中のニーズ・困りごと",
   7: "ハッカソン情報(応募できる案件・入賞作品)",
+  // 2026-11-13修正: category 8〜11(scheduled_job_ai_research_fetch.jsのCATEGORYで2026-10-10〜11-08に追加)が
+  // この定義に反映されておらず、research-items.jsonのcategoriesに出ていなかったため追加。ラベルは同ファイルのコメントに合わせる。
+  8: "世の中の動向(SEO・マーケティング業界の視点から)",
+  9: "働き方の動向(最先端/一般的/近未来的)",
+  10: "世の中の話題・トレンド(YouTube再生回数ベース、ジャンル問わず)",
+  11: "開発の失敗談・よくあるエラー(要件定義〜実装〜テスト)",
 };
 
 async function fetchAllRows(client, token) {
