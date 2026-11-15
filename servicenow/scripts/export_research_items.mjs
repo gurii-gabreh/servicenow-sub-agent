@@ -160,6 +160,11 @@ async function main() {
       summaryJa: prior?.summaryJa || "",
       pointsJa: prior?.pointsJa || [],
       applicableTechJa: prior?.applicableTechJa || "",
+      // 2026-11-16追加(PTD-136、ユーザー指示「キュレーション処理が動いた時にのみ、おすすめの記事にチェックを入れろ」):
+      // キュレーション時にClaudeが付ける⭐おすすめ印。日本語要約と同様、手動キュレーションのみが更新し、
+      // このスクリプトでは上書きしない(ここで引き継がないと日次エクスポートのたびに消えてしまう)。
+      recommended: prior?.recommended || false,
+      recommendedAt: prior?.recommendedAt || "",
     };
     merged.score = scoreItem(merged);
     return merged;
@@ -189,6 +194,8 @@ async function main() {
       "付与されている。curated:falseは収集元の生データ(title/rawSummaryは元記事のまま、英語が多い)のみ。" +
       "servicenow/scripts/export_research_items.mjs(GitHub Actions)による自動生成・マージ。" +
       "日本語要約フィールドはこのスクリプトでは上書きしない(Claudeによる手動キュレーションのみが更新する)。" +
+      "recommended:true(recommendedAt付き)は、キュレーション実行時にClaudeが特に読む価値が高いと選んだ⭐おすすめ項目" +
+      "(2026-11-16追加、PTD-136。キュレーションした回にのみ付与し、このスクリプトでは上書きしない)。" +
       "ServiceNow側のテーブルから行が無くなっても(PDIリクレーム等を含む)このファイル側では切り捨てない、" +
       "蓄積一方の設計(2026-11-06、ユーザー指摘により変更。PTD-124参照)。",
     categories: CATEGORY_LABELS,
