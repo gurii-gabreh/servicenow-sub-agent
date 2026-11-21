@@ -179,7 +179,16 @@ async function main() {
     .filter((it) => !freshSysIds.has(it.sysId))
     .map((it) => ({ ...it, score: scoreItem(it) }));
 
-  const mergedItems = [...freshItems, ...staleItems];
+  // 2026-11-21追加、ユーザー指示「重複があったら一つになるように調整して」: 同じsysIdが
+  // 複数あった場合は1件だけ残す(先に来たもの=ServiceNow側の最新行を優先)。2026-11-13に
+  // 中身が完全に同じ重複が10組見つかったため(原因は未特定)、今後も自動で1件にまとめる。
+  const seenSysIds = new Set();
+  const mergedItems = [...freshItems, ...staleItems].filter((it) => {
+    if (!it.sysId) return true;
+    if (seenSysIds.has(it.sysId)) return false;
+    seenSysIds.add(it.sysId);
+    return true;
+  });
 
   // sys_created_on 降順(新しい順)。ServiceNow側のORDERBYDESCと合わせて明示的にも並べ替える。
   mergedItems.sort((a, b) => (b.createdAt || "").localeCompare(a.createdAt || ""));
