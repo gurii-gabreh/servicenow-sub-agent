@@ -192,6 +192,18 @@ const REST_MESSAGES = [
       },
     ],
   },
+  {
+    // 2026-11-21追加: AIBL(AI Business Labo、株式会社グレイトフルエージェント運営の日本語AIニュース)。
+    // manager-roomでのユーザー指示「これもservicenowで情報収集したい」、方式A「タイトルとURLだけ」(承認済み)。
+    // RSSは提供されておらず、公式のMCP連携(https://aibl-portal.com/docs/mcp、無料会員のAPIキーでBearer認証)の
+    // list_newsツールをJSON-RPC 2.0(POST)で呼ぶ。他の情報源と違いPOSTのため、http_methodを明示する。
+    // APIキーはエンドポイントにもこのリポジトリにも含めず、システムプロパティ"aibl.api_key"(password2)から
+    // scheduled_job_ai_research_fetch.jsが実行時にAuthorizationヘッダーへ付与する(YouTubeと同じ考え方)。
+    // AIBL利用規約第6条(無断複製・転載の禁止)に配慮し、取り込むのはタイトル・URL・公開日・カテゴリのみ(要約は保存しない)。
+    name: "AI Research - AIBL",
+    description: "2026-11-21: AIBL公式MCP(list_news、POST・JSON-RPC)。認証はAPIキー、実行時にAuthorizationヘッダーで付与",
+    methods: [{ function_name: "news", rest_endpoint: "https://aibl-portal.com/api/mcp", http_method: "POST" }],
+  },
 ];
 // 2026-08-29: Anthropicは公式ブログRSSフィードを提供していないことが実機検証(verify-source-urlsジョブ、
 // https://www.anthropic.com/rss.xml が404)で判明したため、ブログ相当の情報源からは除外した
@@ -248,7 +260,7 @@ async function ensureMethod(client, token, restMessage, method, authInheritValue
     function_name: method.function_name,
     rest_message: restMessage.sys_id,
     rest_endpoint: method.rest_endpoint,
-    http_method: "GET",
+    http_method: method.http_method || "GET",
   };
   if (authInheritValue) body.authentication_type = authInheritValue;
   if (DRY_RUN) {

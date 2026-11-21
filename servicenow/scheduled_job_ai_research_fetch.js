@@ -20,7 +20,8 @@
 //                                   qiitapoem〜devtodebuggingの5件は2026-11-08追加、category 11)
 //   - "AI Research - Devpost"      HTTPメソッド "hackathons"(2026-09-29追加、category 7)
 //   - "AI Research - YouTube"      HTTPメソッド "aitech" / "aitrend" / "trendjp" / "trendworld"
-//                                   (2026-10-18追加、category 2/5/10。唯一APIキー認証が必要)
+//                                   (2026-10-18追加、category 2/5/10。APIキー認証が必要)
+//   - "AI Research - AIBL"         HTTPメソッド "news"(2026-11-21追加、category 2。POST・APIキー認証)
 // また u_ai_research_item テーブル(フィールド定義はREADME参照)が作成済みであること。
 //
 // 2026-11-06追記(PTD-124): ServiceNow PDI(dev395932)がリクレーム(自動回収)され
@@ -661,6 +662,80 @@
         }
     }
 
+    // ---- AIBL(AI Business Labo)公式MCP(category 2) ----
+    // 2026-11-21追加。manager-roomでのユーザー指示「これもservicenowで情報収集したい」、方式A
+    // 「タイトルとURLだけ」(承認済み)。RSSが無いため公式MCP(https://aibl-portal.com/docs/mcp)の
+    // list_newsをJSON-RPC 2.0のPOSTで呼ぶ(MCPのinitializeを省略したtools/call単発呼び出しで
+    // 応答が返ることを2026-11-21に実機確認済み)。応答はSSE形式("event: message"+"data: {JSON}")
+    // またはJSONのどちらでも受けられるようにする。
+    // APIキーはシステムプロパティ"aibl.api_key"(password2)からのみ読み、Authorizationヘッダーへ
+    // 実行時に付与する(このリポジトリにキーは現れない)。AIBL利用規約第6条(無断複製・転載の禁止)に
+    // 配慮し、AIBLの要約文は保存せずタイトル・URL・公開日・カテゴリのみを取り込む。
+    // since=直近30日(重複はu_dedup_keyで除外されるため、多少重なっても二重登録されない)。2026-11-21時点で
+    // MCP経由の最新記事が11/06(約2週間前)までしか返らなかった(原因未確認)ため、7日では0件になる。余裕を見て30日とした。
+    // 【未検証】RESTMessageV2でのPOST+setRequestHeader/setRequestBodyはServiceNow標準メソッドだが、
+    // このセッションからPDIで実機確認できていない。反映後にScheduled Jobを1回実行し、
+    // check_fetch_log.mjsで"AIBL"のエラー有無を確認すること。
+    function parseMcpResponse(body) {
+        var text = body || "";
+        if (text.indexOf("data:") !== -1) {
+            var lines = text.split(/\r?\n/);
+            var last = "";
+            for (var i = 0; i < lines.length; i++) {
+                if (lines[i].indexOf("data:") === 0) last = lines[i].substring(5).replace(/^\s+/, "");
+            }
+            text = last;
+        }
+        return JSON.parse(text);
+    }
+
+    function fetchAiblNews() {
+        var sourceLabel = "AIBL";
+        try {
+            var apiKey = gs.getProperty("aibl.api_key", "");
+            if (!apiKey) {
+                stats.errors.push(sourceLabel + ": システムプロパティ aibl.api_key が未設定のためスキップ");
+                return;
+            }
+            var r = new sn_ws.RESTMessageV2("AI Research - AIBL", "news");
+            r.setEndpoint("https://aibl-portal.com/api/mcp");
+            r.setHttpMethod("post");
+            r.setRequestHeader("Content-Type", "application/json");
+            r.setRequestHeader("Accept", "application/json, text/event-stream");
+            r.setRequestHeader("Authorization", "Bearer " + apiKey);
+            r.setRequestBody(JSON.stringify({
+                jsonrpc: "2.0",
+                id: 1,
+                method: "tools/call",
+                params: { name: "list_news", arguments: { limit: 50, since: getPublishedAfterIso(30) } }
+            }));
+            var response = r.execute();
+            if (response.getStatusCode() !== 200) {
+                stats.errors.push(sourceLabel + ": HTTP " + response.getStatusCode() + " " + String(response.getBody()).substring(0, 300));
+                return;
+            }
+            var rpc = parseMcpResponse(response.getBody());
+            if (rpc.error || !rpc.result || rpc.result.isError) {
+                stats.errors.push(sourceLabel + ": MCPエラー " + JSON.stringify(rpc.error || rpc.result).substring(0, 300));
+                return;
+            }
+            var content = (rpc.result.content || [])[0] || {};
+            var data = JSON.parse(content.text || "{}");
+            (data.items || []).forEach(function (it) {
+                insertItem({
+                    category: CATEGORY.AI_TREND,
+                    title: it.title || "",
+                    summary: it.category ? "AIBLカテゴリ: " + it.category : "",
+                    sourceUrl: it.source_url || "",
+                    sourceName: sourceLabel,
+                    publishedAt: it.published_at || ""
+                });
+            });
+        } catch (e) {
+            stats.errors.push(sourceLabel + ": " + e);
+        }
+    }
+
     // ---- 実行 ----
     fetchArxiv();
     fetchHackerNews();
@@ -692,6 +767,7 @@
     fetchYouTubeSearch("aitrend", CATEGORY.FASHION, "YouTube (AI流行・再生回数順)", 30);
     fetchYouTubeTrending("trendjp", "YouTube (急上昇・日本)");
     fetchYouTubeTrending("trendworld", "YouTube (急上昇・世界)");
+    fetchAiblNews();
 
     gs.info(
         "[AIResearchFetcher] inserted=" + stats.inserted +

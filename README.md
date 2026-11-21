@@ -44,6 +44,7 @@ ServiceNow PDI(Personal Developer Instance、`dev395932.service-now.com`)上で�
 | The Guardian (Work & Careers) | RSS | `https://www.theguardian.com/money/work-and-careers/rss` (実機検証済み、2026-10-10。category 9用・一般的な働き方) |
 | Economic Policy Institute (EPI) | RSS | `https://www.epi.org/feed/` (実機検証済み、2026-10-10。category 9用・近未来的な働き方、労働市場の研究機関) |
 | YouTube Data API v3 | API(JSON) | `https://www.googleapis.com/youtube/v3/search` ・ `https://www.googleapis.com/youtube/v3/videos` (実機検証済み、2026-10-18追加・同日中に方式修正。category 2/5/10用。**唯一APIキー認証が必要**。詳細は下記「YouTube Data API v3(category 2/5/10)」参照) |
+| AIBL(AI Business Labo) | MCP(JSON-RPC・POST) | `https://aibl-portal.com/api/mcp` の`list_news`(2026-11-21追加、category 2。無料会員のAPIキーでBearer認証。キーはGitHub Actions SecretsのAIBL_API_KEY→`servicenow/scripts/setup_aibl_api_key.mjs`がシステムプロパティ`aibl.api_key`(password2)へ設定し、ジョブが実行時にAuthorizationヘッダーへ付与。利用規約第6条(無断複製・転載の禁止)に配慮し、**タイトル・URL・公開日・AIBLカテゴリのみ保存し要約文は保存しない**。2026-11-21時点でMCPの最新記事が11/06までしか返らない事象あり(原因未確認)のため取得範囲は直近30日) |
 | Qiita (タグ: ポエム) | Atom | `https://qiita.com/tags/ポエム/feed.atom` (実機検証済み、2026-11-08。category 11用。個人の開発経験談・振り返り記事が多く投稿されるタグ) |
 | Qiita (タグ: アンチパターン) | Atom | `https://qiita.com/tags/アンチパターン/feed.atom` (実機検証済み、2026-11-08。category 11用) |
 | Zenn (トピック: postmortem) | RSS | `https://zenn.dev/topics/postmortem/feed` (実機検証済み、2026-11-08。category 11用) |

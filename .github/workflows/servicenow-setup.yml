@@ -10,6 +10,8 @@ name: ServiceNowセットアップ・同期(PTD-048/049)
 # PTD-089(YouTube Data API v3)を使う場合は、追加でYOUTUBE_API_KEYも同じ場所に登録すること。
 # 未登録でもワークフロー自体は失敗せず、setup-youtube-api-keyジョブがスキップのログを
 # 出すだけで、他のジョブには影響しない。
+#
+# 2026-11-21: AIBL(日本語AIニュース)を使う場合は、AIBL_API_KEYも同じ場所に登録すること(未登録ならスキップ)。
 on:
   workflow_dispatch:
     inputs:
@@ -58,6 +60,22 @@ jobs:
           SN_CLIENT_ID: ${{ secrets.SERVICENOW_CLIENT_ID }}
           SN_CLIENT_SECRET: ${{ secrets.SERVICENOW_CLIENT_SECRET }}
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          DRY_RUN: ${{ inputs.dry_run }}
+
+  setup-aibl-api-key:
+    name: AIBL APIキーをシステムプロパティへ設定(2026-11-21追加)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - run: node servicenow/scripts/setup_aibl_api_key.mjs
+        env:
+          SN_INSTANCE: ${{ secrets.SERVICENOW_INSTANCE_URL }}
+          SN_CLIENT_ID: ${{ secrets.SERVICENOW_CLIENT_ID }}
+          SN_CLIENT_SECRET: ${{ secrets.SERVICENOW_CLIENT_SECRET }}
+          AIBL_API_KEY: ${{ secrets.AIBL_API_KEY }}
           DRY_RUN: ${{ inputs.dry_run }}
 
   sync-scheduled-job:
